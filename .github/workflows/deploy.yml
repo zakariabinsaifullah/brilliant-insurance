@@ -63,6 +63,23 @@ jobs:
                   git commit -q -m "Deploy ${GITHUB_SHA::7}: ${COMMIT_MSG%%$'\n'*}"
                   git push -f "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" deploy
 
+            # Deployer downloads the branch as a zip. Right after a push GitHub
+            # can still serve the previous zip for a short while, so wait until
+            # the deploy branch's zipball contains the commit just pushed
+            # before pinging Deployer (otherwise it reinstalls the old version).
+            - name: Wait for the new deploy zip
+              env:
+                  GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+              run: |
+                  sha=$(git -C "$RUNNER_TEMP/brilliant-insurance" rev-parse --short=7 HEAD)
+                  for i in $(seq 1 24); do
+                      # The zip's root folder is "<owner>-<repo>-<short sha>/".
+                      root=$(curl -sSL -H "Authorization: Bearer $GH_TOKEN" "https://api.github.com/repos/${{ github.repository }}/zipball/deploy" 2>/dev/null | head -c 400 | LC_ALL=C grep -a -o -- '-[0-9a-f]\{7\}/' | head -1 || true)
+                      case "$root" in *"$sha"*) echo "Deploy zip is at $sha"; exit 0;; esac
+                      sleep 5
+                  done
+                  echo "::warning::Deploy zip not confirmed at $sha after 2 minutes; pinging Deployer anyway"
+
             - name: Notify Deployer for Git
               env:
                   DEPLOYER_WEBHOOK_URL: ${{ secrets.DEPLOYER_WEBHOOK_URL }}
