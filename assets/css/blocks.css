@@ -382,9 +382,11 @@ ul.is-style-mega-links-large a::after {
     background-image: var(--wp--preset--gradient--bnti-midnight);
 }
 
+/* Logo row: the logo and the rule under it start on the same left edge as
+   the menu rows and their dividers. */
 .wp-block-kadence-off-canvas .kb-off-canvas-inner > .wp-block-image {
-    margin: 0 -24px 8px;
-    padding: 0 24px 20px;
+    margin-bottom: 8px;
+    padding: 0 0 20px;
     border-bottom: 1px solid var(--wp--preset--color--bnti-white-30);
 }
 
