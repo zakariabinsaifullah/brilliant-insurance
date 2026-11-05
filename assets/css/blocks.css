@@ -344,6 +344,13 @@ ul.is-style-mega-links-large a::after {
     margin-left: 0;
 }
 
+/* No underline on menu links: style.css underlines paragraph links
+   (`.wp-block-paragraph a`) and loads after the block's own link setting. */
+.wp-block-kadence-header .mega-menu a,
+.wp-block-kadence-off-canvas .kb-navigation a {
+    text-decoration: none;
+}
+
 .wp-block-kadence-header .mega-menu .bnti-mega-title a:is(:hover, :focus-visible),
 .wp-block-kadence-header .mega-menu .bnti-mega-hub a:is(:hover, :focus-visible) {
     color: var(--wp--preset--color--bnti-premier-soft);
@@ -433,6 +440,8 @@ ul.is-style-mega-links-large a::after {
 }
 
 .wp-block-kadence-off-canvas .kb-navigation .sub-menu {
+    margin-left: 0;
+    padding-left: 0;
     border-bottom: 1px solid var(--wp--preset--color--bnti-white-10);
 }
 
