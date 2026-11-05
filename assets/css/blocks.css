@@ -253,11 +253,15 @@ ul.is-style-mega-links-large a::after {
     transform: none !important;
     margin: 0;
     background: transparent;
-    box-shadow: none;
+    /* Figma dims the page to 70% black under an open panel: a huge spread
+       shadow on the panel's (transparent, full-row) container, clipped so it
+       only covers what is below the header. It shows and hides with the panel. */
+    box-shadow: 0 0 0 100vmax rgb(0 0 0 / 0.7);
+    clip-path: inset(0 -100vmax -100vmax -100vmax);
 }
 
 /* Parent item: "+" instead of Kadence's chevron, "−" while open; text and
-   sign Premier while open. Mega menu items and the plain dropdowns of the
+   sign Premier Soft (#9DB8EC) while open, as in Figma "Navigation States". Mega menu items and the plain dropdowns of the
    desktop (horizontal) menu, e.g. Resources, share it. */
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap {
     position: relative;
@@ -275,8 +279,8 @@ ul.is-style-mega-links-large a::after {
     padding: 0;
     color: inherit;
     font-family: var(--wp--preset--font-family--inter);
-    font-size: var(--wp--preset--font-size--bnti-small);
-    font-weight: 400;
+    font-size: var(--wp--preset--font-size--bnti-medium);
+    font-weight: 500;
     line-height: 1;
 }
 
@@ -289,7 +293,7 @@ ul.is-style-mega-links-large a::after {
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content {
-    color: var(--wp--preset--color--bnti-premier);
+    color: var(--wp--preset--color--bnti-premier-soft);
 }
 
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) .kb-nav-dropdown-toggle-btn::before,
@@ -297,16 +301,16 @@ ul.is-style-mega-links-large a::after {
     content: "\2212";
 }
 
-/* 2px Premier underline on the white rule (the link area ends 25px above the
-   row's bottom edge: 24px padding + the 1px rule). */
+/* 3px Premier Soft bar on the header's bottom rule (Figma "Active Bar"): the
+   80px row ends 19px below the link area, and the bar straddles the 1px rule. */
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap::after {
     content: "";
     position: absolute;
-    top: calc(100% + 23px);
+    top: calc(100% + 18px);
     right: 0;
     left: 0;
-    height: 2px;
-    background-color: var(--wp--preset--color--bnti-premier);
+    height: 3px;
+    background-color: var(--wp--preset--color--bnti-premier-soft);
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -325,6 +329,134 @@ ul.is-style-mega-links-large a::after {
     right: -20px;
     left: -20px;
     height: 26px;
+}
+
+/*
+ * Mega menu panel content (the Row Layout inside each mega item).
+ * Separators: WordPress centres them with auto side margins, which stops them
+ * stretching in the panel's flex columns, so they would collapse to 0 width.
+ * Column titles (`bnti-mega-title`): Premier Soft with a → on hover, as in
+ * Figma's "Column Heading (Hover)".
+ */
+.wp-block-kadence-header .mega-menu .wp-block-separator {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a:is(:hover, :focus-visible),
+.wp-block-kadence-header .mega-menu .bnti-mega-hub a:is(:hover, :focus-visible) {
+    color: var(--wp--preset--color--bnti-premier-soft);
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a::after {
+    content: "\2192";
+    display: inline-block;
+    margin-left: 0.3em;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a:is(:hover, :focus-visible)::after {
+    opacity: 1;
+    transform: none;
+}
+
+/*
+ * Off-canvas Mobile Menu (Figma "Nav • Mobile"): Midnight gradient panel, a
+ * faint rule under the logo row, → on plain items, + / − on the hubs (Premier
+ * Soft while open), the hub link in small uppercase Premier Soft, and the
+ * child pages on a faint left border.
+ */
+.wp-block-kadence-off-canvas .kb-off-canvas-inner-wrap {
+    background-image: var(--wp--preset--gradient--bnti-midnight);
+}
+
+.wp-block-kadence-off-canvas .kb-off-canvas-inner > .wp-block-image {
+    margin: 0 -24px 8px;
+    padding: 0 24px 20px;
+    border-bottom: 1px solid var(--wp--preset--color--bnti-white-30);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li > .kb-link-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a::after,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn::before {
+    color: var(--wp--preset--color--bnti-white-60);
+    font-family: var(--wp--preset--font-family--inter);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a::after {
+    content: "\2192";
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn svg {
+    display: none;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn {
+    padding: 0;
+    color: inherit;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn::before {
+    content: "+";
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on > .kb-link-wrap,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on > .kb-link-wrap > a,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on .kb-nav-dropdown-toggle-btn::before {
+    color: var(--wp--preset--color--bnti-premier-soft);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on .kb-nav-dropdown-toggle-btn::before {
+    content: "\2212";
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu {
+    border-bottom: 1px solid var(--wp--preset--color--bnti-white-10);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li:not(.bnti-hub-link) {
+    border-left: 1px solid var(--wp--preset--color--bnti-white-20);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li.bnti-hub-link {
+    margin-bottom: 9px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li.bnti-hub-link > .kb-link-wrap > a {
+    padding-left: 0;
+    color: var(--wp--preset--color--bnti-premier-soft);
+    font-size: var(--wp--preset--font-size--bnti-x-small);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-kadence-header .mega-menu .bnti-mega-title a::after {
+        transition: none;
+    }
 }
 
 /*

@@ -111,6 +111,11 @@
                     "slug": "bnti-premier-light"
                 },
                 {
+                    "color": "#9DB8EC",
+                    "name": "Premier Soft",
+                    "slug": "bnti-premier-soft"
+                },
+                {
                     "color": "#214280",
                     "name": "Premier",
                     "slug": "bnti-premier"
@@ -209,6 +214,11 @@
                     "color": "#FFFFFF99",
                     "name": "White 60%",
                     "slug": "bnti-white-60"
+                },
+                {
+                    "color": "#FFFFFFCC",
+                    "name": "White 80%",
+                    "slug": "bnti-white-80"
                 },
                 {
                     "color": "#0000000D",
