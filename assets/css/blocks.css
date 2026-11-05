@@ -439,8 +439,12 @@ ul.is-style-mega-links-large a::after {
     content: "\2212";
 }
 
-.wp-block-kadence-off-canvas .kb-navigation .sub-menu {
-    margin-left: 0;
+/* Kadence indents every vertical sub-menu by 1em (it sets
+   --kb-nav-dropdown-margin-left on the sub-menu itself, so the navigation's
+   own 0 setting can't override it); in Figma the hub link and the child list
+   line up with the row labels. */
+.wp-block-kadence-off-canvas .wp-block-kadence-navigation .kb-navigation .sub-menu {
+    --kb-nav-dropdown-margin-left: 0;
     padding-left: 0;
     border-bottom: 1px solid var(--wp--preset--color--bnti-white-10);
 }
