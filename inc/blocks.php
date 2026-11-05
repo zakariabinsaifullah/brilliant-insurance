@@ -12,10 +12,10 @@
  * dirname() when it cannot resolve the file paths — producing PHP deprecation
  * warnings.  Using a manual loop with an is_dir() guard is the safe alternative.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! function_exists( 'mty_register_blocks' ) ) :
+if ( ! function_exists( 'bnti_register_blocks' ) ) :
 	/**
 	 * Registers custom blocks from the build directory.
 	 *
@@ -25,7 +25,7 @@ if ( ! function_exists( 'mty_register_blocks' ) ) :
 	 * 2. If no manifest, scan build/blocks/ directly.
 	 * 3. If build/ does not exist at all, fall back to src/ for development.
 	 */
-	function mty_register_blocks() {
+	function bnti_register_blocks() {
 		$build_dir     = __DIR__ . '/../build/blocks';
 		$manifest_path = __DIR__ . '/../build/blocks-manifest.php';
 		$src_dir       = __DIR__ . '/../src/blocks';
@@ -66,10 +66,10 @@ if ( ! function_exists( 'mty_register_blocks' ) ) :
 		}
 	}
 endif;
-add_action( 'init', 'mty_register_blocks' );
+add_action( 'init', 'bnti_register_blocks' );
 
 
-if ( ! function_exists( 'mty_query_loop_exclude_current_post' ) ) :
+if ( ! function_exists( 'bnti_query_loop_exclude_current_post' ) ) :
 	/**
 	 * Leaves the post being read out of Query Loops of posts on a single post
 	 * (the "Keep reading." cards in the Single Posts template), so an article
@@ -80,7 +80,7 @@ if ( ! function_exists( 'mty_query_loop_exclude_current_post' ) ) :
 	 * @param WP_Block $block The Post Template block being rendered.
 	 * @return array Query vars.
 	 */
-	function mty_query_loop_exclude_current_post( $query, $block ) {
+	function bnti_query_loop_exclude_current_post( $query, $block ) {
 		if ( ! is_singular( 'post' ) || ! empty( $block->context['query']['inherit'] ) ) {
 			return $query;
 		}
@@ -97,4 +97,4 @@ if ( ! function_exists( 'mty_query_loop_exclude_current_post' ) ) :
 		return $query;
 	}
 endif;
-add_filter( 'query_loop_block_query_vars', 'mty_query_loop_exclude_current_post', 10, 2 );
+add_filter( 'query_loop_block_query_vars', 'bnti_query_loop_exclude_current_post', 10, 2 );

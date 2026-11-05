@@ -13,7 +13,7 @@
 }
 
 .is-style-post-typo.wp-block-post-content h2 {
-    font-size: var(--wp--preset--font-size--mty-heading-three);
+    font-size: var(--wp--preset--font-size--bnti-heading-three);
 }
 
 .wp-block-post-excerpt__more-link {
@@ -76,7 +76,7 @@ header.wp-block-kadence-rowlayout::before {
     background: linear-gradient(180deg, rgba(255, 255, 255, 0.175) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0) 60%);
 }
 
-.mty-icon-pos .kt-svg-icon-link {
+.bnti-icon-pos .kt-svg-icon-link {
     flex-direction: row-reverse !important;
     gap: 12px;
 }
@@ -163,13 +163,13 @@ ul.is-style-mega-links > li + li {
 
 ul.is-style-mega-links a,
 ul.is-style-mega-links-large a {
-    color: var(--wp--preset--color--mty-white);
+    color: var(--wp--preset--color--bnti-white);
     text-decoration: none;
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 ul.is-style-mega-links a {
-    font-size: var(--wp--preset--font-size--mty-regular);
+    font-size: var(--wp--preset--font-size--bnti-regular);
 }
 
 ul.is-style-mega-links a::after {
@@ -187,7 +187,7 @@ ul.is-style-mega-links a:hover,
 ul.is-style-mega-links a:focus-visible,
 ul.is-style-mega-links-large a:hover,
 ul.is-style-mega-links-large a:focus-visible {
-    color: var(--wp--preset--color--mty-goblin);
+    color: var(--wp--preset--color--bnti-goblin);
 }
 
 ul.is-style-mega-links a:hover::after,
@@ -197,7 +197,7 @@ ul.is-style-mega-links a:focus-visible::after {
 }
 
 ul.is-style-mega-links-large > li + li {
-    border-top: 1px solid var(--wp--preset--color--mty-white-15);
+    border-top: 1px solid var(--wp--preset--color--bnti-white-15);
 }
 
 ul.is-style-mega-links-large a {
@@ -207,7 +207,7 @@ ul.is-style-mega-links-large a {
     gap: 16px;
     padding: 20px 0;
     font-family: var(--wp--preset--font-family--alexandria);
-    font-size: var(--wp--preset--font-size--mty-heading-five);
+    font-size: var(--wp--preset--font-size--bnti-heading-five);
     font-weight: 600;
     line-height: 1.2;
 }
@@ -219,7 +219,7 @@ ul.is-style-mega-links-large > li:first-child a {
 ul.is-style-mega-links-large a::after {
     content: "\2192";
     font-family: var(--wp--preset--font-family--open-sans);
-    font-size: var(--wp--preset--font-size--mty-regular);
+    font-size: var(--wp--preset--font-size--bnti-regular);
     font-weight: 400;
 }
 
@@ -275,7 +275,7 @@ ul.is-style-mega-links-large a::after {
     padding: 0;
     color: inherit;
     font-family: var(--wp--preset--font-family--open-sans);
-    font-size: var(--wp--preset--font-size--mty-small);
+    font-size: var(--wp--preset--font-size--bnti-small);
     font-weight: 400;
     line-height: 1;
 }
@@ -289,7 +289,7 @@ ul.is-style-mega-links-large a::after {
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content {
-    color: var(--wp--preset--color--mty-goblin);
+    color: var(--wp--preset--color--bnti-goblin);
 }
 
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) .kb-nav-dropdown-toggle-btn::before,
@@ -306,7 +306,7 @@ ul.is-style-mega-links-large a::after {
     right: 0;
     left: 0;
     height: 2px;
-    background-color: var(--wp--preset--color--mty-goblin);
+    background-color: var(--wp--preset--color--bnti-goblin);
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -355,12 +355,12 @@ ul.is-style-mega-links-large a::after {
  * styles only; a button that uses Icon Settings (Iconic Button) shows its own
  * icon instead.
  */
-.wp-block-button:not([class*="is-style-"]):not(.mty-icon-button) > .wp-block-button__link::after,
-.wp-block-button.is-style-fill:not(.mty-icon-button) > .wp-block-button__link::after,
-.wp-block-button.is-style-outline:not(.mty-icon-button) > .wp-block-button__link::after {
+.wp-block-button:not([class*="is-style-"]):not(.bnti-icon-button) > .wp-block-button__link::after,
+.wp-block-button.is-style-fill:not(.bnti-icon-button) > .wp-block-button__link::after,
+.wp-block-button.is-style-outline:not(.bnti-icon-button) > .wp-block-button__link::after {
     content: "\2192";
     margin-left: 12px;
-    font-size: var(--wp--preset--font-size--mty-regular);
+    font-size: var(--wp--preset--font-size--bnti-regular);
     font-weight: 400;
     letter-spacing: 0;
     line-height: 1;
@@ -378,16 +378,16 @@ ul.is-style-mega-links-large a::after {
  * restated here. Keep the two in sync.
  */
 .wp-block-button.is-style-alternative .wp-block-button__link {
-    background-color: var(--wp--preset--color--mty-goblin-lightest);
-    color: var(--wp--preset--color--mty-green-pea);
+    background-color: var(--wp--preset--color--bnti-goblin-lightest);
+    color: var(--wp--preset--color--bnti-green-pea);
     padding: 4px 28px;
 }
 
 /* Transition is inherited from the default button's `css` in theme.json
    (styles.elements.button) — background-color/color/border-color at 0.3s. */
 .wp-block-button.is-style-alternative .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--mty-goblin);
-    color: var(--wp--preset--color--mty-white);
+    background-color: var(--wp--preset--color--bnti-goblin);
+    color: var(--wp--preset--color--bnti-white);
 }
 
 @media (max-width: 1024px) {
@@ -413,7 +413,7 @@ ul.is-style-mega-links-large a::after {
     background-color: transparent;
     background-image: none;
     border: 1px solid currentColor;
-    color: var(--wp--preset--color--mty-white);
+    color: var(--wp--preset--color--bnti-white);
     padding: 15px 27px;
     text-align: center !important;
     justify-content: center !important;
@@ -422,7 +422,7 @@ ul.is-style-mega-links-large a::after {
 /* The border is `currentColor`, so it turns orange along with the text. */
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
     background-color: transparent;
-    color: var(--wp--preset--color--mty-goblin);
+    color: var(--wp--preset--color--bnti-goblin);
 }
 
 /*
@@ -442,7 +442,7 @@ ul.is-style-mega-links-large a::after {
 }
 
 .wp-block-button.is-style-link .wp-block-button__link:hover {
-    color: var(--wp--preset--color--mty-green-pea);
+    color: var(--wp--preset--color--bnti-green-pea);
 }
 
 /* Kadence Table */
@@ -477,37 +477,37 @@ th.kb-table-data p {
 }
 
 /* FAQ accordion
-   A Kadence Accordion with the class `mty-faq` (Advanced → Additional CSS
+   A Kadence Accordion with the class `bnti-faq` (Advanced → Additional CSS
    class): 720px wide and centred, a thin divider above the first question and
    below every question/answer, no title background and no answer box. Title
    type, padding and the orange chevron come from the block's own settings. */
 
-.wp-block-kadence-accordion.mty-faq {
+.wp-block-kadence-accordion.bnti-faq {
     max-width: 720px;
     margin-inline: auto;
-    border-top: 1px solid var(--wp--preset--color--mty-thunder-lightest);
+    border-top: 1px solid var(--wp--preset--color--bnti-thunder-lightest);
 }
 
-.wp-block-kadence-accordion.mty-faq .kt-accordion-pane {
-    border-bottom: 1px solid var(--wp--preset--color--mty-thunder-lightest);
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-pane {
+    border-bottom: 1px solid var(--wp--preset--color--bnti-thunder-lightest);
 }
 
-.wp-block-kadence-accordion.mty-faq .kt-blocks-accordion-header,
-.wp-block-kadence-accordion.mty-faq .kt-blocks-accordion-header:hover,
-.wp-block-kadence-accordion.mty-faq .kt-blocks-accordion-header:focus,
-.wp-block-kadence-accordion.mty-faq .kt-blocks-accordion-header.kt-accordion-panel-active {
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:hover,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:focus,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header.kt-accordion-panel-active {
     background: transparent;
     border: 0;
     border-radius: 0;
     text-align: left;
 }
 
-.wp-block-kadence-accordion.mty-faq .kt-accordion-panel-inner {
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner {
     border: 0;
     background: transparent;
 }
 
-.wp-block-kadence-accordion.mty-faq .kt-accordion-panel-inner > :last-child {
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner > :last-child {
     margin-bottom: 0;
 }
 
@@ -519,11 +519,11 @@ th.kb-table-data p {
  * settings (Accordion, Item, Heading).
  */
 .wp-block-accordion.is-style-numbered {
-    counter-reset: mty-faq;
+    counter-reset: bnti-faq;
 }
 
 .wp-block-accordion.is-style-numbered > .wp-block-accordion-item {
-    counter-increment: mty-faq;
+    counter-increment: bnti-faq;
 }
 
 .wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle {
@@ -533,10 +533,10 @@ th.kb-table-data p {
 }
 
 .wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle::before {
-    content: "Q." counter(mty-faq, decimal-leading-zero);
+    content: "Q." counter(bnti-faq, decimal-leading-zero);
     flex: 0 0 52px;
     align-self: baseline;
-    color: var(--wp--preset--color--mty-goblin);
+    color: var(--wp--preset--color--bnti-goblin);
     font-family: var(--wp--preset--font-family--open-sans, inherit);
     font-size: 13px;
     font-weight: 600;
@@ -570,7 +570,7 @@ th.kb-table-data p {
     width: 14px;
     height: 2px;
     margin-top: -1px;
-    background: var(--wp--preset--color--mty-goblin);
+    background: var(--wp--preset--color--bnti-goblin);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -615,7 +615,7 @@ body.single-post .wp-block-kadence-off-canvas-trigger,
 body.single-post .wp-block-kadence-off-canvas-trigger:hover,
 body.single-post .wp-block-kadence-off-canvas-trigger:focus,
 .editor-styles-wrapper:has(.wp-block-post-author-name) .wp-block-kadence-off-canvas-trigger {
-    color: var(--wp--preset--color--mty-goblin, #3a8d3b) !important;
+    color: var(--wp--preset--color--bnti-goblin, #3a8d3b) !important;
 }
 
 /* Tablet/mobile header row: 15px left/right instead of Kadence's 30px. */
@@ -657,7 +657,7 @@ body.single-post .wp-block-kadence-header-tablet.kb-header-container,
     }
 
     .wp-block-buttons > .wp-block-button:not(.is-style-link):not(header *),
-    .wp-block-button.mty-gform-button:not(header *) {
+    .wp-block-button.bnti-gform-button:not(header *) {
         flex-basis: 100%;
         width: 100% !important;
         max-width: 100%;

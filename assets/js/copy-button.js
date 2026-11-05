@@ -39,7 +39,7 @@
 	}
 
 	document.addEventListener( 'DOMContentLoaded', function () {
-		var buttons = document.querySelectorAll( '.mty-copy-button' );
+		var buttons = document.querySelectorAll( '.bnti-copy-button' );
 
 		buttons.forEach( function ( button ) {
 			button.addEventListener( 'click', function () {

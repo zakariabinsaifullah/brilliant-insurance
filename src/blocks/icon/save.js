@@ -103,7 +103,7 @@ export default function save({ attributes, className }) {
         return (
             <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
                 <div
-                    className={classNames('mty-icon-block-wrapper', {
+                    className={classNames('bnti-icon-block-wrapper', {
                         [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
                     })}
                 >
@@ -124,7 +124,7 @@ export default function save({ attributes, className }) {
     return (
         <Tag {...blockProps} {...(href && { href, target: linkTarget, rel: linkRel })}>
             <div
-                className={classNames('mty-icon-block-wrapper', {
+                className={classNames('bnti-icon-block-wrapper', {
                     [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
                 })}
             >

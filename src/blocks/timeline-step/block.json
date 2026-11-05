@@ -1,12 +1,12 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/timeline-step",
+    "name": "bnti/timeline-step",
     "version": "0.2.0",
     "title": "Timeline Step",
-    "category": "mty",
+    "category": "bnti",
     "description": "One step of a Timeline: the dot and the line to the next step, with any blocks below.",
-    "parent": ["mty/timeline"],
+    "parent": ["bnti/timeline"],
     "supports": {
         "html": false,
         "reusable": false
@@ -17,6 +17,6 @@
             "default": false
         }
     },
-    "textdomain": "mty",
+    "textdomain": "brilliant-insurance",
     "editorScript": "file:./index.js"
 }

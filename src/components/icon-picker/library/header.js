@@ -11,19 +11,19 @@ import { Flex, FlexBlock, Button } from '@wordpress/components';
 export const Header = ({ activeTab, onTabChange }) => {
     // Define tabs
     const tabs = [
-        { label: __('Library', 'mty'), value: 'library' },
-        { label: __('My Icons', 'mty'), value: 'my-icons' },
-        { label: __('Custom SVG', 'mty'), value: 'custom' }
+        { label: __('Library', 'brilliant-insurance'), value: 'library' },
+        { label: __('My Icons', 'brilliant-insurance'), value: 'my-icons' },
+        { label: __('Custom SVG', 'brilliant-insurance'), value: 'custom' }
     ];
 
     return (
         <Flex gap={2}>
             <FlexBlock>
-                <div className="mty-modal__tabs">
+                <div className="bnti-modal__tabs">
                     {tabs.map(tab => (
                         <Button
                             key={tab.value}
-                            className={`mty-modal__tabs-button ${activeTab === tab.value ? 'is-selected' : ''}`}
+                            className={`bnti-modal__tabs-button ${activeTab === tab.value ? 'is-selected' : ''}`}
                             onClick={() => onTabChange(tab.value)}
                             disabled={tab.disabled}
                             __nextHasNoMarginBottom

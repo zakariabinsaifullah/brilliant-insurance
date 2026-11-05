@@ -4,7 +4,7 @@
  * Adds a "Highlight" button, in its own group on the block toolbar (not in
  * the rich text "More" menu), to every rich text field (headings, paragraphs,
  * lists, buttons…). The selected text is wrapped in
- * <mark class="mty-highlight">, which makes it semi-bold (600) and Goblin
+ * <mark class="bnti-highlight">, which makes it semi-bold (600) and Goblin
  * green, as in the Figma headings ("Key takeaways.", "Meet James."). A
  * different colour can be picked from the theme palette; it is stored as the
  * preset's own `has-{slug}-color` class, so no inline styles are saved.
@@ -17,8 +17,8 @@ import { Popover, ColorPalette, Button, BaseControl, ToolbarGroup, ToolbarButton
 
 import './style.scss';
 
-const FORMAT_NAME = 'mty/highlight';
-const DEFAULT_SLUG = 'mty-goblin';
+const FORMAT_NAME = 'bnti/highlight';
+const DEFAULT_SLUG = 'bnti-goblin';
 
 const highlightIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
@@ -38,9 +38,9 @@ const getSlugFromClass = className => {
 };
 
 const settings = {
-    title: __('Highlight', 'mty'),
+    title: __('Highlight', 'brilliant-insurance'),
     tagName: 'mark',
-    className: 'mty-highlight',
+    className: 'bnti-highlight',
     attributes: {
         class: 'class'
     },
@@ -50,8 +50,8 @@ const settings = {
 function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef }) {
     const [isOpen, setIsOpen] = useState(false);
     const [themePalette] = useSettings('color.palette.theme');
-    // Solid MTY colours only: no Kadence palette, overlays or transparent.
-    const palette = (themePalette || []).filter(color => color.slug.startsWith('mty-') && /^#[0-9a-f]{6}$/i.test(color.color));
+    // Solid Brilliant Insurance colours only: no Kadence palette, overlays or transparent.
+    const palette = (themePalette || []).filter(color => color.slug.startsWith('bnti-') && /^#[0-9a-f]{6}$/i.test(color.color));
     const anchor = useAnchor({ editableContentElement: contentRef.current, settings });
 
     const activeSlug = getSlugFromClass(activeAttributes?.class) || DEFAULT_SLUG;
@@ -81,21 +81,21 @@ function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef
     return (
         <>
             <BlockControls>
-                <ToolbarGroup className="mty-highlight-toolbar">
+                <ToolbarGroup className="bnti-highlight-toolbar">
                     <ToolbarButton
                         icon={highlightIcon}
-                        label={__('Highlight', 'mty')}
+                        label={__('Highlight', 'brilliant-insurance')}
                         onClick={onToolbarClick}
                         isPressed={isActive}
                     />
                 </ToolbarGroup>
             </BlockControls>
             {isOpen && isActive && (
-                <Popover anchor={anchor} placement="bottom" onClose={() => setIsOpen(false)} className="mty-highlight-popover">
+                <Popover anchor={anchor} placement="bottom" onClose={() => setIsOpen(false)} className="bnti-highlight-popover">
                     <div style={{ padding: '16px', width: '260px' }}>
                         <BaseControl
-                            label={__('Highlight colour', 'mty')}
-                            help={__('Semi-bold text in the chosen colour. Default: Goblin.', 'mty')}
+                            label={__('Highlight colour', 'brilliant-insurance')}
+                            help={__('Semi-bold text in the chosen colour. Default: Goblin.', 'brilliant-insurance')}
                             __nextHasNoMarginBottom
                         >
                             <ColorPalette
@@ -108,7 +108,7 @@ function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef
                         </BaseControl>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
                             <Button variant="secondary" size="compact" onClick={() => applyHighlight(DEFAULT_SLUG)}>
-                                {__('Reset to Goblin', 'mty')}
+                                {__('Reset to Goblin', 'brilliant-insurance')}
                             </Button>
                             <Button
                                 variant="tertiary"
@@ -119,7 +119,7 @@ function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef
                                     setIsOpen(false);
                                 }}
                             >
-                                {__('Remove', 'mty')}
+                                {__('Remove', 'brilliant-insurance')}
                             </Button>
                         </div>
                     </div>

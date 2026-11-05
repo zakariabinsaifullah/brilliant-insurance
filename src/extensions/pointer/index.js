@@ -8,8 +8,8 @@
  * below).
  *
  * Editor: drawn on the block wrapper (::before; core uses ::after for selection outlines) from classes and CSS custom
- * properties set here. Front end: mty_render_pointer() in inc/extensions.php
- * adds the same classes and a .mty-pointer element.
+ * properties set here. Front end: bnti_render_pointer() in inc/extensions.php
+ * adds the same classes and a .bnti-pointer element.
  */
 import { __ } from '@wordpress/i18n';
 import { addFilter } from '@wordpress/hooks';
@@ -42,18 +42,18 @@ export const getPointerProps = attributes => {
     const size = attributes.pointerSize || DEFAULTS.pointerSize;
     const position = attributes.pointerPosition || DEFAULTS.pointerPosition;
     const style = {
-        '--mty-pointer-length': `${attributes.pointerLength ?? DEFAULTS.pointerLength}px`
+        '--bnti-pointer-length': `${attributes.pointerLength ?? DEFAULTS.pointerLength}px`
     };
     if (position === 'top') {
-        style['--mty-pointer-top'] = `${attributes.pointerOffset ?? DEFAULTS.pointerOffset}px`;
+        style['--bnti-pointer-top'] = `${attributes.pointerOffset ?? DEFAULTS.pointerOffset}px`;
     }
     return {
-        classes: ['has-mty-pointer', `is-pointer-${direction}`, `is-pointer-${size}`],
+        classes: ['has-bnti-pointer', `is-pointer-${direction}`, `is-pointer-${size}`],
         style
     };
 };
 
-addFilter('blocks.registerBlockType', 'mty/pointer-add-attributes', (settings, name) => {
+addFilter('blocks.registerBlockType', 'bnti/pointer-add-attributes', (settings, name) => {
     if (!BLOCKS.includes(name)) {
         return settings;
     }
@@ -74,7 +74,7 @@ addFilter('blocks.registerBlockType', 'mty/pointer-add-attributes', (settings, n
 
 addFilter(
     'editor.BlockEdit',
-    'mty/pointer-add-inspector-controls',
+    'bnti/pointer-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -89,43 +89,43 @@ addFilter(
                 <>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('Pointer', 'mty')} initialOpen={!!pointer}>
+                        <PanelBody title={__('Pointer', 'brilliant-insurance')} initialOpen={!!pointer}>
                             <NativeToggleControl
-                                label={__('Enable pointer', 'mty')}
-                                help={__('A line with a dot from this block’s edge to the image beside it. Desktop only.', 'mty')}
+                                label={__('Enable pointer', 'brilliant-insurance')}
+                                help={__('A line with a dot from this block’s edge to the image beside it. Desktop only.', 'brilliant-insurance')}
                                 checked={!!pointer}
                                 onChange={value => setAttributes({ pointer: value })}
                             />
                             {pointer && (
                                 <>
                                     <NativeToggleGroupControl
-                                        label={__('Direction', 'mty')}
+                                        label={__('Direction', 'brilliant-insurance')}
                                         value={pointerDirection}
                                         options={[
-                                            { label: __('Left', 'mty'), value: 'left' },
-                                            { label: __('Right', 'mty'), value: 'right' }
+                                            { label: __('Left', 'brilliant-insurance'), value: 'left' },
+                                            { label: __('Right', 'brilliant-insurance'), value: 'right' }
                                         ]}
                                         onChange={value => setAttributes({ pointerDirection: value })}
                                     />
                                     <NativeRangeControl
-                                        label={__('Length (px)', 'mty')}
+                                        label={__('Length (px)', 'brilliant-insurance')}
                                         value={pointerLength}
                                         min={20}
                                         max={600}
                                         onChange={value => setAttributes({ pointerLength: value })}
                                     />
                                     <NativeToggleGroupControl
-                                        label={__('Vertical position', 'mty')}
+                                        label={__('Vertical position', 'brilliant-insurance')}
                                         value={pointerPosition}
                                         options={[
-                                            { label: __('Middle', 'mty'), value: 'middle' },
-                                            { label: __('From top', 'mty'), value: 'top' }
+                                            { label: __('Middle', 'brilliant-insurance'), value: 'middle' },
+                                            { label: __('From top', 'brilliant-insurance'), value: 'top' }
                                         ]}
                                         onChange={value => setAttributes({ pointerPosition: value })}
                                     />
                                     {pointerPosition === 'top' && (
                                         <NativeRangeControl
-                                            label={__('Offset from top (px)', 'mty')}
+                                            label={__('Offset from top (px)', 'brilliant-insurance')}
                                             value={pointerOffset}
                                             min={0}
                                             max={800}
@@ -133,11 +133,11 @@ addFilter(
                                         />
                                     )}
                                     <NativeToggleGroupControl
-                                        label={__('Size', 'mty')}
+                                        label={__('Size', 'brilliant-insurance')}
                                         value={pointerSize}
                                         options={[
-                                            { label: __('Small', 'mty'), value: 'small' },
-                                            { label: __('Large', 'mty'), value: 'large' }
+                                            { label: __('Small', 'brilliant-insurance'), value: 'small' },
+                                            { label: __('Large', 'brilliant-insurance'), value: 'large' }
                                         ]}
                                         onChange={value => setAttributes({ pointerSize: value })}
                                     />
@@ -153,7 +153,7 @@ addFilter(
 
 addFilter(
     'editor.BlockListBlock',
-    'mty/pointer-add-class',
+    'bnti/pointer-add-class',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -171,7 +171,7 @@ addFilter(
             return (
                 <BlockListBlock
                     {...props}
-                    className={[props.className, 'mty-pointer-editor', ...classes].filter(Boolean).join(' ')}
+                    className={[props.className, 'bnti-pointer-editor', ...classes].filter(Boolean).join(' ')}
                     wrapperProps={wrapperProps}
                 />
             );

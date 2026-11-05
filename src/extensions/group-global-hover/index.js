@@ -20,7 +20,7 @@ const BLOCK_NAME = 'core/group';
 /**
  * Add global hover attributes to core/group.
  */
-addFilter( 'blocks.registerBlockType', 'mty/group-global-hover-add-attributes', ( settings, name ) => {
+addFilter( 'blocks.registerBlockType', 'bnti/group-global-hover-add-attributes', ( settings, name ) => {
     if ( name !== BLOCK_NAME ) {
         return settings;
     }
@@ -54,7 +54,7 @@ addFilter( 'blocks.registerBlockType', 'mty/group-global-hover-add-attributes', 
  */
 addFilter(
     'editor.BlockEdit',
-    'mty/group-global-hover-add-inspector-controls',
+    'bnti/group-global-hover-add-inspector-controls',
     createHigherOrderComponent( BlockEdit => {
         return props => {
             const { name, attributes, setAttributes, clientId } = props;
@@ -71,7 +71,7 @@ addFilter(
                     <InspectorControls>
                         <PanelBody>
                             <NativeToggleControl
-                                label={ __( 'Enable global hover', 'mty' ) }
+                                label={ __( 'Enable global hover', 'brilliant-insurance' ) }
                                 checked={ !! attributes.globalHoverEnabled }
                                 onChange={ value => setAttributes( { globalHoverEnabled: value } ) }
                             />
@@ -91,11 +91,11 @@ addFilter(
 );
 
 /**
- * Apply `mty-global-hover` class + CSS variables in the editor preview.
+ * Apply `bnti-global-hover` class + CSS variables in the editor preview.
  */
 addFilter(
     'editor.BlockListBlock',
-    'mty/group-global-hover-add-styles',
+    'bnti/group-global-hover-add-styles',
     createHigherOrderComponent( BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -116,13 +116,13 @@ addFilter(
             const style = {};
 
             if ( hasBg ) {
-                style[ '--mty-ghover-bg' ] = globalHoverBgColor
+                style[ '--bnti-ghover-bg' ] = globalHoverBgColor
                     ? `var(--wp--preset--color--${ globalHoverBgColor })`
                     : customGlobalHoverBgColor;
             }
 
             if ( hasColor ) {
-                style[ '--mty-ghover-color' ] = globalHoverColor
+                style[ '--bnti-ghover-color' ] = globalHoverColor
                     ? `var(--wp--preset--color--${ globalHoverColor })`
                     : customGlobalHoverColor;
             }
@@ -135,7 +135,7 @@ addFilter(
                 }
             };
 
-            const classes = [ props.className, 'mty-global-hover' ].filter( Boolean ).join( ' ' );
+            const classes = [ props.className, 'bnti-global-hover' ].filter( Boolean ).join( ' ' );
 
             return <BlockListBlock { ...props } className={ classes } wrapperProps={ wrapperProps } />;
         };

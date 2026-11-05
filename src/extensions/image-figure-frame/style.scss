@@ -10,13 +10,13 @@
  *   16px from the top left corner
  * Images in the frame are always square (no radius).
  *
- * Front end: the image (or its link) is wrapped in .mty-fig-frame with a
- * .mty-fig-frame__label span (inc/extensions.php). Editor: the same look is
- * drawn on the block wrapper (.mty-fig-frame-editor) with the label taken
+ * Front end: the image (or its link) is wrapped in .bnti-fig-frame with a
+ * .bnti-fig-frame__label span (inc/extensions.php). Editor: the same look is
+ * drawn on the block wrapper (.bnti-fig-frame-editor) with the label taken
  * from its data-fig-label attribute.
  */
 
-$fig-tick-color: var(--wp--preset--color--mty-white);
+$fig-tick-color: var(--wp--preset--color--bnti-white);
 $fig-ticks:
     linear-gradient($fig-tick-color, $fig-tick-color) left 7px top 7px / 14px 1px no-repeat,
     linear-gradient($fig-tick-color, $fig-tick-color) left 7px top 7px / 1px 14px no-repeat,
@@ -26,7 +26,7 @@ $fig-ticks:
     linear-gradient($fig-tick-color, $fig-tick-color) left 7px bottom 7px / 1px 14px no-repeat,
     linear-gradient($fig-tick-color, $fig-tick-color) right 7px bottom 7px / 14px 1px no-repeat,
     linear-gradient($fig-tick-color, $fig-tick-color) right 7px bottom 7px / 1px 14px no-repeat;
-$fig-overlay: var(--wp--preset--color--mty-neutral-darkest-30);
+$fig-overlay: var(--wp--preset--color--bnti-neutral-darkest-30);
 $fig-border: 1px solid rgba(255, 255, 255, 0.25);
 
 @mixin fig-label {
@@ -40,12 +40,12 @@ $fig-border: 1px solid rgba(255, 255, 255, 0.25);
     line-height: normal;
     letter-spacing: 0.14em;
     text-transform: uppercase;
-    color: var(--wp--preset--color--mty-white);
+    color: var(--wp--preset--color--bnti-white);
     pointer-events: none;
 }
 
 // Front end
-.mty-fig-frame {
+.bnti-fig-frame {
     position: relative;
     display: block;
     width: fit-content;
@@ -91,12 +91,12 @@ $fig-border: 1px solid rgba(255, 255, 255, 0.25);
     }
 }
 
-.mty-fig-frame__label {
+.bnti-fig-frame__label {
     @include fig-label;
 }
 
 // Editor preview
-.wp-block-image.mty-fig-frame-editor {
+.wp-block-image.bnti-fig-frame-editor {
     position: relative;
     width: fit-content;
     max-width: 100%;
@@ -150,9 +150,9 @@ $fig-border: 1px solid rgba(255, 255, 255, 0.25);
 // Post Featured Image: the frame classes sit on the block's own figure, which
 // keeps its width and height settings (e.g. the 400px Our Team headshots).
 // Without a featured image the front end prints an empty figure
-// (.mty-fig-frame--empty) at the block's height: a faint box with the ticks
+// (.bnti-fig-frame--empty) at the block's height: a faint box with the ticks
 // and label, as in the Figma headshot placeholders.
-.wp-block-post-featured-image.mty-fig-frame {
+.wp-block-post-featured-image.bnti-fig-frame {
     width: auto;
 
     img {
@@ -160,16 +160,16 @@ $fig-border: 1px solid rgba(255, 255, 255, 0.25);
         z-index: 0;
     }
 
-    &.mty-fig-frame--empty {
-        background-color: var(--wp--preset--color--mty-white-5);
+    &.bnti-fig-frame--empty {
+        background-color: var(--wp--preset--color--bnti-white-5);
     }
 
-    &.mty-fig-frame--empty:not([style*='height']) {
+    &.bnti-fig-frame--empty:not([style*='height']) {
         aspect-ratio: 4 / 3;
     }
 }
 
-.wp-block-post-featured-image.mty-fig-frame-editor {
+.wp-block-post-featured-image.bnti-fig-frame-editor {
     position: relative;
 
     img {

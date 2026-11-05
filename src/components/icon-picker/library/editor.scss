@@ -1,4 +1,4 @@
-.mty-modal__icons {
+.bnti-modal__icons {
     display: grid;
     grid-template-columns: repeat(6, 1fr);
     gap: 24px;
@@ -46,17 +46,17 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
-.mty-modal__my-icons {
+.bnti-modal__my-icons {
     &-item {
         position: relative;
         display: flex;
 
-        .mty-modal__icons-button {
+        .bnti-modal__icons-button {
             flex: 1;
         }
 
-        &:hover .mty-modal__my-icons-remove,
-        .mty-modal__my-icons-remove:focus {
+        &:hover .bnti-modal__my-icons-remove,
+        .bnti-modal__my-icons-remove:focus {
             opacity: 1;
         }
     }
@@ -107,7 +107,7 @@
     }
 }
 
-.mty-modal__custom-svg {
+.bnti-modal__custom-svg {
     display: flex;
     padding: 24px 0;
     gap: 24px;
@@ -136,7 +136,7 @@
         width: 360px;
         display: flex;
         flex-direction: column;
-        .mty-icon-preview-container {
+        .bnti-icon-preview-container {
             flex: 1;
         }
 

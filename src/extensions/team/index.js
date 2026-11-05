@@ -4,10 +4,10 @@
  * Editor side of the Team post type (inc/team.php):
  *
  * - "Team details" panel in the document sidebar of team members, one text
- *   field per `mty_team_*` meta field (the list comes from PHP, `mtyTeam`).
- * - The "Team member" block bindings source (`mty/team`), so bound blocks
+ *   field per `bnti_team_*` meta field (the list comes from PHP, `bntiTeam`).
+ * - The "Team member" block bindings source (`bnti/team`), so bound blocks
  *   show the member's values in the editor too, including inside a Query
- *   Loop. The values mirror mty_team_binding_value() in PHP.
+ *   Loop. The values mirror bnti_team_binding_value() in PHP.
  */
 import { __, sprintf } from '@wordpress/i18n';
 import { registerPlugin } from '@wordpress/plugins';
@@ -17,8 +17,8 @@ import { useSelect } from '@wordpress/data';
 import { useEntityProp, store as coreStore } from '@wordpress/core-data';
 import { registerBlockBindingsSource } from '@wordpress/blocks';
 
-const POST_TYPE = 'mty_team';
-const { fields = [], firmName = 'More 2 You Law' } = window.mtyTeam || {};
+const POST_TYPE = 'bnti_team';
+const { fields = [], firmName = 'Brilliant Insurance' } = window.bntiTeam || {};
 
 // -----------------------------------------------------------------------------
 // Team details panel
@@ -33,7 +33,7 @@ const TeamDetailsPanel = () => {
     }
 
     return (
-        <PluginDocumentSettingPanel name="mty-team-details" title={__('Team details', 'mty')}>
+        <PluginDocumentSettingPanel name="bnti-team-details" title={__('Team details', 'brilliant-insurance')}>
             <VStack spacing={4}>
                 {fields.map(({ key, label, description }) => (
                     <TextControl
@@ -51,7 +51,7 @@ const TeamDetailsPanel = () => {
     );
 };
 
-registerPlugin('mty-team-details', { render: TeamDetailsPanel });
+registerPlugin('bnti-team-details', { render: TeamDetailsPanel });
 
 // -----------------------------------------------------------------------------
 // "Team member" binding source
@@ -86,7 +86,7 @@ const nameHtml = (name, highlight) => {
 
     return (
         escapeHtml(name.slice(0, position)) +
-        `<mark class="mty-highlight">${escapeHtml(part)}</mark>` +
+        `<mark class="bnti-highlight">${escapeHtml(part)}</mark>` +
         escapeHtml(name.slice(position + part.length))
     );
 };
@@ -100,7 +100,7 @@ const nameHtml = (name, highlight) => {
  */
 const getValue = (record, key) => {
     const meta = record.meta || {};
-    const field = name => (meta[`mty_team_${name}`] || '').trim();
+    const field = name => (meta[`bnti_team_${name}`] || '').trim();
     const name = stripTags(typeof record.title === 'string' ? record.title : record.title?.raw || '');
     const shortName = field('short_name') || name.split(' ')[0];
 
@@ -117,12 +117,12 @@ const getValue = (record, key) => {
             );
         case 'bio_link':
             /* translators: %s: team member's short name, e.g. "James". */
-            return escapeHtml(sprintf(__("Read %s's bio", 'mty'), shortName));
+            return escapeHtml(sprintf(__("Read %s's bio", 'brilliant-insurance'), shortName));
         case 'short_name':
             return escapeHtml(shortName);
     }
 
-    if (fields.some(f => f.key === `mty_team_${key}`)) {
+    if (fields.some(f => f.key === `bnti_team_${key}`)) {
         return escapeHtml(field(key));
     }
 
@@ -130,18 +130,18 @@ const getValue = (record, key) => {
 };
 
 const FIELDS_LIST = [
-    { label: __('Name (highlighted)', 'mty'), args: { key: 'name' }, type: 'string' },
-    { label: __('Position, Office', 'mty'), args: { key: 'eyebrow' }, type: 'string' },
-    { label: __('Tagline', 'mty'), args: { key: 'tagline' }, type: 'string' },
-    { label: __('"Read …\'s bio"', 'mty'), args: { key: 'bio_link' }, type: 'string' },
+    { label: __('Name (highlighted)', 'brilliant-insurance'), args: { key: 'name' }, type: 'string' },
+    { label: __('Position, Office', 'brilliant-insurance'), args: { key: 'eyebrow' }, type: 'string' },
+    { label: __('Tagline', 'brilliant-insurance'), args: { key: 'tagline' }, type: 'string' },
+    { label: __('"Read …\'s bio"', 'brilliant-insurance'), args: { key: 'bio_link' }, type: 'string' },
     ...fields
-        .filter(f => f.key !== 'mty_team_name_highlight')
-        .map(f => ({ label: f.label, args: { key: f.key.replace('mty_team_', '') }, type: 'string' }))
+        .filter(f => f.key !== 'bnti_team_name_highlight')
+        .map(f => ({ label: f.label, args: { key: f.key.replace('bnti_team_', '') }, type: 'string' }))
 ];
 
 registerBlockBindingsSource({
-    name: 'mty/team',
-    label: __('Team member', 'mty'),
+    name: 'bnti/team',
+    label: __('Team member', 'brilliant-insurance'),
     usesContext: ['postId', 'postType'],
     getValues({ select, context, bindings }) {
         const values = {};

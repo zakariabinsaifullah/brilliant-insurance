@@ -19,7 +19,7 @@ const GlobalHoverControls = ( { clientId, globalHoverBgColor, setGlobalHoverBgCo
         {
             colorValue: globalHoverBgColor?.color,
             onColorChange: color => setGlobalHoverBgColor( color ),
-            label: __( 'Hover Background', 'mty' ),
+            label: __( 'Hover Background', 'brilliant-insurance' ),
             isShownByDefault: true,
             enableAlpha: true,
             clearable: true,
@@ -31,7 +31,7 @@ const GlobalHoverControls = ( { clientId, globalHoverBgColor, setGlobalHoverBgCo
         {
             colorValue: globalHoverColor?.color,
             onColorChange: setGlobalHoverColor,
-            label: __( 'Hover Color', 'mty' ),
+            label: __( 'Hover Color', 'brilliant-insurance' ),
             isShownByDefault: true,
             enableAlpha: true,
             clearable: true,

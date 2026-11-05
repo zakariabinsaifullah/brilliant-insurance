@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/group-full-height-extension",
+    "name": "bnti/group-full-height-extension",
     "version": "0.0.5",
     "title": "Group Force Full Height Extension",
     "editorScript": "file:./index.js",

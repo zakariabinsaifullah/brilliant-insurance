@@ -1,4 +1,4 @@
-.wp-block-mty-social-share {
+.wp-block-bnti-social-share {
 	--icon-size: 24px;
 	--gap: 12px;
 	--icon-color: currentColor;
@@ -6,26 +6,26 @@
 	--icon-radius: 0px;
 	--icon-padding: 0px;
 
-	&.justify-center .mty-social-share__icons {
+	&.justify-center .bnti-social-share__icons {
 		justify-content: center;
 	}
 
-	&.justify-right .mty-social-share__icons {
+	&.justify-right .bnti-social-share__icons {
 		justify-content: flex-end;
 	}
 
-	&.justify-left .mty-social-share__icons {
+	&.justify-left .bnti-social-share__icons {
 		justify-content: flex-start;
 	}
 
-	.mty-social-share__icons {
+	.bnti-social-share__icons {
 		display: flex;
 		flex-wrap: wrap;
 		align-items: center;
 		gap: var(--gap);
 	}
 
-	.mty-social-share__item {
+	.bnti-social-share__item {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;

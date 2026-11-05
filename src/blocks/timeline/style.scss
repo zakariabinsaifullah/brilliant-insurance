@@ -8,7 +8,7 @@
  * number of columns.
  *
  * The highlighted step (`is-active`) colours its dot (Goblin by default). With
- * "Highlight line" on, the block sets --mty-timeline-active-line(-height) and
+ * "Highlight line" on, the block sets --bnti-timeline-active-line(-height) and
  * that step's line becomes a 3px progress bar too (homepage "How we move your
  * case."); otherwise the line stays the normal colour (practice page "How the
  * process works.").
@@ -17,19 +17,19 @@
  * the highlighted colours (its line keeps its normal 1px thickness) and the
  * highlighted step returns to normal while another step is hovered.
  *
- * Columns come from the block (--mty-timeline-columns). Tablet and mobile
+ * Columns come from the block (--bnti-timeline-columns). Tablet and mobile
  * stack the steps as a plain list (Figma mobile "How we move your case."):
  * each step starts with a 1px White 15% divider, no dots, no highlight, 24px
  * from the divider to the content and 28px between steps.
  */
-.wp-block-mty-timeline {
-    --mty-timeline-color: var(--wp--preset--color--mty-white);
-    --mty-timeline-active: var(--wp--preset--color--mty-goblin);
-    --mty-timeline-gap: 40px;
-    --mty-timeline-content-gap: 40px;
+.wp-block-bnti-timeline {
+    --bnti-timeline-color: var(--wp--preset--color--bnti-white);
+    --bnti-timeline-active: var(--wp--preset--color--bnti-goblin);
+    --bnti-timeline-gap: 40px;
+    --bnti-timeline-content-gap: 40px;
     display: grid;
-    grid-template-columns: repeat(var(--mty-timeline-columns, 4), minmax(0, 1fr));
-    gap: var(--mty-timeline-gap);
+    grid-template-columns: repeat(var(--bnti-timeline-columns, 4), minmax(0, 1fr));
+    gap: var(--bnti-timeline-gap);
     overflow-x: clip;
 
     @media (max-width: 1024px) {
@@ -38,37 +38,37 @@
     }
 }
 
-.wp-block-mty-timeline-step {
-    --mty-timeline-dot-color: var(--mty-timeline-color);
-    --mty-timeline-line-color: var(--mty-timeline-color);
-    --mty-timeline-line-height: 1px;
+.wp-block-bnti-timeline-step {
+    --bnti-timeline-dot-color: var(--bnti-timeline-color);
+    --bnti-timeline-line-color: var(--bnti-timeline-color);
+    --bnti-timeline-line-height: 1px;
     display: flex;
     flex-direction: column;
-    gap: var(--mty-timeline-content-gap);
+    gap: var(--bnti-timeline-content-gap);
     min-width: 0;
     margin: 0;
 
     &.is-active {
-        --mty-timeline-dot-color: var(--mty-timeline-active);
-        --mty-timeline-line-color: var(--mty-timeline-active-line, var(--mty-timeline-color));
-        --mty-timeline-line-height: var(--mty-timeline-active-line-height, 1px);
+        --bnti-timeline-dot-color: var(--bnti-timeline-active);
+        --bnti-timeline-line-color: var(--bnti-timeline-active-line, var(--bnti-timeline-color));
+        --bnti-timeline-line-height: var(--bnti-timeline-active-line-height, 1px);
     }
 
     // Hover only recolours the dot and line; the line keeps its normal
     // thickness (1px, or the highlighted step's own bar).
     .has-hover-highlight > &:hover {
-        --mty-timeline-dot-color: var(--mty-timeline-active);
-        --mty-timeline-line-color: var(--mty-timeline-active-line, var(--mty-timeline-color));
+        --bnti-timeline-dot-color: var(--bnti-timeline-active);
+        --bnti-timeline-line-color: var(--bnti-timeline-active-line, var(--bnti-timeline-color));
     }
 
     // While another step is hovered, the highlighted step looks normal.
-    .has-hover-highlight:has(> .wp-block-mty-timeline-step:hover) > &.is-active:not(:hover) {
-        --mty-timeline-dot-color: var(--mty-timeline-color);
-        --mty-timeline-line-color: var(--mty-timeline-color);
-        --mty-timeline-line-height: 1px;
+    .has-hover-highlight:has(> .wp-block-bnti-timeline-step:hover) > &.is-active:not(:hover) {
+        --bnti-timeline-dot-color: var(--bnti-timeline-color);
+        --bnti-timeline-line-color: var(--bnti-timeline-color);
+        --bnti-timeline-line-height: 1px;
     }
 
-    .mty-timeline-step__marker {
+    .bnti-timeline-step__marker {
         position: relative;
         height: 12px;
 
@@ -81,7 +81,7 @@
             z-index: 1;
             width: 12px;
             height: 12px;
-            background-color: var(--mty-timeline-dot-color);
+            background-color: var(--bnti-timeline-dot-color);
             transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
         }
 
@@ -91,10 +91,10 @@
             position: absolute;
             top: 50%;
             left: 0;
-            width: calc(100% + var(--mty-timeline-gap));
-            height: var(--mty-timeline-line-height);
+            width: calc(100% + var(--bnti-timeline-gap));
+            height: var(--bnti-timeline-line-height);
             transform: translateY(-50%);
-            background-color: var(--mty-timeline-line-color);
+            background-color: var(--bnti-timeline-line-color);
             transition:
                 background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
                 height 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -103,26 +103,26 @@
 
     // The very last step's line ends at its own column (it matters when there
     // are fewer steps than columns; otherwise the wrapper's clip handles it).
-    &:last-child .mty-timeline-step__marker::after {
+    &:last-child .bnti-timeline-step__marker::after {
         width: 100%;
     }
 
     // Stacked (tablet and mobile): a plain list with a divider per step.
     @media (max-width: 1024px) {
-        --mty-timeline-dot-color: transparent;
-        --mty-timeline-line-color: var(--wp--preset--color--mty-white-15);
-        --mty-timeline-line-height: 1px;
+        --bnti-timeline-dot-color: transparent;
+        --bnti-timeline-line-color: var(--wp--preset--color--bnti-white-15);
+        --bnti-timeline-line-height: 1px;
         gap: 24px;
 
         &.is-active,
         .has-hover-highlight > &:hover,
-        .has-hover-highlight:has(> .wp-block-mty-timeline-step:hover) > &.is-active:not(:hover) {
-            --mty-timeline-dot-color: transparent;
-            --mty-timeline-line-color: var(--wp--preset--color--mty-white-15);
-            --mty-timeline-line-height: 1px;
+        .has-hover-highlight:has(> .wp-block-bnti-timeline-step:hover) > &.is-active:not(:hover) {
+            --bnti-timeline-dot-color: transparent;
+            --bnti-timeline-line-color: var(--wp--preset--color--bnti-white-15);
+            --bnti-timeline-line-height: 1px;
         }
 
-        .mty-timeline-step__marker {
+        .bnti-timeline-step__marker {
             height: 1px;
 
             &::before {
@@ -135,7 +135,7 @@
         }
     }
 
-    .mty-timeline-step__content {
+    .bnti-timeline-step__content {
         > :first-child {
             margin-top: 0;
         }

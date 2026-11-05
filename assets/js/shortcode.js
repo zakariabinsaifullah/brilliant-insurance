@@ -18,7 +18,7 @@
 				wrapper.classList.add( 'is-loading' );
 
 				var body = new URLSearchParams( {
-					action:     'mty_posts_grid',
+					action:     'bnti_posts_grid',
 					nonce:      config.nonce,
 					cat:        state.cat,
 					page:       state.page,

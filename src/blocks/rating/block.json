@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/rating",
+    "name": "bnti/rating",
     "version": "1.0.0",
     "title": "Rating",
-    "category": "mty",
+    "category": "bnti",
     "description": "SVG-based star rating system with customizable values.",
     "supports": {
         "anchor": true,
@@ -59,7 +59,7 @@
             "default": ""
         }
     },
-    "textdomain": "mty",
+    "textdomain": "brilliant-insurance",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css"

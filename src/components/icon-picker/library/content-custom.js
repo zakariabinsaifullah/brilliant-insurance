@@ -62,14 +62,14 @@ export const ContentCustom = ({
                 status: 'success',
                 message: sprintf(
                     /* translators: %s: icon name. */
-                    __('“%s” was added to My Icons.', 'mty'),
+                    __('“%s” was added to My Icons.', 'brilliant-insurance'),
                     saved.label
                 )
             });
         } catch (error) {
             setNotice({
                 status: 'error',
-                message: error?.message || __('The icon could not be saved.', 'mty')
+                message: error?.message || __('The icon could not be saved.', 'brilliant-insurance')
             });
         }
     };
@@ -88,7 +88,7 @@ export const ContentCustom = ({
 
             return (
                 <div
-                    className="mty-custom-svg-container"
+                    className="bnti-custom-svg-container"
                     dangerouslySetInnerHTML={{ __html: finalSvgCode }}
                     style={{ width: `${size}px`, height: `${size}px` }}
                 />
@@ -104,30 +104,30 @@ export const ContentCustom = ({
     };
 
     return (
-        <div className="mty-modal__custom-svg">
-            <div className="mty-modal__custom-svg-editor">
+        <div className="bnti-modal__custom-svg">
+            <div className="bnti-modal__custom-svg-editor">
                 <TextareaControl
-                    label={__('Custom SVG code', 'mty')}
+                    label={__('Custom SVG code', 'brilliant-insurance')}
                     value={tempCustomSvgCode}
                     onChange={setTempCustomSvgCode}
-                    help={__('Paste your custom SVG code here. It will override the selected icon.', 'mty')}
+                    help={__('Paste your custom SVG code here. It will override the selected icon.', 'brilliant-insurance')}
                     rows={15}
                 />
             </div>
 
-            <div className="mty-modal__custom-svg-preview">
-                <h3>{__('Preview', 'mty')}</h3>
-                <div className="mty-icon-preview-container">
+            <div className="bnti-modal__custom-svg-preview">
+                <h3>{__('Preview', 'brilliant-insurance')}</h3>
+                <div className="bnti-icon-preview-container">
                     {tempCustomSvgCode ? (
                         renderCurrentIcon(previewIconSize, tempCustomSvgCode, previewStrokeWidth)
                     ) : (
-                        <div className="mty-empty-preview">{__('Enter SVG code to see preview', 'mty')}</div>
+                        <div className="bnti-empty-preview">{__('Enter SVG code to see preview', 'brilliant-insurance')}</div>
                     )}
                 </div>
 
-                <div className="mty-modal__custom-svg-controls">
+                <div className="bnti-modal__custom-svg-controls">
                     <RangeControl
-                        label={__('Icon Size', 'mty')}
+                        label={__('Icon Size', 'brilliant-insurance')}
                         value={previewIconSize}
                         onChange={setPreviewIconSize}
                         min={16}
@@ -137,7 +137,7 @@ export const ContentCustom = ({
 
                     {tempIconType === 'line' && (
                         <RangeControl
-                            label={__('Stroke Width', 'mty')}
+                            label={__('Stroke Width', 'brilliant-insurance')}
                             value={previewStrokeWidth}
                             onChange={setPreviewStrokeWidth}
                             min={0.5}
@@ -148,13 +148,13 @@ export const ContentCustom = ({
                     )}
                 </div>
 
-                <div className="mty-modal__custom-svg-save">
+                <div className="bnti-modal__custom-svg-save">
                     <TextControl
-                        label={__('Icon name', 'mty')}
+                        label={__('Icon name', 'brilliant-insurance')}
                         value={iconLabel}
                         onChange={setIconLabel}
-                        placeholder={__('e.g. Arrow Badge', 'mty')}
-                        help={__('Name this icon to save it to My Icons and reuse it anywhere on the site.', 'mty')}
+                        placeholder={__('e.g. Arrow Badge', 'brilliant-insurance')}
+                        help={__('Name this icon to save it to My Icons and reuse it anywhere on the site.', 'brilliant-insurance')}
                         __next40pxDefaultSize
                         __nextHasNoMarginBottom
                     />
@@ -166,7 +166,7 @@ export const ContentCustom = ({
                     )}
                 </div>
 
-                <div className="mty-modal__custom-svg-buttons">
+                <div className="bnti-modal__custom-svg-buttons">
                     <Flex>
                         <Button
                             __next40pxDefaultSize
@@ -175,7 +175,7 @@ export const ContentCustom = ({
                             isDestructive
                             style={{ flex: '1', justifyContent: 'center' }}
                         >
-                            {__('Clear', 'mty')}
+                            {__('Clear', 'brilliant-insurance')}
                         </Button>
                         <Button
                             __next40pxDefaultSize
@@ -185,7 +185,7 @@ export const ContentCustom = ({
                             disabled={!tempCustomSvgCode || !iconLabel.trim() || isSaving}
                             style={{ flex: '1', justifyContent: 'center' }}
                         >
-                            {__('Add to My Icons', 'mty')}
+                            {__('Add to My Icons', 'brilliant-insurance')}
                         </Button>
                     </Flex>
                     <Button
@@ -195,7 +195,7 @@ export const ContentCustom = ({
                         disabled={!tempCustomSvgCode}
                         style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}
                     >
-                        {__('Insert Custom Icon', 'mty')}
+                        {__('Insert Custom Icon', 'brilliant-insurance')}
                     </Button>
                 </div>
             </div>

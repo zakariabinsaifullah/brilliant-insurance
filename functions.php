@@ -1,12 +1,12 @@
 <?php
 /**
- * MTY — Theme Functions
+ * Brilliant Insurance — Theme Functions
  *
  * This file is intentionally kept as a loader only.
  * All feature logic lives in the files under inc/.
  *
  * @link    https://developer.wordpress.org/themes/basics/theme-functions/
- * @package MTY
+ * @package Brilliant_Insurance
  * @since   1.0
  */
 
@@ -40,7 +40,7 @@ require_once get_theme_file_path( 'inc/gravity-forms.php' ); // Gravity Forms st
 require_once get_theme_file_path( 'inc/shortcode.php' ); // Posts grid shortcode
 
 // ── Documentation ──────────────────────────────────────────────────────────────
-require_once get_theme_file_path( 'inc/docs.php' );      // Appearance → MTY
+require_once get_theme_file_path( 'inc/docs.php' );      // Appearance → Brilliant Insurance
 
 // ── Admin UI ───────────────────────────────────────────────────────────────────
 require_once get_theme_file_path( 'inc/admin.php' );     // Post ID column
@@ -49,15 +49,15 @@ require_once get_theme_file_path( 'inc/admin.php' );     // Post ID column
 /**
  * Set WordPress excerpt length to 25 words.
  */
-function mty_excerpt_length( $length ) {
+function bnti_excerpt_length( $length ) {
     return 25;
 }
-add_filter( 'excerpt_length', 'mty_excerpt_length' );
+add_filter( 'excerpt_length', 'bnti_excerpt_length' );
 
 /**
  * Customize excerpt more text.
  */
-function mty_excerpt_more( $more ) {
+function bnti_excerpt_more( $more ) {
     return '...';
 }
-add_filter( 'excerpt_more', 'mty_excerpt_more' );
+add_filter( 'excerpt_more', 'bnti_excerpt_more' );

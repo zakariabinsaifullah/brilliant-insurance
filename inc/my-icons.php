@@ -9,18 +9,18 @@
  * All SVG markup is sanitised against an allow-list before it is stored, so a
  * saved icon can never carry scripts or event handlers into the editor.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! defined( 'MTY_MY_ICONS_OPTION' ) ) {
-	define( 'MTY_MY_ICONS_OPTION', 'mty_my_icons' );
+if ( ! defined( 'BNTI_MY_ICONS_OPTION' ) ) {
+	define( 'BNTI_MY_ICONS_OPTION', 'bnti_my_icons' );
 }
 
-if ( ! defined( 'MTY_MY_ICONS_MAX' ) ) {
-	define( 'MTY_MY_ICONS_MAX', 500 );
+if ( ! defined( 'BNTI_MY_ICONS_MAX' ) ) {
+	define( 'BNTI_MY_ICONS_MAX', 500 );
 }
 
-if ( ! function_exists( 'mty_my_icons_permissions_check' ) ) :
+if ( ! function_exists( 'bnti_my_icons_permissions_check' ) ) :
 	/**
 	 * Permission callback for every My Icons route.
 	 *
@@ -29,19 +29,19 @@ if ( ! function_exists( 'mty_my_icons_permissions_check' ) ) :
 	 *
 	 * @return bool
 	 */
-	function mty_my_icons_permissions_check() {
+	function bnti_my_icons_permissions_check() {
 		return current_user_can( 'edit_posts' );
 	}
 endif;
 
-if ( ! function_exists( 'mty_get_my_icons' ) ) :
+if ( ! function_exists( 'bnti_get_my_icons' ) ) :
 	/**
 	 * Returns the stored icon library as a clean, sequential array.
 	 *
 	 * @return array<int, array<string, mixed>>
 	 */
-	function mty_get_my_icons() {
-		$icons = get_option( MTY_MY_ICONS_OPTION, array() );
+	function bnti_get_my_icons() {
+		$icons = get_option( BNTI_MY_ICONS_OPTION, array() );
 
 		if ( ! is_array( $icons ) ) {
 			return array();
@@ -62,13 +62,13 @@ endif;
  * SVG sanitisation
  * ---------------------------------------------------------------------- */
 
-if ( ! function_exists( 'mty_svg_allowed_elements' ) ) :
+if ( ! function_exists( 'bnti_svg_allowed_elements' ) ) :
 	/**
 	 * Lower-cased list of SVG elements that may be stored.
 	 *
 	 * @return array<int, string>
 	 */
-	function mty_svg_allowed_elements() {
+	function bnti_svg_allowed_elements() {
 		return array(
 			'svg',
 			'g',
@@ -111,13 +111,13 @@ if ( ! function_exists( 'mty_svg_allowed_elements' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_svg_allowed_attributes' ) ) :
+if ( ! function_exists( 'bnti_svg_allowed_attributes' ) ) :
 	/**
 	 * Lower-cased list of attributes that may be stored.
 	 *
 	 * @return array<int, string>
 	 */
-	function mty_svg_allowed_attributes() {
+	function bnti_svg_allowed_attributes() {
 		return array(
 			// Structure.
 			'id',
@@ -232,7 +232,7 @@ if ( ! function_exists( 'mty_svg_allowed_attributes' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_sanitize_svg_css' ) ) :
+if ( ! function_exists( 'bnti_sanitize_svg_css' ) ) :
 	/**
 	 * Strips anything that can reach the network or a script from CSS found in a
 	 * `style` attribute or an inline `<style>` element.
@@ -240,7 +240,7 @@ if ( ! function_exists( 'mty_sanitize_svg_css' ) ) :
 	 * @param string $css Raw CSS.
 	 * @return string Sanitised CSS.
 	 */
-	function mty_sanitize_svg_css( $css ) {
+	function bnti_sanitize_svg_css( $css ) {
 		$css = (string) $css;
 
 		// Remove at-rules that can load remote resources.
@@ -262,16 +262,16 @@ if ( ! function_exists( 'mty_sanitize_svg_css' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_sanitize_svg_node' ) ) :
+if ( ! function_exists( 'bnti_sanitize_svg_node' ) ) :
 	/**
 	 * Recursively removes disallowed elements and attributes from a DOM node.
 	 *
 	 * @param DOMNode $node Node to clean.
 	 * @return void
 	 */
-	function mty_sanitize_svg_node( DOMNode $node ) {
-		$allowed_elements   = mty_svg_allowed_elements();
-		$allowed_attributes = mty_svg_allowed_attributes();
+	function bnti_sanitize_svg_node( DOMNode $node ) {
+		$allowed_elements   = bnti_svg_allowed_elements();
+		$allowed_attributes = bnti_svg_allowed_attributes();
 
 		// Walk backwards so removals do not shift the live NodeList.
 		for ( $i = $node->childNodes->length - 1; $i >= 0; $i-- ) {
@@ -299,7 +299,7 @@ if ( ! function_exists( 'mty_sanitize_svg_node' ) ) :
 			}
 
 			if ( 'style' === $tag ) {
-				$child->nodeValue = mty_sanitize_svg_css( $child->textContent ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
+				$child->nodeValue = bnti_sanitize_svg_css( $child->textContent ); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase
 				continue;
 			}
 
@@ -324,7 +324,7 @@ if ( ! function_exists( 'mty_sanitize_svg_node' ) ) :
 					}
 
 					if ( 'style' === $name ) {
-						$child->setAttribute( $attribute->nodeName, mty_sanitize_svg_css( $value ) );
+						$child->setAttribute( $attribute->nodeName, bnti_sanitize_svg_css( $value ) );
 						continue;
 					}
 
@@ -341,13 +341,13 @@ if ( ! function_exists( 'mty_sanitize_svg_node' ) ) :
 			}
 
 			if ( $child->hasChildNodes() ) {
-				mty_sanitize_svg_node( $child );
+				bnti_sanitize_svg_node( $child );
 			}
 		}
 	}
 endif;
 
-if ( ! function_exists( 'mty_svg_restore_camel_case' ) ) :
+if ( ! function_exists( 'bnti_svg_restore_camel_case' ) ) :
 	/**
 	 * Restores camel-cased SVG element and attribute names.
 	 *
@@ -358,7 +358,7 @@ if ( ! function_exists( 'mty_svg_restore_camel_case' ) ) :
 	 * @param string $markup Serialised SVG markup.
 	 * @return string
 	 */
-	function mty_svg_restore_camel_case( $markup ) {
+	function bnti_svg_restore_camel_case( $markup ) {
 		$elements = array(
 			'lineargradient' => 'linearGradient',
 			'radialgradient' => 'radialGradient',
@@ -410,14 +410,14 @@ if ( ! function_exists( 'mty_svg_restore_camel_case' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_sanitize_svg_markup' ) ) :
+if ( ! function_exists( 'bnti_sanitize_svg_markup' ) ) :
 	/**
 	 * Sanitises pasted SVG markup down to a safe, storable `<svg>` element.
 	 *
 	 * @param string $svg Raw SVG markup.
 	 * @return string Sanitised markup, or an empty string when the input is not usable SVG.
 	 */
-	function mty_sanitize_svg_markup( $svg ) {
+	function bnti_sanitize_svg_markup( $svg ) {
 		$svg = trim( (string) $svg );
 
 		if ( '' === $svg || ! class_exists( 'DOMDocument' ) ) {
@@ -466,7 +466,7 @@ if ( ! function_exists( 'mty_sanitize_svg_markup' ) ) :
 		// Clean the root element itself, then everything below it.
 		$fragment = $document->createElement( 'wrapper' );
 		$fragment->appendChild( $root->cloneNode( true ) );
-		mty_sanitize_svg_node( $fragment );
+		bnti_sanitize_svg_node( $fragment );
 
 		$clean_root = $fragment->firstChild;
 
@@ -483,7 +483,7 @@ if ( ! function_exists( 'mty_sanitize_svg_markup' ) ) :
 		$markup = trim( $markup );
 
 		if ( 'html' === $used_parser ) {
-			$markup = mty_svg_restore_camel_case( $markup );
+			$markup = bnti_svg_restore_camel_case( $markup );
 		}
 
 		// Serialising may or may not have emitted the namespace; never emit it twice.
@@ -499,44 +499,44 @@ endif;
  * REST API
  * ---------------------------------------------------------------------- */
 
-if ( ! function_exists( 'mty_rest_get_my_icons' ) ) :
+if ( ! function_exists( 'bnti_rest_get_my_icons' ) ) :
 	/**
-	 * GET /mty/v1/my-icons
+	 * GET /bnti/v1/my-icons
 	 *
 	 * @return WP_REST_Response
 	 */
-	function mty_rest_get_my_icons() {
-		return rest_ensure_response( mty_get_my_icons() );
+	function bnti_rest_get_my_icons() {
+		return rest_ensure_response( bnti_get_my_icons() );
 	}
 endif;
 
-if ( ! function_exists( 'mty_rest_add_my_icon' ) ) :
+if ( ! function_exists( 'bnti_rest_add_my_icon' ) ) :
 	/**
-	 * POST /mty/v1/my-icons
+	 * POST /bnti/v1/my-icons
 	 *
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response|WP_Error
 	 */
-	function mty_rest_add_my_icon( WP_REST_Request $request ) {
-		$svg = mty_sanitize_svg_markup( $request->get_param( 'svg' ) );
+	function bnti_rest_add_my_icon( WP_REST_Request $request ) {
+		$svg = bnti_sanitize_svg_markup( $request->get_param( 'svg' ) );
 
 		if ( '' === $svg ) {
 			return new WP_Error(
-				'mty_invalid_svg',
-				__( 'That does not look like valid SVG markup, or everything in it was disallowed.', 'mty' ),
+				'bnti_invalid_svg',
+				__( 'That does not look like valid SVG markup, or everything in it was disallowed.', 'brilliant-insurance' ),
 				array( 'status' => 400 )
 			);
 		}
 
-		$icons = mty_get_my_icons();
+		$icons = bnti_get_my_icons();
 
-		if ( count( $icons ) >= MTY_MY_ICONS_MAX ) {
+		if ( count( $icons ) >= BNTI_MY_ICONS_MAX ) {
 			return new WP_Error(
-				'mty_icon_limit_reached',
+				'bnti_icon_limit_reached',
 				sprintf(
 					/* translators: %d: maximum number of saved icons. */
-					__( 'The icon library is full (%d icons). Delete an icon before adding another.', 'mty' ),
-					MTY_MY_ICONS_MAX
+					__( 'The icon library is full (%d icons). Delete an icon before adding another.', 'brilliant-insurance' ),
+					BNTI_MY_ICONS_MAX
 				),
 				array( 'status' => 400 )
 			);
@@ -545,11 +545,11 @@ if ( ! function_exists( 'mty_rest_add_my_icon' ) ) :
 		foreach ( $icons as $existing ) {
 			if ( isset( $existing['svg'] ) && $existing['svg'] === $svg ) {
 				return new WP_Error(
-					'mty_duplicate_icon',
+					'bnti_duplicate_icon',
 					sprintf(
 						/* translators: %s: name of the icon already stored. */
-						__( 'This icon is already saved as “%s”.', 'mty' ),
-						isset( $existing['label'] ) ? $existing['label'] : __( 'Untitled', 'mty' )
+						__( 'This icon is already saved as “%s”.', 'brilliant-insurance' ),
+						isset( $existing['label'] ) ? $existing['label'] : __( 'Untitled', 'brilliant-insurance' )
 					),
 					array( 'status' => 409 )
 				);
@@ -559,7 +559,7 @@ if ( ! function_exists( 'mty_rest_add_my_icon' ) ) :
 		$label = sanitize_text_field( (string) $request->get_param( 'label' ) );
 
 		if ( '' === $label ) {
-			$label = __( 'Custom Icon', 'mty' );
+			$label = __( 'Custom Icon', 'brilliant-insurance' );
 		}
 
 		$icon_type = 'line' === $request->get_param( 'iconType' ) ? 'line' : 'fill';
@@ -579,22 +579,22 @@ if ( ! function_exists( 'mty_rest_add_my_icon' ) ) :
 
 		$icons[] = $icon;
 
-		update_option( MTY_MY_ICONS_OPTION, $icons, false );
+		update_option( BNTI_MY_ICONS_OPTION, $icons, false );
 
 		return rest_ensure_response( $icon );
 	}
 endif;
 
-if ( ! function_exists( 'mty_rest_delete_my_icon' ) ) :
+if ( ! function_exists( 'bnti_rest_delete_my_icon' ) ) :
 	/**
-	 * DELETE /mty/v1/my-icons/<id>
+	 * DELETE /bnti/v1/my-icons/<id>
 	 *
 	 * @param WP_REST_Request $request Request object.
 	 * @return WP_REST_Response|WP_Error
 	 */
-	function mty_rest_delete_my_icon( WP_REST_Request $request ) {
+	function bnti_rest_delete_my_icon( WP_REST_Request $request ) {
 		$id    = (string) $request->get_param( 'id' );
-		$icons = mty_get_my_icons();
+		$icons = bnti_get_my_icons();
 
 		$remaining = array_values(
 			array_filter(
@@ -607,13 +607,13 @@ if ( ! function_exists( 'mty_rest_delete_my_icon' ) ) :
 
 		if ( count( $remaining ) === count( $icons ) ) {
 			return new WP_Error(
-				'mty_icon_not_found',
-				__( 'That icon is no longer in the library.', 'mty' ),
+				'bnti_icon_not_found',
+				__( 'That icon is no longer in the library.', 'brilliant-insurance' ),
 				array( 'status' => 404 )
 			);
 		}
 
-		update_option( MTY_MY_ICONS_OPTION, $remaining, false );
+		update_option( BNTI_MY_ICONS_OPTION, $remaining, false );
 
 		return rest_ensure_response(
 			array(
@@ -624,26 +624,26 @@ if ( ! function_exists( 'mty_rest_delete_my_icon' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_register_my_icons_routes' ) ) :
+if ( ! function_exists( 'bnti_register_my_icons_routes' ) ) :
 	/**
 	 * Registers the My Icons REST routes.
 	 *
 	 * @return void
 	 */
-	function mty_register_my_icons_routes() {
+	function bnti_register_my_icons_routes() {
 		register_rest_route(
-			'mty/v1',
+			'bnti/v1',
 			'/my-icons',
 			array(
 				array(
 					'methods'             => WP_REST_Server::READABLE,
-					'callback'            => 'mty_rest_get_my_icons',
-					'permission_callback' => 'mty_my_icons_permissions_check',
+					'callback'            => 'bnti_rest_get_my_icons',
+					'permission_callback' => 'bnti_my_icons_permissions_check',
 				),
 				array(
 					'methods'             => WP_REST_Server::CREATABLE,
-					'callback'            => 'mty_rest_add_my_icon',
-					'permission_callback' => 'mty_my_icons_permissions_check',
+					'callback'            => 'bnti_rest_add_my_icon',
+					'permission_callback' => 'bnti_my_icons_permissions_check',
 					'args'                => array(
 						'svg'         => array(
 							'type'     => 'string',
@@ -665,13 +665,13 @@ if ( ! function_exists( 'mty_register_my_icons_routes' ) ) :
 		);
 
 		register_rest_route(
-			'mty/v1',
+			'bnti/v1',
 			'/my-icons/(?P<id>[A-Za-z0-9\-]+)',
 			array(
 				array(
 					'methods'             => WP_REST_Server::DELETABLE,
-					'callback'            => 'mty_rest_delete_my_icon',
-					'permission_callback' => 'mty_my_icons_permissions_check',
+					'callback'            => 'bnti_rest_delete_my_icon',
+					'permission_callback' => 'bnti_my_icons_permissions_check',
 					'args'                => array(
 						'id' => array(
 							'type'     => 'string',
@@ -683,4 +683,4 @@ if ( ! function_exists( 'mty_register_my_icons_routes' ) ) :
 		);
 	}
 endif;
-add_action( 'rest_api_init', 'mty_register_my_icons_routes' );
+add_action( 'rest_api_init', 'bnti_register_my_icons_routes' );

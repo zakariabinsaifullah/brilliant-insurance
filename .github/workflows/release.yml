@@ -30,20 +30,20 @@ jobs:
             - name: Prepare Release Artifact
               run: |
                   # 1. Create a build directory
-                  mkdir mty
+                  mkdir brilliant-insurance
 
                   # 2. Copy files to build dir
-                  rsync -rc --exclude-from='.distignore' --exclude 'mty' . mty/
+                  rsync -rc --exclude-from='.distignore' --exclude 'brilliant-insurance' . brilliant-insurance/
 
                   # 3. CLEANUP: Force remove any .DS_Store files that slipped through
-                  find mty -name ".DS_Store" -type f -delete
+                  find brilliant-insurance -name ".DS_Store" -type f -delete
 
                   # 4. Zip the clean directory
-                  zip -r mty.zip mty
+                  zip -r brilliant-insurance.zip brilliant-insurance
             - name: Create Release
               uses: ncipollo/release-action@v1.14.0
               with:
-                  artifacts: 'mty.zip'
+                  artifacts: 'brilliant-insurance.zip'
                   token: ${{ secrets.TOKEN }}
                   allowUpdates: true
                   makeLatest: true

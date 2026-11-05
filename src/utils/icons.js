@@ -265,59 +265,59 @@ import {
 const categories = [
     {
         slug: 'all',
-        name: __('All Icons', 'mty')
+        name: __('All Icons', 'brilliant-insurance')
     },
     {
         slug: 'arrows',
-        name: __('Arrows', 'mty')
+        name: __('Arrows', 'brilliant-insurance')
     },
     {
         slug: 'editor',
-        name: __('Editor', 'mty')
+        name: __('Editor', 'brilliant-insurance')
     },
     {
         slug: 'actions',
-        name: __('Actions', 'mty')
+        name: __('Actions', 'brilliant-insurance')
     },
     {
         slug: 'devices',
-        name: __('Devices', 'mty')
+        name: __('Devices', 'brilliant-insurance')
     },
     {
         slug: 'interface',
-        name: __('Interface', 'mty')
+        name: __('Interface', 'brilliant-insurance')
     },
     {
         slug: 'media',
-        name: __('Media', 'mty')
+        name: __('Media', 'brilliant-insurance')
     },
     {
         slug: 'format',
-        name: __('Formatting', 'mty')
+        name: __('Formatting', 'brilliant-insurance')
     },
     {
         slug: 'layout',
-        name: __('Layout', 'mty')
+        name: __('Layout', 'brilliant-insurance')
     },
     {
         slug: 'tables',
-        name: __('Tables', 'mty')
+        name: __('Tables', 'brilliant-insurance')
     },
     {
         slug: 'posts',
-        name: __('Posts & Pages', 'mty')
+        name: __('Posts & Pages', 'brilliant-insurance')
     },
     {
         slug: 'comments',
-        name: __('Comments', 'mty')
+        name: __('Comments', 'brilliant-insurance')
     },
     {
         slug: 'ecommerce',
-        name: __('E-Commerce', 'mty')
+        name: __('E-Commerce', 'brilliant-insurance')
     },
     {
         slug: 'misc',
-        name: __('Miscellaneous', 'mty')
+        name: __('Miscellaneous', 'brilliant-insurance')
     }
 ];
 
@@ -328,209 +328,209 @@ const icons = [
     // Original icons
     {
         name: 'wordpress',
-        title: __('WordPress', 'mty'),
+        title: __('WordPress', 'brilliant-insurance'),
         icon: wordpress,
         categories: ['misc'],
         isDefault: true
     },
     {
         name: 'paragraph',
-        title: __('Paragraph', 'mty'),
+        title: __('Paragraph', 'brilliant-insurance'),
         icon: paragraph,
         categories: ['editor']
     },
     {
         name: 'share',
-        title: __('Share', 'mty'),
+        title: __('Share', 'brilliant-insurance'),
         icon: share,
         categories: ['actions']
     },
     {
         name: 'star-filled',
-        title: __('Star Filled', 'mty'),
+        title: __('Star Filled', 'brilliant-insurance'),
         icon: starFilled,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'star-empty',
-        title: __('Star Empty', 'mty'),
+        title: __('Star Empty', 'brilliant-insurance'),
         icon: starEmpty,
         categories: ['interface']
     },
     {
         name: 'check',
-        title: __('Check', 'mty'),
+        title: __('Check', 'brilliant-insurance'),
         icon: check,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'menu',
-        title: __('Menu', 'mty'),
+        title: __('Menu', 'brilliant-insurance'),
         icon: menu,
         categories: ['interface']
     },
     {
         name: 'help',
-        title: __('Help', 'mty'),
+        title: __('Help', 'brilliant-insurance'),
         icon: help,
         categories: ['interface']
     },
     {
         name: 'globe',
-        title: __('Globe', 'mty'),
+        title: __('Globe', 'brilliant-insurance'),
         icon: globe,
         categories: ['misc']
     },
     {
         name: 'gallery',
-        title: __('Gallery', 'mty'),
+        title: __('Gallery', 'brilliant-insurance'),
         icon: gallery,
         categories: ['editor', 'media']
     },
     // {
     //     name: 'edit',
-    //     title: __('Edit', 'mty'),
+    //     title: __('Edit', 'brilliant-insurance'),
     //     icon: edit,
     //     categories: ['actions']
     // },
     {
         name: 'cloud',
-        title: __('Cloud', 'mty'),
+        title: __('Cloud', 'brilliant-insurance'),
         icon: cloud,
         categories: ['misc']
     },
     {
         name: 'archive',
-        title: __('Archive', 'mty'),
+        title: __('Archive', 'brilliant-insurance'),
         icon: archive,
         categories: ['misc']
     },
     {
         name: 'settings',
-        title: __('Settings', 'mty'),
+        title: __('Settings', 'brilliant-insurance'),
         icon: settings,
         categories: ['interface']
     },
     {
         name: 'home',
-        title: __('Home', 'mty'),
+        title: __('Home', 'brilliant-insurance'),
         icon: home,
         categories: ['misc']
     },
     // {
     //     name: 'warning',
-    //     title: __('Warning', 'mty'),
+    //     title: __('Warning', 'brilliant-insurance'),
     //     icon: warning,
     //     categories: ['interface']
     // },
     {
         name: 'info',
-        title: __('Info', 'mty'),
+        title: __('Info', 'brilliant-insurance'),
         icon: info,
         categories: ['interface']
     },
     {
         name: 'search',
-        title: __('Search', 'mty'),
+        title: __('Search', 'brilliant-insurance'),
         icon: search,
         categories: ['actions']
     },
     {
         name: 'calendar',
-        title: __('Calendar', 'mty'),
+        title: __('Calendar', 'brilliant-insurance'),
         icon: calendar,
         categories: ['misc']
     },
     {
         name: 'desktop',
-        title: __('Desktop', 'mty'),
+        title: __('Desktop', 'brilliant-insurance'),
         icon: desktop,
         categories: ['devices']
     },
     {
         name: 'mobile',
-        title: __('Mobile', 'mty'),
+        title: __('Mobile', 'brilliant-insurance'),
         icon: mobile,
         categories: ['devices']
     },
     {
         name: 'tablet',
-        title: __('Tablet', 'mty'),
+        title: __('Tablet', 'brilliant-insurance'),
         icon: tablet,
         categories: ['devices']
     },
     {
         name: 'download',
-        title: __('Download', 'mty'),
+        title: __('Download', 'brilliant-insurance'),
         icon: download,
         categories: ['actions'],
         isDefault: true
     },
     {
         name: 'pencil',
-        title: __('Pencil', 'mty'),
+        title: __('Pencil', 'brilliant-insurance'),
         icon: pencil,
         categories: ['actions']
     },
     {
         name: 'external',
-        title: __('External', 'mty'),
+        title: __('External', 'brilliant-insurance'),
         icon: external,
         categories: ['interface']
     },
     {
         name: 'trash',
-        title: __('Trash', 'mty'),
+        title: __('Trash', 'brilliant-insurance'),
         icon: trash,
         categories: ['actions']
     },
     {
         name: 'upload',
-        title: __('Upload', 'mty'),
+        title: __('Upload', 'brilliant-insurance'),
         icon: upload,
         categories: ['actions']
     },
     {
         name: 'plus',
-        title: __('Plus', 'mty'),
+        title: __('Plus', 'brilliant-insurance'),
         icon: plus,
         categories: ['interface']
     },
     {
         name: 'close',
-        title: __('Close', 'mty'),
+        title: __('Close', 'brilliant-insurance'),
         icon: close,
         categories: ['interface']
     },
     {
         name: 'update',
-        title: __('Update', 'mty'),
+        title: __('Update', 'brilliant-insurance'),
         icon: update,
         categories: ['actions']
     },
     {
         name: 'arrow-up',
-        title: __('Arrow Up', 'mty'),
+        title: __('Arrow Up', 'brilliant-insurance'),
         icon: arrowUp,
         categories: ['arrows']
     },
     {
         name: 'arrow-down',
-        title: __('Arrow Down', 'mty'),
+        title: __('Arrow Down', 'brilliant-insurance'),
         icon: arrowDown,
         categories: ['arrows']
     },
     {
         name: 'arrow-left',
-        title: __('Arrow Left', 'mty'),
+        title: __('Arrow Left', 'brilliant-insurance'),
         icon: arrowLeft,
         categories: ['arrows']
     },
     {
         name: 'arrow-right',
-        title: __('Arrow Right', 'mty'),
+        title: __('Arrow Right', 'brilliant-insurance'),
         icon: arrowRight,
         categories: ['arrows'],
         isDefault: true
@@ -539,50 +539,50 @@ const icons = [
     // Additional icons - Arrows
     {
         name: 'chevron-down',
-        title: __('Chevron Down', 'mty'),
+        title: __('Chevron Down', 'brilliant-insurance'),
         icon: chevronDown,
         categories: ['arrows']
     },
     {
         name: 'chevron-up',
-        title: __('Chevron Up', 'mty'),
+        title: __('Chevron Up', 'brilliant-insurance'),
         icon: chevronUp,
         categories: ['arrows']
     },
     {
         name: 'chevron-left',
-        title: __('Chevron Left', 'mty'),
+        title: __('Chevron Left', 'brilliant-insurance'),
         icon: chevronLeft,
         categories: ['arrows']
     },
     {
         name: 'chevron-right',
-        title: __('Chevron Right', 'mty'),
+        title: __('Chevron Right', 'brilliant-insurance'),
         icon: chevronRight,
         categories: ['arrows'],
         isDefault: true
     },
     {
         name: 'chevron-right-small',
-        title: __('Chevron Right Small', 'mty'),
+        title: __('Chevron Right Small', 'brilliant-insurance'),
         icon: chevronRightSmall,
         categories: ['arrows']
     },
     {
         name: 'chevron-up-down',
-        title: __('Chevron Up Down', 'mty'),
+        title: __('Chevron Up Down', 'brilliant-insurance'),
         icon: chevronUpDown,
         categories: ['arrows']
     },
     {
         name: 'previous',
-        title: __('Previous', 'mty'),
+        title: __('Previous', 'brilliant-insurance'),
         icon: previous,
         categories: ['arrows']
     },
     {
         name: 'next',
-        title: __('Next', 'mty'),
+        title: __('Next', 'brilliant-insurance'),
         icon: next,
         categories: ['arrows']
     },
@@ -590,109 +590,109 @@ const icons = [
     // Editor
     {
         name: 'heading',
-        title: __('Heading', 'mty'),
+        title: __('Heading', 'brilliant-insurance'),
         icon: heading,
         categories: ['editor']
     },
     {
         name: 'quote',
-        title: __('Quote', 'mty'),
+        title: __('Quote', 'brilliant-insurance'),
         icon: quote,
         categories: ['editor']
     },
     {
         name: 'list',
-        title: __('List', 'mty'),
+        title: __('List', 'brilliant-insurance'),
         icon: list,
         categories: ['editor']
     },
     {
         name: 'list-item',
-        title: __('List Item', 'mty'),
+        title: __('List Item', 'brilliant-insurance'),
         icon: listItem,
         categories: ['editor']
     },
     {
         name: 'code',
-        title: __('Code', 'mty'),
+        title: __('Code', 'brilliant-insurance'),
         icon: code,
         categories: ['editor']
     },
     {
         name: 'image',
-        title: __('Image', 'mty'),
+        title: __('Image', 'brilliant-insurance'),
         icon: image,
         categories: ['editor', 'media']
     },
     {
         name: 'video',
-        title: __('Video', 'mty'),
+        title: __('Video', 'brilliant-insurance'),
         icon: video,
         categories: ['editor', 'media']
     },
     {
         name: 'audio',
-        title: __('Audio', 'mty'),
+        title: __('Audio', 'brilliant-insurance'),
         icon: audio,
         categories: ['editor', 'media']
     },
     {
         name: 'media',
-        title: __('Media', 'mty'),
+        title: __('Media', 'brilliant-insurance'),
         icon: media,
         categories: ['editor', 'media']
     },
     {
         name: 'cover',
-        title: __('Cover', 'mty'),
+        title: __('Cover', 'brilliant-insurance'),
         icon: cover,
         categories: ['editor']
     },
     {
         name: 'verse',
-        title: __('Verse', 'mty'),
+        title: __('Verse', 'brilliant-insurance'),
         icon: verse,
         categories: ['editor']
     },
     {
         name: 'preformatted',
-        title: __('Preformatted', 'mty'),
+        title: __('Preformatted', 'brilliant-insurance'),
         icon: preformatted,
         categories: ['editor']
     },
     {
         name: 'shortcode',
-        title: __('Shortcode', 'mty'),
+        title: __('Shortcode', 'brilliant-insurance'),
         icon: shortcode,
         categories: ['editor']
     },
     {
         name: 'html',
-        title: __('HTML', 'mty'),
+        title: __('HTML', 'brilliant-insurance'),
         icon: html,
         categories: ['editor']
     },
     {
         name: 'pullquote',
-        title: __('Pullquote', 'mty'),
+        title: __('Pullquote', 'brilliant-insurance'),
         icon: pullquote,
         categories: ['editor']
     },
     {
         name: 'button',
-        title: __('Button', 'mty'),
+        title: __('Button', 'brilliant-insurance'),
         icon: button,
         categories: ['editor']
     },
     {
         name: 'buttons',
-        title: __('Buttons', 'mty'),
+        title: __('Buttons', 'brilliant-insurance'),
         icon: buttons,
         categories: ['editor']
     },
     {
         name: 'media-and-text',
-        title: __('Media & Text', 'mty'),
+        title: __('Media & Text', 'brilliant-insurance'),
         icon: mediaAndText,
         categories: ['editor', 'layout']
     },
@@ -700,121 +700,121 @@ const icons = [
     // Format
     {
         name: 'format-bold',
-        title: __('Format Bold', 'mty'),
+        title: __('Format Bold', 'brilliant-insurance'),
         icon: formatBold,
         categories: ['format']
     },
     {
         name: 'format-italic',
-        title: __('Format Italic', 'mty'),
+        title: __('Format Italic', 'brilliant-insurance'),
         icon: formatItalic,
         categories: ['format']
     },
     {
         name: 'format-strikethrough',
-        title: __('Format Strikethrough', 'mty'),
+        title: __('Format Strikethrough', 'brilliant-insurance'),
         icon: formatStrikethrough,
         categories: ['format']
     },
     {
         name: 'format-underline',
-        title: __('Format Underline', 'mty'),
+        title: __('Format Underline', 'brilliant-insurance'),
         icon: formatUnderline,
         categories: ['format']
     },
     {
         name: 'format-capitalize',
-        title: __('Format Capitalize', 'mty'),
+        title: __('Format Capitalize', 'brilliant-insurance'),
         icon: formatCapitalize,
         categories: ['format']
     },
     {
         name: 'format-uppercase',
-        title: __('Format Uppercase', 'mty'),
+        title: __('Format Uppercase', 'brilliant-insurance'),
         icon: formatUppercase,
         categories: ['format']
     },
     {
         name: 'format-lowercase',
-        title: __('Format Lowercase', 'mty'),
+        title: __('Format Lowercase', 'brilliant-insurance'),
         icon: formatLowercase,
         categories: ['format']
     },
     {
         name: 'format-ltr',
-        title: __('Format LTR', 'mty'),
+        title: __('Format LTR', 'brilliant-insurance'),
         icon: formatLTR,
         categories: ['format']
     },
     // {
     //     name: 'format-rtl',
-    //     title: __('Format RTL', 'mty'),
+    //     title: __('Format RTL', 'brilliant-insurance'),
     //     icon: formatRTL,
     //     categories: ['format']
     // },
     {
         name: 'format-indent',
-        title: __('Format Indent', 'mty'),
+        title: __('Format Indent', 'brilliant-insurance'),
         icon: formatIndent,
         categories: ['format']
     },
     {
         name: 'format-indent-rtl',
-        title: __('Format Indent RTL', 'mty'),
+        title: __('Format Indent RTL', 'brilliant-insurance'),
         icon: formatIndentRTL,
         categories: ['format']
     },
     {
         name: 'format-outdent',
-        title: __('Format Outdent', 'mty'),
+        title: __('Format Outdent', 'brilliant-insurance'),
         icon: formatOutdent,
         categories: ['format']
     },
     {
         name: 'format-outdent-rtl',
-        title: __('Format Outdent RTL', 'mty'),
+        title: __('Format Outdent RTL', 'brilliant-insurance'),
         icon: formatOutdentRTL,
         categories: ['format']
     },
     {
         name: 'format-list-bullets',
-        title: __('Format List Bullets', 'mty'),
+        title: __('Format List Bullets', 'brilliant-insurance'),
         icon: formatListBullets,
         categories: ['format']
     },
     {
         name: 'format-list-bullets-rtl',
-        title: __('Format List Bullets RTL', 'mty'),
+        title: __('Format List Bullets RTL', 'brilliant-insurance'),
         icon: formatListBulletsRTL,
         categories: ['format']
     },
     {
         name: 'format-list-numbered',
-        title: __('Format List Numbered', 'mty'),
+        title: __('Format List Numbered', 'brilliant-insurance'),
         icon: formatListNumbered,
         categories: ['format']
     },
     {
         name: 'format-list-numbered-rtl',
-        title: __('Format List Numbered RTL', 'mty'),
+        title: __('Format List Numbered RTL', 'brilliant-insurance'),
         icon: formatListNumberedRTL,
         categories: ['format']
     },
     {
         name: 'text-color',
-        title: __('Text Color', 'mty'),
+        title: __('Text Color', 'brilliant-insurance'),
         icon: textColor,
         categories: ['format']
     },
     {
         name: 'subscript',
-        title: __('Subscript', 'mty'),
+        title: __('Subscript', 'brilliant-insurance'),
         icon: subscript,
         categories: ['format']
     },
     {
         name: 'superscript',
-        title: __('Superscript', 'mty'),
+        title: __('Superscript', 'brilliant-insurance'),
         icon: superscript,
         categories: ['format']
     },
@@ -822,7 +822,7 @@ const icons = [
     // Layout
     {
         name: 'layouts',
-        title: __('Layouts', 'mty'),
+        title: __('Layouts', 'brilliant-insurance'),
         icon: (
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -843,145 +843,145 @@ const icons = [
     },
     {
         name: 'align-left',
-        title: __('Align Left', 'mty'),
+        title: __('Align Left', 'brilliant-insurance'),
         icon: alignLeft,
         categories: ['layout']
     },
     {
         name: 'align-center',
-        title: __('Align Center', 'mty'),
+        title: __('Align Center', 'brilliant-insurance'),
         icon: alignCenter,
         categories: ['layout']
     },
     {
         name: 'align-right',
-        title: __('Align Right', 'mty'),
+        title: __('Align Right', 'brilliant-insurance'),
         icon: alignRight,
         categories: ['layout']
     },
     {
         name: 'align-justify',
-        title: __('Align Justify', 'mty'),
+        title: __('Align Justify', 'brilliant-insurance'),
         icon: alignJustify,
         categories: ['layout']
     },
     {
         name: 'align-none',
-        title: __('Align None', 'mty'),
+        title: __('Align None', 'brilliant-insurance'),
         icon: alignNone,
         categories: ['layout']
     },
     {
         name: 'columns',
-        title: __('Columns', 'mty'),
+        title: __('Columns', 'brilliant-insurance'),
         icon: columns,
         categories: ['layout']
     },
     {
         name: 'column',
-        title: __('Column', 'mty'),
+        title: __('Column', 'brilliant-insurance'),
         icon: column,
         categories: ['layout']
     },
     {
         name: 'row',
-        title: __('Row', 'mty'),
+        title: __('Row', 'brilliant-insurance'),
         icon: row,
         categories: ['layout']
     },
     {
         name: 'group',
-        title: __('Group', 'mty'),
+        title: __('Group', 'brilliant-insurance'),
         icon: group,
         categories: ['layout']
     },
     {
         name: 'ungroup',
-        title: __('Ungroup', 'mty'),
+        title: __('Ungroup', 'brilliant-insurance'),
         icon: ungroup,
         categories: ['layout']
     },
     {
         name: 'stretch-wide',
-        title: __('Stretch Wide', 'mty'),
+        title: __('Stretch Wide', 'brilliant-insurance'),
         icon: stretchWide,
         categories: ['layout']
     },
     {
         name: 'stretch-full-width',
-        title: __('Stretch Full Width', 'mty'),
+        title: __('Stretch Full Width', 'brilliant-insurance'),
         icon: stretchFullWidth,
         categories: ['layout']
     },
     {
         name: 'position-left',
-        title: __('Position Left', 'mty'),
+        title: __('Position Left', 'brilliant-insurance'),
         icon: positionLeft,
         categories: ['layout']
     },
     {
         name: 'position-center',
-        title: __('Position Center', 'mty'),
+        title: __('Position Center', 'brilliant-insurance'),
         icon: positionCenter,
         categories: ['layout']
     },
     {
         name: 'position-right',
-        title: __('Position Right', 'mty'),
+        title: __('Position Right', 'brilliant-insurance'),
         icon: positionRight,
         categories: ['layout']
     },
     {
         name: 'justify-left',
-        title: __('Justify Left', 'mty'),
+        title: __('Justify Left', 'brilliant-insurance'),
         icon: justifyLeft,
         categories: ['layout']
     },
     {
         name: 'justify-center',
-        title: __('Justify Center', 'mty'),
+        title: __('Justify Center', 'brilliant-insurance'),
         icon: justifyCenter,
         categories: ['layout']
     },
     {
         name: 'justify-right',
-        title: __('Justify Right', 'mty'),
+        title: __('Justify Right', 'brilliant-insurance'),
         icon: justifyRight,
         categories: ['layout']
     },
     {
         name: 'justify-space-between',
-        title: __('Justify Space Between', 'mty'),
+        title: __('Justify Space Between', 'brilliant-insurance'),
         icon: justifySpaceBetween,
         categories: ['layout']
     },
     {
         name: 'justify-stretch',
-        title: __('Justify Stretch', 'mty'),
+        title: __('Justify Stretch', 'brilliant-insurance'),
         icon: justifyStretch,
         categories: ['layout']
     },
     {
         name: 'header',
-        title: __('Header', 'mty'),
+        title: __('Header', 'brilliant-insurance'),
         icon: header,
         categories: ['layout']
     },
     {
         name: 'footer',
-        title: __('Footer', 'mty'),
+        title: __('Footer', 'brilliant-insurance'),
         icon: footer,
         categories: ['layout']
     },
     {
         name: 'sidebar',
-        title: __('Sidebar', 'mty'),
+        title: __('Sidebar', 'brilliant-insurance'),
         icon: sidebar,
         categories: ['layout']
     },
     {
         name: 'layout',
-        title: __('Layout', 'mty'),
+        title: __('Layout', 'brilliant-insurance'),
         icon: layout,
         categories: ['layout']
     },
@@ -989,49 +989,49 @@ const icons = [
     // Tables
     {
         name: 'table',
-        title: __('Table', 'mty'),
+        title: __('Table', 'brilliant-insurance'),
         icon: table,
         categories: ['tables']
     },
     {
         name: 'block-table',
-        title: __('Block Table', 'mty'),
+        title: __('Block Table', 'brilliant-insurance'),
         icon: blockTable,
         categories: ['tables']
     },
     {
         name: 'table-column-after',
-        title: __('Table Column After', 'mty'),
+        title: __('Table Column After', 'brilliant-insurance'),
         icon: tableColumnAfter,
         categories: ['tables']
     },
     {
         name: 'table-column-before',
-        title: __('Table Column Before', 'mty'),
+        title: __('Table Column Before', 'brilliant-insurance'),
         icon: tableColumnBefore,
         categories: ['tables']
     },
     {
         name: 'table-column-delete',
-        title: __('Table Column Delete', 'mty'),
+        title: __('Table Column Delete', 'brilliant-insurance'),
         icon: tableColumnDelete,
         categories: ['tables']
     },
     {
         name: 'table-row-after',
-        title: __('Table Row After', 'mty'),
+        title: __('Table Row After', 'brilliant-insurance'),
         icon: tableRowAfter,
         categories: ['tables']
     },
     {
         name: 'table-row-before',
-        title: __('Table Row Before', 'mty'),
+        title: __('Table Row Before', 'brilliant-insurance'),
         icon: tableRowBefore,
         categories: ['tables']
     },
     {
         name: 'table-row-delete',
-        title: __('Table Row Delete', 'mty'),
+        title: __('Table Row Delete', 'brilliant-insurance'),
         icon: tableRowDelete,
         categories: ['tables']
     },
@@ -1039,98 +1039,98 @@ const icons = [
     // Actions
     {
         name: 'copy',
-        title: __('Copy', 'mty'),
+        title: __('Copy', 'brilliant-insurance'),
         icon: copy,
         categories: ['actions']
     },
 
     {
         name: 'redo',
-        title: __('Redo', 'mty'),
+        title: __('Redo', 'brilliant-insurance'),
         icon: redo,
         categories: ['actions']
     },
     {
         name: 'undo',
-        title: __('Undo', 'mty'),
+        title: __('Undo', 'brilliant-insurance'),
         icon: undo,
         categories: ['actions']
     },
     {
         name: 'create',
-        title: __('Create', 'mty'),
+        title: __('Create', 'brilliant-insurance'),
         icon: create,
         categories: ['actions']
     },
     {
         name: 'lock',
-        title: __('Lock', 'mty'),
+        title: __('Lock', 'brilliant-insurance'),
         icon: lock,
         categories: ['actions']
     },
     {
         name: 'unlock',
-        title: __('Unlock', 'mty'),
+        title: __('Unlock', 'brilliant-insurance'),
         icon: unlock,
         categories: ['actions']
     },
     {
         name: 'lock-outline',
-        title: __('Lock Outline', 'mty'),
+        title: __('Lock Outline', 'brilliant-insurance'),
         icon: lockOutline,
         categories: ['actions']
     },
     {
         name: 'lock-small',
-        title: __('Lock Small', 'mty'),
+        title: __('Lock Small', 'brilliant-insurance'),
         icon: lockSmall,
         categories: ['actions']
     },
     {
         name: 'login',
-        title: __('Login', 'mty'),
+        title: __('Login', 'brilliant-insurance'),
         icon: login,
         categories: ['actions']
     },
     {
         name: 'reset',
-        title: __('Reset', 'mty'),
+        title: __('Reset', 'brilliant-insurance'),
         icon: reset,
         categories: ['actions']
     },
     {
         name: 'rotate-left',
-        title: __('Rotate Left', 'mty'),
+        title: __('Rotate Left', 'brilliant-insurance'),
         icon: rotateLeft,
         categories: ['actions']
     },
     {
         name: 'rotate-right',
-        title: __('Rotate Right', 'mty'),
+        title: __('Rotate Right', 'brilliant-insurance'),
         icon: rotateRight,
         categories: ['actions']
     },
     {
         name: 'flip-horizontal',
-        title: __('Flip Horizontal', 'mty'),
+        title: __('Flip Horizontal', 'brilliant-insurance'),
         icon: flipHorizontal,
         categories: ['actions']
     },
     {
         name: 'flip-vertical',
-        title: __('Flip Vertical', 'mty'),
+        title: __('Flip Vertical', 'brilliant-insurance'),
         icon: flipVertical,
         categories: ['actions']
     },
     {
         name: 'replace',
-        title: __('Replace', 'mty'),
+        title: __('Replace', 'brilliant-insurance'),
         icon: replace,
         categories: ['actions']
     },
     {
         name: 'fullscreen',
-        title: __('Fullscreen', 'mty'),
+        title: __('Fullscreen', 'brilliant-insurance'),
         icon: fullscreen,
         categories: ['actions']
     },
@@ -1138,122 +1138,122 @@ const icons = [
     // Interface
     {
         name: 'close-small',
-        title: __('Close Small', 'mty'),
+        title: __('Close Small', 'brilliant-insurance'),
         icon: closeSmall,
         categories: ['interface']
     },
     {
         name: 'more',
-        title: __('More', 'mty'),
+        title: __('More', 'brilliant-insurance'),
         icon: more,
         categories: ['interface']
     },
     {
         name: 'more-horizontal',
-        title: __('More Horizontal', 'mty'),
+        title: __('More Horizontal', 'brilliant-insurance'),
         icon: moreHorizontal,
         categories: ['interface']
     },
     {
         name: 'more-vertical',
-        title: __('More Vertical', 'mty'),
+        title: __('More Vertical', 'brilliant-insurance'),
         icon: moreVertical,
         categories: ['interface']
     },
     {
         name: 'star-half',
-        title: __('Star Half', 'mty'),
+        title: __('Star Half', 'brilliant-insurance'),
         icon: starHalf,
         categories: ['interface']
     },
     {
         name: 'help-filled',
-        title: __('Help Filled', 'mty'),
+        title: __('Help Filled', 'brilliant-insurance'),
         icon: helpFilled,
         categories: ['interface']
     },
     {
         name: 'cog',
-        title: __('Cog', 'mty'),
+        title: __('Cog', 'brilliant-insurance'),
         icon: cog,
         categories: ['interface'],
         isDefault: true
     },
     {
         name: 'plus-circle',
-        title: __('Plus Circle', 'mty'),
+        title: __('Plus Circle', 'brilliant-insurance'),
         icon: plusCircle,
         categories: ['interface']
     },
     {
         name: 'plus-circle-filled',
-        title: __('Plus Circle Filled', 'mty'),
+        title: __('Plus Circle Filled', 'brilliant-insurance'),
         icon: plusCircleFilled,
         categories: ['interface']
     },
     {
         name: 'cancel-circle-filled',
-        title: __('Cancel Circle Filled', 'mty'),
+        title: __('Cancel Circle Filled', 'brilliant-insurance'),
         icon: cancelCircleFilled,
         categories: ['interface']
     },
     {
         name: 'plugins',
-        title: __('Plugins', 'mty'),
+        title: __('Plugins', 'brilliant-insurance'),
         icon: plugins,
         categories: ['interface']
     },
     {
         name: 'filter',
-        title: __('Filter', 'mty'),
+        title: __('Filter', 'brilliant-insurance'),
         icon: filter,
         categories: ['interface']
     },
     {
         name: 'list-view',
-        title: __('List View', 'mty'),
+        title: __('List View', 'brilliant-insurance'),
         icon: listView,
         categories: ['interface']
     },
     {
         name: 'drag-handle',
-        title: __('Drag Handle', 'mty'),
+        title: __('Drag Handle', 'brilliant-insurance'),
         icon: dragHandle,
         categories: ['interface']
     },
     {
         name: 'handle',
-        title: __('Handle', 'mty'),
+        title: __('Handle', 'brilliant-insurance'),
         icon: handle,
         categories: ['interface']
     },
     {
         name: 'seen',
-        title: __('Seen', 'mty'),
+        title: __('Seen', 'brilliant-insurance'),
         icon: seen,
         categories: ['interface']
     },
     {
         name: 'unseen',
-        title: __('Unseen', 'mty'),
+        title: __('Unseen', 'brilliant-insurance'),
         icon: unseen,
         categories: ['interface']
     },
     {
         name: 'keyboard-close',
-        title: __('Keyboard Close', 'mty'),
+        title: __('Keyboard Close', 'brilliant-insurance'),
         icon: keyboardClose,
         categories: ['interface']
     },
     {
         name: 'keyboard-return',
-        title: __('Keyboard Return', 'mty'),
+        title: __('Keyboard Return', 'brilliant-insurance'),
         icon: keyboardReturn,
         categories: ['interface']
     },
     {
         name: 'styles',
-        title: __('Styles', 'mty'),
+        title: __('Styles', 'brilliant-insurance'),
         icon: styles,
         categories: ['interface']
     },
@@ -1261,103 +1261,103 @@ const icons = [
     // Posts & Pages
     {
         name: 'page',
-        title: __('Page', 'mty'),
+        title: __('Page', 'brilliant-insurance'),
         icon: page,
         categories: ['posts']
     },
     {
         name: 'pages',
-        title: __('Pages', 'mty'),
+        title: __('Pages', 'brilliant-insurance'),
         icon: pages,
         categories: ['posts']
     },
     {
         name: 'post',
-        title: __('Post', 'mty'),
+        title: __('Post', 'brilliant-insurance'),
         icon: post,
         categories: ['posts']
     },
     {
         name: 'post-author',
-        title: __('Post Author', 'mty'),
+        title: __('Post Author', 'brilliant-insurance'),
         icon: postAuthor,
         categories: ['posts']
     },
     {
         name: 'post-categories',
-        title: __('Post Categories', 'mty'),
+        title: __('Post Categories', 'brilliant-insurance'),
         icon: postCategories,
         categories: ['posts']
     },
     {
         name: 'post-content',
-        title: __('Post Content', 'mty'),
+        title: __('Post Content', 'brilliant-insurance'),
         icon: postContent,
         categories: ['posts']
     },
     {
         name: 'post-date',
-        title: __('Post Date', 'mty'),
+        title: __('Post Date', 'brilliant-insurance'),
         icon: postDate,
         categories: ['posts']
     },
     {
         name: 'post-excerpt',
-        title: __('Post Excerpt', 'mty'),
+        title: __('Post Excerpt', 'brilliant-insurance'),
         icon: postExcerpt,
         categories: ['posts']
     },
     {
         name: 'post-featured-image',
-        title: __('Post Featured Image', 'mty'),
+        title: __('Post Featured Image', 'brilliant-insurance'),
         icon: postFeaturedImage,
         categories: ['posts', 'media']
     },
     {
         name: 'post-list',
-        title: __('Post List', 'mty'),
+        title: __('Post List', 'brilliant-insurance'),
         icon: postList,
         categories: ['posts']
     },
     {
         name: 'post-terms',
-        title: __('Post Terms', 'mty'),
+        title: __('Post Terms', 'brilliant-insurance'),
         icon: postTerms,
         categories: ['posts']
     },
     {
         name: 'page-break',
-        title: __('Page Break', 'mty'),
+        title: __('Page Break', 'brilliant-insurance'),
         icon: pageBreak,
         categories: ['posts', 'editor']
     },
     {
         name: 'custom-post-type',
-        title: __('Custom Post Type', 'mty'),
+        title: __('Custom Post Type', 'brilliant-insurance'),
         icon: customPostType,
         categories: ['posts']
     },
     {
         name: 'term-description',
-        title: __('Term Description', 'mty'),
+        title: __('Term Description', 'brilliant-insurance'),
         icon: termDescription,
         categories: ['posts']
     },
     {
         name: 'category',
-        title: __('Category', 'mty'),
+        title: __('Category', 'brilliant-insurance'),
         icon: category,
         categories: ['posts']
     },
     {
         name: 'tag',
-        title: __('Tag', 'mty'),
+        title: __('Tag', 'brilliant-insurance'),
         icon: tag,
         categories: ['posts']
     },
     {
         name: 'title',
-        title: __('Title', 'mty'),
+        title: __('Title', 'brilliant-insurance'),
         icon: title,
         categories: ['posts', 'editor']
     },
@@ -1365,55 +1365,55 @@ const icons = [
     // Comments
     {
         name: 'comment',
-        title: __('Comment', 'mty'),
+        title: __('Comment', 'brilliant-insurance'),
         icon: comment,
         categories: ['comments']
     },
     {
         name: 'post-comments',
-        title: __('Post Comments', 'mty'),
+        title: __('Post Comments', 'brilliant-insurance'),
         icon: postComments,
         categories: ['comments', 'posts']
     },
     {
         name: 'post-comments-count',
-        title: __('Post Comments Count', 'mty'),
+        title: __('Post Comments Count', 'brilliant-insurance'),
         icon: postCommentsCount,
         categories: ['comments', 'posts']
     },
     {
         name: 'post-comments-form',
-        title: __('Post Comments Form', 'mty'),
+        title: __('Post Comments Form', 'brilliant-insurance'),
         icon: postCommentsForm,
         categories: ['comments', 'posts']
     },
     {
         name: 'comment-author-avatar',
-        title: __('Comment Author Avatar', 'mty'),
+        title: __('Comment Author Avatar', 'brilliant-insurance'),
         icon: commentAuthorAvatar,
         categories: ['comments']
     },
     {
         name: 'comment-author-name',
-        title: __('Comment Author Name', 'mty'),
+        title: __('Comment Author Name', 'brilliant-insurance'),
         icon: commentAuthorName,
         categories: ['comments']
     },
     {
         name: 'comment-content',
-        title: __('Comment Content', 'mty'),
+        title: __('Comment Content', 'brilliant-insurance'),
         icon: commentContent,
         categories: ['comments']
     },
     {
         name: 'comment-edit-link',
-        title: __('Comment Edit Link', 'mty'),
+        title: __('Comment Edit Link', 'brilliant-insurance'),
         icon: commentEditLink,
         categories: ['comments']
     },
     {
         name: 'comment-reply-link',
-        title: __('Comment Reply Link', 'mty'),
+        title: __('Comment Reply Link', 'brilliant-insurance'),
         icon: commentReplyLink,
         categories: ['comments']
     },
@@ -1421,37 +1421,37 @@ const icons = [
     // Media
     {
         name: 'caption',
-        title: __('Caption', 'mty'),
+        title: __('Caption', 'brilliant-insurance'),
         icon: caption,
         categories: ['media']
     },
     {
         name: 'capture-photo',
-        title: __('Capture Photo', 'mty'),
+        title: __('Capture Photo', 'brilliant-insurance'),
         icon: capturePhoto,
         categories: ['media']
     },
     {
         name: 'capture-video',
-        title: __('Capture Video', 'mty'),
+        title: __('Capture Video', 'brilliant-insurance'),
         icon: captureVideo,
         categories: ['media']
     },
     {
         name: 'aspect-ratio',
-        title: __('Aspect Ratio', 'mty'),
+        title: __('Aspect Ratio', 'brilliant-insurance'),
         icon: aspectRatio,
         categories: ['media']
     },
     {
         name: 'crop',
-        title: __('Crop', 'mty'),
+        title: __('Crop', 'brilliant-insurance'),
         icon: crop,
         categories: ['media', 'actions']
     },
     {
         name: 'file',
-        title: __('File', 'mty'),
+        title: __('File', 'brilliant-insurance'),
         icon: file,
         categories: ['media']
     },
@@ -1459,68 +1459,68 @@ const icons = [
     // E-commerce
     {
         name: 'currency-dollar',
-        title: __('Currency Dollar', 'mty'),
+        title: __('Currency Dollar', 'brilliant-insurance'),
         icon: currencyDollar,
         categories: ['ecommerce']
     },
     {
         name: 'currency-euro',
-        title: __('Currency Euro', 'mty'),
+        title: __('Currency Euro', 'brilliant-insurance'),
         icon: currencyEuro,
         categories: ['ecommerce']
     },
     {
         name: 'currency-pound',
-        title: __('Currency Pound', 'mty'),
+        title: __('Currency Pound', 'brilliant-insurance'),
         icon: currencyPound,
         categories: ['ecommerce']
     },
     {
         name: 'payment',
-        title: __('Payment', 'mty'),
+        title: __('Payment', 'brilliant-insurance'),
         icon: payment,
         categories: ['ecommerce']
     },
     {
         name: 'percent',
-        title: __('Percent', 'mty'),
+        title: __('Percent', 'brilliant-insurance'),
         icon: percent,
         categories: ['ecommerce']
     },
     {
         name: 'receipt',
-        title: __('Receipt', 'mty'),
+        title: __('Receipt', 'brilliant-insurance'),
         icon: receipt,
         categories: ['ecommerce']
     },
     {
         name: 'shipping',
-        title: __('Shipping', 'mty'),
+        title: __('Shipping', 'brilliant-insurance'),
         icon: shipping,
         categories: ['ecommerce'],
         isDefault: true
     },
     {
         name: 'store',
-        title: __('Store', 'mty'),
+        title: __('Store', 'brilliant-insurance'),
         icon: store,
         categories: ['ecommerce']
     },
     {
         name: 'chart-bar',
-        title: __('Chart Bar', 'mty'),
+        title: __('Chart Bar', 'brilliant-insurance'),
         icon: chartBar,
         categories: ['ecommerce']
     },
     {
         name: 'trending-down',
-        title: __('Trending Down', 'mty'),
+        title: __('Trending Down', 'brilliant-insurance'),
         icon: trendingDown,
         categories: ['ecommerce']
     },
     {
         name: 'trending-up',
-        title: __('Trending Up', 'mty'),
+        title: __('Trending Up', 'brilliant-insurance'),
         icon: trendingUp,
         categories: ['ecommerce']
     },
@@ -1528,355 +1528,355 @@ const icons = [
     // Miscellaneous
     {
         name: 'at-symbol',
-        title: __('At Symbol', 'mty'),
+        title: __('At Symbol', 'brilliant-insurance'),
         icon: atSymbol,
         categories: ['misc']
     },
     {
         name: 'backup',
-        title: __('Backup', 'mty'),
+        title: __('Backup', 'brilliant-insurance'),
         icon: backup,
         categories: ['misc']
     },
     {
         name: 'block-default',
-        title: __('Block Default', 'mty'),
+        title: __('Block Default', 'brilliant-insurance'),
         icon: blockDefault,
         categories: ['misc']
     },
     {
         name: 'border',
-        title: __('Border', 'mty'),
+        title: __('Border', 'brilliant-insurance'),
         icon: border,
         categories: ['misc']
     },
     {
         name: 'box',
-        title: __('Box', 'mty'),
+        title: __('Box', 'brilliant-insurance'),
         icon: box,
         categories: ['misc']
     },
     {
         name: 'brush',
-        title: __('Brush', 'mty'),
+        title: __('Brush', 'brilliant-insurance'),
         icon: brush,
         categories: ['misc']
     },
     {
         name: 'bug',
-        title: __('Bug', 'mty'),
+        title: __('Bug', 'brilliant-insurance'),
         icon: bug,
         categories: ['misc']
     },
     {
         name: 'remove-bug',
-        title: __('Remove Bug', 'mty'),
+        title: __('Remove Bug', 'brilliant-insurance'),
         icon: removeBug,
         categories: ['misc']
     },
     {
         name: 'classic',
-        title: __('Classic', 'mty'),
+        title: __('Classic', 'brilliant-insurance'),
         icon: classic,
         categories: ['misc']
     },
     {
         name: 'cloud-upload',
-        title: __('Cloud Upload', 'mty'),
+        title: __('Cloud Upload', 'brilliant-insurance'),
         icon: cloudUpload,
         categories: ['misc', 'actions']
     },
     {
         name: 'color',
-        title: __('Color', 'mty'),
+        title: __('Color', 'brilliant-insurance'),
         icon: color,
         categories: ['misc']
     },
     {
         name: 'custom-link',
-        title: __('Custom Link', 'mty'),
+        title: __('Custom Link', 'brilliant-insurance'),
         icon: customLink,
         categories: ['misc']
     },
     {
         name: 'drawer-left',
-        title: __('Drawer Left', 'mty'),
+        title: __('Drawer Left', 'brilliant-insurance'),
         icon: drawerLeft,
         categories: ['misc']
     },
     {
         name: 'drawer-right',
-        title: __('Drawer Right', 'mty'),
+        title: __('Drawer Right', 'brilliant-insurance'),
         icon: drawerRight,
         categories: ['misc']
     },
     {
         name: 'grid',
-        title: __('Grid', 'mty'),
+        title: __('Grid', 'brilliant-insurance'),
         icon: grid,
         categories: ['misc', 'layout']
     },
     {
         name: 'inbox',
-        title: __('Inbox', 'mty'),
+        title: __('Inbox', 'brilliant-insurance'),
         icon: inbox,
         categories: ['misc']
     },
     {
         name: 'institution',
-        title: __('Institution', 'mty'),
+        title: __('Institution', 'brilliant-insurance'),
         icon: institution,
         categories: ['misc']
     },
     {
         name: 'insert-after',
-        title: __('Insert After', 'mty'),
+        title: __('Insert After', 'brilliant-insurance'),
         icon: insertAfter,
         categories: ['misc', 'actions']
     },
     {
         name: 'insert-before',
-        title: __('Insert Before', 'mty'),
+        title: __('Insert Before', 'brilliant-insurance'),
         icon: insertBefore,
         categories: ['misc', 'actions']
     },
     {
         name: 'key',
-        title: __('Key', 'mty'),
+        title: __('Key', 'brilliant-insurance'),
         icon: key,
         categories: ['misc']
     },
     {
         name: 'lifesaver',
-        title: __('Lifesaver', 'mty'),
+        title: __('Lifesaver', 'brilliant-insurance'),
         icon: lifesaver,
         categories: ['misc']
     },
     {
         name: 'line-dashed',
-        title: __('Line Dashed', 'mty'),
+        title: __('Line Dashed', 'brilliant-insurance'),
         icon: lineDashed,
         categories: ['misc']
     },
     {
         name: 'line-dotted',
-        title: __('Line Dotted', 'mty'),
+        title: __('Line Dotted', 'brilliant-insurance'),
         icon: lineDotted,
         categories: ['misc']
     },
     {
         name: 'line-solid',
-        title: __('Line Solid', 'mty'),
+        title: __('Line Solid', 'brilliant-insurance'),
         icon: lineSolid,
         categories: ['misc']
     },
     {
         name: 'link',
-        title: __('Link', 'mty'),
+        title: __('Link', 'brilliant-insurance'),
         icon: link,
         categories: ['misc']
     },
     {
         name: 'link-off',
-        title: __('Link Off', 'mty'),
+        title: __('Link Off', 'brilliant-insurance'),
         icon: linkOff,
         categories: ['misc']
     },
     {
         name: 'loop',
-        title: __('Loop', 'mty'),
+        title: __('Loop', 'brilliant-insurance'),
         icon: loop,
         categories: ['misc']
     },
     {
         name: 'map-marker',
-        title: __('Map Marker', 'mty'),
+        title: __('Map Marker', 'brilliant-insurance'),
         icon: mapMarker,
         categories: ['misc']
     },
     {
         name: 'megaphone',
-        title: __('Megaphone', 'mty'),
+        title: __('Megaphone', 'brilliant-insurance'),
         icon: megaphone,
         categories: ['misc']
     },
     {
         name: 'move-to',
-        title: __('Move To', 'mty'),
+        title: __('Move To', 'brilliant-insurance'),
         icon: moveTo,
         categories: ['misc', 'actions']
     },
     {
         name: 'navigation',
-        title: __('Navigation', 'mty'),
+        title: __('Navigation', 'brilliant-insurance'),
         icon: navigation,
         categories: ['misc']
     },
     {
         name: 'overlay-text',
-        title: __('Overlay Text', 'mty'),
+        title: __('Overlay Text', 'brilliant-insurance'),
         icon: overlayText,
         categories: ['misc']
     },
     {
         name: 'people',
-        title: __('People', 'mty'),
+        title: __('People', 'brilliant-insurance'),
         icon: people,
         categories: ['misc']
     },
     {
         name: 'pin',
-        title: __('Pin', 'mty'),
+        title: __('Pin', 'brilliant-insurance'),
         icon: pin,
         categories: ['misc']
     },
     {
         name: 'pull-left',
-        title: __('Pull Left', 'mty'),
+        title: __('Pull Left', 'brilliant-insurance'),
         icon: pullLeft,
         categories: ['misc', 'layout']
     },
     {
         name: 'pull-right',
-        title: __('Pull Right', 'mty'),
+        title: __('Pull Right', 'brilliant-insurance'),
         icon: pullRight,
         categories: ['misc', 'layout']
     },
     {
         name: 'query-pagination',
-        title: __('Query Pagination', 'mty'),
+        title: __('Query Pagination', 'brilliant-insurance'),
         icon: queryPagination,
         categories: ['misc']
     },
     {
         name: 'query-pagination-next',
-        title: __('Query Pagination Next', 'mty'),
+        title: __('Query Pagination Next', 'brilliant-insurance'),
         icon: queryPaginationNext,
         categories: ['misc']
     },
     {
         name: 'query-pagination-numbers',
-        title: __('Query Pagination Numbers', 'mty'),
+        title: __('Query Pagination Numbers', 'brilliant-insurance'),
         icon: queryPaginationNumbers,
         categories: ['misc']
     },
     {
         name: 'query-pagination-previous',
-        title: __('Query Pagination Previous', 'mty'),
+        title: __('Query Pagination Previous', 'brilliant-insurance'),
         icon: queryPaginationPrevious,
         categories: ['misc']
     },
     {
         name: 'resize-corner-ne',
-        title: __('Resize Corner NE', 'mty'),
+        title: __('Resize Corner NE', 'brilliant-insurance'),
         icon: resizeCornerNE,
         categories: ['misc']
     },
     {
         name: 'reusable-block',
-        title: __('Reusable Block', 'mty'),
+        title: __('Reusable Block', 'brilliant-insurance'),
         icon: reusableBlock,
         categories: ['misc', 'editor']
     },
     {
         name: 'rss',
-        title: __('RSS', 'mty'),
+        title: __('RSS', 'brilliant-insurance'),
         icon: rss,
         categories: ['misc']
     },
     {
         name: 'separator',
-        title: __('Separator', 'mty'),
+        title: __('Separator', 'brilliant-insurance'),
         icon: separator,
         categories: ['misc', 'editor']
     },
     {
         name: 'shadow',
-        title: __('Shadow', 'mty'),
+        title: __('Shadow', 'brilliant-insurance'),
         icon: shadow,
         categories: ['misc']
     },
     {
         name: 'shield',
-        title: __('Shield', 'mty'),
+        title: __('Shield', 'brilliant-insurance'),
         icon: shield,
         categories: ['misc']
     },
     {
         name: 'shuffle',
-        title: __('Shuffle', 'mty'),
+        title: __('Shuffle', 'brilliant-insurance'),
         icon: shuffle,
         categories: ['misc']
     },
     {
         name: 'site-logo',
-        title: __('Site Logo', 'mty'),
+        title: __('Site Logo', 'brilliant-insurance'),
         icon: siteLogo,
         categories: ['misc']
     },
     {
         name: 'stack',
-        title: __('Stack', 'mty'),
+        title: __('Stack', 'brilliant-insurance'),
         icon: stack,
         categories: ['misc']
     },
     {
         name: 'swatch',
-        title: __('Swatch', 'mty'),
+        title: __('Swatch', 'brilliant-insurance'),
         icon: swatch,
         categories: ['misc']
     },
     {
         name: 'symbol',
-        title: __('Symbol', 'mty'),
+        title: __('Symbol', 'brilliant-insurance'),
         icon: symbol,
         categories: ['misc']
     },
     {
         name: 'symbol-filled',
-        title: __('Symbol Filled', 'mty'),
+        title: __('Symbol Filled', 'brilliant-insurance'),
         icon: symbolFilled,
         categories: ['misc']
     },
     {
         name: 'tip',
-        title: __('Tip', 'mty'),
+        title: __('Tip', 'brilliant-insurance'),
         icon: tip,
         categories: ['misc']
     },
     {
         name: 'tool',
-        title: __('Tool', 'mty'),
+        title: __('Tool', 'brilliant-insurance'),
         icon: tool,
         categories: ['misc']
     },
     {
         name: 'typography',
-        title: __('Typography', 'mty'),
+        title: __('Typography', 'brilliant-insurance'),
         icon: typography,
         categories: ['misc', 'format']
     },
     {
         name: 'widget',
-        title: __('Widget', 'mty'),
+        title: __('Widget', 'brilliant-insurance'),
         icon: widget,
         categories: ['misc']
     },
     {
         name: 'add-card',
-        title: __('Add Card', 'mty'),
+        title: __('Add Card', 'brilliant-insurance'),
         icon: addCard,
         categories: ['actions']
     },
     {
         name: 'add-submenu',
-        title: __('Add Submenu', 'mty'),
+        title: __('Add Submenu', 'brilliant-insurance'),
         icon: addSubmenu,
         categories: ['actions']
     },
     {
         name: 'remove-submenu',
-        title: __('Remove Submenu', 'mty'),
+        title: __('Remove Submenu', 'brilliant-insurance'),
         icon: removeSubmenu,
         categories: ['actions']
     }

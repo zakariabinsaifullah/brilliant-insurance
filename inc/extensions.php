@@ -6,15 +6,15 @@
  * Extensions are different from custom blocks — they extend existing blocks
  * rather than registering new block types.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! function_exists( 'mty_enqueue_hover_color_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_hover_color_editor_assets' ) ) :
 	/**
 	 * Enqueues the hover-color extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_hover_color_editor_assets() {
+	function bnti_enqueue_hover_color_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/hover-color/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -24,7 +24,7 @@ if ( ! function_exists( 'mty_enqueue_hover_color_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-hover-color-extension',
+			'bnti-hover-color-extension',
 			get_theme_file_uri( 'build/extensions/hover-color/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -34,7 +34,7 @@ if ( ! function_exists( 'mty_enqueue_hover_color_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/hover-color/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-hover-color-extension',
+				'bnti-hover-color-extension',
 				get_theme_file_uri( 'build/extensions/hover-color/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -42,15 +42,15 @@ if ( ! function_exists( 'mty_enqueue_hover_color_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_hover_color_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_hover_color_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_hover_color_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_hover_color_frontend_assets' ) ) :
 	/**
 	 * Enqueues the hover-color extension frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_hover_color_frontend_assets() {
+	function bnti_enqueue_hover_color_frontend_assets() {
 		$asset_file  = get_theme_file_path( 'build/extensions/hover-color/index.asset.php' );
 		$style_file  = get_theme_file_path( 'build/extensions/hover-color/style-index.css' );
 
@@ -61,17 +61,17 @@ if ( ! function_exists( 'mty_enqueue_hover_color_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-hover-color-extension-style',
+			'bnti-hover-color-extension-style',
 			get_theme_file_uri( 'build/extensions/hover-color/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_hover_color_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_hover_color_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_hover_color_attributes' ) ) :
+if ( ! function_exists( 'bnti_render_hover_color_attributes' ) ) :
 	/**
 	 * Injects hover-color CSS classes and custom properties into block HTML on the frontend.
 	 *
@@ -83,7 +83,7 @@ if ( ! function_exists( 'mty_render_hover_color_attributes' ) ) :
 	 * @param array  $block         The block data including attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_hover_color_attributes( $block_content, $block ) {
+	function bnti_render_hover_color_attributes( $block_content, $block ) {
 		if ( empty( $block_content ) ) {
 			return $block_content;
 		}
@@ -165,19 +165,19 @@ if ( ! function_exists( 'mty_render_hover_color_attributes' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_hover_color_attributes', 10, 2 );
+add_filter( 'render_block', 'bnti_render_hover_color_attributes', 10, 2 );
 
 
 // =============================================================================
 // Group – Force Full Height Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_group_full_height_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_full_height_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-full-height extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_group_full_height_editor_assets() {
+	function bnti_enqueue_group_full_height_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-full-height/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -187,7 +187,7 @@ if ( ! function_exists( 'mty_enqueue_group_full_height_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-group-full-height-extension',
+			'bnti-group-full-height-extension',
 			get_theme_file_uri( 'build/extensions/group-full-height/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -197,7 +197,7 @@ if ( ! function_exists( 'mty_enqueue_group_full_height_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-full-height/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-group-full-height-extension',
+				'bnti-group-full-height-extension',
 				get_theme_file_uri( 'build/extensions/group-full-height/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -205,15 +205,15 @@ if ( ! function_exists( 'mty_enqueue_group_full_height_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_group_full_height_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_group_full_height_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_group_full_height_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_full_height_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-full-height frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_group_full_height_frontend_assets() {
+	function bnti_enqueue_group_full_height_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-full-height/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-full-height/style-index.css' );
 
@@ -224,17 +224,17 @@ if ( ! function_exists( 'mty_enqueue_group_full_height_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-group-full-height-extension-style',
+			'bnti-group-full-height-extension-style',
 			get_theme_file_uri( 'build/extensions/group-full-height/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_group_full_height_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_group_full_height_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_group_full_height' ) ) :
+if ( ! function_exists( 'bnti_render_group_full_height' ) ) :
 	/**
 	 * Injects the `has-force-full-height` class into core/group blocks on the frontend
 	 * when the `forceFullHeight` attribute is enabled.
@@ -243,7 +243,7 @@ if ( ! function_exists( 'mty_render_group_full_height' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_group_full_height( $block_content, $block ) {
+	function bnti_render_group_full_height( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -265,18 +265,18 @@ if ( ! function_exists( 'mty_render_group_full_height' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_group_full_height', 10, 2 );
+add_filter( 'render_block', 'bnti_render_group_full_height', 10, 2 );
 
 // =============================================================================
 // Group – Overlay Background Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_group_overlay_bg_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_overlay_bg_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-overlay-bg extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_group_overlay_bg_editor_assets() {
+	function bnti_enqueue_group_overlay_bg_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-overlay-bg/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -286,7 +286,7 @@ if ( ! function_exists( 'mty_enqueue_group_overlay_bg_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-group-overlay-bg-extension',
+			'bnti-group-overlay-bg-extension',
 			get_theme_file_uri( 'build/extensions/group-overlay-bg/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -296,7 +296,7 @@ if ( ! function_exists( 'mty_enqueue_group_overlay_bg_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-overlay-bg/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-group-overlay-bg-extension',
+				'bnti-group-overlay-bg-extension',
 				get_theme_file_uri( 'build/extensions/group-overlay-bg/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -304,15 +304,15 @@ if ( ! function_exists( 'mty_enqueue_group_overlay_bg_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_group_overlay_bg_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_group_overlay_bg_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_group_overlay_bg_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_overlay_bg_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-overlay-bg frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_group_overlay_bg_frontend_assets() {
+	function bnti_enqueue_group_overlay_bg_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-overlay-bg/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-overlay-bg/style-index.css' );
 
@@ -323,26 +323,26 @@ if ( ! function_exists( 'mty_enqueue_group_overlay_bg_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-group-overlay-bg-extension-style',
+			'bnti-group-overlay-bg-extension-style',
 			get_theme_file_uri( 'build/extensions/group-overlay-bg/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_group_overlay_bg_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_group_overlay_bg_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_group_overlay_bg' ) ) :
+if ( ! function_exists( 'bnti_render_group_overlay_bg' ) ) :
 	/**
-	 * Injects the `mty-overlay-bg` class and `--mty-overlay-bg` CSS custom property
+	 * Injects the `bnti-overlay-bg` class and `--bnti-overlay-bg` CSS custom property
 	 * into core/group blocks on the frontend when an overlay background is set.
 	 *
 	 * @param string $block_content The rendered block HTML.
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_group_overlay_bg( $block_content, $block ) {
+	function bnti_render_group_overlay_bg( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -371,14 +371,14 @@ if ( ! function_exists( 'mty_render_group_overlay_bg' ) ) :
 
 		$processor = new WP_HTML_Tag_Processor( $block_content );
 		if ( $processor->next_tag() ) {
-			$processor->add_class( 'mty-overlay-bg' );
+			$processor->add_class( 'bnti-overlay-bg' );
 
 			$existing_style = $processor->get_attribute( 'style' ) ?? '';
 			$new_style      = rtrim( $existing_style, '; ' );
 			if ( $new_style ) {
 				$new_style .= ';';
 			}
-			$new_style .= '--mty-overlay-bg:' . $bg_value;
+			$new_style .= '--bnti-overlay-bg:' . $bg_value;
 			$processor->set_attribute( 'style', $new_style );
 
 			return $processor->get_updated_html();
@@ -387,19 +387,19 @@ if ( ! function_exists( 'mty_render_group_overlay_bg' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_group_overlay_bg', 10, 2 );
+add_filter( 'render_block', 'bnti_render_group_overlay_bg', 10, 2 );
 
 
 // =============================================================================
 // Group – Global Hover Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_group_global_hover_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_global_hover_editor_assets' ) ) :
 	/**
 	 * Enqueues the group-global-hover extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_group_global_hover_editor_assets() {
+	function bnti_enqueue_group_global_hover_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-global-hover/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -409,7 +409,7 @@ if ( ! function_exists( 'mty_enqueue_group_global_hover_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-group-global-hover-extension',
+			'bnti-group-global-hover-extension',
 			get_theme_file_uri( 'build/extensions/group-global-hover/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -419,7 +419,7 @@ if ( ! function_exists( 'mty_enqueue_group_global_hover_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/group-global-hover/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-group-global-hover-extension',
+				'bnti-group-global-hover-extension',
 				get_theme_file_uri( 'build/extensions/group-global-hover/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -427,15 +427,15 @@ if ( ! function_exists( 'mty_enqueue_group_global_hover_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_group_global_hover_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_group_global_hover_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_group_global_hover_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_group_global_hover_frontend_assets' ) ) :
 	/**
 	 * Enqueues the group-global-hover frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_group_global_hover_frontend_assets() {
+	function bnti_enqueue_group_global_hover_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/group-global-hover/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/group-global-hover/style-index.css' );
 
@@ -446,26 +446,26 @@ if ( ! function_exists( 'mty_enqueue_group_global_hover_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-group-global-hover-extension-style',
+			'bnti-group-global-hover-extension-style',
 			get_theme_file_uri( 'build/extensions/group-global-hover/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_group_global_hover_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_group_global_hover_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_group_global_hover' ) ) :
+if ( ! function_exists( 'bnti_render_group_global_hover' ) ) :
 	/**
-	 * Injects `mty-global-hover` class + CSS variables into core/group blocks on the
+	 * Injects `bnti-global-hover` class + CSS variables into core/group blocks on the
 	 * frontend when the global hover feature is enabled.
 	 *
 	 * @param string $block_content The rendered block HTML.
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_group_global_hover( $block_content, $block ) {
+	function bnti_render_group_global_hover( $block_content, $block ) {
 		if ( 'core/group' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -496,16 +496,16 @@ if ( ! function_exists( 'mty_render_group_global_hover' ) ) :
 		$css_vars = array();
 
 		if ( $has_bg ) {
-			$css_vars[] = '--mty-ghover-bg:' . ( $bg_color ? 'var(--wp--preset--color--' . $bg_color . ')' : $custom_bg_color );
+			$css_vars[] = '--bnti-ghover-bg:' . ( $bg_color ? 'var(--wp--preset--color--' . $bg_color . ')' : $custom_bg_color );
 		}
 
 		if ( $has_color ) {
-			$css_vars[] = '--mty-ghover-color:' . ( $color ? 'var(--wp--preset--color--' . $color . ')' : $custom_color );
+			$css_vars[] = '--bnti-ghover-color:' . ( $color ? 'var(--wp--preset--color--' . $color . ')' : $custom_color );
 		}
 
 		$processor = new WP_HTML_Tag_Processor( $block_content );
 		if ( $processor->next_tag() ) {
-			$processor->add_class( 'mty-global-hover' );
+			$processor->add_class( 'bnti-global-hover' );
 
 			$existing_style = $processor->get_attribute( 'style' ) ?? '';
 			$new_style      = rtrim( $existing_style, '; ' );
@@ -521,18 +521,18 @@ if ( ! function_exists( 'mty_render_group_global_hover' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_group_global_hover', 10, 2 );
+add_filter( 'render_block', 'bnti_render_group_global_hover', 10, 2 );
 
 // =============================================================================
 // Heading & Paragraph – Max Width Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_text_max_width_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_text_max_width_editor_assets' ) ) :
 	/**
 	 * Enqueues the text-max-width extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_text_max_width_editor_assets() {
+	function bnti_enqueue_text_max_width_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-max-width/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -542,7 +542,7 @@ if ( ! function_exists( 'mty_enqueue_text_max_width_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-text-max-width-extension',
+			'bnti-text-max-width-extension',
 			get_theme_file_uri( 'build/extensions/text-max-width/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -552,7 +552,7 @@ if ( ! function_exists( 'mty_enqueue_text_max_width_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/text-max-width/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-text-max-width-extension',
+				'bnti-text-max-width-extension',
 				get_theme_file_uri( 'build/extensions/text-max-width/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -560,15 +560,15 @@ if ( ! function_exists( 'mty_enqueue_text_max_width_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_text_max_width_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_text_max_width_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_text_max_width_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_text_max_width_frontend_assets' ) ) :
 	/**
 	 * Enqueues the text-max-width frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_text_max_width_frontend_assets() {
+	function bnti_enqueue_text_max_width_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-max-width/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/text-max-width/style-index.css' );
 
@@ -579,17 +579,17 @@ if ( ! function_exists( 'mty_enqueue_text_max_width_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-text-max-width-extension-style',
+			'bnti-text-max-width-extension-style',
 			get_theme_file_uri( 'build/extensions/text-max-width/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_text_max_width_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_text_max_width_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_text_max_width' ) ) :
+if ( ! function_exists( 'bnti_render_text_max_width' ) ) :
 	/**
 	 * Injects the `has-max-width` class and `--max-width` CSS custom property
 	 * into supported blocks on the frontend when the maxWidth attribute is set.
@@ -598,7 +598,7 @@ if ( ! function_exists( 'mty_render_text_max_width' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_text_max_width( $block_content, $block ) {
+	function bnti_render_text_max_width( $block_content, $block ) {
 		$supported = array( 'core/heading', 'core/paragraph' );
 
 		if ( ! in_array( $block['blockName'], $supported, true ) ) {
@@ -633,19 +633,19 @@ if ( ! function_exists( 'mty_render_text_max_width' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_text_max_width', 10, 2 );
+add_filter( 'render_block', 'bnti_render_text_max_width', 10, 2 );
 
 
 // =============================================================================
 // Heading & Paragraph – Responsive Alignment Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_text_responsive_align_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_text_responsive_align_editor_assets' ) ) :
 	/**
 	 * Enqueues the text-responsive-align extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_text_responsive_align_editor_assets() {
+	function bnti_enqueue_text_responsive_align_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-responsive-align/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -655,7 +655,7 @@ if ( ! function_exists( 'mty_enqueue_text_responsive_align_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-text-responsive-align-extension',
+			'bnti-text-responsive-align-extension',
 			get_theme_file_uri( 'build/extensions/text-responsive-align/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -665,7 +665,7 @@ if ( ! function_exists( 'mty_enqueue_text_responsive_align_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/text-responsive-align/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-text-responsive-align-extension',
+				'bnti-text-responsive-align-extension',
 				get_theme_file_uri( 'build/extensions/text-responsive-align/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -673,15 +673,15 @@ if ( ! function_exists( 'mty_enqueue_text_responsive_align_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_text_responsive_align_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_text_responsive_align_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_text_responsive_align_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_text_responsive_align_frontend_assets' ) ) :
 	/**
 	 * Enqueues the text-responsive-align frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_text_responsive_align_frontend_assets() {
+	function bnti_enqueue_text_responsive_align_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/text-responsive-align/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/text-responsive-align/style-index.css' );
 
@@ -690,17 +690,17 @@ if ( ! function_exists( 'mty_enqueue_text_responsive_align_frontend_assets' ) ) 
 		}
 
 		wp_enqueue_style(
-			'mty-text-responsive-align-extension-style',
+			'bnti-text-responsive-align-extension-style',
 			get_theme_file_uri( 'build/extensions/text-responsive-align/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_text_responsive_align_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_text_responsive_align_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_text_responsive_align' ) ) :
+if ( ! function_exists( 'bnti_render_text_responsive_align' ) ) :
 	/**
 	 * Injects the tablet/mobile alignment classes into supported blocks on the frontend.
 	 *
@@ -712,7 +712,7 @@ if ( ! function_exists( 'mty_render_text_responsive_align' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_text_responsive_align( $block_content, $block ) {
+	function bnti_render_text_responsive_align( $block_content, $block ) {
 		$supported = array( 'core/heading', 'core/paragraph' );
 
 		if ( ! in_array( $block['blockName'], $supported, true ) ) {
@@ -755,19 +755,19 @@ if ( ! function_exists( 'mty_render_text_responsive_align' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_text_responsive_align', 10, 2 );
+add_filter( 'render_block', 'bnti_render_text_responsive_align', 10, 2 );
 
 
 // =============================================================================
 // Button – Full Width Mobile Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_button_full_width_mobile_editor_assets' ) ) :
 	/**
 	 * Enqueues the button-full-width-mobile extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_button_full_width_mobile_editor_assets() {
+	function bnti_enqueue_button_full_width_mobile_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -777,7 +777,7 @@ if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_editor_assets' ) )
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-button-full-width-mobile-extension',
+			'bnti-button-full-width-mobile-extension',
 			get_theme_file_uri( 'build/extensions/button-full-width-mobile/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -787,7 +787,7 @@ if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_editor_assets' ) )
 		$editor_css = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-button-full-width-mobile-extension',
+				'bnti-button-full-width-mobile-extension',
 				get_theme_file_uri( 'build/extensions/button-full-width-mobile/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -795,15 +795,15 @@ if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_editor_assets' ) )
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_button_full_width_mobile_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_button_full_width_mobile_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_button_full_width_mobile_frontend_assets' ) ) :
 	/**
 	 * Enqueues the button-full-width-mobile frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_button_full_width_mobile_frontend_assets() {
+	function bnti_enqueue_button_full_width_mobile_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/button-full-width-mobile/style-index.css' );
 
@@ -814,17 +814,17 @@ if ( ! function_exists( 'mty_enqueue_button_full_width_mobile_frontend_assets' )
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-button-full-width-mobile-extension-style',
+			'bnti-button-full-width-mobile-extension-style',
 			get_theme_file_uri( 'build/extensions/button-full-width-mobile/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_button_full_width_mobile_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_button_full_width_mobile_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_button_full_width_mobile' ) ) :
+if ( ! function_exists( 'bnti_render_button_full_width_mobile' ) ) :
 	/**
 	 * Injects the `has-full-width-mobile` class into core/button blocks on the frontend
 	 * when the `fullWidthMobile` attribute is enabled.
@@ -833,7 +833,7 @@ if ( ! function_exists( 'mty_render_button_full_width_mobile' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_button_full_width_mobile( $block_content, $block ) {
+	function bnti_render_button_full_width_mobile( $block_content, $block ) {
 		if ( 'core/button' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -855,18 +855,18 @@ if ( ! function_exists( 'mty_render_button_full_width_mobile' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_button_full_width_mobile', 10, 2 );
+add_filter( 'render_block', 'bnti_render_button_full_width_mobile', 10, 2 );
 
 // =============================================================================
 // Button – Iconic Button Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_iconic_button_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_iconic_button_editor_assets' ) ) :
 	/**
 	 * Enqueues the iconic-button extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_iconic_button_editor_assets() {
+	function bnti_enqueue_iconic_button_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/iconic-button/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -876,7 +876,7 @@ if ( ! function_exists( 'mty_enqueue_iconic_button_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-iconic-button-extension',
+			'bnti-iconic-button-extension',
 			get_theme_file_uri( 'build/extensions/iconic-button/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -886,7 +886,7 @@ if ( ! function_exists( 'mty_enqueue_iconic_button_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/iconic-button/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-iconic-button-extension',
+				'bnti-iconic-button-extension',
 				get_theme_file_uri( 'build/extensions/iconic-button/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -894,14 +894,14 @@ if ( ! function_exists( 'mty_enqueue_iconic_button_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_iconic_button_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_iconic_button_editor_assets' );
 
-if ( ! function_exists( 'mty_enqueue_iconic_button_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_iconic_button_frontend_assets' ) ) :
 	/**
 	 * Enqueues the iconic-button extension frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_iconic_button_frontend_assets() {
+	function bnti_enqueue_iconic_button_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/iconic-button/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/iconic-button/style-index.css' );
 
@@ -912,22 +912,22 @@ if ( ! function_exists( 'mty_enqueue_iconic_button_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-iconic-button-extension-style',
+			'bnti-iconic-button-extension-style',
 			get_theme_file_uri( 'build/extensions/iconic-button/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_iconic_button_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_iconic_button_frontend_assets' );
 
-if ( ! function_exists( 'mty_iconic_button_svg_kses_args' ) ) :
+if ( ! function_exists( 'bnti_iconic_button_svg_kses_args' ) ) :
 	/**
 	 * Allowed SVG tags/attributes for icons rendered inside the iconic-button markup.
 	 *
 	 * @return array Kses args for wp_kses().
 	 */
-	function mty_iconic_button_svg_kses_args() {
+	function bnti_iconic_button_svg_kses_args() {
 		// Presentation attributes shared by most SVG shape elements — stroke-based
 		// icon sets (Feather, Lucide, Heroicons outline, Tabler, etc.) rely on these
 		// alongside fill, so omitting any of them renders the icon invisible.
@@ -1035,7 +1035,7 @@ if ( ! function_exists( 'mty_iconic_button_svg_kses_args' ) ) :
 	}
 endif;
 
-if ( ! function_exists( 'mty_render_iconic_button' ) ) :
+if ( ! function_exists( 'bnti_render_iconic_button' ) ) :
 	/**
 	 * Injects the icon SVG markup and size/gap/padding/background CSS custom
 	 * properties into core/button blocks on the frontend when the iconic button
@@ -1045,7 +1045,7 @@ if ( ! function_exists( 'mty_render_iconic_button' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_iconic_button( $block_content, $block ) {
+	function bnti_render_iconic_button( $block_content, $block ) {
 		if ( 'core/button' !== ( $block['blockName'] ?? '' ) ) {
 			return $block_content;
 		}
@@ -1069,16 +1069,16 @@ if ( ! function_exists( 'mty_render_iconic_button' ) ) :
 		// Merge icon size/gap/padding/background CSS custom properties into the outer wrapper's style attribute.
 		$css_vars = array();
 		if ( ! empty( $attrs['iconicButtonIconSize'] ) ) {
-			$css_vars[] = '--mty-icon-size:' . esc_attr( $attrs['iconicButtonIconSize'] );
+			$css_vars[] = '--bnti-icon-size:' . esc_attr( $attrs['iconicButtonIconSize'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconGap'] ) ) {
-			$css_vars[] = '--mty-icon-gap:' . esc_attr( $attrs['iconicButtonIconGap'] );
+			$css_vars[] = '--bnti-icon-gap:' . esc_attr( $attrs['iconicButtonIconGap'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconPadding'] ) ) {
-			$css_vars[] = '--mty-icon-padding:' . esc_attr( $attrs['iconicButtonIconPadding'] );
+			$css_vars[] = '--bnti-icon-padding:' . esc_attr( $attrs['iconicButtonIconPadding'] );
 		}
 		if ( ! empty( $attrs['iconicButtonIconBgColor'] ) ) {
-			$css_vars[] = '--mty-icon-bg-color:' . esc_attr( $attrs['iconicButtonIconBgColor'] );
+			$css_vars[] = '--bnti-icon-bg-color:' . esc_attr( $attrs['iconicButtonIconBgColor'] );
 		}
 
 		if ( ! empty( $css_vars ) ) {
@@ -1097,8 +1097,8 @@ if ( ! function_exists( 'mty_render_iconic_button' ) ) :
 
 		// Build the icon markup and inject it after the link's inner content.
 		// Before/after visual ordering is handled entirely by CSS (flex-direction: row-reverse
-		// on the .mty-icon-before class), so the DOM position is always icon-after-text.
-		$icon_html = '<span class="mty-icon-button-svg">' . wp_kses( $icon_svg, mty_iconic_button_svg_kses_args() ) . '</span>';
+		// on the .bnti-icon-before class), so the DOM position is always icon-after-text.
+		$icon_html = '<span class="bnti-icon-button-svg">' . wp_kses( $icon_svg, bnti_iconic_button_svg_kses_args() ) . '</span>';
 
 		$block_content = preg_replace_callback(
 			'/(<a[^>]*class="[^"]*wp-block-button__link[^"]*"[^>]*>)(.*?)(<\/a>)/s',
@@ -1112,17 +1112,17 @@ if ( ! function_exists( 'mty_render_iconic_button' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_iconic_button', 10, 2 );
+add_filter( 'render_block', 'bnti_render_iconic_button', 10, 2 );
 
 // =============================================================================
 // Kadence RowLayout — Featured Image as Background Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_kadence_featured_bg_editor_assets' ) ) :
 	/**
 	 * Enqueues the kadence-featured-bg extension script and editor stylesheet.
 	 */
-	function mty_enqueue_kadence_featured_bg_editor_assets() {
+	function bnti_enqueue_kadence_featured_bg_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1132,7 +1132,7 @@ if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-kadence-featured-bg-extension',
+			'bnti-kadence-featured-bg-extension',
 			get_theme_file_uri( 'build/extensions/kadence-featured-bg/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1142,7 +1142,7 @@ if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-kadence-featured-bg-extension',
+				'bnti-kadence-featured-bg-extension',
 				get_theme_file_uri( 'build/extensions/kadence-featured-bg/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -1150,14 +1150,14 @@ if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_kadence_featured_bg_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_kadence_featured_bg_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_kadence_featured_bg_frontend_assets' ) ) :
 	/**
 	 * Enqueues the kadence-featured-bg frontend stylesheet.
 	 */
-	function mty_enqueue_kadence_featured_bg_frontend_assets() {
+	function bnti_enqueue_kadence_featured_bg_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/kadence-featured-bg/style-index.css' );
 
@@ -1168,17 +1168,17 @@ if ( ! function_exists( 'mty_enqueue_kadence_featured_bg_frontend_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_style(
-			'mty-kadence-featured-bg-extension-style',
+			'bnti-kadence-featured-bg-extension-style',
 			get_theme_file_uri( 'build/extensions/kadence-featured-bg/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_kadence_featured_bg_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_kadence_featured_bg_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_kadence_featured_bg' ) ) :
+if ( ! function_exists( 'bnti_render_kadence_featured_bg' ) ) :
 	/**
 	 * Injects the featured image as background on kadence/rowlayout blocks
 	 * on the frontend when the useFeaturedImageAsBg attribute is enabled.
@@ -1187,7 +1187,7 @@ if ( ! function_exists( 'mty_render_kadence_featured_bg' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_kadence_featured_bg( $block_content, $block ) {
+	function bnti_render_kadence_featured_bg( $block_content, $block ) {
 		if ( 'kadence/rowlayout' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -1227,7 +1227,7 @@ if ( ! function_exists( 'mty_render_kadence_featured_bg' ) ) :
 			if ( $new_style ) {
 				$new_style .= ';';
 			}
-			$new_style .= '--mty-featured-bg-image:url(' . esc_url( $image_url ) . ')';
+			$new_style .= '--bnti-featured-bg-image:url(' . esc_url( $image_url ) . ')';
 			$processor->set_attribute( 'style', $new_style );
 
 			return $processor->get_updated_html();
@@ -1236,18 +1236,18 @@ if ( ! function_exists( 'mty_render_kadence_featured_bg' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_kadence_featured_bg', 10, 2 );
+add_filter( 'render_block', 'bnti_render_kadence_featured_bg', 10, 2 );
 
 // =============================================================================
 // Image – Scaled Image Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_image_scale_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_image_scale_editor_assets' ) ) :
 	/**
 	 * Enqueues the image-scale extension script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_image_scale_editor_assets() {
+	function bnti_enqueue_image_scale_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/image-scale/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1257,7 +1257,7 @@ if ( ! function_exists( 'mty_enqueue_image_scale_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-image-scale-extension',
+			'bnti-image-scale-extension',
 			get_theme_file_uri( 'build/extensions/image-scale/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1267,7 +1267,7 @@ if ( ! function_exists( 'mty_enqueue_image_scale_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/image-scale/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-image-scale-extension',
+				'bnti-image-scale-extension',
 				get_theme_file_uri( 'build/extensions/image-scale/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -1275,15 +1275,15 @@ if ( ! function_exists( 'mty_enqueue_image_scale_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_image_scale_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_image_scale_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_image_scale_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_image_scale_frontend_assets' ) ) :
 	/**
 	 * Enqueues the image-scale frontend stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_image_scale_frontend_assets() {
+	function bnti_enqueue_image_scale_frontend_assets() {
 		$style_file = get_theme_file_path( 'build/extensions/image-scale/style-index.css' );
 
 		if ( ! file_exists( $style_file ) ) {
@@ -1291,19 +1291,19 @@ if ( ! function_exists( 'mty_enqueue_image_scale_frontend_assets' ) ) :
 		}
 
 		wp_enqueue_style(
-			'mty-image-scale-extension-style',
+			'bnti-image-scale-extension-style',
 			get_theme_file_uri( 'build/extensions/image-scale/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_image_scale_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_image_scale_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_image_scale' ) ) :
+if ( ! function_exists( 'bnti_render_image_scale' ) ) :
 	/**
-	 * Injects the `has-scaled-image` class and `--mty-image-scale` custom
+	 * Injects the `has-scaled-image` class and `--bnti-image-scale` custom
 	 * property into core/image blocks on the frontend when the `isScaled`
 	 * attribute is enabled.
 	 *
@@ -1311,7 +1311,7 @@ if ( ! function_exists( 'mty_render_image_scale' ) ) :
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_image_scale( $block_content, $block ) {
+	function bnti_render_image_scale( $block_content, $block ) {
 		if ( 'core/image' !== $block['blockName'] ) {
 			return $block_content;
 		}
@@ -1335,7 +1335,7 @@ if ( ! function_exists( 'mty_render_image_scale' ) ) :
 			if ( $new_style ) {
 				$new_style .= ';';
 			}
-			$new_style .= '--mty-image-scale:' . $scale;
+			$new_style .= '--bnti-image-scale:' . $scale;
 			$processor->set_attribute( 'style', $new_style );
 
 			return $processor->get_updated_html();
@@ -1344,19 +1344,19 @@ if ( ! function_exists( 'mty_render_image_scale' ) ) :
 		return $block_content;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_image_scale', 10, 2 );
+add_filter( 'render_block', 'bnti_render_image_scale', 10, 2 );
 
 
 // =============================================================================
 // Heading & Paragraph – Highlight Format
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_highlight_editor_assets' ) ) :
 	/**
 	 * Enqueues the highlight format script and editor stylesheet.
 	 * Runs on `enqueue_block_editor_assets` (editor only).
 	 */
-	function mty_enqueue_highlight_editor_assets() {
+	function bnti_enqueue_highlight_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/highlight/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1366,7 +1366,7 @@ if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-highlight-extension',
+			'bnti-highlight-extension',
 			get_theme_file_uri( 'build/extensions/highlight/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1376,7 +1376,7 @@ if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
 		$editor_css = get_theme_file_path( 'build/extensions/highlight/index.css' );
 		if ( file_exists( $editor_css ) ) {
 			wp_enqueue_style(
-				'mty-highlight-extension',
+				'bnti-highlight-extension',
 				get_theme_file_uri( 'build/extensions/highlight/index.css' ),
 				array(),
 				wp_get_theme()->get( 'Version' )
@@ -1384,15 +1384,15 @@ if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
 		}
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_highlight_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_highlight_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_highlight_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_highlight_frontend_assets' ) ) :
 	/**
 	 * Enqueues the highlight format stylesheet.
 	 * Runs on `enqueue_block_assets` (editor + front end).
 	 */
-	function mty_enqueue_highlight_frontend_assets() {
+	function bnti_enqueue_highlight_frontend_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/highlight/index.asset.php' );
 		$style_file = get_theme_file_path( 'build/extensions/highlight/style-index.css' );
 
@@ -1401,25 +1401,25 @@ if ( ! function_exists( 'mty_enqueue_highlight_frontend_assets' ) ) :
 		}
 
 		wp_enqueue_style(
-			'mty-highlight-extension-style',
+			'bnti-highlight-extension-style',
 			get_theme_file_uri( 'build/extensions/highlight/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_highlight_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_highlight_frontend_assets' );
 
 
 // =============================================================================
 // Image — Figure Frame Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_image_figure_frame_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_image_figure_frame_editor_assets' ) ) :
 	/**
 	 * Enqueues the image-figure-frame extension script (editor only).
 	 */
-	function mty_enqueue_image_figure_frame_editor_assets() {
+	function bnti_enqueue_image_figure_frame_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/image-figure-frame/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1429,7 +1429,7 @@ if ( ! function_exists( 'mty_enqueue_image_figure_frame_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-image-figure-frame-extension',
+			'bnti-image-figure-frame-extension',
 			get_theme_file_uri( 'build/extensions/image-figure-frame/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1437,14 +1437,14 @@ if ( ! function_exists( 'mty_enqueue_image_figure_frame_editor_assets' ) ) :
 		);
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_image_figure_frame_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_image_figure_frame_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_image_figure_frame_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_image_figure_frame_frontend_assets' ) ) :
 	/**
 	 * Enqueues the image-figure-frame stylesheet (editor + front end).
 	 */
-	function mty_enqueue_image_figure_frame_frontend_assets() {
+	function bnti_enqueue_image_figure_frame_frontend_assets() {
 		$style_file = get_theme_file_path( 'build/extensions/image-figure-frame/style-index.css' );
 
 		if ( ! file_exists( $style_file ) ) {
@@ -1452,19 +1452,19 @@ if ( ! function_exists( 'mty_enqueue_image_figure_frame_frontend_assets' ) ) :
 		}
 
 		wp_enqueue_style(
-			'mty-image-figure-frame-extension-style',
+			'bnti-image-figure-frame-extension-style',
 			get_theme_file_uri( 'build/extensions/image-figure-frame/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_image_figure_frame_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_image_figure_frame_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_image_figure_frame' ) ) :
+if ( ! function_exists( 'bnti_render_image_figure_frame' ) ) :
 	/**
-	 * Wraps the image (or its link) of a core/image block in a .mty-fig-frame
+	 * Wraps the image (or its link) of a core/image block in a .bnti-fig-frame
 	 * element and adds the "FIG. xx" label when the figFrame attribute is on.
 	 * The caption stays outside the frame.
 	 *
@@ -1478,14 +1478,14 @@ if ( ! function_exists( 'mty_render_image_figure_frame' ) ) :
 	 * @param WP_Block $instance      The block instance (for the post context).
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_image_figure_frame( $block_content, $block, $instance = null ) {
+	function bnti_render_image_figure_frame( $block_content, $block, $instance = null ) {
 		$name = $block['blockName'] ?? '';
 		if ( ! in_array( $name, array( 'core/image', 'core/post-featured-image' ), true ) || empty( $block['attrs']['figFrame'] ) ) {
 			return $block_content;
 		}
 
 		$attrs   = $block['attrs'];
-		$classes = array( 'mty-fig-frame' );
+		$classes = array( 'bnti-fig-frame' );
 		foreach ( array(
 			'figFrameBorder'  => 'has-fig-border',
 			'figFrameTicks'   => 'has-fig-ticks',
@@ -1513,12 +1513,12 @@ if ( ! function_exists( 'mty_render_image_figure_frame' ) ) :
 			}
 
 			$label_html = '' !== $label
-				? '<span class="mty-fig-frame__label" aria-hidden="true">' . esc_html( $label ) . '</span>'
+				? '<span class="bnti-fig-frame__label" aria-hidden="true">' . esc_html( $label ) . '</span>'
 				: '';
 
 			// No featured image: an empty framed box at the block's height.
 			if ( '' === trim( $block_content ) ) {
-				$classes[] = 'mty-fig-frame--empty';
+				$classes[] = 'bnti-fig-frame--empty';
 				$styles    = array();
 				if ( ! empty( $attrs['height'] ) ) {
 					$styles[] = 'height:' . $attrs['height'];
@@ -1554,7 +1554,7 @@ if ( ! function_exists( 'mty_render_image_figure_frame' ) ) :
 		}
 
 		$label_html = '' !== $label
-			? '<span class="mty-fig-frame__label" aria-hidden="true">' . esc_html( $label ) . '</span>'
+			? '<span class="bnti-fig-frame__label" aria-hidden="true">' . esc_html( $label ) . '</span>'
 			: '';
 
 		$open = '<span class="' . esc_attr( implode( ' ', $classes ) ) . '">';
@@ -1573,18 +1573,18 @@ if ( ! function_exists( 'mty_render_image_figure_frame' ) ) :
 		return null === $updated ? $block_content : $updated;
 	}
 endif;
-add_filter( 'render_block', 'mty_render_image_figure_frame', 10, 3 );
+add_filter( 'render_block', 'bnti_render_image_figure_frame', 10, 3 );
 
 
 // =============================================================================
 // Highlight — Rich Text Format Extension
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_highlight_editor_assets' ) ) :
 	/**
 	 * Enqueues the highlight format script (editor only).
 	 */
-	function mty_enqueue_highlight_editor_assets() {
+	function bnti_enqueue_highlight_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/highlight/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1594,7 +1594,7 @@ if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-highlight-extension',
+			'bnti-highlight-extension',
 			get_theme_file_uri( 'build/extensions/highlight/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1602,14 +1602,14 @@ if ( ! function_exists( 'mty_enqueue_highlight_editor_assets' ) ) :
 		);
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_highlight_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_highlight_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_highlight_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_highlight_frontend_assets' ) ) :
 	/**
 	 * Enqueues the highlight stylesheet (editor + front end).
 	 */
-	function mty_enqueue_highlight_frontend_assets() {
+	function bnti_enqueue_highlight_frontend_assets() {
 		$style_file = get_theme_file_path( 'build/extensions/highlight/style-index.css' );
 
 		if ( ! file_exists( $style_file ) ) {
@@ -1617,25 +1617,25 @@ if ( ! function_exists( 'mty_enqueue_highlight_frontend_assets' ) ) :
 		}
 
 		wp_enqueue_style(
-			'mty-highlight-extension-style',
+			'bnti-highlight-extension-style',
 			get_theme_file_uri( 'build/extensions/highlight/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_highlight_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_highlight_frontend_assets' );
 
 
 // =============================================================================
 // Pointer Extension (Group, Kadence Section)
 // =============================================================================
 
-if ( ! function_exists( 'mty_enqueue_pointer_editor_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_pointer_editor_assets' ) ) :
 	/**
 	 * Enqueues the pointer extension script (editor only).
 	 */
-	function mty_enqueue_pointer_editor_assets() {
+	function bnti_enqueue_pointer_editor_assets() {
 		$asset_file = get_theme_file_path( 'build/extensions/pointer/index.asset.php' );
 
 		if ( ! file_exists( $asset_file ) ) {
@@ -1645,7 +1645,7 @@ if ( ! function_exists( 'mty_enqueue_pointer_editor_assets' ) ) :
 		$assets = require $asset_file;
 
 		wp_enqueue_script(
-			'mty-pointer-extension',
+			'bnti-pointer-extension',
 			get_theme_file_uri( 'build/extensions/pointer/index.js' ),
 			$assets['dependencies'],
 			wp_get_theme()->get( 'Version' ),
@@ -1653,14 +1653,14 @@ if ( ! function_exists( 'mty_enqueue_pointer_editor_assets' ) ) :
 		);
 	}
 endif;
-add_action( 'enqueue_block_editor_assets', 'mty_enqueue_pointer_editor_assets' );
+add_action( 'enqueue_block_editor_assets', 'bnti_enqueue_pointer_editor_assets' );
 
 
-if ( ! function_exists( 'mty_enqueue_pointer_frontend_assets' ) ) :
+if ( ! function_exists( 'bnti_enqueue_pointer_frontend_assets' ) ) :
 	/**
 	 * Enqueues the pointer stylesheet (editor + front end).
 	 */
-	function mty_enqueue_pointer_frontend_assets() {
+	function bnti_enqueue_pointer_frontend_assets() {
 		$style_file = get_theme_file_path( 'build/extensions/pointer/style-index.css' );
 
 		if ( ! file_exists( $style_file ) ) {
@@ -1668,26 +1668,26 @@ if ( ! function_exists( 'mty_enqueue_pointer_frontend_assets' ) ) :
 		}
 
 		wp_enqueue_style(
-			'mty-pointer-extension-style',
+			'bnti-pointer-extension-style',
 			get_theme_file_uri( 'build/extensions/pointer/style-index.css' ),
 			array(),
 			wp_get_theme()->get( 'Version' )
 		);
 	}
 endif;
-add_action( 'enqueue_block_assets', 'mty_enqueue_pointer_frontend_assets' );
+add_action( 'enqueue_block_assets', 'bnti_enqueue_pointer_frontend_assets' );
 
 
-if ( ! function_exists( 'mty_render_pointer' ) ) :
+if ( ! function_exists( 'bnti_render_pointer' ) ) :
 	/**
-	 * Adds the pointer classes, custom properties and a .mty-pointer element to
+	 * Adds the pointer classes, custom properties and a .bnti-pointer element to
 	 * core/group and kadence/column blocks that have the pointer turned on.
 	 *
 	 * @param string $block_content The rendered block HTML.
 	 * @param array  $block         The block data including name and attributes.
 	 * @return string Modified block HTML.
 	 */
-	function mty_render_pointer( $block_content, $block ) {
+	function bnti_render_pointer( $block_content, $block ) {
 		$name = $block['blockName'] ?? '';
 		if ( ! in_array( $name, array( 'core/group', 'kadence/column' ), true ) || empty( $block['attrs']['pointer'] ) || empty( $block_content ) ) {
 			return $block_content;
@@ -1697,16 +1697,16 @@ if ( ! function_exists( 'mty_render_pointer' ) ) :
 		$direction = ( $attrs['pointerDirection'] ?? 'right' ) === 'left' ? 'left' : 'right';
 		$size      = ( $attrs['pointerSize'] ?? 'small' ) === 'large' ? 'large' : 'small';
 		$length    = isset( $attrs['pointerLength'] ) ? absint( $attrs['pointerLength'] ) : 84;
-		$vars      = '--mty-pointer-length:' . $length . 'px';
+		$vars      = '--bnti-pointer-length:' . $length . 'px';
 		if ( ( $attrs['pointerPosition'] ?? 'middle' ) === 'top' ) {
-			$vars .= ';--mty-pointer-top:' . ( isset( $attrs['pointerOffset'] ) ? absint( $attrs['pointerOffset'] ) : 45 ) . 'px';
+			$vars .= ';--bnti-pointer-top:' . ( isset( $attrs['pointerOffset'] ) ? absint( $attrs['pointerOffset'] ) : 45 ) . 'px';
 		}
 
 		$processor = new WP_HTML_Tag_Processor( $block_content );
 		if ( ! $processor->next_tag() ) {
 			return $block_content;
 		}
-		$processor->add_class( 'has-mty-pointer' );
+		$processor->add_class( 'has-bnti-pointer' );
 		$processor->add_class( 'is-pointer-' . $direction );
 		$processor->add_class( 'is-pointer-' . $size );
 		$style = rtrim( (string) $processor->get_attribute( 'style' ), '; ' );
@@ -1719,7 +1719,7 @@ if ( ! function_exists( 'mty_render_pointer' ) ) :
 			return $block_content;
 		}
 
-		return substr( $block_content, 0, $close ) . '<span class="mty-pointer" aria-hidden="true"></span>' . substr( $block_content, $close );
+		return substr( $block_content, 0, $close ) . '<span class="bnti-pointer" aria-hidden="true"></span>' . substr( $block_content, $close );
 	}
 endif;
-add_filter( 'render_block', 'mty_render_pointer', 10, 2 );
+add_filter( 'render_block', 'bnti_render_pointer', 10, 2 );

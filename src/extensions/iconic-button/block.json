@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/iconic-button-extension",
+    "name": "bnti/iconic-button-extension",
     "title": "Iconic Button Extension",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",

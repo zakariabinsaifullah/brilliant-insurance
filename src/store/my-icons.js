@@ -11,9 +11,9 @@ import { createReduxStore, register, select as globalSelect } from '@wordpress/d
  * `wp.data` registry — so registering once is enough and an icon saved from one
  * block instantly shows up in every other picker on the screen.
  */
-export const MY_ICONS_STORE = 'mty/my-icons';
+export const MY_ICONS_STORE = 'bnti/my-icons';
 
-const REST_PATH = '/mty/v1/my-icons';
+const REST_PATH = '/bnti/v1/my-icons';
 
 const DEFAULT_STATE = {
     icons: null, // `null` until the first fetch resolves.

@@ -6,7 +6,7 @@ export const RenderIcon = ({ customSvgCode, iconName, size = '24' }) => {
         if (customSvgCode) {
             return (
                 <div
-                    className="mty-custom-svg-container"
+                    className="bnti-custom-svg-container"
                     style={{
                         display: 'flex',
                         alignItems: 'center',
@@ -32,7 +32,7 @@ export const RenderIcon = ({ customSvgCode, iconName, size = '24' }) => {
 
 // soft minify
 export const softMinifyCssStrings = (cssString = ' ') =>
-    cssString.replace(/\s+/g, ' ').replace(/\.mty\-[\w\-\s\.\,\:\>\(\)\d\+\[\]\#\>]+\{[\s]+\}/g, '');
+    cssString.replace(/\s+/g, ' ').replace(/\.bnti\-[\w\-\s\.\,\:\>\(\)\d\+\[\]\#\>]+\{[\s]+\}/g, '');
 
 // Convert SVG code to a Base64 data URL
 export const svgToBase64DataUrl = svgCode => {

@@ -1,4 +1,4 @@
-.mty-overlay-bg {
+.bnti-overlay-bg {
 	position: relative;
 
 	// Overlay sits behind block content via z-index layering.
@@ -8,7 +8,7 @@
 		inset: 0;
 		z-index: 0;
 		pointer-events: none;
-		background: var(--mty-overlay-bg);
+		background: var(--bnti-overlay-bg);
 	}
 
 	// Lift all direct children above the ::after overlay.

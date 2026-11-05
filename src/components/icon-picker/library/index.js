@@ -127,17 +127,17 @@ export default function Library({
 
     return (
         <Modal
-            overlayClassName="mty-modal__overlay"
-            className={`mty-modal is-${activeTab}`}
-            title={__('Icons Library', 'mty')}
+            overlayClassName="bnti-modal__overlay"
+            className={`bnti-modal is-${activeTab}`}
+            title={__('Icons Library', 'brilliant-insurance')}
             onRequestClose={onClose}
             isFullScreen={true}
             headerActions={<Header activeTab={activeTab} onTabChange={onTabChange} />}
         >
-            <div className="mty-modal__container">
+            <div className="bnti-modal__container">
                 <Sidebar categories={categories} category={selectedCategory} setCategory={setSelectedCategory} activeTab={activeTab} />
-                <div className="mty-modal__content">
-                    <Scrollable className="mty-modal__scrollable">
+                <div className="bnti-modal__content">
+                    <Scrollable className="bnti-modal__scrollable">
                         {activeTab === 'library' && (
                             <ContentIcons
                                 searchTerm={searchTerm}

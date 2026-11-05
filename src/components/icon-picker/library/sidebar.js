@@ -18,22 +18,22 @@ const iconResources = [
     {
         name: 'Heroicons',
         url: 'https://heroicons.com/',
-        description: __('Beautiful hand-crafted SVG icons by Tailwind CSS', 'mty')
+        description: __('Beautiful hand-crafted SVG icons by Tailwind CSS', 'brilliant-insurance')
     },
     {
         name: 'Google Fonts Icons',
         url: 'https://fonts.google.com/icons',
-        description: __('Material icons and symbols', 'mty')
+        description: __('Material icons and symbols', 'brilliant-insurance')
     },
     {
         name: 'Remix Icon',
         url: 'https://remixicon.com/',
-        description: __('Open-source icon library', 'mty')
+        description: __('Open-source icon library', 'brilliant-insurance')
     },
     {
         name: 'Basicons',
         url: 'https://basicons.xyz/',
-        description: __('Basic icons for your projects', 'mty')
+        description: __('Basic icons for your projects', 'brilliant-insurance')
     }
 ];
 
@@ -50,18 +50,18 @@ export const Sidebar = ({ categories = [], category, setCategory, activeTab }) =
 
     if ('custom' === activeTab) {
         return (
-            <div className="mty-modal__sidebar">
-                <h4 className="icons-heading">{__('Resources', 'mty')}</h4>
+            <div className="bnti-modal__sidebar">
+                <h4 className="icons-heading">{__('Resources', 'brilliant-insurance')}</h4>
                 <p style={helpTextStyle}>
                     {__(
                         'Want to try a different icon? Maybe find one from these resources, Copy the SVG code and paste it in the editor.',
-                        'mty'
+                        'brilliant-insurance'
                     )}
                 </p>
-                <Scrollable className="mty-modal__scrollable">
-                    <div className="mty-modal__sidebar-buttons">
+                <Scrollable className="bnti-modal__scrollable">
+                    <div className="bnti-modal__sidebar-buttons">
                         {iconResources.map(resource => (
-                            <ExternalLink key={resource.url} href={resource.url} className="mty-modal__sidebar-link">
+                            <ExternalLink key={resource.url} href={resource.url} className="bnti-modal__sidebar-link">
                                 {resource.name}
                             </ExternalLink>
                         ))}
@@ -73,34 +73,34 @@ export const Sidebar = ({ categories = [], category, setCategory, activeTab }) =
 
     if ('my-icons' === activeTab) {
         return (
-            <div className="mty-modal__sidebar">
-                <h4 className="icons-heading">{__('My Icons', 'mty')}</h4>
+            <div className="bnti-modal__sidebar">
+                <h4 className="icons-heading">{__('My Icons', 'brilliant-insurance')}</h4>
                 <p style={helpTextStyle}>
                     {__(
                         'Icons you have saved from the Custom SVG tab. They are stored site-wide, so they are available in every block that uses an icon.',
-                        'mty'
+                        'brilliant-insurance'
                     )}
                 </p>
                 <p style={{ ...helpTextStyle, fontWeight: '500', color: '#1e1e1e' }}>
                     {myIconsCount === 1
-                        ? __('1 saved icon', 'mty')
-                        : `${myIconsCount} ${__('saved icons', 'mty')}`}
+                        ? __('1 saved icon', 'brilliant-insurance')
+                        : `${myIconsCount} ${__('saved icons', 'brilliant-insurance')}`}
                 </p>
             </div>
         );
     }
 
     return (
-        <div className="mty-modal__sidebar">
-            <h4 className="icons-heading">{__('Categories', 'mty')}</h4>
-            <Scrollable className="mty-modal__scrollable">
-                <div className="mty-modal__sidebar-buttons">
+        <div className="bnti-modal__sidebar">
+            <h4 className="icons-heading">{__('Categories', 'brilliant-insurance')}</h4>
+            <Scrollable className="bnti-modal__scrollable">
+                <div className="bnti-modal__sidebar-buttons">
                     {categories.map(cat => (
                         <Button
                             key={cat.slug}
                             icon={file}
                             iconSize={20}
-                            className={`mty-modal__sidebar-button ${category === cat.slug ? 'is-selected' : ''}`}
+                            className={`bnti-modal__sidebar-button ${category === cat.slug ? 'is-selected' : ''}`}
                             onClick={() => setCategory(cat.slug)}
                         >
                             {cat.name}

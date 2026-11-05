@@ -28,7 +28,7 @@ const HoverColorsControls = ( {
             colorValue: hoverTextColor?.color,
             onColorChange: setHoverTextColor,
             isShownByDefault: false,
-            label: __( 'Hover Text', 'mty' ),
+            label: __( 'Hover Text', 'brilliant-insurance' ),
             resetAllFilter: () => ( {
                 hoverTextColor: undefined,
                 customHoverTextColor: undefined
@@ -38,7 +38,7 @@ const HoverColorsControls = ( {
             colorValue: hoverBackgroundColor?.color,
             onColorChange: setHoverBackgroundColor,
             isShownByDefault: false,
-            label: __( 'Hover Background', 'mty' ),
+            label: __( 'Hover Background', 'brilliant-insurance' ),
             resetAllFilter: () => ( {
                 hoverBackgroundColor: undefined,
                 customHoverBackgroundColor: undefined
@@ -48,7 +48,7 @@ const HoverColorsControls = ( {
             colorValue: hoverBorderColor?.color,
             onColorChange: setHoverBorderColor,
             isShownByDefault: false,
-            label: __( 'Hover Border', 'mty' ),
+            label: __( 'Hover Border', 'brilliant-insurance' ),
             resetAllFilter: () => ( {
                 hoverBorderColor: undefined,
                 customHoverBorderColor: undefined

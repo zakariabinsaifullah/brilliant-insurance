@@ -18,7 +18,7 @@ const SUPPORTED_BLOCKS = ['core/heading', 'core/paragraph'];
 const ATTRIBUTE = 'maxWidth';
 const CLASS_NAME = 'has-max-width';
 
-addFilter('blocks.registerBlockType', 'mty/text-max-width-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'bnti/text-max-width-add-attribute', (settings, name) => {
     if (!SUPPORTED_BLOCKS.includes(name)) {
         return settings;
     }
@@ -37,7 +37,7 @@ addFilter('blocks.registerBlockType', 'mty/text-max-width-add-attribute', (setti
 
 addFilter(
     'editor.BlockEdit',
-    'mty/text-max-width-add-inspector-controls',
+    'bnti/text-max-width-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -50,9 +50,9 @@ addFilter(
                 <>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('Max Width', 'mty')}>
+                        <PanelBody title={__('Max Width', 'brilliant-insurance')}>
                             <NativeRangeControl
-                                label={__('Maximum width (px)', 'mty')}
+                                label={__('Maximum width (px)', 'brilliant-insurance')}
                                 value={attributes[ATTRIBUTE]}
                                 onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                                 min={200}
@@ -70,7 +70,7 @@ addFilter(
 
 addFilter(
     'editor.BlockListBlock',
-    'mty/text-max-width-add-styles',
+    'bnti/text-max-width-add-styles',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;

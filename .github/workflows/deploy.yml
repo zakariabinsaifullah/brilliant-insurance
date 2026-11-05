@@ -38,15 +38,15 @@ jobs:
 
             - name: Prepare deploy files
               run: |
-                  mkdir -p "$RUNNER_TEMP/mty"
-                  rsync -rc --exclude-from='.distignore' . "$RUNNER_TEMP/mty/"
-                  find "$RUNNER_TEMP/mty" -name ".DS_Store" -type f -delete
+                  mkdir -p "$RUNNER_TEMP/brilliant-insurance"
+                  rsync -rc --exclude-from='.distignore' . "$RUNNER_TEMP/brilliant-insurance/"
+                  find "$RUNNER_TEMP/brilliant-insurance" -name ".DS_Store" -type f -delete
 
             - name: Push to deploy branch
               env:
                   COMMIT_MSG: ${{ github.event.head_commit.message || 'manual run' }}
               run: |
-                  cd "$RUNNER_TEMP/mty"
+                  cd "$RUNNER_TEMP/brilliant-insurance"
                   git init -q -b deploy
                   git config user.name "github-actions[bot]"
                   git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

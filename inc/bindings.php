@@ -5,34 +5,34 @@
  * Registers custom block binding sources that allow blocks to pull
  * dynamic data from theme-specific callbacks.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! function_exists( 'mty_register_block_bindings' ) ) :
+if ( ! function_exists( 'bnti_register_block_bindings' ) ) :
 	/**
 	 * Registers the "Post Format Name" block binding source.
 	 *
 	 * Allows blocks to display the human-readable post format label
 	 * (e.g. "Video", "Gallery") via the block bindings API.
 	 */
-	function mty_register_block_bindings() {
+	function bnti_register_block_bindings() {
 		register_block_bindings_source(
-			'mty/format',
+			'bnti/format',
 			array(
 				'label'              => _x(
 					'Post format name',
 					'Label for the block binding placeholder in the editor',
-					'mty'
+					'brilliant-insurance'
 				),
-				'get_value_callback' => 'mty_format_binding',
+				'get_value_callback' => 'bnti_format_binding',
 			)
 		);
 	}
 endif;
-add_action( 'init', 'mty_register_block_bindings' );
+add_action( 'init', 'bnti_register_block_bindings' );
 
 
-if ( ! function_exists( 'mty_format_binding' ) ) :
+if ( ! function_exists( 'bnti_format_binding' ) ) :
 	/**
 	 * Returns the human-readable post format name for the current post.
 	 *
@@ -41,7 +41,7 @@ if ( ! function_exists( 'mty_format_binding' ) ) :
 	 *
 	 * @return string|void Post format name, or nothing for the standard format.
 	 */
-	function mty_format_binding() {
+	function bnti_format_binding() {
 		$post_format_slug = get_post_format();
 
 		if ( $post_format_slug && 'standard' !== $post_format_slug ) {

@@ -1,14 +1,14 @@
 /**
  * Highlight — rich text format
  *
- * <mark class="mty-highlight"> from the Highlight toolbar button: semi-bold
+ * <mark class="bnti-highlight"> from the Highlight toolbar button: semi-bold
  * and Goblin green by default. A colour picked in the toolbar adds the
  * preset's `has-{slug}-color` class, whose global style (with !important)
  * replaces the Goblin default.
  */
-mark.mty-highlight {
+mark.bnti-highlight {
     padding: 0;
     background: none;
     font-weight: 600;
-    color: var(--wp--preset--color--mty-goblin);
+    color: var(--wp--preset--color--bnti-goblin);
 }

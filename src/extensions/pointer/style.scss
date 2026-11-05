@@ -7,95 +7,95 @@
  *   lawyer do?")
  * - large: 18px dot, white centre with a 4px Green Pea ring (homepage "The
  *   claims we take on.")
- * --mty-pointer-length is the full length, dot included. The line sits at the
- * block's vertical middle, or --mty-pointer-top px from its top.
+ * --bnti-pointer-length is the full length, dot included. The line sits at the
+ * block's vertical middle, or --bnti-pointer-top px from its top.
  *
- * The line and dot are background layers of one element: .mty-pointer on the
+ * The line and dot are background layers of one element: .bnti-pointer on the
  * front end, the block wrapper's ::before in the editor (core draws selection outlines with ::after). Desktop only.
  */
 
-$green-pea: var(--wp--preset--color--mty-green-pea);
-$white: var(--wp--preset--color--mty-white);
+$green-pea: var(--wp--preset--color--bnti-green-pea);
+$white: var(--wp--preset--color--bnti-white);
 
 @mixin pointer-shape {
     position: absolute;
     // Flow/flex layouts give children a block-gap top margin; the pointer is
     // positioned, so it must not get one.
     margin: 0 !important;
-    top: var(--mty-pointer-top, 50%);
+    top: var(--bnti-pointer-top, 50%);
     z-index: 5;
-    width: var(--mty-pointer-length, 84px);
-    height: var(--mty-pointer-dot);
+    width: var(--bnti-pointer-length, 84px);
+    height: var(--bnti-pointer-dot);
     transform: translateY(-50%);
     pointer-events: none;
     background:
-        radial-gradient(circle closest-side, var(--mty-pointer-dot-fill)) var(--mty-pointer-dot-x) 50% / var(--mty-pointer-dot) var(--mty-pointer-dot) no-repeat,
-        linear-gradient($white, $white) var(--mty-pointer-line-x) 50% / calc(100% - var(--mty-pointer-dot)) 1px no-repeat;
+        radial-gradient(circle closest-side, var(--bnti-pointer-dot-fill)) var(--bnti-pointer-dot-x) 50% / var(--bnti-pointer-dot) var(--bnti-pointer-dot) no-repeat,
+        linear-gradient($white, $white) var(--bnti-pointer-line-x) 50% / calc(100% - var(--bnti-pointer-dot)) 1px no-repeat;
 }
 
-.has-mty-pointer {
+.has-bnti-pointer {
     position: relative;
 
     &.is-pointer-small {
-        --mty-pointer-dot: 10px;
-        --mty-pointer-dot-fill: #{$white} 0 99%, transparent 100%;
+        --bnti-pointer-dot: 10px;
+        --bnti-pointer-dot-fill: #{$white} 0 99%, transparent 100%;
     }
 
     &.is-pointer-large {
-        --mty-pointer-dot: 18px;
-        --mty-pointer-dot-fill: #{$white} 0 54%, #{$green-pea} 56% 99%, transparent 100%;
+        --bnti-pointer-dot: 18px;
+        --bnti-pointer-dot-fill: #{$white} 0 54%, #{$green-pea} 56% 99%, transparent 100%;
     }
 
     // Right: the line leaves the right edge, the dot is at the far end.
     &.is-pointer-right {
-        --mty-pointer-dot-x: 100%;
-        --mty-pointer-line-x: 0;
+        --bnti-pointer-dot-x: 100%;
+        --bnti-pointer-line-x: 0;
     }
 
     // Left: mirrored.
     &.is-pointer-left {
-        --mty-pointer-dot-x: 0;
-        --mty-pointer-line-x: 100%;
+        --bnti-pointer-dot-x: 0;
+        --bnti-pointer-line-x: 100%;
     }
 }
 
-.mty-pointer {
+.bnti-pointer {
     display: none;
 }
 
 // Kadence gives every column z-index: 1, so a column later in the row (the
 // image) would paint over a pointer reaching into it. Lift the column that
 // holds the pointer.
-.wp-block-kadence-column:has(.mty-pointer),
-.wp-block-kadence-column:has(.mty-pointer-editor) {
+.wp-block-kadence-column:has(.bnti-pointer),
+.wp-block-kadence-column:has(.bnti-pointer-editor) {
     z-index: 2;
 }
 
 @media (min-width: 1025px) {
-    .mty-pointer {
+    .bnti-pointer {
         display: block;
         @include pointer-shape;
     }
 
-    .is-pointer-right > .mty-pointer {
+    .is-pointer-right > .bnti-pointer {
         left: 100%;
     }
 
-    .is-pointer-left > .mty-pointer {
+    .is-pointer-left > .bnti-pointer {
         right: 100%;
     }
 
     // Editor preview
-    .mty-pointer-editor::before {
+    .bnti-pointer-editor::before {
         content: '';
         @include pointer-shape;
     }
 
-    .mty-pointer-editor.is-pointer-right::before {
+    .bnti-pointer-editor.is-pointer-right::before {
         left: 100%;
     }
 
-    .mty-pointer-editor.is-pointer-left::before {
+    .bnti-pointer-editor.is-pointer-left::before {
         right: 100%;
     }
 }

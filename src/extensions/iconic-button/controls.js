@@ -10,7 +10,7 @@ import { getSVGString } from '../../helpers';
 // Track panel open state
 let initialOpen = false;
 
-const mtyIconicButtonPanel = createHigherOrderComponent( BlockEdit => {
+const bntiIconicButtonPanel = createHigherOrderComponent( BlockEdit => {
     return props => {
         // Check if the block is in the allowed list
         if ( ! allowedBlocks.includes( props.name ) ) {
@@ -35,15 +35,15 @@ const mtyIconicButtonPanel = createHigherOrderComponent( BlockEdit => {
                 <BlockEdit key="edit" { ...props } />
                 { isSelected && (
                     <InspectorControls>
-                        <PanelBody title={ __( 'Icon Settings', 'mty' ) } initialOpen={ initialOpen }>
+                        <PanelBody title={ __( 'Icon Settings', 'brilliant-insurance' ) } initialOpen={ initialOpen }>
                             <NativeToggleControl
-                                label={ __( 'Add Icon to Button', 'mty' ) }
+                                label={ __( 'Add Icon to Button', 'brilliant-insurance' ) }
                                 checked={ iconicButtonEnabled }
                                 onChange={ () => {
                                     const newEnabled = ! iconicButtonEnabled;
                                     const newAttrs = { iconicButtonEnabled: newEnabled };
                                     if ( newEnabled && ! iconicButtonUniqueClass ) {
-                                        newAttrs.iconicButtonUniqueClass = `mty-icon-button-${ clientId.slice( 0, 8 ) }`;
+                                        newAttrs.iconicButtonUniqueClass = `bnti-icon-button-${ clientId.slice( 0, 8 ) }`;
                                     }
                                     setAttributes( newAttrs );
                                     initialOpen = true;
@@ -75,34 +75,34 @@ const mtyIconicButtonPanel = createHigherOrderComponent( BlockEdit => {
                                         iconSize={ 24 }
                                     />
                                     <NativeToggleGroupControl
-                                        label={ __( 'Position', 'mty' ) }
+                                        label={ __( 'Position', 'brilliant-insurance' ) }
                                         value={ iconicButtonIconPosition }
                                         options={ [
-                                            { label: __( 'Before', 'mty' ), value: 'mty-icon-before' },
-                                            { label: __( 'After', 'mty' ), value: '' }
+                                            { label: __( 'Before', 'brilliant-insurance' ), value: 'bnti-icon-before' },
+                                            { label: __( 'After', 'brilliant-insurance' ), value: '' }
                                         ] }
                                         onChange={ value => setAttributes( { iconicButtonIconPosition: value } ) }
                                     />
                                     <NativeUnitControl
-                                        label={ __( 'Size', 'mty' ) }
+                                        label={ __( 'Size', 'brilliant-insurance' ) }
                                         value={ iconicButtonIconSize }
                                         onChange={ value => setAttributes( { iconicButtonIconSize: value } ) }
                                         mb="16px"
                                     />
                                     <NativeUnitControl
-                                        label={ __( 'Gap', 'mty' ) }
+                                        label={ __( 'Gap', 'brilliant-insurance' ) }
                                         value={ iconicButtonIconGap }
                                         onChange={ value => setAttributes( { iconicButtonIconGap: value } ) }
                                         mb="16px"
                                     />
                                     <NativeUnitControl
-                                        label={ __( 'Icon Padding', 'mty' ) }
+                                        label={ __( 'Icon Padding', 'brilliant-insurance' ) }
                                         value={ iconicButtonIconPadding }
                                         onChange={ value => setAttributes( { iconicButtonIconPadding: value } ) }
                                         mb="16px"
                                     />
                                     <PanelColorControl
-                                        label={ __( 'Icon Background', 'mty' ) }
+                                        label={ __( 'Icon Background', 'brilliant-insurance' ) }
                                         colorSettings={ [
                                             {
                                                 value: iconicButtonIconBgColor,
@@ -118,6 +118,6 @@ const mtyIconicButtonPanel = createHigherOrderComponent( BlockEdit => {
             </>
         );
     };
-}, 'withMtyIconicButtonPanel' );
+}, 'withBntiIconicButtonPanel' );
 
-addFilter( 'editor.BlockEdit', 'mty/iconic-button-panel', mtyIconicButtonPanel );
+addFilter( 'editor.BlockEdit', 'bnti/iconic-button-panel', bntiIconicButtonPanel );

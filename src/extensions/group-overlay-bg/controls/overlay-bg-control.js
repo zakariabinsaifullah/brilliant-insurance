@@ -35,7 +35,7 @@ const OverlayBgControl = ( { clientId, attributes, setAttributes, overlayBgColor
                 customOverlayBgColor: undefined
             } );
         },
-        label: __( 'Overlay Background', 'mty' ),
+        label: __( 'Overlay Background', 'brilliant-insurance' ),
         isShownByDefault: true,
         enableAlpha: true,
         clearable: true,

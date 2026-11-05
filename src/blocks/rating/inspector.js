@@ -16,39 +16,39 @@ const Inspector = props => {
     return (
         <>
             <InspectorControls group="settings">
-                <PanelBody title={ __( 'Settings', 'mty' ) } initialOpen={ true }>
+                <PanelBody title={ __( 'Settings', 'brilliant-insurance' ) } initialOpen={ true }>
                     <NativeToggleControl
-                        label={ __( 'Show Numeric Rating', 'mty' ) }
+                        label={ __( 'Show Numeric Rating', 'brilliant-insurance' ) }
                         checked={ enableRating }
                         onChange={ value => setAttributes( { enableRating: value } ) }
                     />
                     { enableRating && (
                         <NativeToggleGroupControl
-                            label={ __( 'Position', 'mty' ) }
+                            label={ __( 'Position', 'brilliant-insurance' ) }
                             value={ nrPos }
                             onChange={ value => setAttributes( { nrPos: value } ) }
                             options={ [
-                                { value: 'nr_left', label: __( 'Left', 'mty' ), icon: arrowLeft },
-                                { value: 'nr_right', label: __( 'Right', 'mty' ), icon: arrowRight },
-                                { value: 'nr_top', label: __( 'Top', 'mty' ), icon: arrowUp },
-                                { value: 'nr_bottom', label: __( 'Bottom', 'mty' ), icon: arrowDown }
+                                { value: 'nr_left', label: __( 'Left', 'brilliant-insurance' ), icon: arrowLeft },
+                                { value: 'nr_right', label: __( 'Right', 'brilliant-insurance' ), icon: arrowRight },
+                                { value: 'nr_top', label: __( 'Top', 'brilliant-insurance' ), icon: arrowUp },
+                                { value: 'nr_bottom', label: __( 'Bottom', 'brilliant-insurance' ), icon: arrowDown }
                             ] }
                         />
                     ) }
                     <NativeToggleGroupControl
-                        label={ __( 'Alignment', 'mty' ) }
+                        label={ __( 'Alignment', 'brilliant-insurance' ) }
                         value={ alignment }
                         onChange={ value => setAttributes( { alignment: value } ) }
                         options={ [
-                            { value: '', label: __( 'Left', 'mty' ) },
-                            { value: 'center', label: __( 'Center', 'mty' ) },
-                            { value: 'right', label: __( 'Right', 'mty' ) }
+                            { value: '', label: __( 'Left', 'brilliant-insurance' ) },
+                            { value: 'center', label: __( 'Center', 'brilliant-insurance' ) },
+                            { value: 'right', label: __( 'Right', 'brilliant-insurance' ) }
                         ] }
                     />
                 </PanelBody>
-                <PanelBody title={ __( 'Rating', 'mty' ) } initialOpen={ false }>
+                <PanelBody title={ __( 'Rating', 'brilliant-insurance' ) } initialOpen={ false }>
                     <NativeRangeControl
-                        label={ __( 'Total Rating', 'mty' ) }
+                        label={ __( 'Total Rating', 'brilliant-insurance' ) }
                         value={ totalRating }
                         onChange={ value => setAttributes( { totalRating: value } ) }
                         min={ 1 }
@@ -57,17 +57,17 @@ const Inspector = props => {
                         resetFallbackValue={ 5 }
                     />
                     <NativeTextControl
-                        label={ __( 'Rating', 'mty' ) }
+                        label={ __( 'Rating', 'brilliant-insurance' ) }
                         value={ ratingText }
                         placeholder="4.5"
-                        help={ __( 'Shown as the number rating; the stars fill to the number in it.', 'mty' ) }
+                        help={ __( 'Shown as the number rating; the stars fill to the number in it.', 'brilliant-insurance' ) }
                         onChange={ value => setAttributes( { ratingText: value } ) }
                     />
                 </PanelBody>
             </InspectorControls>
             <InspectorControls group="styles">
                 <ToolsPanel
-                    label={ __( 'Rating', 'mty' ) }
+                    label={ __( 'Rating', 'brilliant-insurance' ) }
                     resetAll={ () =>
                         setAttributes( {
                             ratingSize: undefined,
@@ -77,7 +77,7 @@ const Inspector = props => {
                 >
                     <ToolsPanelItem
                         hasValue={ () => !! ratingSize }
-                        label={ __( 'Size', 'mty' ) }
+                        label={ __( 'Size', 'brilliant-insurance' ) }
                         onDeselect={ () => {
                             setAttributes( {
                                 ratingSize: undefined
@@ -86,7 +86,7 @@ const Inspector = props => {
                         onSelect={ () => {} }
                     >
                         <NativeRangeControl
-                            label={ __( 'Rating Size', 'mty' ) }
+                            label={ __( 'Rating Size', 'brilliant-insurance' ) }
                             value={ ratingSize }
                             onChange={ value => setAttributes( { ratingSize: value } ) }
                             min={ 0 }
@@ -97,7 +97,7 @@ const Inspector = props => {
 
                     <ToolsPanelItem
                         hasValue={ () => !! ratingColor }
-                        label={ __( 'Color', 'mty' ) }
+                        label={ __( 'Color', 'brilliant-insurance' ) }
                         onDeselect={ () => {
                             setAttributes( {
                                 ratingColor: undefined
@@ -106,7 +106,7 @@ const Inspector = props => {
                         onSelect={ () => {} }
                     >
                         <PanelColorControl
-                            label={ __( 'Star Color', 'mty' ) }
+                            label={ __( 'Star Color', 'brilliant-insurance' ) }
                             colorSettings={ [
                                 {
                                     value: ratingColor,
@@ -118,7 +118,7 @@ const Inspector = props => {
                 </ToolsPanel>
                 { enableRating && (
                     <ToolsPanel
-                        label={ __( 'Numeric Rating', 'mty' ) }
+                        label={ __( 'Numeric Rating', 'brilliant-insurance' ) }
                         resetAll={ () =>
                             setAttributes( {
                                 ratingNsize: undefined,
@@ -128,7 +128,7 @@ const Inspector = props => {
                     >
                         <ToolsPanelItem
                             hasValue={ () => !! ratingNsize }
-                            label={ __( 'Size', 'mty' ) }
+                            label={ __( 'Size', 'brilliant-insurance' ) }
                             onDeselect={ () => {
                                 setAttributes( {
                                     ratingNsize: undefined
@@ -137,7 +137,7 @@ const Inspector = props => {
                             onSelect={ () => {} }
                         >
                             <NativeRangeControl
-                                label={ __( 'Font Size', 'mty' ) }
+                                label={ __( 'Font Size', 'brilliant-insurance' ) }
                                 value={ ratingNsize }
                                 onChange={ value => setAttributes( { ratingNsize: value } ) }
                                 min={ 0 }
@@ -148,7 +148,7 @@ const Inspector = props => {
 
                         <ToolsPanelItem
                             hasValue={ () => !! nuRatColor }
-                            label={ __( 'Color', 'mty' ) }
+                            label={ __( 'Color', 'brilliant-insurance' ) }
                             onDeselect={ () => {
                                 setAttributes( {
                                     nuRatColor: undefined
@@ -157,12 +157,12 @@ const Inspector = props => {
                             onSelect={ () => {} }
                         >
                             <PanelColorControl
-                                label={ __( 'Text Color', 'mty' ) }
+                                label={ __( 'Text Color', 'brilliant-insurance' ) }
                                 colorSettings={ [
                                     {
                                         value: nuRatColor,
                                         onChange: color => setAttributes( { nuRatColor: color } ),
-                                        label: __( 'Color', 'mty' )
+                                        label: __( 'Color', 'brilliant-insurance' )
                                     }
                                 ] }
                             />

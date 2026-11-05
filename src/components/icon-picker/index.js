@@ -14,7 +14,7 @@ const folderOpen = (
 );
 
 const NativeIconPicker = ({
-    label = __('Icon', 'mty'),
+    label = __('Icon', 'brilliant-insurance'),
     onIconSelect,
     onCustomSvgInsert,
     iconName,
@@ -63,37 +63,37 @@ const NativeIconPicker = ({
                 modalState={modalState}
                 setModalState={setModalState}
             />
-            <BaseControl id="mty-icon-settings" label={label} __nextHasNoMarginBottom>
+            <BaseControl id="bnti-icon-settings" label={label} __nextHasNoMarginBottom>
                 <Dropdown
                     popoverProps={{
                         placement: 'left-start',
                         offset: 36,
                         shift: true
                     }}
-                    className="mty-icon-settings"
+                    className="bnti-icon-settings"
                     renderToggle={({ isOpen, onToggle, onClose }) => (
-                        <div className="mty-icon-settings__dropdown">
+                        <div className="bnti-icon-settings__dropdown">
                             <Button
                                 onClick={onToggle}
                                 aria-expanded={isOpen}
-                                className="mty-icon-settings__dropdown-toggle"
+                                className="bnti-icon-settings__dropdown-toggle"
                                 __next40pxDefaultSize
                                 __nextHasNoMarginBottom
                             >
                                 {!!(iconName || customSvgCode) ? (
-                                    <span className="mty-icon-settings__indicator">
+                                    <span className="bnti-icon-settings__indicator">
                                         <RenderIcon customSvgCode={customSvgCode} iconName={iconName} size={20} />
                                     </span>
                                 ) : (
-                                    <span className="mty-icon-settings__indicator disabled"></span>
+                                    <span className="bnti-icon-settings__indicator disabled"></span>
                                 )}
 
-                                <span className="mty-icon-settings__dropdown-label">
-                                    {__(iconName || (customSvgCode ? 'Custom SVG' : 'Select Icon', 'mty'))}
+                                <span className="bnti-icon-settings__dropdown-label">
+                                    {__(iconName || (customSvgCode ? 'Custom SVG' : 'Select Icon', 'brilliant-insurance'))}
                                 </span>
                             </Button>
                             <Button
-                                label={__('Browse library', 'mty')}
+                                label={__('Browse library', 'brilliant-insurance')}
                                 onClick={() => {
                                     onClose();
                                     openModal('library');
@@ -101,7 +101,7 @@ const NativeIconPicker = ({
                                 iconSize={18}
                                 size="small"
                                 icon={folderOpen}
-                                className="mty-icon-settings__dropdown-more"
+                                className="bnti-icon-settings__dropdown-more"
                                 __next40pxDefaultSize
                                 __nextHasNoMarginBottom
                             />

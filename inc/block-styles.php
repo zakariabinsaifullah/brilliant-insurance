@@ -4,19 +4,19 @@
  *
  * Registers custom style variations for core (and third-party) blocks.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! function_exists( 'mty_block_styles' ) ) :
+if ( ! function_exists( 'bnti_block_styles' ) ) :
 	/**
 	 * Registers all custom block style variations for the theme.
 	 */
-	function mty_block_styles() {
+	function bnti_block_styles() {
 		register_block_style(
 			'core/group',
 			array(
 				'name'  => 'wrap-mobile',
-				'label' => __( 'Wrap Mobile', 'mty' ),
+				'label' => __( 'Wrap Mobile', 'brilliant-insurance' ),
 			)
 		);
 
@@ -24,7 +24,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/group',
 			array(
 				'name'  => 'plain-links',
-				'label' => __( 'Plain Links', 'mty' ),
+				'label' => __( 'Plain Links', 'brilliant-insurance' ),
 			)
 		);
 
@@ -33,7 +33,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/list',
 			array(
 				'name'  => 'mega-links',
-				'label' => __( 'Mega Links', 'mty' ),
+				'label' => __( 'Mega Links', 'brilliant-insurance' ),
 			)
 		);
 
@@ -41,7 +41,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/list',
 			array(
 				'name'  => 'mega-links-large',
-				'label' => __( 'Mega Links: Large', 'mty' ),
+				'label' => __( 'Mega Links: Large', 'brilliant-insurance' ),
 			)
 		);
 
@@ -49,7 +49,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/post-template',
 			array(
 				'name'  => 'card-grid',
-				'label' => __( 'Card Grid', 'mty' ),
+				'label' => __( 'Card Grid', 'brilliant-insurance' ),
 			)
 		);
 
@@ -57,7 +57,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'alternative',
-				'label' => __( 'Alternative', 'mty' ),
+				'label' => __( 'Alternative', 'brilliant-insurance' ),
 			)
 		);
 
@@ -65,7 +65,7 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/button',
 			array(
 				'name'  => 'link',
-				'label' => __( 'Link', 'mty' ),
+				'label' => __( 'Link', 'brilliant-insurance' ),
 			)
 		);
 
@@ -73,9 +73,9 @@ if ( ! function_exists( 'mty_block_styles' ) ) :
 			'core/accordion',
 			array(
 				'name'  => 'numbered',
-				'label' => __( 'Numbered', 'mty' ),
+				'label' => __( 'Numbered', 'brilliant-insurance' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'mty_block_styles' );
+add_action( 'init', 'bnti_block_styles' );

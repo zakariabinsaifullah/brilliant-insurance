@@ -13,7 +13,7 @@ import { allowedBlocks } from './allowed-blocks';
  * @return {Object} Modified settings
  */
 
-function mtyIconicButtonAttribute( settings, name ) {
+function bntiIconicButtonAttribute( settings, name ) {
     // Check if the block is in the allowed list
     if ( ! allowedBlocks.includes( name ) ) {
         return settings;
@@ -67,4 +67,4 @@ function mtyIconicButtonAttribute( settings, name ) {
     };
 }
 
-addFilter( 'blocks.registerBlockType', 'mty/iconic-button-attribute', mtyIconicButtonAttribute );
+addFilter( 'blocks.registerBlockType', 'bnti/iconic-button-attribute', bntiIconicButtonAttribute );

@@ -136,15 +136,15 @@ function ColorControlDropdown({ label, colorValue = {}, onChangeColor, hasHover 
                         tabs={[
                             {
                                 name: 'default',
-                                title: __('Default', 'mty')
+                                title: __('Default', 'brilliant-insurance')
                             },
                             {
                                 name: 'hover',
-                                title: __('Hover', 'mty')
+                                title: __('Hover', 'brilliant-insurance')
                             },
                             {
                                 name: 'active',
-                                title: __('Active', 'mty')
+                                title: __('Active', 'brilliant-insurance')
                             }
                         ]}
                     >

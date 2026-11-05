@@ -1,13 +1,13 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/timeline",
+    "name": "bnti/timeline",
     "version": "0.4.0",
     "title": "Timeline",
-    "category": "mty",
+    "category": "bnti",
     "description": "A row of steps joined by one line, each marked by a square dot, with your own blocks below. The highlighted step can colour its dot only, or its dot and line.",
     "allowedBlocks": [
-        "mty/timeline-step"
+        "bnti/timeline-step"
     ],
     "supports": {
         "html": false,
@@ -59,7 +59,7 @@
         }
     },
     "example": {},
-    "textdomain": "mty",
+    "textdomain": "brilliant-insurance",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css"

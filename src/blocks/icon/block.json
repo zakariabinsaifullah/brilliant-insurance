@@ -1,10 +1,10 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/icon",
+    "name": "bnti/icon",
     "version": "0.0.5",
     "title": "Icon",
-    "category": "mty",
+    "category": "bnti",
     "description": "Display SVG icons from library or upload custom SVGs.",
     "supports": {
         "reusable": false,
@@ -85,11 +85,11 @@
         },
         "textColor": {
             "type": "string",
-            "default": "mty-white"
+            "default": "bnti-white"
         },
         "backgroundColor": {
             "type": "string",
-            "default": "mty-goblin"
+            "default": "bnti-goblin"
         },
         "width": {
             "type": "number"
@@ -142,7 +142,7 @@
             "default": false
         }
     },
-    "textdomain": "mty",
+    "textdomain": "brilliant-insurance",
     "editorScript": "file:./index.js",
     "editorStyle": "file:./index.css",
     "style": "file:./style-index.css"

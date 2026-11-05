@@ -1,7 +1,7 @@
 {
     "$schema": "https://schemas.wp.org/trunk/block.json",
     "apiVersion": 3,
-    "name": "mty/hover-color-extension",
+    "name": "bnti/hover-color-extension",
     "version": "0.0.5",
     "title": "Hover Color Extension",
     "editorScript": "file:./index.js",

@@ -1,15 +1,15 @@
-.wp-block-mty-rating {
+.wp-block-bnti-rating {
     text-align: var(--rating-align);
 
     // Stars follow the Figma rating: 19.6px wide, #FBB040.
-    .mty-rating {
+    .bnti-rating {
         display: inline-flex;
         align-items: center;
         gap: 2px;
         line-height: 0;
     }
 
-    .mty-rating__star {
+    .bnti-rating__star {
         position: relative;
         display: inline-block;
         width: var(--rating-size, 19.6px);
@@ -24,7 +24,7 @@
         }
 
         // The empty star: the same star, outlined.
-        .mty-rating__empty {
+        .bnti-rating__empty {
             fill: none;
             stroke: var(--rating-color, #fbb040);
             stroke-width: 1;
@@ -33,7 +33,7 @@
     }
 
     // The filled star, clipped to the star's filled share.
-    .mty-rating__fill {
+    .bnti-rating__fill {
         position: absolute;
         inset: 0 auto 0 0;
         width: 100%;
@@ -72,7 +72,7 @@
             align-items: baseline;
             font-size: var(--value-size, 15px);
             line-height: 1;
-            color: var(--numeric-color, var(--wp--preset--color--mty-white));
+            color: var(--numeric-color, var(--wp--preset--color--bnti-white));
         }
     }
 }

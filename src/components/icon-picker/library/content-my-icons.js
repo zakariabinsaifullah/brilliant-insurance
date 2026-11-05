@@ -56,15 +56,15 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
             setError('');
             await deleteIcon(icon.id);
         } catch (deleteError) {
-            setError(deleteError?.message || __('The icon could not be deleted.', 'mty'));
+            setError(deleteError?.message || __('The icon could not be deleted.', 'brilliant-insurance'));
         }
     };
 
     if (!hasLoaded) {
         return (
-            <div className="mty-modal__my-icons-placeholder">
+            <div className="bnti-modal__my-icons-placeholder">
                 <Spinner />
-                <p>{__('Loading your icons…', 'mty')}</p>
+                <p>{__('Loading your icons…', 'brilliant-insurance')}</p>
             </div>
         );
     }
@@ -83,9 +83,9 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                         <SearchControl
                             value={searchTerm}
                             onChange={setSearchTerm}
-                            label={__('Search your icons', 'mty')}
-                            placeholder={__('Search...', 'mty')}
-                            className="mty-modal__search"
+                            label={__('Search your icons', 'brilliant-insurance')}
+                            placeholder={__('Search...', 'brilliant-insurance')}
+                            className="bnti-modal__search"
                             size="compact"
                         />
                     </FlexItem>
@@ -93,48 +93,48 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
             )}
 
             {0 === myIcons.length && (
-                <div className="mty-modal__my-icons-placeholder">
-                    <p>{__('You have not saved any icons yet.', 'mty')}</p>
-                    <p className="mty-modal__my-icons-placeholder-help">
+                <div className="bnti-modal__my-icons-placeholder">
+                    <p>{__('You have not saved any icons yet.', 'brilliant-insurance')}</p>
+                    <p className="bnti-modal__my-icons-placeholder-help">
                         {__(
                             'Paste an SVG in the Custom SVG tab, give it a name, and choose “Add to My Icons” to make it available across the whole site.',
-                            'mty'
+                            'brilliant-insurance'
                         )}
                     </p>
                     <Button variant="primary" onClick={onGoToCustomTab} __next40pxDefaultSize>
-                        {__('Add an icon', 'mty')}
+                        {__('Add an icon', 'brilliant-insurance')}
                     </Button>
                 </div>
             )}
 
-            {myIcons.length > 0 && 0 === filteredIcons.length && <p>{__('No icons found!', 'mty')}</p>}
+            {myIcons.length > 0 && 0 === filteredIcons.length && <p>{__('No icons found!', 'brilliant-insurance')}</p>}
 
             {filteredIcons.length > 0 && (
-                <div className="mty-modal__icons mty-modal__my-icons">
+                <div className="bnti-modal__icons bnti-modal__my-icons">
                     {filteredIcons.map(icon => {
                         const isDeleting = deletingIds.includes(icon.id);
 
                         return (
-                            <div className="mty-modal__my-icons-item" key={icon.id}>
+                            <div className="bnti-modal__my-icons-item" key={icon.id}>
                                 <Button
-                                    className={`mty-modal__icons-button ${currentCustomSvg === icon.svg ? 'is-selected' : ''}`}
+                                    className={`bnti-modal__icons-button ${currentCustomSvg === icon.svg ? 'is-selected' : ''}`}
                                     onClick={() => onIconSelect(icon)}
                                     disabled={isDeleting}
                                     label={sprintf(
                                         /* translators: %s: icon name. */
-                                        __('Use %s', 'mty'),
+                                        __('Use %s', 'brilliant-insurance'),
                                         icon.label
                                     )}
                                     showTooltip
                                 >
                                     <span
-                                        className="mty-modal__my-icons-preview"
+                                        className="bnti-modal__my-icons-preview"
                                         dangerouslySetInnerHTML={{ __html: icon.svg }} // eslint-disable-line react/no-danger
                                     />
                                     <span className="icon-title">{icon.label}</span>
                                 </Button>
                                 <Button
-                                    className="mty-modal__my-icons-remove"
+                                    className="bnti-modal__my-icons-remove"
                                     icon={trash}
                                     iconSize={18}
                                     size="small"
@@ -143,7 +143,7 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                                     disabled={isDeleting}
                                     label={sprintf(
                                         /* translators: %s: icon name. */
-                                        __('Delete %s', 'mty'),
+                                        __('Delete %s', 'brilliant-insurance'),
                                         icon.label
                                     )}
                                     onClick={() => setPendingDelete(icon)}
@@ -158,12 +158,12 @@ export const ContentMyIcons = ({ currentCustomSvg, onIconSelect, onGoToCustomTab
                 isOpen={!!pendingDelete}
                 onConfirm={confirmDelete}
                 onCancel={() => setPendingDelete(null)}
-                confirmButtonText={__('Delete', 'mty')}
+                confirmButtonText={__('Delete', 'brilliant-insurance')}
             >
                 {pendingDelete &&
                     sprintf(
                         /* translators: %s: icon name. */
-                        __('Delete “%s” from your icon library? Blocks already using it keep their icon.', 'mty'),
+                        __('Delete “%s” from your icon library? Blocks already using it keep their icon.', 'brilliant-insurance'),
                         pendingDelete.label
                     )}
             </ConfirmDialog>

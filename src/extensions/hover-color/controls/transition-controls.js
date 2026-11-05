@@ -29,17 +29,17 @@ const HoverTransitionControls = ( { attributes, setAttributes } ) => {
     }
 
     const timingOptions = [
-        { label: __( 'Standard', 'mty' ), value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
-        { label: __( 'Ease', 'mty' ), value: 'ease' },
-        { label: __( 'Linear', 'mty' ), value: 'linear' },
-        { label: __( 'Ease In', 'mty' ), value: 'ease-in' },
-        { label: __( 'Ease Out', 'mty' ), value: 'ease-out' },
-        { label: __( 'Ease In Out', 'mty' ), value: 'ease-in-out' }
+        { label: __( 'Standard', 'brilliant-insurance' ), value: 'cubic-bezier(0.4, 0, 0.2, 1)' },
+        { label: __( 'Ease', 'brilliant-insurance' ), value: 'ease' },
+        { label: __( 'Linear', 'brilliant-insurance' ), value: 'linear' },
+        { label: __( 'Ease In', 'brilliant-insurance' ), value: 'ease-in' },
+        { label: __( 'Ease Out', 'brilliant-insurance' ), value: 'ease-out' },
+        { label: __( 'Ease In Out', 'brilliant-insurance' ), value: 'ease-in-out' }
     ];
 
     return (
         <div
-            className="mty-hover-color__transition-controls"
+            className="bnti-hover-color__transition-controls"
             style={ {
                 gridTemplateColumns: 'repeat(2, minmax(0px, 1fr))',
                 gap: 'calc(16px)',
@@ -47,17 +47,17 @@ const HoverTransitionControls = ( { attributes, setAttributes } ) => {
             } }
         >
             <NativeRangeControl
-                label={ __( 'Transition Duration', 'mty' ) }
+                label={ __( 'Transition Duration', 'brilliant-insurance' ) }
                 value={ hoverTransitionDuration }
                 onChange={ value => setAttributes( { hoverTransitionDuration: value } ) }
                 min={ 0 }
                 max={ 2000 }
                 step={ 50 }
                 resetFallbackValue={ 200 }
-                help={ __( 'Duration in milliseconds', 'mty' ) }
+                help={ __( 'Duration in milliseconds', 'brilliant-insurance' ) }
             />
             <NativeSelectControl
-                label={ __( 'Timing Function', 'mty' ) }
+                label={ __( 'Timing Function', 'brilliant-insurance' ) }
                 value={ hoverTransitionTiming }
                 options={ timingOptions }
                 onChange={ value => setAttributes( { hoverTransitionTiming: value } ) }

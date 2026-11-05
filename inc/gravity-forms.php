@@ -2,7 +2,7 @@
 /**
  * Gravity Forms: theme styles and the block-button submit.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -11,11 +11,11 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 // ── Enqueue front-end styles ───────────────────────────────────────────────────
 
-add_action( 'wp_enqueue_scripts', 'mty_gravity_forms_assets' );
+add_action( 'wp_enqueue_scripts', 'bnti_gravity_forms_assets' );
 
-function mty_gravity_forms_assets() {
+function bnti_gravity_forms_assets() {
 	wp_enqueue_style(
-		'mty-gravity-forms',
+		'bnti-gravity-forms',
 		get_theme_file_uri( 'assets/css/gravity-forms.css' ),
 		array(),
 		wp_get_theme()->get( 'Version' )
@@ -24,7 +24,7 @@ function mty_gravity_forms_assets() {
 
 // ── Gravity Forms submit button ────────────────────────────────────────────────
 
-add_filter( 'gform_submit_button', 'mty_gform_submit_button', 10, 2 );
+add_filter( 'gform_submit_button', 'bnti_gform_submit_button', 10, 2 );
 
 /**
  * Renders the Gravity Forms submit button as the theme's default block button.
@@ -45,7 +45,7 @@ add_filter( 'gform_submit_button', 'mty_gform_submit_button', 10, 2 );
  * @param array  $form   The current form.
  * @return string Button HTML.
  */
-function mty_gform_submit_button( $button, $form ) {
+function bnti_gform_submit_button( $button, $form ) {
 	$processor = new WP_HTML_Tag_Processor( $button );
 
 	if ( ! $processor->next_tag( array( 'tag_name' => 'INPUT' ) ) || 'submit' !== $processor->get_attribute( 'type' ) ) {
@@ -76,7 +76,7 @@ function mty_gform_submit_button( $button, $form ) {
 	}
 
 	return sprintf(
-		'<div class="wp-block-button mty-gform-button"><button type="submit"%1$s>%2$s</button></div>',
+		'<div class="wp-block-button bnti-gform-button"><button type="submit"%1$s>%2$s</button></div>',
 		$attrs,
 		esc_html( $label )
 	);

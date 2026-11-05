@@ -92,11 +92,11 @@ export default function Edit(props) {
     }, []);
 
     const fontFamilyOptions = [
-        { label: __('Default', 'mty'), value: '' },
+        { label: __('Default', 'brilliant-insurance'), value: '' },
         ...fontFamilies.map(f => {
             const value = f.fontFamily || (f.slug ? `var(--wp--preset--font-family--${f.slug})` : f.slug);
             return {
-                label: f.name || f.slug || __('Unknown', 'mty'),
+                label: f.name || f.slug || __('Unknown', 'brilliant-insurance'),
                 value: value
             };
         })
@@ -159,7 +159,7 @@ export default function Edit(props) {
                 tagName={headingTag}
                 value={heading}
                 onChange={value => setAttributes({ heading: value })}
-                placeholder={__('List title...', 'mty')}
+                placeholder={__('List title...', 'brilliant-insurance')}
                 className="icon-heading"
             />
         </div>
@@ -181,7 +181,7 @@ export default function Edit(props) {
                     ref={setPopoverAnchor}
                     name="link"
                     icon={link}
-                    title={__('Link', 'mty')}
+                    title={__('Link', 'brilliant-insurance')}
                     onClick={() => setIsEditingURL(true)}
                     isActive={!!href || isEditingURL}
                 />
@@ -192,7 +192,7 @@ export default function Edit(props) {
                         placement="bottom"
                         focusOnMount={true}
                         offset={12}
-                        className="mty-icon__link-popover"
+                        className="bnti-icon__link-popover"
                         variant="alternate"
                     >
                         <LinkControl
@@ -221,9 +221,9 @@ export default function Edit(props) {
                 )}
             </BlockControls>
             <InspectorControls>
-                <PanelBody title={__('Settings', 'mty')}>
+                <PanelBody title={__('Settings', 'brilliant-insurance')}>
                     <NativeToggleControl
-                        label={__('Add List Title', 'mty')}
+                        label={__('Add List Title', 'brilliant-insurance')}
                         checked={showTitle}
                         onChange={value => setAttributes({ showTitle: value })}
                     />
@@ -239,7 +239,7 @@ export default function Edit(props) {
                         iconSize={iconSize}
                         strokeWidth={strokeWidth}
                     />
-                    <NativeResponsiveControl label={__('Icon Size (px)', 'mty')} props={props}>
+                    <NativeResponsiveControl label={__('Icon Size (px)', 'brilliant-insurance')} props={props}>
                         <RangeControl
                             value={resolvedSizes[resMode]}
                             onChange={value => setAttributes({ sizes: { ...sizes, [resMode]: value } })}
@@ -250,7 +250,7 @@ export default function Edit(props) {
                                 'Desktop' !== resMode && isInheritedSize
                                     ? __(
                                           'Inherited from the larger screen size. Change it to set a size just for this device.',
-                                          'mty'
+                                          'brilliant-insurance'
                                       )
                                     : undefined
                             }
@@ -259,61 +259,61 @@ export default function Edit(props) {
                     </NativeResponsiveControl>
                     {customSvgCode && (
                         <NativeToggleControl
-                            label={__('Keep SVG Aspect Ratio', 'mty')}
-                            help={__('For wide SVGs such as logos: the icon size sets the height and the width follows the SVG.', 'mty')}
+                            label={__('Keep SVG Aspect Ratio', 'brilliant-insurance')}
+                            help={__('For wide SVGs such as logos: the icon size sets the height and the width follows the SVG.', 'brilliant-insurance')}
                             checked={keepAspectRatio}
                             onChange={value => setAttributes({ keepAspectRatio: value })}
                         />
                     )}
                 </PanelBody>
                 {showTitle && (
-                    <PanelBody title={__('List Title', 'mty')} initialOpen={false}>
+                    <PanelBody title={__('List Title', 'brilliant-insurance')} initialOpen={false}>
                         <NativeUnitControl
-                            label={__('Gap ', 'mty')}
+                            label={__('Gap ', 'brilliant-insurance')}
                             value={listGap}
                             onChange={value => setAttributes({ listGap: value })}
                         />
                         <NativeSelectControl
-                            label={__('Icon Position', 'mty')}
+                            label={__('Icon Position', 'brilliant-insurance')}
                             value={iconPosition}
                             onChange={value => setAttributes({ iconPosition: value })}
                             options={[
-                                { label: __('Before Title', 'mty'), value: 'before' },
-                                { label: __('After Title', 'mty'), value: 'after' }
+                                { label: __('Before Title', 'brilliant-insurance'), value: 'before' },
+                                { label: __('After Title', 'brilliant-insurance'), value: 'after' }
                             ]}
                         />
                         <NativeSelectControl
-                            label={__('Vertical Alignment', 'mty')}
+                            label={__('Vertical Alignment', 'brilliant-insurance')}
                             value={iconVerticalAlign}
                             onChange={value => setAttributes({ iconVerticalAlign: value })}
                             options={[
-                                { label: __('Top', 'mty'), value: 'top' },
-                                { label: __('Center', 'mty'), value: 'center' },
-                                { label: __('Bottom', 'mty'), value: 'bottom' }
+                                { label: __('Top', 'brilliant-insurance'), value: 'top' },
+                                { label: __('Center', 'brilliant-insurance'), value: 'center' },
+                                { label: __('Bottom', 'brilliant-insurance'), value: 'bottom' }
                             ]}
                         />
                         {showTitle && (
                             <>
                                 <NativeSelectControl
-                                    label={__('Select Tag', 'mty')}
+                                    label={__('Select Tag', 'brilliant-insurance')}
                                     value={headingTag}
                                     onChange={value => setAttributes({ headingTag: value })}
                                     options={[
-                                        { label: __('H1', 'mty'), value: 'h1' },
-                                        { label: __('H2', 'mty'), value: 'h2' },
-                                        { label: __('H3', 'mty'), value: 'h3' },
-                                        { label: __('H4', 'mty'), value: 'h4' },
-                                        { label: __('H5', 'mty'), value: 'h5' },
-                                        { label: __('H6', 'mty'), value: 'h6' },
-                                        { label: __('Paragraph', 'mty'), value: 'p' },
-                                        { label: __('Div', 'mty'), value: 'div' }
+                                        { label: __('H1', 'brilliant-insurance'), value: 'h1' },
+                                        { label: __('H2', 'brilliant-insurance'), value: 'h2' },
+                                        { label: __('H3', 'brilliant-insurance'), value: 'h3' },
+                                        { label: __('H4', 'brilliant-insurance'), value: 'h4' },
+                                        { label: __('H5', 'brilliant-insurance'), value: 'h5' },
+                                        { label: __('H6', 'brilliant-insurance'), value: 'h6' },
+                                        { label: __('Paragraph', 'brilliant-insurance'), value: 'p' },
+                                        { label: __('Div', 'brilliant-insurance'), value: 'div' }
                                     ]}
                                 />
                                 <NativeTextControl
-                                    label={__('Title Text', 'mty')}
+                                    label={__('Title Text', 'brilliant-insurance')}
                                     value={heading}
                                     onChange={value => setAttributes({ heading: value })}
-                                    placeholder={__('List title...', 'mty')}
+                                    placeholder={__('List title...', 'brilliant-insurance')}
                                 />
                             </>
                         )}
@@ -323,7 +323,7 @@ export default function Edit(props) {
             <InspectorControls group="styles">
                 {showTitle && (
                     <ToolsPanel
-                        label={__('Title', 'mty')}
+                        label={__('Title', 'brilliant-insurance')}
                         resetAll={() =>
                             setAttributes({
                                 titleSize: undefined,
@@ -333,7 +333,7 @@ export default function Edit(props) {
                     >
                         <ToolsPanelItem
                             hasValue={() => !!titleSize}
-                            label={__('Size', 'mty')}
+                            label={__('Size', 'brilliant-insurance')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleSize: undefined
@@ -342,7 +342,7 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <NativeUnitControl
-                                label={__('Font Size', 'mty')}
+                                label={__('Font Size', 'brilliant-insurance')}
                                 value={titleSize}
                                 onChange={value => setAttributes({ titleSize: value })}
                             />
@@ -350,7 +350,7 @@ export default function Edit(props) {
 
                         <ToolsPanelItem
                             hasValue={() => !!titleColor}
-                            label={__('Color', 'mty')}
+                            label={__('Color', 'brilliant-insurance')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleColor: undefined
@@ -359,12 +359,12 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <PanelColorControl
-                                label={__('Color', 'mty')}
+                                label={__('Color', 'brilliant-insurance')}
                                 colorSettings={[
                                     {
                                         value: titleColor,
                                         onChange: color => setAttributes({ titleColor: color }),
-                                        label: __('Color', 'mty')
+                                        label: __('Color', 'brilliant-insurance')
                                     }
                                 ]}
                             />
@@ -372,7 +372,7 @@ export default function Edit(props) {
 
                         <ToolsPanelItem
                             hasValue={() => !!titleFontFamily}
-                            label={__('Font', 'mty')}
+                            label={__('Font', 'brilliant-insurance')}
                             onDeselect={() => {
                                 setAttributes({
                                     titleFontFamily: undefined
@@ -381,7 +381,7 @@ export default function Edit(props) {
                             onSelect={() => {}}
                         >
                             <NativeSelectControl
-                                label={__('Font', 'mty')}
+                                label={__('Font', 'brilliant-insurance')}
                                 value={titleFontFamily}
                                 onChange={value => setAttributes({ titleFontFamily: value })}
                                 options={fontFamilyOptions}
@@ -392,7 +392,7 @@ export default function Edit(props) {
             </InspectorControls>
             <div {...blockProps}>
                 <div
-                    className={classNames('mty-icon-block-wrapper', {
+                    className={classNames('bnti-icon-block-wrapper', {
                         [`icon-valign-${iconVerticalAlign}`]: iconVerticalAlign
                     })}
                 >

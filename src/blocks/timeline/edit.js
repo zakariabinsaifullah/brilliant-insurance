@@ -16,7 +16,7 @@ import { getTimelineStyle, getTimelineClass } from './save';
 
 import './editor.scss';
 
-const createStep = () => createBlock('mty/timeline-step', {}, [createBlock('core/paragraph')]);
+const createStep = () => createBlock('bnti/timeline-step', {}, [createBlock('core/paragraph')]);
 
 const PRESET = /^var\(--wp--preset--color--([a-z0-9-]+)\)$/;
 
@@ -68,9 +68,9 @@ export default function Edit({ attributes, setAttributes, clientId }) {
 
     const blockProps = useBlockProps({ className: getTimelineClass(attributes), style: getTimelineStyle(attributes) });
     const innerBlocksProps = useInnerBlocksProps(blockProps, {
-        allowedBlocks: ['mty/timeline-step'],
+        allowedBlocks: ['bnti/timeline-step'],
         // The first step starts highlighted, as in the design.
-        template: Array.from({ length: steps }, (_, index) => ['mty/timeline-step', { isActive: index === 0 }, [['core/paragraph']]]),
+        template: Array.from({ length: steps }, (_, index) => ['bnti/timeline-step', { isActive: index === 0 }, [['core/paragraph']]]),
         orientation: 'horizontal',
         renderAppender: false
     });
@@ -78,11 +78,11 @@ export default function Edit({ attributes, setAttributes, clientId }) {
     return (
         <>
             <InspectorControls>
-                <PanelBody title={__('Timeline', 'mty')}>
+                <PanelBody title={__('Timeline', 'brilliant-insurance')}>
                     <RangeControl
                         __nextHasNoMarginBottom
                         __next40pxDefaultSize
-                        label={__('Steps', 'mty')}
+                        label={__('Steps', 'brilliant-insurance')}
                         value={steps}
                         onChange={value => value && updateSteps(value)}
                         min={1}
@@ -91,8 +91,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                     <RangeControl
                         __nextHasNoMarginBottom
                         __next40pxDefaultSize
-                        label={__('Columns (desktop)', 'mty')}
-                        help={__('Tablet and mobile always show one column.', 'mty')}
+                        label={__('Columns (desktop)', 'brilliant-insurance')}
+                        help={__('Tablet and mobile always show one column.', 'brilliant-insurance')}
                         value={columns}
                         onChange={value => setAttributes({ columns: value || 4 })}
                         min={1}
@@ -101,8 +101,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                     <RangeControl
                         __nextHasNoMarginBottom
                         __next40pxDefaultSize
-                        label={__('Step gap (px)', 'mty')}
-                        help={__('Space between steps; the line runs across it.', 'mty')}
+                        label={__('Step gap (px)', 'brilliant-insurance')}
+                        help={__('Space between steps; the line runs across it.', 'brilliant-insurance')}
                         value={gap}
                         onChange={value => setAttributes({ gap: value ?? 40 })}
                         min={0}
@@ -111,8 +111,8 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                     <RangeControl
                         __nextHasNoMarginBottom
                         __next40pxDefaultSize
-                        label={__('Content gap (px)', 'mty')}
-                        help={__('Space between the line and the blocks below it.', 'mty')}
+                        label={__('Content gap (px)', 'brilliant-insurance')}
+                        help={__('Space between the line and the blocks below it.', 'brilliant-insurance')}
                         value={contentGap}
                         onChange={value => setAttributes({ contentGap: value ?? 40 })}
                         min={0}
@@ -120,36 +120,36 @@ export default function Edit({ attributes, setAttributes, clientId }) {
                     />
                     <ToggleControl
                         __nextHasNoMarginBottom
-                        label={__('Highlight line', 'mty')}
-                        help={__('Also draw the highlighted step’s line, as a 3px progress bar. Off: only its dot is coloured.', 'mty')}
+                        label={__('Highlight line', 'brilliant-insurance')}
+                        help={__('Also draw the highlighted step’s line, as a 3px progress bar. Off: only its dot is coloured.', 'brilliant-insurance')}
                         checked={!!highlightLine}
                         onChange={value => setAttributes({ highlightLine: value })}
                     />
                     <ToggleControl
                         __nextHasNoMarginBottom
-                        label={__('Highlight on hover', 'mty')}
-                        help={__('Desktop: hovering a step highlights it (dot, and line if Highlight line is on) instead of the highlighted step.', 'mty')}
+                        label={__('Highlight on hover', 'brilliant-insurance')}
+                        help={__('Desktop: hovering a step highlights it (dot, and line if Highlight line is on) instead of the highlighted step.', 'brilliant-insurance')}
                         checked={!!highlightOnHover}
                         onChange={value => setAttributes({ highlightOnHover: value })}
                     />
                 </PanelBody>
                 <PanelColorControl
-                    label={__('Timeline Colors', 'mty')}
+                    label={__('Timeline Colors', 'brilliant-insurance')}
                     colorSettings={[
                         {
-                            label: __('Dot & Line', 'mty'),
+                            label: __('Dot & Line', 'brilliant-insurance'),
                             value: toPicker(color),
                             onChange: value => setAttributes({ color: toStored(value) })
                         },
                         {
-                            label: __('Highlighted Dot', 'mty'),
+                            label: __('Highlighted Dot', 'brilliant-insurance'),
                             value: toPicker(activeColor),
                             onChange: value => setAttributes({ activeColor: toStored(value) })
                         },
                         ...(highlightLine
                             ? [
                                   {
-                                      label: __('Highlighted Line', 'mty'),
+                                      label: __('Highlighted Line', 'brilliant-insurance'),
                                       value: toPicker(activeLineColor),
                                       onChange: value => setAttributes({ activeLineColor: toStored(value) })
                                   }

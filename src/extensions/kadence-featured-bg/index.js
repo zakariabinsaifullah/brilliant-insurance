@@ -22,7 +22,7 @@ const ATTRIBUTE = 'useFeaturedImageAsBg';
 /**
  * Add the useFeaturedImageAsBg attribute to kadence/rowlayout.
  */
-addFilter('blocks.registerBlockType', 'mty/kadence-featured-bg-add-attribute', (settings, name) => {
+addFilter('blocks.registerBlockType', 'bnti/kadence-featured-bg-add-attribute', (settings, name) => {
     if (name !== BLOCK_NAME) {
         return settings;
     }
@@ -44,7 +44,7 @@ addFilter('blocks.registerBlockType', 'mty/kadence-featured-bg-add-attribute', (
  */
 addFilter(
     'editor.BlockEdit',
-    'mty/kadence-featured-bg-add-inspector-controls',
+    'bnti/kadence-featured-bg-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -66,13 +66,13 @@ addFilter(
                     <BlockEdit {...props} />
                     <InspectorAdvancedControls>
                         <NativeToggleControl
-                            label={__('Use Featured Image as Background', 'mty')}
+                            label={__('Use Featured Image as Background', 'brilliant-insurance')}
                             checked={!!attributes[ATTRIBUTE]}
                             onChange={value => setAttributes({ [ATTRIBUTE]: value })}
                         />
                         {!hasFeaturedImage && (
                             <p style={{ color: '#999', fontSize: '12px', marginTop: '4px' }}>
-                                {__('No featured image set for this post.', 'mty')}
+                                {__('No featured image set for this post.', 'brilliant-insurance')}
                             </p>
                         )}
                     </InspectorAdvancedControls>
@@ -87,7 +87,7 @@ addFilter(
  */
 addFilter(
     'editor.BlockListBlock',
-    'mty/kadence-featured-bg-add-styles',
+    'bnti/kadence-featured-bg-add-styles',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -113,7 +113,7 @@ addFilter(
                 ...props.wrapperProps,
                 style: {
                     ...props.wrapperProps?.style,
-                    '--mty-featured-bg-image': `url(${featuredImageUrl})`
+                    '--bnti-featured-bg-image': `url(${featuredImageUrl})`
                 }
             };
 

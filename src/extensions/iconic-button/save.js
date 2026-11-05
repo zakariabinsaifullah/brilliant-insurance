@@ -20,13 +20,13 @@ function addIconicButtonSaveProps( props, blockType, attributes ) {
         return props;
     }
 
-    const classes = [ 'mty-icon-button', iconicButtonUniqueClass ];
+    const classes = [ 'bnti-icon-button', iconicButtonUniqueClass ];
     if ( iconicButtonIconPosition !== '' ) {
-        classes.push( 'mty-icon-before' );
+        classes.push( 'bnti-icon-before' );
     }
 
     props.className = ( ( props.className || '' ) + ' ' + classes.join( ' ' ) ).trim();
     return props;
 }
 
-addFilter( 'blocks.getSaveContent.extraProps', 'mty/iconic-button-save-props', addIconicButtonSaveProps );
+addFilter( 'blocks.getSaveContent.extraProps', 'bnti/iconic-button-save-props', addIconicButtonSaveProps );

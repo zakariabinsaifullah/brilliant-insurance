@@ -1,7 +1,7 @@
 {
-    "name": "mty",
-"version": "0.10.17",
-    "description": "MTY — A Full Site Editing Theme for MTY",
+    "name": "brilliant-insurance",
+"version": "0.0.1",
+    "description": "Brilliant Insurance — A Full Site Editing Theme for Brilliant Insurance",
     "author": "binsaifullah",
     "license": "GPL-2.0-or-later",
     "main": "build/index.js",

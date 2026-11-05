@@ -10,7 +10,7 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
 
     const handleInsert = () => {
         if (code.trim() === '') {
-            wp.data.dispatch('core/notices').createNotice('error', __('Please enter SVG code', 'mty'), {
+            wp.data.dispatch('core/notices').createNotice('error', __('Please enter SVG code', 'brilliant-insurance'), {
                 isDismissible: true
             });
             return;
@@ -19,18 +19,18 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
     };
 
     return (
-        <Modal className="svgib__modal custom-svg" title={__('Custom SVG', 'mty')} onRequestClose={() => setCustomiconPanel(false)}>
+        <Modal className="svgib__modal custom-svg" title={__('Custom SVG', 'brilliant-insurance')} onRequestClose={() => setCustomiconPanel(false)}>
             <div className="svg-controls">
-                <RangeControl label={__('SVG Preview Size', 'mty')} value={size} onChange={v => setSize(v)} min={20} max={150} />
+                <RangeControl label={__('SVG Preview Size', 'brilliant-insurance')} value={size} onChange={v => setSize(v)} min={20} max={150} />
             </div>
             <div className="svgib-modal__wrapper">
                 <div className="svg-code">
                     <TextareaControl
-                        label={__('SVG Code', 'mty')}
-                        help={__('Paste your SVG code here.', 'mty')}
+                        label={__('SVG Code', 'brilliant-insurance')}
+                        help={__('Paste your SVG code here.', 'brilliant-insurance')}
                         value={code}
                         onChange={v => setCode(v)}
-                        placeholder={__('<svg>...</svg>', 'mty')}
+                        placeholder={__('<svg>...</svg>', 'brilliant-insurance')}
                         rows={10}
                     />
                 </div>
@@ -38,13 +38,13 @@ const CustomiconModal = ({ customiconPanel, setCustomiconPanel, onInsert, value 
                     {code ? (
                         <div dangerouslySetInnerHTML={{ __html: code }} />
                     ) : (
-                        <div className="preview-text">{__('SVG Preview', 'mty')}</div>
+                        <div className="preview-text">{__('SVG Preview', 'brilliant-insurance')}</div>
                     )}
                 </div>
             </div>
             <div className="insert-svg">
                 <Button variant="primary" onClick={handleInsert}>
-                    {__('Insert SVG', 'mty')}
+                    {__('Insert SVG', 'brilliant-insurance')}
                 </Button>
             </div>
         </Modal>

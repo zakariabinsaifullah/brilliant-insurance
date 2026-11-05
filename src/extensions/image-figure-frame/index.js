@@ -2,7 +2,7 @@
  * Image — Figure Frame
  *
  * Adds a "Figure Frame" panel to core/image blocks. When enabled, the image
- * gets the Figma "figure" treatment used across the MTY design: a faint 1px
+ * gets the Figma "figure" treatment used across the Brilliant Insurance design: a faint 1px
  * border, a dark overlay, four corner ticks and a "FIG. 02" label in the top
  * left corner. The label number is set per image; border, ticks and overlay
  * can each be switched off (e.g. the "Meet James" portrait shows only the
@@ -14,8 +14,8 @@
  * featured image it shows an empty framed box at the block's height.
  *
  * Editor: classes and the label are applied to the block wrapper here.
- * Front end: mty_render_image_figure_frame() in inc/extensions.php wraps the
- * image in a .mty-fig-frame element (or frames the featured image figure) and
+ * Front end: bnti_render_image_figure_frame() in inc/extensions.php wraps the
+ * image in a .bnti-fig-frame element (or frames the featured image figure) and
  * adds the label as real markup.
  */
 import { __ } from '@wordpress/i18n';
@@ -54,7 +54,7 @@ const getFrameClasses = attributes => {
 /**
  * Add the figure frame attributes to core/image.
  */
-addFilter('blocks.registerBlockType', 'mty/image-figure-frame-add-attributes', (settings, name) => {
+addFilter('blocks.registerBlockType', 'bnti/image-figure-frame-add-attributes', (settings, name) => {
     if (!BLOCKS.includes(name)) {
         return settings;
     }
@@ -102,7 +102,7 @@ addFilter('blocks.registerBlockType', 'mty/image-figure-frame-add-attributes', (
  */
 addFilter(
     'editor.BlockEdit',
-    'mty/image-figure-frame-add-inspector-controls',
+    'bnti/image-figure-frame-add-inspector-controls',
     createHigherOrderComponent(BlockEdit => {
         return props => {
             const { name, attributes, setAttributes } = props;
@@ -118,9 +118,9 @@ addFilter(
                 <>
                     <BlockEdit {...props} />
                     <InspectorControls>
-                        <PanelBody title={__('Figure Frame', 'mty')} initialOpen={!!figFrame}>
+                        <PanelBody title={__('Figure Frame', 'brilliant-insurance')} initialOpen={!!figFrame}>
                             <NativeToggleControl
-                                label={__('Enable figure frame', 'mty')}
+                                label={__('Enable figure frame', 'brilliant-insurance')}
                                 checked={!!figFrame}
                                 onChange={value => setAttributes({ figFrame: value })}
                             />
@@ -129,14 +129,14 @@ addFilter(
                                     {isFeaturedImage && (
                                         <>
                                             <NativeToggleControl
-                                                label={__('Post title as label', 'mty')}
-                                                help={__('e.g. “[HEADSHOT: JAMES T. LAURA, JR.]”. Replaces the FIG label.', 'mty')}
+                                                label={__('Post title as label', 'brilliant-insurance')}
+                                                help={__('e.g. “[HEADSHOT: JAMES T. LAURA, JR.]”. Replaces the FIG label.', 'brilliant-insurance')}
                                                 checked={!!figTitleLabel}
                                                 onChange={value => setAttributes({ figTitleLabel: value })}
                                             />
                                             {figTitleLabel && (
                                                 <NativeTextControl
-                                                    label={__('Label prefix', 'mty')}
+                                                    label={__('Label prefix', 'brilliant-insurance')}
                                                     value={figTitlePrefix}
                                                     placeholder="Headshot"
                                                     onChange={value => setAttributes({ figTitlePrefix: value })}
@@ -146,29 +146,29 @@ addFilter(
                                     )}
                                     {!(isFeaturedImage && figTitleLabel) && (
                                         <NativeTextControl
-                                            label={__('FIG value', 'mty')}
+                                            label={__('FIG value', 'brilliant-insurance')}
                                             value={figLabel}
                                             placeholder="02"
                                             help={
                                                 figLabel
-                                                    ? `${__('Shown as', 'mty')} “FIG. ${figLabel.toUpperCase()}”`
-                                                    : __('Leave empty to hide the FIG label.', 'mty')
+                                                    ? `${__('Shown as', 'brilliant-insurance')} “FIG. ${figLabel.toUpperCase()}”`
+                                                    : __('Leave empty to hide the FIG label.', 'brilliant-insurance')
                                             }
                                             onChange={value => setAttributes({ figLabel: value })}
                                         />
                                     )}
                                     <NativeToggleControl
-                                        label={__('Border', 'mty')}
+                                        label={__('Border', 'brilliant-insurance')}
                                         checked={figFrameBorder !== false}
                                         onChange={value => setAttributes({ figFrameBorder: value })}
                                     />
                                     <NativeToggleControl
-                                        label={__('Corner ticks', 'mty')}
+                                        label={__('Corner ticks', 'brilliant-insurance')}
                                         checked={figFrameTicks !== false}
                                         onChange={value => setAttributes({ figFrameTicks: value })}
                                     />
                                     <NativeToggleControl
-                                        label={__('Dark overlay', 'mty')}
+                                        label={__('Dark overlay', 'brilliant-insurance')}
                                         checked={figFrameOverlay !== false}
                                         onChange={value => setAttributes({ figFrameOverlay: value })}
                                     />
@@ -187,7 +187,7 @@ addFilter(
  */
 addFilter(
     'editor.BlockListBlock',
-    'mty/image-figure-frame-add-class',
+    'bnti/image-figure-frame-add-class',
     createHigherOrderComponent(BlockListBlock => {
         return props => {
             const { name, attributes } = props;
@@ -196,12 +196,12 @@ addFilter(
                 return <BlockListBlock {...props} />;
             }
 
-            const classes = [props.className, 'mty-fig-frame-editor', ...getFrameClasses(attributes)].filter(Boolean).join(' ');
+            const classes = [props.className, 'bnti-fig-frame-editor', ...getFrameClasses(attributes)].filter(Boolean).join(' ');
             const wrapperProps = { ...props.wrapperProps };
             if (name === FEATURED_IMAGE && attributes.figTitleLabel) {
                 // The post title isn't known here; the front end shows the real name.
                 const prefix = (attributes.figTitlePrefix || '').trim();
-                const title = __('Post title', 'mty');
+                const title = __('Post title', 'brilliant-insurance');
                 wrapperProps['data-fig-label'] = `[${prefix ? `${prefix}: ` : ''}${title}]`;
             } else if (attributes.figLabel) {
                 wrapperProps['data-fig-label'] = `FIG. ${attributes.figLabel}`;

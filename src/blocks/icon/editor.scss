@@ -12,7 +12,7 @@
 }
 
 // Icon preview container
-.mty-icon-preview-container {
+.bnti-icon-preview-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,11 +31,11 @@
 }
 
 // settings
-.mty-icon-settings {
+.bnti-icon-settings {
     width: 100%;
     border: 1px solid #ddd;
     border-radius: 2px;
-    .mty-icon-settings__dropdown {
+    .bnti-icon-settings__dropdown {
         position: relative;
         &-toggle {
             width: 100%;
@@ -51,11 +51,11 @@
             transform: translateY(-50%);
         }
         &:hover {
-            .mty-icon-settings__dropdown-more {
+            .bnti-icon-settings__dropdown-more {
                 opacity: 1;
             }
         }
-        .mty-icon-settings__indicator {
+        .bnti-icon-settings__indicator {
             background-color: #f3f3f3;
             border-radius: 2px;
             display: flex;
@@ -70,14 +70,14 @@
                 box-shadow: inset 0 0 0 1px #0003;
             }
         }
-        .mty-icon-settings__dropdown-label {
+        .bnti-icon-settings__dropdown-label {
             text-transform: capitalize;
         }
     }
 }
 
 // content
-.wp-block-mty-icon {
+.wp-block-bnti-icon {
     .icon-container {
         line-height: 0;
     }

@@ -5,10 +5,10 @@
  * Registers custom block categories and block pattern categories
  * used throughout this theme.
  *
- * @package MTY
+ * @package Brilliant_Insurance
  */
 
-if ( ! function_exists( 'mty_block_categories' ) ) :
+if ( ! function_exists( 'bnti_block_categories' ) ) :
 	/**
 	 * Adds the "Brilliant Blocks" category to the block inserter.
 	 *
@@ -16,12 +16,12 @@ if ( ! function_exists( 'mty_block_categories' ) ) :
 	 * @param  WP_Block_Editor_Context $block_editor_context Current editor context.
 	 * @return array
 	 */
-	function mty_block_categories( $block_categories, $block_editor_context ) {
+	function bnti_block_categories( $block_categories, $block_editor_context ) {
 		return array_merge(
 			array(
 				array(
-					'slug'  => 'mty',
-					'title' => __( 'MTY', 'mty' ),
+					'slug'  => 'bnti',
+					'title' => __( 'Brilliant Insurance', 'brilliant-insurance' ),
 				),
 			),
 			$block_categories
@@ -29,59 +29,59 @@ if ( ! function_exists( 'mty_block_categories' ) ) :
 		);
 	}
 endif;
-add_filter( 'block_categories_all', 'mty_block_categories', 10, 2 );
+add_filter( 'block_categories_all', 'bnti_block_categories', 10, 2 );
 
 
-if ( ! function_exists( 'mty_pattern_categories' ) ) :
+if ( ! function_exists( 'bnti_pattern_categories' ) ) :
 	/**
-	 * Registers the "MTY" block pattern category.
+	 * Registers the "Brilliant Insurance" block pattern category.
 	 */
-	function mty_pattern_categories() {
+	function bnti_pattern_categories() {
 		register_block_pattern_category(
-			'mty',
+			'bnti',
 			array(
-				'label'       => __( 'MTY', 'mty' ),
-				'description' => __( 'A collection of MTY patterns.', 'mty' ),
+				'label'       => __( 'Brilliant Insurance', 'brilliant-insurance' ),
+				'description' => __( 'A collection of Brilliant Insurance patterns.', 'brilliant-insurance' ),
 			)
 		);
 	}
 endif;
-add_action( 'init', 'mty_pattern_categories' );
+add_action( 'init', 'bnti_pattern_categories' );
 
 
 // ── ID column on the Categories admin screen ──────────────────────────────────
 
-if ( ! function_exists( 'mty_category_columns' ) ) :
+if ( ! function_exists( 'bnti_category_columns' ) ) :
 	/**
 	 * Adds an "ID" column to the Categories list table.
 	 *
 	 * @param  array $columns Existing column definitions.
 	 * @return array
 	 */
-	function mty_category_columns( $columns ) {
-		$columns['mty_id'] = __( 'ID', 'mty' );
+	function bnti_category_columns( $columns ) {
+		$columns['bnti_id'] = __( 'ID', 'brilliant-insurance' );
 		return $columns;
 	}
 endif;
-add_filter( 'manage_edit-category_columns', 'mty_category_columns' );
+add_filter( 'manage_edit-category_columns', 'bnti_category_columns' );
 
 /**
  * Caps the ID column width on the Categories list table.
  */
-function mty_category_column_width() {
+function bnti_category_column_width() {
 	?>
 	<style>
-		.wp-list-table .column-mty_id {
+		.wp-list-table .column-bnti_id {
 			width: 100px;
 			max-width: 100px;
 		}
 	</style>
 	<?php
 }
-add_action( 'admin_head-edit-tags.php', 'mty_category_column_width' );
+add_action( 'admin_head-edit-tags.php', 'bnti_category_column_width' );
 
 
-if ( ! function_exists( 'mty_category_column_content' ) ) :
+if ( ! function_exists( 'bnti_category_column_content' ) ) :
 	/**
 	 * Outputs the term ID for the custom column.
 	 *
@@ -90,11 +90,11 @@ if ( ! function_exists( 'mty_category_column_content' ) ) :
 	 * @param  int    $term_id      Term ID.
 	 * @return string
 	 */
-	function mty_category_column_content( $content, $column_name, $term_id ) {
-		if ( 'mty_id' === $column_name ) {
+	function bnti_category_column_content( $content, $column_name, $term_id ) {
+		if ( 'bnti_id' === $column_name ) {
 			return (string) $term_id;
 		}
 		return $content;
 	}
 endif;
-add_filter( 'manage_category_custom_column', 'mty_category_column_content', 10, 3 );
+add_filter( 'manage_category_custom_column', 'bnti_category_column_content', 10, 3 );

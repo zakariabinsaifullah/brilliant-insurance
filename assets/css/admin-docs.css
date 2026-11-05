@@ -1,21 +1,21 @@
 /* =============================================================================
-   MTY docs page — Appearance → MTY (inc/docs.php)
+   Brilliant Insurance docs page — Appearance → Brilliant Insurance (inc/docs.php)
 
    Built on the core admin styles (.wrap, .widefat, .button) so it stays in step
    with whatever admin colour scheme the user has.
    ============================================================================= */
 
-.mty-docs {
+.bnti-docs {
     max-width: 900px;
 }
 
-.mty-docs-intro {
+.bnti-docs-intro {
     font-size: 14px;
     color: #50575e;
     margin: 4px 0 24px;
 }
 
-.mty-docs-section {
+.bnti-docs-section {
     background: #fff;
     border: 1px solid #c3c4c7;
     border-radius: 4px;
@@ -23,13 +23,13 @@
     margin-bottom: 24px;
 }
 
-.mty-docs-section h2 {
+.bnti-docs-section h2 {
     font-size: 18px;
     padding-bottom: 12px;
     border-bottom: 1px solid #f0f0f1;
 }
 
-.mty-docs-section h2 code {
+.bnti-docs-section h2 code {
     font-size: 14px;
     font-weight: 400;
     background: #f0f0f1;
@@ -38,31 +38,31 @@
     margin-left: 6px;
 }
 
-.mty-docs-section h3 {
+.bnti-docs-section h3 {
     font-size: 14px;
     margin: 28px 0 10px;
 }
 
 /* ── Copyable snippet ──────────────────────────────────────────────────────── */
 
-.mty-docs-code {
+.bnti-docs-code {
     margin: 12px 0 16px;
 }
 
-.mty-docs-code__label {
+.bnti-docs-code__label {
     margin: 0 0 6px;
     font-size: 13px;
     color: #50575e;
 }
 
-.mty-docs-code__row {
+.bnti-docs-code__row {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
 }
 
-.mty-docs-code__row code {
+.bnti-docs-code__row code {
     flex: 1;
     min-width: 260px;
     background: #1d2327;
@@ -76,29 +76,29 @@
 
 /* ── Attribute table ───────────────────────────────────────────────────────── */
 
-.mty-docs-table {
+.bnti-docs-table {
     border-radius: 4px;
 }
 
-.mty-docs-table th,
-.mty-docs-table td {
+.bnti-docs-table th,
+.bnti-docs-table td {
     padding: 10px 12px;
     vertical-align: top;
 }
 
-.mty-docs-table td:first-child,
-.mty-docs-table td:nth-child(2):not(:last-child) {
+.bnti-docs-table td:first-child,
+.bnti-docs-table td:nth-child(2):not(:last-child) {
     white-space: nowrap;
 }
 
-.mty-docs-table code {
+.bnti-docs-table code {
     background: #f0f0f1;
     padding: 2px 6px;
     border-radius: 3px;
     font-size: 12px;
 }
 
-.mty-docs-empty {
+.bnti-docs-empty {
     color: #8c8f94;
     font-style: italic;
     font-size: 12px;
@@ -106,12 +106,12 @@
 
 /* ── Lists and notes ───────────────────────────────────────────────────────── */
 
-.mty-docs-list {
+.bnti-docs-list {
     list-style: disc;
     margin: 0 0 12px 20px;
 }
 
-.mty-docs-note {
+.bnti-docs-note {
     background: #f0f6fc;
     border-left: 4px solid #2271b1;
     border-radius: 0 4px 4px 0;
@@ -119,11 +119,11 @@
     margin-top: 20px;
 }
 
-.mty-docs-list--ordered {
+.bnti-docs-list--ordered {
     list-style: decimal;
 }
 
-.mty-docs-table + .mty-docs-note,
-.mty-docs-table {
+.bnti-docs-table + .bnti-docs-note,
+.bnti-docs-table {
     margin-top: 12px;
 }

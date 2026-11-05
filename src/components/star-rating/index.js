@@ -22,10 +22,10 @@ const StarRating = ({ total = 5, rating = 0 }) => {
         const fill = Math.round(Math.min(Math.max(rating - i, 0), 1) * 100);
 
         stars.push(
-            <span key={i} className="mty-rating__star">
-                <Star className="mty-rating__empty" />
+            <span key={i} className="bnti-rating__star">
+                <Star className="bnti-rating__empty" />
                 {fill > 0 && (
-                    <span className="mty-rating__fill" style={fill < 100 ? { width: `${fill}%` } : undefined}>
+                    <span className="bnti-rating__fill" style={fill < 100 ? { width: `${fill}%` } : undefined}>
                         <Star />
                     </span>
                 )}
@@ -34,7 +34,7 @@ const StarRating = ({ total = 5, rating = 0 }) => {
     }
 
     return (
-        <div className="mty-rating" role="img" aria-label={`${rating} / ${total}`}>
+        <div className="bnti-rating" role="img" aria-label={`${rating} / ${total}`}>
             {stars}
         </div>
     );

@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.querySelectorAll('.mty-social-share__item.is-copy-link').forEach(function (button) {
+    document.querySelectorAll('.bnti-social-share__item.is-copy-link').forEach(function (button) {
         button.addEventListener('click', function () {
             const url = this.dataset.copyUrl;
             if (!url) return;

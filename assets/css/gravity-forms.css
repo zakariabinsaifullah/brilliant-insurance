@@ -55,9 +55,9 @@
 .gform-body.gform_body textarea,
 .gform-body.gform_body select {
     width: 100%;
-    border-color: var(--wp--preset--color--mty-white-30, rgba(255, 255, 255, 0.3)) !important;
+    border-color: var(--wp--preset--color--bnti-white-30, rgba(255, 255, 255, 0.3)) !important;
     background-color: transparent !important;
-    color: var(--wp--preset--color--mty-white, #ffffff) !important;
+    color: var(--wp--preset--color--bnti-white, #ffffff) !important;
     outline: none;
     box-shadow: none !important;
     transition:
@@ -85,33 +85,33 @@
 }
 
 .gfield_label {
-    color: var(--wp--preset--color--mty-white, #ffffff) !important;
-    font-size: var(--wp--preset--font-size--mty-medium, 18px) !important;
+    color: var(--wp--preset--color--bnti-white, #ffffff) !important;
+    font-size: var(--wp--preset--font-size--bnti-medium, 18px) !important;
     font-weight: 600 !important;
     line-height: 1.5 !important;
 }
 
 .gform_body input::placeholder,
 .gform_body textarea::placeholder {
-    color: var(--wp--preset--color--mty-white-50, rgba(255, 255, 255, 0.5)) !important;
+    color: var(--wp--preset--color--bnti-white-50, rgba(255, 255, 255, 0.5)) !important;
 }
 
 /* Dropdown options open on the browser's light list, so give them dark text. */
 .gform_body select option {
-    color: var(--wp--preset--color--mty-thunder, #231F20);
+    color: var(--wp--preset--color--bnti-thunder, #231F20);
 }
 
 .gform_body input:focus,
 .gform_body textarea:focus,
 .gform_body select:focus {
-    border-color: var(--wp--preset--color--mty-white, #ffffff) !important;
+    border-color: var(--wp--preset--color--bnti-white, #ffffff) !important;
     outline: none !important;
 }
 
 /*
  * Submit button — the default block button, exactly.
  *
- * mty_gform_submit_button() (inc/gravity-forms.php) rebuilds Gravity Forms' submit
+ * bnti_gform_submit_button() (inc/gravity-forms.php) rebuilds Gravity Forms' submit
  * `<input>` as a `<button>` inside the same `.wp-block-button` wrapper a core
  * button block renders.
  *
@@ -123,7 +123,7 @@
  * size changes still flow through — but keep this block in sync if
  * `styles.elements.button` itself changes.
  */
-.wp-block-button.mty-gform-button {
+.wp-block-button.bnti-gform-button {
     display: inline-block;
     max-width: 100%;
 }
@@ -133,13 +133,13 @@
  * `display: none` (its own branch for a literal `input[type="submit"]` doesn't
  * fire for our `<button>`), so hide the wrapper on GF's flag instead.
  */
-.wp-block-button.mty-gform-button:has(.gform_button[data-conditional-logic='hidden']) {
+.wp-block-button.bnti-gform-button:has(.gform_button[data-conditional-logic='hidden']) {
     display: none;
 }
 
 .gform_wrapper .gform_button.button {
-    background: var(--wp--preset--color--mty-goblin, #3a8d3b) !important;
-    color: var(--wp--preset--color--mty-white, #ffffff) !important;
+    background: var(--wp--preset--color--bnti-goblin, #3a8d3b) !important;
+    color: var(--wp--preset--color--bnti-white, #ffffff) !important;
     border: none !important;
     border-radius: 0 !important;
     padding: 16px 28px !important;
@@ -149,7 +149,7 @@
     align-items: center !important;
     justify-content: center !important;
     font-family: var(--wp--preset--font-family--open-sans, "Open Sans", sans-serif) !important;
-    font-size: var(--wp--preset--font-size--mty-small, 14px) !important;
+    font-size: var(--wp--preset--font-size--bnti-small, 14px) !important;
     font-style: normal !important;
     font-weight: 600 !important;
     letter-spacing: 0.12em !important;
@@ -171,7 +171,7 @@
     content: "\2192" !important;
     display: inline !important;
     margin-left: 12px !important;
-    font-size: var(--wp--preset--font-size--mty-regular, 16px) !important;
+    font-size: var(--wp--preset--font-size--bnti-regular, 16px) !important;
     font-weight: 400 !important;
     letter-spacing: 0 !important;
     line-height: 1 !important;
@@ -180,13 +180,13 @@
 
 /* Mirrors `styles.elements.button:hover`. */
 .gform_wrapper .gform_button.button:hover {
-    background: var(--wp--preset--color--mty-goblin-dark, #2E702F) !important;
-    color: var(--wp--preset--color--mty-white, #ffffff) !important;
+    background: var(--wp--preset--color--bnti-goblin-dark, #2E702F) !important;
+    color: var(--wp--preset--color--bnti-white, #ffffff) !important;
 }
 
 /* Mirrors `styles.elements.button:focus`. */
 .gform_wrapper .gform_button.button:focus {
-    outline-color: var(--wp--preset--color--mty-white, #ffffff) !important;
+    outline-color: var(--wp--preset--color--bnti-white, #ffffff) !important;
     outline-offset: 2px !important;
 }
 
