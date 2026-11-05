@@ -1,31 +1,25 @@
-# Directories
-src
-/.github
+# Files and folders that never reach the live site.
+# Used by .github/workflows/deploy.yml (the `deploy` branch Deployer for Git
+# installs) and release.yml (the release zip). Everything else ships:
+# assets/, build/, inc/, parts/, patterns/, templates/, functions.php,
+# style.css, theme.json and screenshot.png.
+
+# Source and tooling
+/src
+/node_modules
+/vendor
+/tests
+/docs
+/scripts
 /.git
+/.github
 /.vscode
 /.idea
-/node_modules
-/tests
-/.wordpress-org
-/docs
 /.claude
 /.commandcode
+/.wordpress-org
 
-# Files
-DOCUMENTATION.md
-features-roadmap.txt
-.gitignore
-.gitattributes
-.editorconfig
-.eslintrc.json
-.prettierrc
-.prettierrc.json
-.babelrc
-.babelrc.json
-.distignore
-.DS_Store
-*.log
-*.lock
+# Package and build config
 package.json
 package-lock.json
 composer.json
@@ -33,20 +27,31 @@ composer.lock
 webpack.config.js
 Gruntfile.js
 gulpfile.js
-README.md
-setup.md
-LICENSE.txt
-CONTRIBUTING.md
-CHANGELOG.md
+*.config.js
+*.config.json
 phpunit.xml
 phpcs.xml
 .phpcs.xml
-*.config.js
-*.config.json
+.editorconfig
+.eslintrc*
+.prettierrc*
+.stylelintrc*
+.babelrc*
+.nvmrc
+.npmrc
+.gitignore
+.gitattributes
+.distignore
+.env*
 
+# Docs, notes and AI instructions (CLAUDE.md, AGENTS.md, README.md…)
 *.md
+*.txt
 
-# Build artifacts
-
+# Build leftovers and junk
 *.map
 *.LICENSE.txt
+*.log
+*.lock
+*.zip
+.DS_Store

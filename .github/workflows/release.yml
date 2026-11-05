@@ -38,7 +38,10 @@ jobs:
                   # 3. CLEANUP: Force remove any .DS_Store files that slipped through
                   find brilliant-insurance -name ".DS_Store" -type f -delete
 
-                  # 4. Zip the clean directory
+                  # 4. Fail if anything from development slipped through
+                  bash .github/scripts/verify-dist.sh brilliant-insurance
+
+                  # 5. Zip the clean directory
                   zip -r brilliant-insurance.zip brilliant-insurance
             - name: Create Release
               uses: ncipollo/release-action@v1.14.0

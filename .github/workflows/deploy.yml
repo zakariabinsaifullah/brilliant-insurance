@@ -1,13 +1,19 @@
 name: Build Deploy Branch
 
 # Builds the theme on every push to main and publishes the production-ready
-# files (build/ included, src/ and dev files excluded via .distignore) to the
-# `deploy` branch, which Deployer for Git installs on the live site.
+# files (build/ included, src/ and dev files excluded via .distignore, checked
+# by .github/scripts/verify-dist.sh) to the `deploy` branch, then pings
+# Deployer for Git on https://brilliantinsur.1wp.site, which reinstalls the
+# `brilliant-insurance` theme from that branch.
 
 on:
     push:
         branches:
             - main
+        # Docs and AI instructions never ship, so changing only them doesn't deploy.
+        paths-ignore:
+            - '**.md'
+            - '.claude/**'
     workflow_dispatch:
 
 concurrency:
@@ -41,6 +47,9 @@ jobs:
                   mkdir -p "$RUNNER_TEMP/brilliant-insurance"
                   rsync -rc --exclude-from='.distignore' . "$RUNNER_TEMP/brilliant-insurance/"
                   find "$RUNNER_TEMP/brilliant-insurance" -name ".DS_Store" -type f -delete
+
+            - name: Verify deploy files are clean
+              run: bash .github/scripts/verify-dist.sh "$RUNNER_TEMP/brilliant-insurance"
 
             - name: Push to deploy branch
               env:
