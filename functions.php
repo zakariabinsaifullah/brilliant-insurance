@@ -20,6 +20,7 @@ require_once get_theme_file_path( 'inc/enqueue.php' );    // Frontend & block st
 require_once get_theme_file_path( 'inc/blocks.php' );        // Custom block registration
 require_once get_theme_file_path( 'inc/block-styles.php' );  // Core block style variations
 require_once get_theme_file_path( 'inc/extensions.php' );    // Block editor extensions
+require_once get_theme_file_path( 'inc/kadence-table.php' ); // Kadence Table mobile labels
 
 // ── Icon library ───────────────────────────────────────────────────────────────
 require_once get_theme_file_path( 'inc/my-icons.php' );      // Site-wide saved SVG icons

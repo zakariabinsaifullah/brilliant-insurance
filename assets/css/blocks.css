@@ -778,14 +778,82 @@ p.is-style-has-arrow::after {
     vertical-align: middle;
 }
 
+/* Tables without a header row keep a scrollable layout on small screens. */
 @media (max-width: 600px) {
-    .kb-table {
+    .kb-table-container:not(:has(td[data-label])) {
+        overflow-x: auto;
+    }
+
+    .kb-table-container:not(:has(td[data-label])) .kb-table {
         table-layout: auto !important;
         min-width: 600px !important;
     }
+}
 
-    .kb-table-container {
-        overflow-x: auto;
+/* Mobile (Figma "Inner / Table" mobile): no table frame and no header row;
+   each body row is a white card (1px border, 20px corners, 24px padding,
+   16px apart) and every cell shows its column heading as a small grey label
+   above the value (`data-label`, added by inc/kadence-table.php). The first
+   cell reads as the card's title (20px, Premier). */
+@media (max-width: 767px) {
+    .kb-table-container:has(td[data-label]) {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table,
+    .kb-table-container:has(td[data-label]) .kb-table tbody,
+    .kb-table-container:has(td[data-label]) .kb-table tr,
+    .kb-table-container:has(td[data-label]) .kb-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:first-child:has(th) {
+        display: none;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:has(td) {
+        box-sizing: border-box;
+        padding: 24px;
+        border: 1px solid var(--wp--preset--color--bnti-gray-100);
+        border-radius: 20px;
+        background: var(--wp--preset--color--bnti-white);
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:has(td) + tr:has(td) {
+        margin-top: 16px;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr + tr .kb-table-data {
+        border-top: 0;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data + td.kb-table-data {
+        padding-top: 14px !important;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--wp--preset--color--bnti-neutral);
+        font-size: var(--wp--preset--font-size--bnti-small);
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data:first-child p {
+        color: var(--wp--preset--color--bnti-premier);
+        font-size: var(--wp--preset--font-size--bnti-lead);
+        font-weight: 400 !important;
     }
 }
 
