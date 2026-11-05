@@ -21,7 +21,7 @@
     align-items: center;
     gap: 8px;
     border: none;
-    color: #538988;
+    color: var(--wp--preset--color--bnti-premier);
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -144,10 +144,10 @@ header.wp-block-kadence-rowlayout::before {
 /*
  * Mega menu link lists (List block styles).
  *
- * Mega Links: a plain list of links (practice areas, cities), 16px Open Sans,
- * white; on hover a link turns Goblin and an arrow slides in after it.
+ * Mega Links: a plain list of links (practice areas, cities), 16px Inter,
+ * white; on hover a link turns Premier and an arrow slides in after it.
  * Mega Links: Large: the big links in the About Us panel (About the Firm, Our
- * Team, Contact Us), Alexandria semi-bold with the arrow always on the right
+ * Team, Contact Us), Baskervville semi-bold with the arrow always on the right
  * and a faint divider between items.
  */
 ul.is-style-mega-links,
@@ -187,7 +187,7 @@ ul.is-style-mega-links a:hover,
 ul.is-style-mega-links a:focus-visible,
 ul.is-style-mega-links-large a:hover,
 ul.is-style-mega-links-large a:focus-visible {
-    color: var(--wp--preset--color--bnti-goblin);
+    color: var(--wp--preset--color--bnti-premier);
 }
 
 ul.is-style-mega-links a:hover::after,
@@ -206,7 +206,7 @@ ul.is-style-mega-links-large a {
     justify-content: space-between;
     gap: 16px;
     padding: 20px 0;
-    font-family: var(--wp--preset--font-family--alexandria);
+    font-family: var(--wp--preset--font-family--baskervville);
     font-size: var(--wp--preset--font-size--bnti-heading-five);
     font-weight: 600;
     line-height: 1.2;
@@ -218,7 +218,7 @@ ul.is-style-mega-links-large > li:first-child a {
 
 ul.is-style-mega-links-large a::after {
     content: "\2192";
-    font-family: var(--wp--preset--font-family--open-sans);
+    font-family: var(--wp--preset--font-family--inter);
     font-size: var(--wp--preset--font-size--bnti-regular);
     font-weight: 400;
 }
@@ -257,7 +257,7 @@ ul.is-style-mega-links-large a::after {
 }
 
 /* Parent item: "+" instead of Kadence's chevron, "−" while open; text and
-   sign Goblin while open. Mega menu items and the plain dropdowns of the
+   sign Premier while open. Mega menu items and the plain dropdowns of the
    desktop (horizontal) menu, e.g. Resources, share it. */
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap {
     position: relative;
@@ -274,7 +274,7 @@ ul.is-style-mega-links-large a::after {
     justify-content: center;
     padding: 0;
     color: inherit;
-    font-family: var(--wp--preset--font-family--open-sans);
+    font-family: var(--wp--preset--font-family--inter);
     font-size: var(--wp--preset--font-size--bnti-small);
     font-weight: 400;
     line-height: 1;
@@ -289,7 +289,7 @@ ul.is-style-mega-links-large a::after {
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap,
 .wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content {
-    color: var(--wp--preset--color--bnti-goblin);
+    color: var(--wp--preset--color--bnti-premier);
 }
 
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) .kb-nav-dropdown-toggle-btn::before,
@@ -297,7 +297,7 @@ ul.is-style-mega-links-large a::after {
     content: "\2212";
 }
 
-/* 2px Goblin underline on the white rule (the link area ends 25px above the
+/* 2px Premier underline on the white rule (the link area ends 25px above the
    row's bottom edge: 24px padding + the 1px rule). */
 .wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap::after {
     content: "";
@@ -306,7 +306,7 @@ ul.is-style-mega-links-large a::after {
     right: 0;
     left: 0;
     height: 2px;
-    background-color: var(--wp--preset--color--bnti-goblin);
+    background-color: var(--wp--preset--color--bnti-premier);
     opacity: 0;
     transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     pointer-events: none;
@@ -327,6 +327,29 @@ ul.is-style-mega-links-large a::after {
     height: 26px;
 }
 
+/*
+ * Paragraph — Has Arrow: the Figma section "eyebrow" (e.g. "What We Cover"):
+ * a 40 × 19px corner arrow (a line that turns down into an arrowhead) 16px
+ * after the text. Drawn as a mask over `currentColor`, so it always matches the
+ * paragraph's text colour. Its line sits 4.25px above the middle of the first
+ * line of text and the arrowhead drops below it, as in Figma (measured on the
+ * 14px / 1.5 eyebrow; the offset follows the font size). If the text wraps,
+ * the arrow follows the last word.
+ */
+p.is-style-has-arrow::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: calc(0.75em - 4.25px);
+    width: 40px;
+    height: 20px;
+    margin-left: 16px;
+    vertical-align: top;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 20%27%3E%3Cpath d=%27M38.67 15.11 36.48 16.89V0H0v1.31h35.21v15.58l-2.24-1.77-.8 1.01 3.67 2.96 3.67-2.96-.84-1.01Z%27/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 20%27%3E%3Cpath d=%27M38.67 15.11 36.48 16.89V0H0v1.31h35.21v15.58l-2.24-1.77-.8 1.01 3.67 2.96 3.67-2.96-.84-1.01Z%27/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
 /* Kadence Codes */
 
 .kb-table p {
@@ -341,22 +364,51 @@ ul.is-style-mega-links-large a::after {
  * `is-style-link`) is not emitted from theme.json at all, so those variations
  * are defined here rather than there.
  *
- * The default button (`styles.elements.button` in theme.json) has no hover
- * state, and neither does Link below. Alternative and Outline do have their
- * own hover colours, mirrored in theme.json under
+ * The default button (`styles.elements.button` in theme.json: the Figma "CTA"
+ * — Premier gradient, CTA shadow, 8px radius, Inter 16px/500) keeps everything
+ * on hover except the gradient, which rotates to run bottom to top (see
+ * "Button hover" below). Alternative and Outline have their own hover
+ * colours, mirrored in theme.json under
  * `styles.blocks.core/button.variations`; keep the two in sync if either
  * changes.
  */
 
 /*
- * Button arrow — the "→" after the label in the Figma "Button / Primary" and
- * "Button / Outline" (Open Sans Regular 16px, 12px from the label, no letter
- * spacing or uppercase from the button). On the default (primary) and Outline
- * styles only; a button that uses Icon Settings (Iconic Button) shows its own
- * icon instead.
+ * Button hover — the default button's gradient (the `bnti-premier`
+ * colours, written out in `styles.elements.button.color.gradient` rather than
+ * through the preset variable, because a var() inside a preset is resolved on
+ * :root and would never see the button's own angle) is drawn at
+ * `--bnti-button-angle`, registered here as an <angle> so the browser can
+ * animate it: on hover it turns from 180deg (top to bottom) to
+ * 0deg (bottom to top), over the 0.3s button transition set in theme.json
+ * (`styles.elements.button.css`). Everything else stays as it is.
+ * `:where()` keeps the selector at zero specificity, like the theme.json button
+ * rules. Gravity Forms' submit does the same (gravity-forms.css), and turns its
+ * own transition off for reduced motion there.
  */
-.wp-block-button:not([class*="is-style-"]):not(.bnti-icon-button) > .wp-block-button__link::after,
-.wp-block-button.is-style-fill:not(.bnti-icon-button) > .wp-block-button__link::after,
+@property --bnti-button-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 180deg;
+}
+
+:root :where(.wp-element-button, .wp-block-button__link):hover {
+    --bnti-button-angle: 0deg;
+}
+
+/* Visitors who ask for reduced motion get the hover without the animation. */
+@media (prefers-reduced-motion: reduce) {
+    :root :where(.wp-element-button, .wp-block-button__link) {
+        transition: none !important;
+    }
+}
+
+/*
+ * Button arrow — the "→" after the label on the Outline style (Inter Regular
+ * 16px, 12px from the label). The default (primary) button has no arrow, as in
+ * the Figma "CTA" button. A button that uses Icon Settings (Iconic Button)
+ * shows its own icon instead.
+ */
 .wp-block-button.is-style-outline:not(.bnti-icon-button) > .wp-block-button__link::after {
     content: "\2192";
     margin-left: 12px;
@@ -368,9 +420,16 @@ ul.is-style-mega-links-large a::after {
 }
 
 /*
- * Alternative — own fill/text colour and padding; radius and typography are
- * inherited from `styles.elements.button` in theme.json (square, Open Sans
- * 14px/600 uppercase), so no need to restate them. Goes full width on tablet/mobile.
+ * Alternative — the Figma "Button" (the CTA's white twin): white fill, 1px
+ * Premier Dark border and text, no gradient or shadow. Radius, padding (11px
+ * 23px + the 1px border = 12px 24px in Figma) and typography (Inter 16px/500)
+ * are inherited from `styles.elements.button` in theme.json. Goes full width
+ * on tablet/mobile.
+ *
+ * Hover, as in the Figma hover variant: the Premier button gradient with white
+ * text. A gradient can't fade in from a plain colour, so it is drawn on a
+ * `::before` layer behind the label (covering the border too) and faded in
+ * with opacity over the theme's 0.3s button transition.
  *
  * theme.json declares this variation under
  * `styles.blocks.core/button.variations.alternative`, but block style variation
@@ -378,16 +437,39 @@ ul.is-style-mega-links-large a::after {
  * restated here. Keep the two in sync.
  */
 .wp-block-button.is-style-alternative .wp-block-button__link {
-    background-color: var(--wp--preset--color--bnti-goblin-lightest);
-    color: var(--wp--preset--color--bnti-green-pea);
-    padding: 4px 28px;
+    position: relative;
+    isolation: isolate;
+    background-color: var(--wp--preset--color--bnti-white);
+    background-image: none;
+    border-color: var(--wp--preset--color--bnti-premier-dark);
+    box-shadow: none;
+    color: var(--wp--preset--color--bnti-premier-dark);
 }
 
-/* Transition is inherited from the default button's `css` in theme.json
-   (styles.elements.button) — background-color/color/border-color at 0.3s. */
+.wp-block-button.is-style-alternative .wp-block-button__link::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--wp--preset--gradient--bnti-premier);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
 .wp-block-button.is-style-alternative .wp-block-button__link:hover {
-    background-color: var(--wp--preset--color--bnti-goblin);
     color: var(--wp--preset--color--bnti-white);
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link:hover::before {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-button.is-style-alternative .wp-block-button__link::before {
+        transition: none;
+    }
 }
 
 @media (max-width: 1024px) {
@@ -397,10 +479,10 @@ ul.is-style-mega-links-large a::after {
 }
 
 /*
- * Outline — the default button (`styles.elements.button` in theme.json: square
- * corners, Open Sans 14px/600 uppercase, arrow) with a transparent fill and a 1px
- * `currentColor` border, in white. Padding is 1px tighter than the default's
- * 16px 28px so the border doesn't make it any larger than a default button.
+ * Outline — the default button (`styles.elements.button` in theme.json: 8px
+ * radius, Inter 16px/500, 1px border, 11px 23px padding) with a transparent
+ * fill, no gradient or shadow, a `currentColor` border and the → arrow, in
+ * white. Same padding as the default, so both are the same size.
  *
  * Registered by core, not by the theme. Core ships its own CSS for this
  * variation (`border: 2px solid`, `color: currentColor`, and its own padding)
@@ -413,8 +495,9 @@ ul.is-style-mega-links-large a::after {
     background-color: transparent;
     background-image: none;
     border: 1px solid currentColor;
+    box-shadow: none;
     color: var(--wp--preset--color--bnti-white);
-    padding: 15px 27px;
+    padding: 11px 23px;
     text-align: center !important;
     justify-content: center !important;
 }
@@ -422,7 +505,7 @@ ul.is-style-mega-links-large a::after {
 /* The border is `currentColor`, so it turns orange along with the text. */
 .wp-block-button.is-style-outline .wp-block-button__link:hover {
     background-color: transparent;
-    color: var(--wp--preset--color--bnti-goblin);
+    color: var(--wp--preset--color--bnti-premier);
 }
 
 /*
@@ -437,12 +520,15 @@ ul.is-style-mega-links-large a::after {
 .wp-block-button.is-style-link .wp-block-button__link {
     background-color: transparent;
     background-image: none;
-    color: #538988;
+    box-shadow: none;
+    color: var(--wp--preset--color--bnti-premier);
+    border-width: 0 0 1px;
     border-bottom: 1px solid currentColor;
+    border-radius: 0;
 }
 
 .wp-block-button.is-style-link .wp-block-button__link:hover {
-    color: var(--wp--preset--color--bnti-green-pea);
+    color: var(--wp--preset--color--bnti-premier-dark);
 }
 
 /* Kadence Table */
@@ -485,11 +571,11 @@ th.kb-table-data p {
 .wp-block-kadence-accordion.bnti-faq {
     max-width: 720px;
     margin-inline: auto;
-    border-top: 1px solid var(--wp--preset--color--bnti-thunder-lightest);
+    border-top: 1px solid var(--wp--preset--color--bnti-neutral-lightest);
 }
 
 .wp-block-kadence-accordion.bnti-faq .kt-accordion-pane {
-    border-bottom: 1px solid var(--wp--preset--color--bnti-thunder-lightest);
+    border-bottom: 1px solid var(--wp--preset--color--bnti-neutral-lightest);
 }
 
 .wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header,
@@ -536,8 +622,8 @@ th.kb-table-data p {
     content: "Q." counter(bnti-faq, decimal-leading-zero);
     flex: 0 0 52px;
     align-self: baseline;
-    color: var(--wp--preset--color--bnti-goblin);
-    font-family: var(--wp--preset--font-family--open-sans, inherit);
+    color: var(--wp--preset--color--bnti-premier);
+    font-family: var(--wp--preset--font-family--inter, inherit);
     font-size: 13px;
     font-weight: 600;
     text-transform: uppercase;
@@ -570,7 +656,7 @@ th.kb-table-data p {
     width: 14px;
     height: 2px;
     margin-top: -1px;
-    background: var(--wp--preset--color--bnti-goblin);
+    background: var(--wp--preset--color--bnti-premier);
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -615,7 +701,7 @@ body.single-post .wp-block-kadence-off-canvas-trigger,
 body.single-post .wp-block-kadence-off-canvas-trigger:hover,
 body.single-post .wp-block-kadence-off-canvas-trigger:focus,
 .editor-styles-wrapper:has(.wp-block-post-author-name) .wp-block-kadence-off-canvas-trigger {
-    color: var(--wp--preset--color--bnti-goblin, #3a8d3b) !important;
+    color: var(--wp--preset--color--bnti-premier, #214280) !important;
 }
 
 /* Tablet/mobile header row: 15px left/right instead of Kadence's 30px. */

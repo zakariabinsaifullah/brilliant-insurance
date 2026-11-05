@@ -30,6 +30,14 @@ if ( ! function_exists( 'bnti_block_styles' ) ) :
 
 
 		register_block_style(
+			'core/paragraph',
+			array(
+				'name'  => 'has-arrow',
+				'label' => __( 'Has Arrow', 'brilliant-insurance' ),
+			)
+		);
+
+		register_block_style(
 			'core/list',
 			array(
 				'name'  => 'mega-links',

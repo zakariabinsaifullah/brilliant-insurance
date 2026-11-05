@@ -9,34 +9,44 @@
             "defaultPalette": false,
             "gradients": [
                 {
-                    "gradient": "linear-gradient(270deg, #231F20 7.69%, #1E7444 55.77%, #2E702F 100%)",
-                    "name": "Gradient One",
-                    "slug": "bnti-gradient-one"
+                    "gradient": "linear-gradient(180deg, #214280 37.5%, #132548 100%)",
+                    "name": "Premier",
+                    "slug": "bnti-premier"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #2E702F 8%, #1E7444 56%, #231F20 100%)",
-                    "name": "Gradient Two",
-                    "slug": "bnti-gradient-two"
+                    "gradient": "linear-gradient(79deg, #214280 56.9%, #132548 92.63%)",
+                    "name": "Premier Angled",
+                    "slug": "bnti-premier-angled"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #231F20 33%, #1E7444 69%)",
-                    "name": "Gradient Three",
-                    "slug": "bnti-gradient-three"
+                    "gradient": "radial-gradient(ellipse 49.59% 49.87% at 51.14% 51.69%, #214280 57.44%, #132548 100%)",
+                    "name": "Premier Radial",
+                    "slug": "bnti-premier-radial"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #1E7444 0%, #2E702F 100%)",
-                    "name": "Gradient Four",
-                    "slug": "bnti-gradient-four"
+                    "gradient": "linear-gradient(180deg, #000000 0%, #0B0B0B 50%, #1B3669 100%)",
+                    "name": "Midnight",
+                    "slug": "bnti-midnight"
                 },
                 {
-                    "gradient": "linear-gradient(90deg, #F2F2F2 0%, #231F20 65%)",
-                    "name": "Gradient Five",
-                    "slug": "bnti-gradient-five"
+                    "gradient": "radial-gradient(ellipse 104.45% 357.84% at 6.11% 44.67%, rgba(0, 0, 0, 0.8) 50%, rgba(27, 54, 105, 0.8) 100%)",
+                    "name": "Hero Overlay",
+                    "slug": "bnti-hero-overlay"
                 },
                 {
-                    "gradient": "linear-gradient(270deg, #F2F2F2 0%, #231F20 64.97%)",
-                    "name": "Button Gradient",
-                    "slug": "bnti-button-gradient"
+                    "gradient": "radial-gradient(ellipse 104.5% 357.81% at 6.11% 44.67%, rgba(0, 0, 0, 0.86) 45.67%, rgba(27, 54, 105, 0.86) 100%)",
+                    "name": "Hero Overlay Mobile",
+                    "slug": "bnti-hero-overlay-mobile"
+                },
+                {
+                    "gradient": "radial-gradient(ellipse 164.05% 124.18% at 50% 124.18%, #000000 1.44%, #1B3669 10.58%, #000000 55.77%, #000000 100%)",
+                    "name": "Footer Glow",
+                    "slug": "bnti-footer-glow"
+                },
+                {
+                    "gradient": "radial-gradient(ellipse 66.28% 69.55% at 49.98% 53.04%, #9D272D 0%, #9D272D 67.06%, #5E0000 100%)",
+                    "name": "Thorn Radial",
+                    "slug": "bnti-thorn-radial"
                 }
             ],
             "palette": [
@@ -51,174 +61,109 @@
                     "slug": "bnti-neutral-lightest"
                 },
                 {
-                    "color": "#DADADA",
+                    "color": "#D8D8D8",
                     "name": "Neutral Lighter",
                     "slug": "bnti-neutral-lighter"
                 },
                 {
-                    "color": "#B6B6B6",
+                    "color": "#B2B2B2",
                     "name": "Neutral Light",
                     "slug": "bnti-neutral-light"
                 },
                 {
-                    "color": "#868686",
+                    "color": "#7F7F7F",
                     "name": "Neutral",
                     "slug": "bnti-neutral"
                 },
                 {
-                    "color": "#555555",
+                    "color": "#4C4C4C",
                     "name": "Neutral Dark",
                     "slug": "bnti-neutral-dark"
                 },
                 {
-                    "color": "#252525",
+                    "color": "#191919",
                     "name": "Neutral Darker",
                     "slug": "bnti-neutral-darker"
                 },
                 {
-                    "color": "#0D0D0D",
+                    "color": "#000000",
                     "name": "Neutral Darkest",
                     "slug": "bnti-neutral-darkest"
                 },
                 {
-                    "color": "#060606",
-                    "name": "Background",
-                    "slug": "bnti-background"
+                    "color": "#111111",
+                    "name": "Ink",
+                    "slug": "bnti-ink"
                 },
                 {
-                    "color": "#E8F1EC",
-                    "name": "Green Pea Lightest",
-                    "slug": "bnti-green-pea-lightest"
+                    "color": "#4A4A4A",
+                    "name": "Text",
+                    "slug": "bnti-text"
                 },
                 {
-                    "color": "#D2E3D9",
-                    "name": "Green Pea Lighter",
-                    "slug": "bnti-green-pea-lighter"
+                    "color": "#E6E6E6",
+                    "name": "Gray 100",
+                    "slug": "bnti-gray-100"
                 },
                 {
-                    "color": "#619D7C",
-                    "name": "Green Pea Light",
-                    "slug": "bnti-green-pea-light"
+                    "color": "#8DB5FF",
+                    "name": "Premier Light",
+                    "slug": "bnti-premier-light"
                 },
                 {
-                    "color": "#1E7444",
-                    "name": "Green Pea",
-                    "slug": "bnti-green-pea"
+                    "color": "#214280",
+                    "name": "Premier",
+                    "slug": "bnti-premier"
                 },
                 {
-                    "color": "#185C36",
-                    "name": "Green Pea Dark",
-                    "slug": "bnti-green-pea-dark"
+                    "color": "#1B3669",
+                    "name": "Premier Deep",
+                    "slug": "bnti-premier-deep"
                 },
                 {
-                    "color": "#0C2E1B",
-                    "name": "Green Pea Darker",
-                    "slug": "bnti-green-pea-darker"
+                    "color": "#132548",
+                    "name": "Premier Dark",
+                    "slug": "bnti-premier-dark"
                 },
                 {
-                    "color": "#092214",
-                    "name": "Green Pea Darkest",
-                    "slug": "bnti-green-pea-darkest"
+                    "color": "#F1E8E9",
+                    "name": "Crown of Thorns Lightest",
+                    "slug": "bnti-crown-of-thorns-lightest"
                 },
                 {
-                    "color": "#EBF3EB",
-                    "name": "Goblin Lightest",
-                    "slug": "bnti-goblin-lightest"
+                    "color": "#E4D2D4",
+                    "name": "Crown of Thorns Lighter",
+                    "slug": "bnti-crown-of-thorns-lighter"
                 },
                 {
-                    "color": "#D7E8D7",
-                    "name": "Goblin Lighter",
-                    "slug": "bnti-goblin-lighter"
+                    "color": "#A1616A",
+                    "name": "Crown of Thorns Light",
+                    "slug": "bnti-crown-of-thorns-light"
                 },
                 {
-                    "color": "#75AF75",
-                    "name": "Goblin Light",
-                    "slug": "bnti-goblin-light"
+                    "color": "#7A1E2B",
+                    "name": "Crown of Thorns",
+                    "slug": "bnti-crown-of-thorns"
                 },
                 {
-                    "color": "#3A8D3B",
-                    "name": "Goblin",
-                    "slug": "bnti-goblin"
+                    "color": "#611822",
+                    "name": "Crown of Thorns Dark",
+                    "slug": "bnti-crown-of-thorns-dark"
                 },
                 {
-                    "color": "#2E702F",
-                    "name": "Goblin Dark",
-                    "slug": "bnti-goblin-dark"
+                    "color": "#300C11",
+                    "name": "Crown of Thorns Darker",
+                    "slug": "bnti-crown-of-thorns-darker"
                 },
                 {
-                    "color": "#173817",
-                    "name": "Goblin Darker",
-                    "slug": "bnti-goblin-darker"
+                    "color": "#24090C",
+                    "name": "Crown of Thorns Darkest",
+                    "slug": "bnti-crown-of-thorns-darkest"
                 },
                 {
-                    "color": "#112A11",
-                    "name": "Goblin Darkest",
-                    "slug": "bnti-goblin-darkest"
-                },
-                {
-                    "color": "#E9E8E8",
-                    "name": "Thunder Lightest",
-                    "slug": "bnti-thunder-lightest"
-                },
-                {
-                    "color": "#D3D2D2",
-                    "name": "Thunder Lighter",
-                    "slug": "bnti-thunder-lighter"
-                },
-                {
-                    "color": "#656262",
-                    "name": "Thunder Light",
-                    "slug": "bnti-thunder-light"
-                },
-                {
-                    "color": "#231F20",
-                    "name": "Thunder",
-                    "slug": "bnti-thunder"
-                },
-                {
-                    "color": "#1C1819",
-                    "name": "Thunder Dark",
-                    "slug": "bnti-thunder-dark"
-                },
-                {
-                    "color": "#0E0C0C",
-                    "name": "Thunder Darker",
-                    "slug": "bnti-thunder-darker"
-                },
-                {
-                    "color": "#0A0909",
-                    "name": "Thunder Darkest",
-                    "slug": "bnti-thunder-darkest"
-                },
-                {
-                    "color": "#FFFFFF",
-                    "name": "White Lightest",
-                    "slug": "bnti-white-lightest"
-                },
-                {
-                    "color": "#FFFFFF",
-                    "name": "White Lighter",
-                    "slug": "bnti-white-lighter"
-                },
-                {
-                    "color": "#FFFFFF",
-                    "name": "White Light",
-                    "slug": "bnti-white-light"
-                },
-                {
-                    "color": "#CCCCCC",
-                    "name": "White Dark",
-                    "slug": "bnti-white-dark"
-                },
-                {
-                    "color": "#666666",
-                    "name": "White Darker",
-                    "slug": "bnti-white-darker"
-                },
-                {
-                    "color": "#4C4C4C",
-                    "name": "White Darkest",
-                    "slug": "bnti-white-darkest"
+                    "color": "#5E0000",
+                    "name": "Darker Thorn",
+                    "slug": "bnti-darker-thorn"
                 },
                 {
                     "color": "#FFFFFF00",
@@ -266,42 +211,42 @@
                     "slug": "bnti-white-60"
                 },
                 {
-                    "color": "#0D0D0D0D",
+                    "color": "#0000000D",
                     "name": "Neutral Darkest 5%",
                     "slug": "bnti-neutral-darkest-5"
                 },
                 {
-                    "color": "#0D0D0D1A",
+                    "color": "#0000001A",
                     "name": "Neutral Darkest 10%",
                     "slug": "bnti-neutral-darkest-10"
                 },
                 {
-                    "color": "#0D0D0D26",
+                    "color": "#00000026",
                     "name": "Neutral Darkest 15%",
                     "slug": "bnti-neutral-darkest-15"
                 },
                 {
-                    "color": "#0D0D0D33",
+                    "color": "#00000033",
                     "name": "Neutral Darkest 20%",
                     "slug": "bnti-neutral-darkest-20"
                 },
                 {
-                    "color": "#0D0D0D4D",
+                    "color": "#0000004D",
                     "name": "Neutral Darkest 30%",
                     "slug": "bnti-neutral-darkest-30"
                 },
                 {
-                    "color": "#0D0D0D66",
+                    "color": "#00000066",
                     "name": "Neutral Darkest 40%",
                     "slug": "bnti-neutral-darkest-40"
                 },
                 {
-                    "color": "#0D0D0D80",
+                    "color": "#00000080",
                     "name": "Neutral Darkest 50%",
                     "slug": "bnti-neutral-darkest-50"
                 },
                 {
-                    "color": "#0D0D0D99",
+                    "color": "#00000099",
                     "name": "Neutral Darkest 60%",
                     "slug": "bnti-neutral-darkest-60"
                 }
@@ -318,190 +263,57 @@
         "typography": {
             "defaultFontSizes": false,
             "fluid": {
-                "minViewportWidth": "375px",
+                "minViewportWidth": "393px",
                 "maxViewportWidth": "1440px"
             },
             "fontFamilies": [
                 {
-                    "name": "Alexandria",
-                    "slug": "alexandria",
-                    "fontFamily": "\"Alexandria\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+                    "fontFamily": "\"Baskervville\", Georgia, \"Times New Roman\", serif",
+                    "name": "Baskervville",
+                    "slug": "baskervville",
                     "fontFace": [
                         {
-                            "src": [
-                                "file:./assets/fonts/alexandria/alexandria-300-normal.woff2"
-                            ],
-                            "fontWeight": "300",
+                            "fontFamily": "Baskervville",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Alexandria\"",
-                            "fontDisplay": "swap"
+                            "fontWeight": "400 700",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./assets/fonts/baskervville/baskervville-latin-wght-normal.woff2"
+                            ]
                         },
                         {
+                            "fontFamily": "Baskervville",
+                            "fontStyle": "italic",
+                            "fontWeight": "400 700",
+                            "fontDisplay": "swap",
                             "src": [
-                                "file:./assets/fonts/alexandria/alexandria-400-normal.woff2"
-                            ],
-                            "fontWeight": "400",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Alexandria\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/alexandria/alexandria-500-normal.woff2"
-                            ],
-                            "fontWeight": "500",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Alexandria\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/alexandria/alexandria-600-normal.woff2"
-                            ],
-                            "fontWeight": "600",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Alexandria\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/alexandria/alexandria-700-normal.woff2"
-                            ],
-                            "fontWeight": "700",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Alexandria\"",
-                            "fontDisplay": "swap"
+                                "file:./assets/fonts/baskervville/baskervville-latin-wght-italic.woff2"
+                            ]
                         }
                     ]
                 },
                 {
-                    "name": "Open Sans",
-                    "slug": "open-sans",
-                    "fontFamily": "\"Open Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+                    "fontFamily": "\"Inter\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
+                    "name": "Inter",
+                    "slug": "inter",
                     "fontFace": [
                         {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-300-normal.woff2"
-                            ],
-                            "fontWeight": "300",
+                            "fontFamily": "Inter",
                             "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
+                            "fontWeight": "100 900",
+                            "fontDisplay": "swap",
+                            "src": [
+                                "file:./assets/fonts/inter/inter-latin-wght-normal.woff2"
+                            ]
                         },
                         {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-300-italic.woff2"
-                            ],
-                            "fontWeight": "300",
+                            "fontFamily": "Inter",
                             "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
+                            "fontWeight": "100 900",
+                            "fontDisplay": "swap",
                             "src": [
-                                "file:./assets/fonts/open-sans/open-sans-400-normal.woff2"
-                            ],
-                            "fontWeight": "400",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-400-italic.woff2"
-                            ],
-                            "fontWeight": "400",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-500-normal.woff2"
-                            ],
-                            "fontWeight": "500",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-500-italic.woff2"
-                            ],
-                            "fontWeight": "500",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-600-normal.woff2"
-                            ],
-                            "fontWeight": "600",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-600-italic.woff2"
-                            ],
-                            "fontWeight": "600",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-700-normal.woff2"
-                            ],
-                            "fontWeight": "700",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans/open-sans-700-italic.woff2"
-                            ],
-                            "fontWeight": "700",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans\"",
-                            "fontDisplay": "swap"
-                        }
-                    ]
-                },
-                {
-                    "name": "Open Sans Condensed",
-                    "slug": "open-sans-condensed",
-                    "fontFamily": "\"Open Sans Condensed\", \"Open Sans\", -apple-system, BlinkMacSystemFont, \"Segoe UI\", Helvetica, Arial, sans-serif",
-                    "fontFace": [
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans-condensed/OpenSansCondensed-Light.woff2"
-                            ],
-                            "fontWeight": "300",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans Condensed\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans-condensed/OpenSansCondensed-LightItalic.woff2"
-                            ],
-                            "fontWeight": "300",
-                            "fontStyle": "italic",
-                            "fontFamily": "\"Open Sans Condensed\"",
-                            "fontDisplay": "swap"
-                        },
-                        {
-                            "src": [
-                                "file:./assets/fonts/open-sans-condensed/OpenSansCondensed-Bold.woff2"
-                            ],
-                            "fontWeight": "700",
-                            "fontStyle": "normal",
-                            "fontFamily": "\"Open Sans Condensed\"",
-                            "fontDisplay": "swap"
+                                "file:./assets/fonts/inter/inter-latin-wght-italic.woff2"
+                            ]
                         }
                     ]
                 }
@@ -512,7 +324,7 @@
                     "size": "72px",
                     "slug": "bnti-heading-one",
                     "fluid": {
-                        "min": "44px",
+                        "min": "48px",
                         "max": "72px"
                     }
                 },
@@ -580,34 +392,34 @@
                     }
                 },
                 {
-                    "fluid": false,
                     "name": "Title",
                     "size": "24px",
-                    "slug": "bnti-title"
+                    "slug": "bnti-title",
+                    "fluid": false
                 },
                 {
-                    "fluid": false,
                     "name": "Lead",
                     "size": "20px",
-                    "slug": "bnti-lead"
+                    "slug": "bnti-lead",
+                    "fluid": false
                 },
                 {
-                    "fluid": false,
                     "name": "Regular",
                     "size": "16px",
-                    "slug": "bnti-regular"
+                    "slug": "bnti-regular",
+                    "fluid": false
                 },
                 {
-                    "fluid": false,
                     "name": "Small",
                     "size": "14px",
-                    "slug": "bnti-small"
+                    "slug": "bnti-small",
+                    "fluid": false
                 },
                 {
-                    "fluid": false,
                     "name": "Extra Small",
                     "size": "12px",
-                    "slug": "bnti-x-small"
+                    "slug": "bnti-x-small",
+                    "fluid": false
                 }
             ],
             "writingMode": true
@@ -623,6 +435,11 @@
                     "name": "Default Shadow",
                     "shadow": "0 0 11.5px 0 #231F20",
                     "slug": "bnti-shadow"
+                },
+                {
+                    "name": "CTA",
+                    "shadow": "11px 8px 41px 2px rgba(242, 242, 242, 0.25)",
+                    "slug": "bnti-cta"
                 }
             ]
         },
@@ -651,12 +468,12 @@
                         },
                         ":hover": {
                             "color": {
-                                "text": "var(--wp--preset--color--bnti-green-pea)"
+                                "text": "var(--wp--preset--color--bnti-premier-dark)"
                             }
                         },
                         "color": {
                             "background": "transparent",
-                            "text": "#538988"
+                            "text": "var(--wp--preset--color--bnti-premier)"
                         },
                         "css": "background: transparent !important;",
                         "spacing": {
@@ -673,23 +490,27 @@
                     },
                     "alternative": {
                         "border": {
-                            "radius": "4px"
+                            "color": "var(--wp--preset--color--bnti-premier-dark)",
+                            "radius": "8px",
+                            "style": "solid",
+                            "width": "1px"
                         },
                         "color": {
-                            "background": "var(--wp--preset--color--bnti-goblin-lightest)",
-                            "text": "var(--wp--preset--color--bnti-green-pea)"
+                            "background": "var(--wp--preset--color--bnti-white)",
+                            "text": "var(--wp--preset--color--bnti-premier-dark)"
                         },
+                        "shadow": "none",
                         "spacing": {
                             "padding": {
-                                "bottom": "4px",
-                                "left": "28px",
-                                "right": "28px",
-                                "top": "4px"
+                                "top": "11px",
+                                "right": "23px",
+                                "bottom": "11px",
+                                "left": "23px"
                             }
                         },
                         ":hover": {
                             "color": {
-                                "background": "var(--wp--preset--color--bnti-goblin)",
+                                "gradient": "var(--wp--preset--gradient--bnti-premier)",
                                 "text": "var(--wp--preset--color--bnti-white)"
                             }
                         }
@@ -697,26 +518,26 @@
                     "outline": {
                         "border": {
                             "color": "currentColor",
-                            "radius": "0px",
+                            "radius": "8px",
                             "style": "solid",
                             "width": "1px"
                         },
                         "color": {
                             "background": "transparent",
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-premier)"
                         },
                         "spacing": {
                             "padding": {
-                                "top": "15px",
-                                "right": "27px",
-                                "bottom": "15px",
-                                "left": "27px"
+                                "top": "11px",
+                                "right": "23px",
+                                "bottom": "11px",
+                                "left": "23px"
                             }
                         },
                         ":hover": {
                             "color": {
                                 "background": "transparent",
-                                "text": "var(--wp--preset--color--bnti-goblin)"
+                                "text": "var(--wp--preset--color--bnti-premier)"
                             }
                         }
                     }
@@ -753,7 +574,7 @@
             },
             "core/comment-author-name": {
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-text)"
                 },
                 "elements": {
                     "link": {
@@ -763,7 +584,7 @@
                             }
                         },
                         "color": {
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-ink)"
                         },
                         "typography": {
                             "textDecoration": "none"
@@ -793,12 +614,12 @@
             },
             "core/comment-date": {
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-text)"
                 },
                 "elements": {
                     "link": {
                         "color": {
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-ink)"
                         }
                     }
                 },
@@ -810,7 +631,7 @@
                 "elements": {
                     "link": {
                         "color": {
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-ink)"
                         }
                     }
                 },
@@ -822,7 +643,7 @@
                 "elements": {
                     "link": {
                         "color": {
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-ink)"
                         }
                     }
                 },
@@ -878,13 +699,13 @@
             },
             "core/paragraph": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--open-sans)",
+                    "fontFamily": "var(--wp--preset--font-family--inter)",
                     "fontSize": "var(--wp--preset--font-size--bnti-regular)",
                     "lineHeight": "1.5",
                     "fontWeight": "400"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-text)"
                 }
             },
             "core/post-comments-form": {
@@ -901,7 +722,7 @@
             },
             "core/post-date": {
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-text)"
                 },
                 "elements": {
                     "link": {
@@ -911,7 +732,7 @@
                             }
                         },
                         "color": {
-                            "text": "var(--wp--preset--color--bnti-white)"
+                            "text": "var(--wp--preset--color--bnti-ink)"
                         },
                         "typography": {
                             "textDecoration": "none"
@@ -1095,139 +916,138 @@
             }
         },
         "color": {
-            "background": "var(--wp--preset--color--bnti-background)",
-            "text": "var(--wp--preset--color--bnti-white)"
+            "background": "var(--wp--preset--color--bnti-white)",
+            "text": "var(--wp--preset--color--bnti-text)"
         },
         "elements": {
             "button": {
                 "border": {
-                    "radius": "0px"
+                    "color": "transparent",
+                    "radius": "8px",
+                    "style": "solid",
+                    "width": "1px"
                 },
                 "color": {
-                    "background": "var(--wp--preset--color--bnti-goblin)",
+                    "background": "var(--wp--preset--color--bnti-premier)",
+                    "gradient": "linear-gradient(var(--bnti-button-angle, 180deg), #214280 37.5%, #132548 100%)",
                     "text": "var(--wp--preset--color--bnti-white)"
                 },
-                "css": "transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; text-align: center;",
+                "css": "transition: --bnti-button-angle 0.3s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1), color 0.3s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1); box-sizing: border-box; display: inline-flex; align-items: center; justify-content: center; text-align: center;",
                 "spacing": {
                     "padding": {
-                        "top": "16px",
-                        "right": "28px",
-                        "bottom": "16px",
-                        "left": "28px"
+                        "top": "11px",
+                        "right": "23px",
+                        "bottom": "11px",
+                        "left": "23px"
                     }
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--open-sans)",
-                    "fontSize": "var(--wp--preset--font-size--bnti-small)",
+                    "fontFamily": "var(--wp--preset--font-family--inter)",
+                    "fontSize": "var(--wp--preset--font-size--bnti-regular)",
                     "fontStyle": "normal",
-                    "fontWeight": "600",
-                    "letterSpacing": "0.12em",
-                    "lineHeight": "1.3",
-                    "textTransform": "uppercase"
-                },
-                ":hover": {
-                    "color": {
-                        "background": "var(--wp--preset--color--bnti-goblin-dark)",
-                        "text": "var(--wp--preset--color--bnti-white)"
-                    }
+                    "fontWeight": "500",
+                    "letterSpacing": "0",
+                    "lineHeight": "1.5",
+                    "textTransform": "none"
                 },
                 ":focus": {
                     "outline": {
-                        "color": "var(--wp--preset--color--bnti-white)",
+                        "color": "var(--wp--preset--color--bnti-premier)",
                         "offset": "2px"
                     }
-                }
+                },
+                "shadow": "var(--wp--preset--shadow--bnti-cta)"
             },
             "caption": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--open-sans)",
+                    "fontFamily": "var(--wp--preset--font-family--inter)",
                     "fontSize": "var(--wp--preset--font-size--bnti-small)",
                     "lineHeight": "1.5"
                 }
             },
             "h1": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-one)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "lineHeight": "1.2"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "h2": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-two)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "lineHeight": "1.2"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "h3": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-three)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "lineHeight": "1.2"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "h4": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-four)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "lineHeight": "1.2"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "h5": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-five)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "letterSpacing": "0px",
                     "lineHeight": "1.2"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "h6": {
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontSize": "var(--wp--preset--font-size--bnti-heading-six)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "letterSpacing": "0px",
                     "lineHeight": "1.2",
                     "textTransform": "none"
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 }
             },
             "heading": {
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 },
                 "typography": {
-                    "fontFamily": "var(--wp--preset--font-family--alexandria)",
+                    "fontFamily": "var(--wp--preset--font-family--baskervville)",
                     "fontStyle": "normal",
-                    "fontWeight": "300",
+                    "fontWeight": "400",
                     "letterSpacing": "0px",
                     "lineHeight": "1.2"
                 }
@@ -1235,14 +1055,14 @@
             "link": {
                 ":hover": {
                     "color": {
-                        "text": "var(--wp--preset--color--bnti-goblin)"
+                        "text": "var(--wp--preset--color--bnti-premier)"
                     },
                     "typography": {
                         "textDecoration": "none"
                     }
                 },
                 "color": {
-                    "text": "var(--wp--preset--color--bnti-white)"
+                    "text": "var(--wp--preset--color--bnti-ink)"
                 },
                 "css": "transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);",
                 "typography": {
@@ -1264,7 +1084,7 @@
             }
         },
         "typography": {
-            "fontFamily": "var(--wp--preset--font-family--open-sans)",
+            "fontFamily": "var(--wp--preset--font-family--inter)",
             "fontSize": "var(--wp--preset--font-size--bnti-regular)",
             "fontStyle": "normal",
             "fontWeight": "400",

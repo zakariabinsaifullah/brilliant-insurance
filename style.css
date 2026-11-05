@@ -109,11 +109,11 @@ p {
 .bnti-footer a,
 .bnti-footer p {
     font-size: 14px !important;
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 footer .wp-block-paragraph a {
-    font-family: 'Open Sans', sans-serif !important;
+    font-family: 'Inter', sans-serif !important;
 }
 
 .bnti-footer .wp-block-gallery.has-nested-images figure.wp-block-image {
@@ -130,17 +130,17 @@ footer .wp-block-paragraph a {
     padding-right: 40px !important;
 }
 
-/* The off-canvas Mobile Menu sets its own fonts (Alexandria items, Open
+/* The off-canvas Mobile Menu sets its own fonts (Baskervville items, Open
    Sans sub-items) in its Kadence Navigation settings, so leave it out. */
 .kt-blocks-accordion-header .kt-blocks-accordion-title,
 a.kb-nav-link-content:not(.wp-block-kadence-off-canvas *) {
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .taxonomy-category a {
     margin: 0 !important;
     padding: 0 !important;
-    font-family: 'Open Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
 }
 
 .kt-accodion-icon-style-basic .kt-blocks-accordion-icon-trigger:after,

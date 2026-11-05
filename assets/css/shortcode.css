@@ -2,7 +2,7 @@
    Posts Grid Shortcode — shortcode.css
 
    The posts grid ([bnti_posts_grid]) in the Brilliant Insurance style: a row of uppercase
-   category tabs on a faint rule (the active one Goblin with a 2px underline on
+   category tabs on a faint rule (the active one Premier with a 2px underline on
    the rule, like the open mega menu item), square dark cards with a 1px White
    15% border (image, category, title, "Read more →"), then a count and square
    page buttons under another rule. Everything square, colours from presets.
@@ -71,12 +71,12 @@
 
 .ipg-nav .ipg-filter-btn.active {
     background: none;
-    color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
-    border-bottom-color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    color: var(--wp--preset--color--bnti-premier, #214280);
+    border-bottom-color: var(--wp--preset--color--bnti-premier, #214280);
 }
 
 .ipg-nav .ipg-filter-btn:focus-visible {
-    outline: 2px solid var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    outline: 2px solid var(--wp--preset--color--bnti-premier, #214280);
     outline-offset: 2px;
 }
 
@@ -97,7 +97,7 @@
 }
 
 /* =============================================================================
-   Post Card — square, 1px White 15% border, Goblin border on hover
+   Post Card — square, 1px White 15% border, Premier border on hover
    ============================================================================= */
 
 .ipg-card {
@@ -106,13 +106,13 @@
     box-sizing: border-box;
     height: 100%;
     border: 1px solid var(--wp--preset--color--bnti-white-15, rgba(255, 255, 255, 0.15));
-    background: var(--wp--preset--color--bnti-background, #060606);
+    background: var(--wp--preset--color--bnti-white, #FFFFFF);
     transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .ipg-card:hover,
 .ipg-card:focus-within {
-    border-color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    border-color: var(--wp--preset--color--bnti-premier, #214280);
 }
 
 .ipg-card__image {
@@ -154,7 +154,7 @@
     font-weight: 600;
     line-height: 1.5;
     text-transform: uppercase;
-    color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    color: var(--wp--preset--color--bnti-premier, #214280);
 }
 
 .ipg-card .ipg-card__title {
@@ -163,8 +163,8 @@
     color: var(--wp--preset--color--bnti-white, #ffffff);
 }
 
-/* The theme's link element style (Open Sans 400, 1.5) would otherwise win over
-   the heading's Alexandria 300 / 1.2. */
+/* The theme's link element style (Inter 400, 1.5) would otherwise win over
+   the heading's Baskervville 400 / 1.2. */
 .ipg-card .ipg-card__title a {
     font-family: inherit;
     font-weight: inherit;
@@ -175,7 +175,7 @@
 }
 
 .ipg-card .ipg-card__title a:hover {
-    color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    color: var(--wp--preset--color--bnti-premier, #214280);
 }
 
 /* "Read more →": the theme's button typography (14px / 600 / uppercase /
@@ -197,7 +197,7 @@
     transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* The arrow matches the theme buttons' "→" (Open Sans 16px / 400). */
+/* The arrow matches the theme buttons' "→" (Inter 16px / 400). */
 .ipg-card .ipg-card__arrow {
     font-size: var(--wp--preset--font-size--bnti-regular, 16px);
     font-weight: 400;
@@ -209,7 +209,7 @@
 .ipg-card .ipg-card__button:hover,
 .ipg-card .ipg-card__button:focus-visible,
 .ipg-card:hover .ipg-card__button {
-    color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    color: var(--wp--preset--color--bnti-premier, #214280);
 }
 
 .ipg-card:hover .ipg-card__arrow {
@@ -251,7 +251,7 @@
 }
 
 /* Square 44px page buttons with a White 15% border; the current page and the
-   hovered one fill Goblin. Prev/Next widen to fit and use the button type. */
+   hovered one fill Premier. Prev/Next widen to fit and use the button type. */
 .ipg-pagination {
     display: flex;
     flex-wrap: wrap;
@@ -290,13 +290,13 @@
 
 .ipg-pagination .ipg-page-btn:hover,
 .ipg-pagination .ipg-page-btn.active {
-    background: var(--wp--preset--color--bnti-goblin, #3a8d3b);
-    border-color: var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    background: var(--wp--preset--color--bnti-premier, #214280);
+    border-color: var(--wp--preset--color--bnti-premier, #214280);
     color: var(--wp--preset--color--bnti-white, #ffffff);
 }
 
 .ipg-pagination .ipg-page-btn:focus-visible {
-    outline: 2px solid var(--wp--preset--color--bnti-goblin, #3a8d3b);
+    outline: 2px solid var(--wp--preset--color--bnti-premier, #214280);
     outline-offset: 2px;
 }
 

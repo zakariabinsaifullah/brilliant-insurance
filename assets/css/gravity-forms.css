@@ -1,6 +1,6 @@
 /* ── Gravity Forms ──────────────────────────────────────────────────────────── */
 
-/* Open Sans across every Gravity Form. GF's font variables all resolve back to
+/* Inter across every Gravity Form. GF's font variables all resolve back to
    --gf-font-family-base: controls and placeholders through -primary, labels
    through -secondary, descriptions through -tertiary, buttons and validation
    direct. Setting that one variable therefore covers the lot.
@@ -8,7 +8,7 @@
    The element rule after it is for the no-framework theme, which predates the
    CSS API and does not read those variables. */
 .gform_wrapper {
-    --gf-font-family-base: var(--wp--preset--font-family--open-sans, "Open Sans", sans-serif);
+    --gf-font-family-base: var(--wp--preset--font-family--inter, "Inter", sans-serif);
 }
 
 .gform_wrapper input,
@@ -19,7 +19,7 @@
 .gform_wrapper legend,
 .gform_wrapper .gfield_description,
 .gform_wrapper .gform_button {
-    font-family: var(--wp--preset--font-family--open-sans, "Open Sans", sans-serif) !important;
+    font-family: var(--wp--preset--font-family--inter, "Inter", sans-serif) !important;
 }
 
 /* Field metrics come from Gravity Forms' own CSS API custom properties rather
@@ -98,7 +98,7 @@
 
 /* Dropdown options open on the browser's light list, so give them dark text. */
 .gform_body select option {
-    color: var(--wp--preset--color--bnti-thunder, #231F20);
+    color: var(--wp--preset--color--bnti-neutral-darker, #191919);
 }
 
 .gform_body input:focus,
@@ -138,55 +138,56 @@
 }
 
 .gform_wrapper .gform_button.button {
-    background: var(--wp--preset--color--bnti-goblin, #3a8d3b) !important;
+    background: linear-gradient(var(--bnti-button-angle, 180deg), #214280 37.5%, #132548 100%) !important;
+    background-color: var(--wp--preset--color--bnti-premier, #214280) !important;
     color: var(--wp--preset--color--bnti-white, #ffffff) !important;
-    border: none !important;
-    border-radius: 0 !important;
-    padding: 16px 28px !important;
+    border: 1px solid transparent !important;
+    border-radius: 8px !important;
+    box-shadow: var(--wp--preset--shadow--bnti-cta, 11px 8px 41px 2px rgba(242, 242, 242, 0.25)) !important;
+    padding: 11px 23px !important;
     width: auto !important;
     box-sizing: border-box !important;
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-family: var(--wp--preset--font-family--open-sans, "Open Sans", sans-serif) !important;
-    font-size: var(--wp--preset--font-size--bnti-small, 14px) !important;
+    font-family: var(--wp--preset--font-family--inter, "Inter", sans-serif) !important;
+    font-size: var(--wp--preset--font-size--bnti-regular, 16px) !important;
     font-style: normal !important;
-    font-weight: 600 !important;
-    letter-spacing: 0.12em !important;
-    line-height: 1.3 !important;
-    text-transform: uppercase !important;
+    font-weight: 500 !important;
+    letter-spacing: 0 !important;
+    line-height: 1.5 !important;
+    text-transform: none !important;
     text-align: center !important;
     text-decoration: none !important;
     cursor: pointer !important;
     transition:
+        --bnti-button-angle 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
         border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
 }
 
-/* The theme's "→" after the label (blocks.css, "Button arrow"). Gravity Forms'
-   framework CSS clears `.button::after` content at a higher specificity, so it
-   is restated here. */
+/* No arrow, like the default button. Gravity Forms' framework CSS may add
+   its own `.button::after`, so clear it. */
 .gform_wrapper .gform_button.button::after {
-    content: "\2192" !important;
-    display: inline !important;
-    margin-left: 12px !important;
-    font-size: var(--wp--preset--font-size--bnti-regular, 16px) !important;
-    font-weight: 400 !important;
-    letter-spacing: 0 !important;
-    line-height: 1 !important;
-    text-transform: none !important;
+    content: none !important;
 }
 
-/* Mirrors `styles.elements.button:hover`. */
+/* The gradient rotates on hover, like the default button (blocks.css, "Button
+   hover"). */
 .gform_wrapper .gform_button.button:hover {
-    background: var(--wp--preset--color--bnti-goblin-dark, #2E702F) !important;
-    color: var(--wp--preset--color--bnti-white, #ffffff) !important;
+    --bnti-button-angle: 0deg;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .gform_wrapper .gform_button.button {
+        transition: none !important;
+    }
 }
 
 /* Mirrors `styles.elements.button:focus`. */
 .gform_wrapper .gform_button.button:focus {
-    outline-color: var(--wp--preset--color--bnti-white, #ffffff) !important;
+    outline-color: var(--wp--preset--color--bnti-premier, #214280) !important;
     outline-offset: 2px !important;
 }
 

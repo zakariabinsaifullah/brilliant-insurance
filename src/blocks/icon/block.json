@@ -89,7 +89,7 @@
         },
         "backgroundColor": {
             "type": "string",
-            "default": "bnti-goblin"
+            "default": "bnti-premier"
         },
         "width": {
             "type": "number"

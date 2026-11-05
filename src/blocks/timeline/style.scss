@@ -7,7 +7,7 @@
  * row (and of the last step) ends exactly at the row's edge, whatever the
  * number of columns.
  *
- * The highlighted step (`is-active`) colours its dot (Goblin by default). With
+ * The highlighted step (`is-active`) colours its dot (Premier by default). With
  * "Highlight line" on, the block sets --bnti-timeline-active-line(-height) and
  * that step's line becomes a 3px progress bar too (homepage "How we move your
  * case."); otherwise the line stays the normal colour (practice page "How the
@@ -24,7 +24,7 @@
  */
 .wp-block-bnti-timeline {
     --bnti-timeline-color: var(--wp--preset--color--bnti-white);
-    --bnti-timeline-active: var(--wp--preset--color--bnti-goblin);
+    --bnti-timeline-active: var(--wp--preset--color--bnti-premier);
     --bnti-timeline-gap: 40px;
     --bnti-timeline-content-gap: 40px;
     display: grid;

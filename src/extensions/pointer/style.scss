@@ -5,7 +5,7 @@
  * ending in a dot. Two sizes from Figma:
  * - small: 10px white dot (Text Block / "What does an injury and insurance
  *   lawyer do?")
- * - large: 18px dot, white centre with a 4px Green Pea ring (homepage "The
+ * - large: 18px dot, white centre with a 4px Premier Dark ring (homepage "The
  *   claims we take on.")
  * --bnti-pointer-length is the full length, dot included. The line sits at the
  * block's vertical middle, or --bnti-pointer-top px from its top.
@@ -14,7 +14,7 @@
  * front end, the block wrapper's ::before in the editor (core draws selection outlines with ::after). Desktop only.
  */
 
-$green-pea: var(--wp--preset--color--bnti-green-pea);
+$green-pea: var(--wp--preset--color--bnti-premier-dark);
 $white: var(--wp--preset--color--bnti-white);
 
 @mixin pointer-shape {

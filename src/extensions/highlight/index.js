@@ -4,7 +4,7 @@
  * Adds a "Highlight" button, in its own group on the block toolbar (not in
  * the rich text "More" menu), to every rich text field (headings, paragraphs,
  * lists, buttons…). The selected text is wrapped in
- * <mark class="bnti-highlight">, which makes it semi-bold (600) and Goblin
+ * <mark class="bnti-highlight">, which makes it semi-bold (600) and Premier
  * green, as in the Figma headings ("Key takeaways.", "Meet James."). A
  * different colour can be picked from the theme palette; it is stored as the
  * preset's own `has-{slug}-color` class, so no inline styles are saved.
@@ -18,7 +18,7 @@ import { Popover, ColorPalette, Button, BaseControl, ToolbarGroup, ToolbarButton
 import './style.scss';
 
 const FORMAT_NAME = 'bnti/highlight';
-const DEFAULT_SLUG = 'bnti-goblin';
+const DEFAULT_SLUG = 'bnti-premier';
 
 const highlightIcon = (
     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
@@ -95,7 +95,7 @@ function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef
                     <div style={{ padding: '16px', width: '260px' }}>
                         <BaseControl
                             label={__('Highlight colour', 'brilliant-insurance')}
-                            help={__('Semi-bold text in the chosen colour. Default: Goblin.', 'brilliant-insurance')}
+                            help={__('Semi-bold text in the chosen colour. Default: Premier.', 'brilliant-insurance')}
                             __nextHasNoMarginBottom
                         >
                             <ColorPalette
@@ -108,7 +108,7 @@ function HighlightEdit({ isActive, activeAttributes, value, onChange, contentRef
                         </BaseControl>
                         <div style={{ display: 'flex', justifyContent: 'space-between', marginTop: '12px' }}>
                             <Button variant="secondary" size="compact" onClick={() => applyHighlight(DEFAULT_SLUG)}>
-                                {__('Reset to Goblin', 'brilliant-insurance')}
+                                {__('Reset to Premier', 'brilliant-insurance')}
                             </Button>
                             <Button
                                 variant="tertiary"
