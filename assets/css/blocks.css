@@ -851,7 +851,7 @@ p.is-style-has-arrow::after {
     }
 
     .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data:first-child p {
-        color: var(--wp--preset--color--bnti-premier);
+        color: var(--wp--preset--color--bnti-premier) !important; /* over the cell's Ink colour class */
         font-size: var(--wp--preset--font-size--bnti-lead);
         font-weight: 400 !important;
     }
