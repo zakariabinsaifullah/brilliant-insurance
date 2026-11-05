@@ -483,6 +483,13 @@ ul.is-style-mega-links-large a::after {
     position: relative;
 }
 
+/* Kadence gives every Section `z-index: 1`, so the badge's own z-index only
+   counts inside its card and the next card would paint over its right half.
+   Lift the card that holds the badge above its neighbour. */
+.wp-block-kadence-column:has(> .kt-inside-inner-col > .bnti-vs-badge) {
+    z-index: 2;
+}
+
 .wp-block-group.bnti-vs-badge {
     position: absolute;
     top: 50%;
