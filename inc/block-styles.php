@@ -40,6 +40,14 @@ if ( ! function_exists( 'bnti_block_styles' ) ) :
 		register_block_style(
 			'core/list',
 			array(
+				'name'  => 'dots',
+				'label' => __( 'Dots', 'brilliant-insurance' ),
+			)
+		);
+
+		register_block_style(
+			'core/list',
+			array(
 				'name'  => 'mega-links',
 				'label' => __( 'Mega Links', 'brilliant-insurance' ),
 			)

@@ -6,7 +6,7 @@ Description: This Full Site Editing Theme is exclusively developed for Brilliant
 Requires at least: 6.7
 Tested up to: 7.1
 Requires PHP: 7.4
-Version: 0.0.8
+Version: 0.0.9
 Text Domain: brilliant-insurance
 */
 
@@ -131,8 +131,8 @@ footer .wp-block-paragraph a {
 }
 
 /* The off-canvas Mobile Menu sets its own fonts (Baskervville items, Inter
-   sub-items) in its Kadence Navigation settings, so leave it out. */
-.kt-blocks-accordion-header .kt-blocks-accordion-title,
+   sub-items) in its Kadence Navigation settings, so leave it out. Accordion
+   titles get their font from blocks.css ("FAQ accordion"). */
 a.kb-nav-link-content:not(.wp-block-kadence-off-canvas *) {
     font-family: 'Inter', sans-serif;
 }

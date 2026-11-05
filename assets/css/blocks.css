@@ -142,6 +142,39 @@ header.wp-block-kadence-rowlayout::before {
 }
 
 /*
+ * List — Dots (Figma "Key takeaways"): an 8px Premier Soft dot before each
+ * item, 16px from the text, items 16px apart. The text colour and size come
+ * from the List block's settings.
+ */
+ul.is-style-dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.is-style-dots > li {
+    position: relative;
+    margin: 0;
+    padding-left: 24px;
+}
+
+ul.is-style-dots > li + li {
+    margin-top: 16px;
+}
+
+ul.is-style-dots > li::before {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--wp--preset--color--bnti-premier-soft);
+    transform: translateY(-50%);
+}
+
+/*
  * Mega menu link lists (List block styles).
  *
  * Mega Links: a plain list of links (practice areas, cities), 16px Inter,
@@ -714,24 +747,31 @@ p.is-style-has-arrow::after {
     color: var(--wp--preset--color--bnti-premier-dark);
 }
 
-/* Kadence Table */
-
+/* Kadence Table (Figma "Inner / Table"): a white table with a 1px border and
+   20px corners, a Premier gradient header row (white Inter 16/600), a light
+   grey first column (Inter 16/600 in Ink) and a 1px rule between rows.
+   Cell padding, column backgrounds and type come from the block's settings;
+   this adds what Kadence can't: the rounded clipped frame and the gradient. */
 .kb-table-container {
     width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
 }
 
-/* Head row (Figma "Head Row"): 600 uppercase labels in the text colour, with
-   20px top/bottom padding instead of the body cells' padding. Body cells keep
-   their content vertically centred. */
-th.kb-table-data p {
-    text-transform: uppercase;
-    font-weight: 600;
-    color: inherit;
+.kb-table-container .kb-table {
+    width: 100%;
+    border-collapse: collapse;
 }
 
-.kb-table th.kb-table-data {
-    padding-top: 20px;
-    padding-bottom: 20px;
+.kb-table-container .kb-table tr:first-child th.kb-table-data {
+    background-image: var(--wp--preset--gradient--bnti-premier);
+    color: var(--wp--preset--color--bnti-white);
+}
+
+.kb-table-container .kb-table tr + tr .kb-table-data {
+    border-top: 1px solid var(--wp--preset--color--bnti-gray-100);
 }
 
 .kb-table td.kb-table-data {
@@ -743,37 +783,71 @@ th.kb-table-data p {
         table-layout: auto !important;
         min-width: 600px !important;
     }
+
+    .kb-table-container {
+        overflow-x: auto;
+    }
 }
 
-/* FAQ accordion
-   A Kadence Accordion with the class `bnti-faq` (Advanced → Additional CSS
-   class): 720px wide and centred, a thin divider above the first question and
-   below every question/answer, no title background and no answer box. Title
-   type, padding and the orange chevron come from the block's own settings. */
-
-.wp-block-kadence-accordion.bnti-faq {
-    max-width: 720px;
-    margin-inline: auto;
-    border-top: 1px solid var(--wp--preset--color--bnti-neutral-lightest);
+/* FAQ accordion (Figma "Inner / FAQ"): a Kadence Accordion with the class
+   `bnti-faq`. Every question is a white card (1px border, 20px corners), 14px
+   apart; the question is Baskervville 22px in Ink with a Premier + / − on the
+   right, the answer Inter 18px in the text colour. The first pane starts open
+   (Accordion → "Start open": pane 1), the rest collapsed. */
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-inner-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
 }
 
 .wp-block-kadence-accordion.bnti-faq .kt-accordion-pane {
-    border-bottom: 1px solid var(--wp--preset--color--bnti-neutral-lightest);
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-header-wrap {
+    margin: 0;
 }
 
 .wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header,
 .wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:hover,
 .wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:focus,
 .wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header.kt-accordion-panel-active {
-    background: transparent;
+    gap: 24px;
+    padding: 28px 32px;
     border: 0;
     border-radius: 0;
+    background: transparent;
+    color: var(--wp--preset--color--bnti-ink);
     text-align: left;
 }
 
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-title {
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:hover .kt-blocks-accordion-title {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+/* Kadence's "basic" icon draws the + / − with two bars; colour them Premier. */
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-icon-trigger::before,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-icon-trigger::after {
+    background: var(--wp--preset--color--bnti-premier) !important;
+}
+
 .wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner {
+    padding: 0 32px 28px;
     border: 0;
     background: transparent;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-medium);
 }
 
 .wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner > :last-child {
