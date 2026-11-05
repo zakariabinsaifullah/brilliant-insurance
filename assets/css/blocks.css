@@ -473,6 +473,35 @@ ul.is-style-mega-links-large a::after {
 }
 
 /*
+ * "vs" badge (Figma "VS Badge", homepage Agent vs Broker): a Group with the
+ * `bnti-vs-badge` class, styled with block settings (64px black circle, 6px
+ * border in the section background, "vs" in Baskervville), placed as the last
+ * block of the first card. This only positions it: centred on the 24px gap
+ * between the two cards, and between the stacked cards at 1024px and below.
+ */
+.kt-inside-inner-col:has(> .bnti-vs-badge) {
+    position: relative;
+}
+
+.wp-block-group.bnti-vs-badge {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    transform: translate(calc(50% + 12px), -50%);
+}
+
+@media (max-width: 1024px) {
+    .wp-block-group.bnti-vs-badge {
+        top: auto;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%, calc(50% + 12px));
+    }
+}
+
+/*
  * Paragraph — Has Arrow: the Figma section "eyebrow" (e.g. "What We Cover"):
  * a 40 × 19px corner arrow (a line that turns down into an arrowhead) 16px
  * after the text. Drawn as a mask over `currentColor`, so it always matches the
