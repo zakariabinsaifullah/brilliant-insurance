@@ -36,6 +36,7 @@ require_once get_theme_file_path( 'inc/team.php' );         // Team CPT (attorne
 
 // ── Gravity Forms ──────────────────────────────────────────────────────────────
 require_once get_theme_file_path( 'inc/gravity-forms.php' ); // Gravity Forms styles & submit button
+require_once get_theme_file_path( 'inc/form-panel.php' ); // Slide-in quote form panel & settings
 
 // ── Shortcodes ─────────────────────────────────────────────────────────────────
 require_once get_theme_file_path( 'inc/shortcode.php' ); // Posts grid shortcode
