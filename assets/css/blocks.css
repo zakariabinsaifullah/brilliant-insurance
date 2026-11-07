@@ -1109,3 +1109,204 @@ body.single-post .wp-block-kadence-header-tablet.kb-header-container,
         justify-content: center;
     }
 }
+
+/* =============================================================================
+   Blog, posts and templates
+   ============================================================================= */
+
+/*
+ * Long-form text (`.bnti-prose`): the single post content and the legal pages.
+ * Section titles elsewhere are h2 at the theme size (52px); inside an article
+ * the headings step down so a writer's h2 reads as a sub-heading: h2 at
+ * heading-four, h3 at heading-five, h4 at heading-six, with room above them.
+ * Paragraphs and lists use Text Medium, blockquotes a Premier rule and the
+ * heading face, images the 20px radius.
+ */
+.bnti-prose > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bnti-prose > * + * {
+    margin-top: 24px;
+}
+
+.bnti-prose > h2,
+.bnti-prose > h3,
+.bnti-prose > h4 {
+    margin-top: 48px;
+}
+
+.bnti-prose > :is(h2, h3, h4) + * {
+    margin-top: 16px;
+}
+
+.bnti-prose h2 {
+    font-size: var(--wp--preset--font-size--bnti-heading-four);
+}
+
+.bnti-prose h3 {
+    font-size: var(--wp--preset--font-size--bnti-heading-five);
+}
+
+.bnti-prose h4 {
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+}
+
+.bnti-prose p,
+.bnti-prose li {
+    font-size: var(--wp--preset--font-size--bnti-medium);
+}
+
+.bnti-prose ul,
+.bnti-prose ol {
+    padding-left: 1.25em;
+}
+
+.bnti-prose li + li {
+    margin-top: 8px;
+}
+
+.bnti-prose li::marker {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-prose a {
+    color: var(--wp--preset--color--bnti-premier);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+}
+
+.bnti-prose a:hover {
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+.bnti-prose blockquote,
+.bnti-prose .wp-block-quote {
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-prose blockquote p {
+    color: var(--wp--preset--color--bnti-ink);
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    line-height: 1.5;
+}
+
+.bnti-prose img {
+    border-radius: 20px;
+}
+
+/* Search form (search and 404 heroes): a 52px white field with 8px corners
+   beside the theme's default button. */
+.bnti-search {
+    max-width: 640px;
+}
+
+.bnti-search .wp-block-search__inside-wrapper {
+    gap: 12px;
+}
+
+.bnti-search .wp-block-search__input {
+    min-height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 8px;
+    background: var(--wp--preset--color--bnti-white);
+    color: var(--wp--preset--color--bnti-ink);
+    font-size: var(--wp--preset--font-size--bnti-regular);
+}
+
+.bnti-search .wp-block-search__input:focus {
+    border-color: var(--wp--preset--color--bnti-premier);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 181, 255, 0.35);
+}
+
+.bnti-search .wp-block-search__button {
+    margin-left: 0;
+}
+
+/* Post footer: tags as small 8px-rounded chips. */
+.bnti-post-tags a {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background: var(--wp--preset--color--bnti-neutral-lightest);
+    color: var(--wp--preset--color--bnti-ink);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.bnti-post-tags a:hover {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-post-tags .wp-block-post-terms__separator {
+    display: none;
+}
+
+/* Previous / next article: a small Premier label with the arrow ("← Previous
+   article"), the post title under it in the heading face. */
+.bnti-post-nav .post-navigation-link-previous,
+.bnti-post-nav .post-navigation-link-next {
+    max-width: calc(50% - 12px);
+}
+
+.bnti-post-nav a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--wp--preset--color--bnti-ink);
+    text-decoration: none;
+}
+
+.bnti-post-nav .post-navigation-link-next a {
+    align-items: flex-end;
+}
+
+.bnti-post-nav .post-navigation-link__label {
+    color: var(--wp--preset--color--bnti-premier);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.bnti-post-nav .post-navigation-link-previous .post-navigation-link__label::before {
+    content: "\2190\00a0\00a0";
+}
+
+.bnti-post-nav .post-navigation-link-next .post-navigation-link__label::after {
+    content: "\00a0\00a0\2192";
+}
+
+.bnti-post-nav .post-navigation-link__title {
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    line-height: 1.2;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bnti-post-nav a:hover .post-navigation-link__title {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+@media (max-width: 767px) {
+    .bnti-post-nav .post-navigation-link-previous,
+    .bnti-post-nav .post-navigation-link-next {
+        max-width: 100%;
+    }
+}
+
+/* Social Share: the copy-link item is a <button>, which the theme's button
+   reset leaves transparent; give it the same tile as the link items. */
+.wp-block-bnti-social-share .bnti-social-share__item.is-copy-link {
+    background-color: var(--icon-bg, transparent);
+    color: var(--icon-color, currentColor);
+}
+
+.bnti-search .wp-block-search__button {
+    border-radius: 8px;
+}

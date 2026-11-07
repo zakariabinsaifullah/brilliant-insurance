@@ -1,9 +1,25 @@
 <!-- wp:template-part {"slug":"header"} /-->
 
-<!-- wp:group {"tagName":"main","style":{"spacing":{"padding":{"top":"var:preset|spacing|50","bottom":"var:preset|spacing|50","left":"var:preset|spacing|50","right":"var:preset|spacing|50"}}},"layout":{"type":"default"}} -->
-<main class="wp-block-group" style="padding-top:var(--wp--preset--spacing--50);padding-right:var(--wp--preset--spacing--50);padding-bottom:var(--wp--preset--spacing--50);padding-left:var(--wp--preset--spacing--50)">
-	<!-- wp:pattern {"slug":"twentytwentyfive/hidden-404"} /-->
-</main>
+<!-- wp:group {"tagName":"main","style":{"spacing":{"margin":{"top":"0","bottom":"0"},"blockGap":"0"}},"layout":{"type":"default"}} -->
+<main class="wp-block-group" style="margin-top:0;margin-bottom:0"><!-- wp:pattern {"slug":"bnti/hero-404"} /-->
+
+<!-- wp:kadence/rowlayout {"uniqueID":"tpl_404_more","columns":1,"colLayout":"equal","bgColor":"var(\u002d\u002dwp\u002d\u002dpreset\u002d\u002dcolor\u002d\u002dbnti-neutral-lightest)","align":"full","tabletPadding":[70,"",70,""],"inheritMaxWidth":true,"padding":[100,15,100,15],"margin":[0,"",0,""],"kbVersion":2} -->
+<!-- wp:kadence/column {"borderWidth":["","","",""],"uniqueID":"tpl_404_more_col","kbVersion":2} -->
+<div class="wp-block-kadence-column kadence-columntpl_404_more_col"><div class="kt-inside-inner-col"><!-- wp:group {"style":{"spacing":{"blockGap":"12px","margin":{"top":"0","bottom":"50px"}}},"layout":{"type":"default"}} -->
+<div class="wp-block-group" style="margin-top:0;margin-bottom:50px"><!-- wp:heading -->
+<h2 class="wp-block-heading">Latest articles.</h2>
+<!-- /wp:heading -->
+
+<!-- wp:paragraph {"fontSize":"bnti-medium"} -->
+<p class="has-bnti-medium-font-size">Plain-language answers about coverage, contracts and claims.</p>
+<!-- /wp:paragraph --></div>
+<!-- /wp:group -->
+
+<!-- wp:shortcode -->
+[bnti_posts_grid per_page="3" filters="false" pagination="false"]
+<!-- /wp:shortcode --></div></div>
+<!-- /wp:kadence/column -->
+<!-- /wp:kadence/rowlayout --></main>
 <!-- /wp:group -->
 
 <!-- wp:template-part {"slug":"footer"} /-->
