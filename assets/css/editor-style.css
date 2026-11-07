@@ -1,0 +1,37 @@
+/*
+ * Link styles
+ * https://github.com/WordPress/gutenberg/issues/42319
+ */
+a {
+	text-decoration-thickness: 1px !important;
+	text-underline-offset: .1em;
+}
+
+/*
+ * Mega menus in the editor (Kadence Navigation → Primary, and the header
+ * editor). Kadence sizes a "Container" mega panel against its menu item, which
+ * the editor makes position: relative, so the panel shrinks to the item's
+ * width (~150px) and can't be edited. Here the whole navigation block is the
+ * reference instead: every open panel spans the navigation's full width.
+ */
+.editor-styles-wrapper .wp-block-kadence-navigation:has(.kadence-menu-mega-enabled) {
+	position: relative;
+}
+
+.editor-styles-wrapper .wp-block-kadence-navigation:has(.kadence-menu-mega-enabled) .navigation,
+.editor-styles-wrapper .wp-block-kadence-navigation:has(.kadence-menu-mega-enabled) .menu-container,
+.editor-styles-wrapper .wp-block-kadence-navigation:has(.kadence-menu-mega-enabled) .kb-navigation,
+.editor-styles-wrapper .wp-block-kadence-navigation .kb-navigation > .kadence-menu-mega-enabled {
+	position: static !important;
+}
+
+.editor-styles-wrapper .wp-block-kadence-navigation .kb-navigation > .kadence-menu-mega-enabled > .sub-menu.mega-menu {
+	top: 100%;
+	right: 0 !important;
+	left: 0 !important;
+	width: auto !important;
+	min-width: 0 !important;
+	max-width: none !important;
+	transform: none !important;
+	margin: 0;
+}

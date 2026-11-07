@@ -1,0 +1,1 @@
+.has-max-width{max-width:var(--max-width)}@media(max-width:767px){.has-max-width{max-width:100%!important}}

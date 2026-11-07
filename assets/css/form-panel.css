@@ -1,0 +1,295 @@
+/* ── Quote form panel (inc/form-panel.php) ───────────────────────────────────
+
+   The slide-in "Get a quote" form, after the Figma contact slide-out (node
+   15634:9924) drawn with this theme's presets: a 560px white panel from the
+   right, a light header bar with the phone link and the close button, a
+   Baskervville title, then the Gravity Form. */
+
+.bnti-form-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100098;
+    background: var(--wp--preset--color--bnti-neutral-darkest-60, rgba(0, 0, 0, 0.6));
+    opacity: 0;
+    visibility: hidden;
+    transition:
+        opacity 0.35s ease,
+        visibility 0.35s ease;
+}
+
+.bnti-form-overlay.is-open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.bnti-form-panel {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 100099;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 560px;
+    overflow: hidden;
+    background: var(--wp--preset--color--bnti-white);
+    color: var(--wp--preset--color--bnti-text);
+    transform: translateX(100%);
+    visibility: hidden;
+    transition:
+        transform 0.35s cubic-bezier(0.4, 0, 0.2, 1),
+        visibility 0.35s ease;
+}
+
+/* The WordPress admin bar sits above everything else; start below it. */
+.admin-bar .bnti-form-panel {
+    top: var(--wp-admin--admin-bar--height, 32px);
+}
+
+.bnti-form-panel.is-open {
+    transform: translateX(0);
+    visibility: visible;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .bnti-form-panel,
+    .bnti-form-overlay {
+        transition: none;
+    }
+}
+
+body.bnti-panel-open {
+    overflow: hidden;
+}
+
+/* ── Header: phone link + close ─────────────────────────────────────────── */
+
+.bnti-form-panel__header {
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 12px 28px 12px 40px;
+    background: var(--wp--preset--color--bnti-neutral-lightest);
+}
+
+.bnti-form-panel__phone {
+    color: var(--wp--preset--color--bnti-premier);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.bnti-form-panel__phone:hover {
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+.bnti-form-panel__close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: transparent;
+    color: var(--wp--preset--color--bnti-ink);
+    cursor: pointer;
+    transition: background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bnti-form-panel__close:hover {
+    background: var(--wp--preset--color--bnti-gray-100);
+}
+
+.bnti-form-panel__close:focus-visible {
+    outline: 2px solid var(--wp--preset--color--bnti-premier);
+    outline-offset: 2px;
+}
+
+/* ── Body ────────────────────────────────────────────────────────────────── */
+
+.bnti-form-panel__body {
+    flex: 1;
+    overflow-y: auto;
+    padding: 40px 40px 48px;
+    overscroll-behavior: contain;
+}
+
+.bnti-form-panel__title {
+    margin: 0 0 12px;
+    color: var(--wp--preset--color--bnti-ink);
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-four);
+    font-weight: 400;
+    line-height: 1.2;
+}
+
+.bnti-form-panel__desc {
+    margin: 0 0 32px;
+}
+
+.bnti-form-panel__desc p {
+    margin: 0;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-medium);
+    line-height: 1.5;
+}
+
+.bnti-form-panel__desc p + p {
+    margin-top: 12px;
+}
+
+.bnti-form-panel__note {
+    margin: 16px 0 0;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    line-height: 1.5;
+}
+
+@media (max-width: 600px) {
+    .bnti-form-panel__header {
+        padding: 8px 8px 8px 16px;
+    }
+
+    .bnti-form-panel__body {
+        padding: 32px 16px 40px;
+    }
+}
+
+/* ── The form inside the panel ───────────────────────────────────────────────
+
+   gravity-forms.css styles forms for dark sections (white labels, transparent
+   fields). Inside the white panel they are drawn light instead: Ink labels,
+   white 52px fields with a Gray-100 border and 8px corners, a Premier focus
+   ring, round Premier radios and the theme's default button (unchanged).
+   Each selector starts from `.bnti-form-panel__body` so it outranks the
+   matching rule there; !important answers the !important ones. */
+
+.bnti-form-panel__body .gform_wrapper.gform-theme--framework {
+    --gf-ctrl-size: 52px;
+    --gf-ctrl-size-md: 52px;
+    --gf-ctrl-line-height: 52px;
+    --gf-ctrl-radius: 8px;
+    --gf-ctrl-radius-max-lg: 8px;
+    --gf-ctrl-choice-size: 20px;
+    --gf-label-space-primary: 8px;
+}
+
+.bnti-form-panel__body .gform-theme--foundation .gform_fields {
+    row-gap: 24px !important;
+}
+
+.bnti-form-panel__body .gfield_label,
+.bnti-form-panel__body .gfield_label.gform-field-label {
+    color: var(--wp--preset--color--bnti-ink) !important;
+    font-size: var(--wp--preset--font-size--bnti-regular) !important;
+    font-weight: 600 !important;
+    line-height: 1.5 !important;
+}
+
+.bnti-form-panel__body .gform-body.gform_body input:not([type='radio']):not([type='checkbox']),
+.bnti-form-panel__body .gform-body.gform_body textarea,
+.bnti-form-panel__body .gform-body.gform_body select {
+    border: 1px solid var(--wp--preset--color--bnti-gray-100) !important;
+    border-radius: 8px !important;
+    background-color: var(--wp--preset--color--bnti-white) !important;
+    color: var(--wp--preset--color--bnti-ink) !important;
+    font-size: var(--wp--preset--font-size--bnti-regular) !important;
+}
+
+.bnti-form-panel__body .gform-theme--framework .gform-body.gform_body textarea {
+    min-height: 136px !important;
+    height: 136px;
+}
+
+.bnti-form-panel__body .gform_body input::placeholder,
+.bnti-form-panel__body .gform_body textarea::placeholder {
+    color: var(--wp--preset--color--bnti-neutral, #9e9e9e) !important;
+}
+
+.bnti-form-panel__body .gform_body input:focus,
+.bnti-form-panel__body .gform_body textarea:focus,
+.bnti-form-panel__body .gform_body select:focus {
+    border-color: var(--wp--preset--color--bnti-premier) !important;
+    box-shadow: 0 0 0 3px rgba(33, 66, 128, 0.12) !important;
+}
+
+/* Helper text under a field ("For example, …"), in italics as drawn. */
+.bnti-form-panel__body .gfield_description:not(.validation_message) {
+    padding-top: 8px !important;
+    color: var(--wp--preset--color--bnti-text) !important;
+    font-size: var(--wp--preset--font-size--bnti-small) !important;
+    font-style: italic;
+    line-height: 1.5 !important;
+}
+
+/* Radio questions: a plain list, 12px apart, round boxes with a Premier dot. */
+.bnti-form-panel__body .gfield_radio {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+}
+
+/* Gravity Forms prints its framework CSS in the footer, after this file, with
+   an equal-specificity `.gchoice` grid rule, hence the !important. */
+.bnti-form-panel__body .gfield_radio .gchoice {
+    display: flex !important;
+    align-items: center !important;
+    gap: 12px !important;
+}
+
+.bnti-form-panel__body .gfield_radio input[type='radio'] {
+    flex: none;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+    border: 1px solid var(--wp--preset--color--bnti-neutral-light, #c7c7c7) !important;
+    border-radius: 50% !important;
+    background-color: var(--wp--preset--color--bnti-white) !important;
+    box-shadow: none !important;
+    cursor: pointer;
+}
+
+.bnti-form-panel__body .gfield_radio .gchoice input[type='radio']:checked {
+    border-color: var(--wp--preset--color--bnti-premier) !important;
+}
+
+.bnti-form-panel__body .gfield_radio input[type='radio']::before {
+    background-color: var(--wp--preset--color--bnti-premier) !important;
+}
+
+.bnti-form-panel__body .gfield_radio input[type='radio']:focus-visible {
+    outline: 2px solid var(--wp--preset--color--bnti-premier) !important;
+    outline-offset: 2px;
+}
+
+.bnti-form-panel__body .gfield_radio .gchoice label {
+    margin: 0 !important;
+    color: var(--wp--preset--color--bnti-text) !important;
+    font-size: var(--wp--preset--font-size--bnti-regular) !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    cursor: pointer;
+}
+
+.bnti-form-panel__body .gform-footer {
+    margin-top: 32px !important;
+    padding: 0 !important;
+}
+
+/* Validation and the thank-you message, in the theme's type. */
+.bnti-form-panel__body .gfield_validation_message,
+.bnti-form-panel__body .validation_message {
+    font-size: var(--wp--preset--font-size--bnti-small) !important;
+}
+
+.bnti-form-panel__body .gform_confirmation_message {
+    color: var(--wp--preset--color--bnti-ink);
+    font-size: var(--wp--preset--font-size--bnti-medium);
+    line-height: 1.5;
+}

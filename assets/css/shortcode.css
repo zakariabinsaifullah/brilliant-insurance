@@ -1,0 +1,384 @@
+/* =============================================================================
+   Posts Grid Shortcode — shortcode.css
+
+   The posts grid ([bnti_posts_grid], inc/shortcode.php) on light sections, in
+   the theme's card style: filter tabs as 8px-rounded buttons (the active one
+   in the Premier gradient), white cards with a 1px Gray-100 border and 20px
+   corners (image, category · date, Baskervville title, excerpt, "Read more →"
+   link), then the article count and page buttons under a Gray-100 rule.
+   Spacing follows the card rules: 24px between cards and between stacked
+   items, 32px card padding, 50px under the header and above the footer.
+   ============================================================================= */
+
+/* Wrapper */
+.ipg-wrapper {
+    transition: opacity 0.2s ease;
+}
+
+.ipg-wrapper.is-loading {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   Header — heading + filter tabs
+   ============================================================================= */
+
+.ipg-header {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 24px;
+    margin-bottom: 50px;
+}
+
+/* Size, family and weight come from `styles.elements.h2` in theme.json. */
+.ipg-wrapper .ipg-heading {
+    margin: 0;
+    color: var(--wp--preset--color--bnti-ink);
+}
+
+.ipg-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.ipg-nav .ipg-filter-btn {
+    cursor: pointer;
+    margin: 0;
+    padding: 9px 19px;
+    background: var(--wp--preset--color--bnti-white);
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 8px;
+    color: var(--wp--preset--color--bnti-ink);
+    font-family: inherit;
+    font-size: var(--wp--preset--font-size--bnti-small);
+    font-weight: 600;
+    line-height: 1.5;
+    transition:
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-nav .ipg-filter-btn:hover {
+    border-color: var(--wp--preset--color--bnti-premier);
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.ipg-nav .ipg-filter-btn.active {
+    background: var(--wp--preset--gradient--bnti-premier);
+    border-color: transparent;
+    color: var(--wp--preset--color--bnti-white);
+}
+
+.ipg-nav .ipg-filter-btn:focus-visible {
+    outline: 2px solid var(--wp--preset--color--bnti-premier);
+    outline-offset: 2px;
+}
+
+/* =============================================================================
+   Post Grid
+   ============================================================================= */
+
+.ipg-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.ipg-posts .ipg-no-posts {
+    margin: 0;
+    padding: 32px;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-medium);
+}
+
+/* =============================================================================
+   Post Card
+   ============================================================================= */
+
+.ipg-card {
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    height: 100%;
+    overflow: hidden;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
+    transition: border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-card:hover,
+.ipg-card:focus-within {
+    border-color: var(--wp--preset--color--bnti-premier);
+}
+
+.ipg-card__image {
+    display: block;
+    overflow: hidden;
+    aspect-ratio: 16 / 10;
+}
+
+.ipg-card__image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-card:hover .ipg-card__image img {
+    transform: scale(1.04);
+}
+
+.ipg-card__body {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 24px;
+    padding: 32px;
+}
+
+.ipg-card__text {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* "Business insurance · Nov 7, 2026" */
+.ipg-card .ipg-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0 8px;
+    margin: 0;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    line-height: 1.5;
+}
+
+.ipg-card .ipg-card__meta:empty {
+    display: none;
+}
+
+.ipg-card .ipg-card__category {
+    color: var(--wp--preset--color--bnti-premier);
+    font-weight: 600;
+}
+
+.ipg-card .ipg-card__category + .ipg-card__date::before {
+    content: '·';
+    margin-right: 8px;
+}
+
+.ipg-card .ipg-card__title {
+    margin: 0;
+    color: var(--wp--preset--color--bnti-ink);
+    font-size: var(--wp--preset--font-size--bnti-heading-five);
+}
+
+/* The theme's link element style (Inter 400, 1.5) would otherwise win over
+   the heading's Baskervville 400 / 1.2. */
+.ipg-card .ipg-card__title a {
+    font-family: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-card .ipg-card__title a:hover {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.ipg-card .ipg-card__excerpt {
+    margin: 0;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-regular);
+    line-height: 1.5;
+}
+
+/* "Read more →": the Link button style (Premier text, no underline), pinned
+   to the bottom so the links line up across a row. */
+.ipg-card .ipg-card__button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    align-self: flex-start;
+    margin-top: auto;
+    color: var(--wp--preset--color--bnti-premier);
+    font-size: var(--wp--preset--font-size--bnti-regular);
+    font-weight: 500;
+    line-height: 1.5;
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-card .ipg-card__arrow {
+    line-height: 1;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-card .ipg-card__button:hover,
+.ipg-card .ipg-card__button:focus-visible {
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+.ipg-card:hover .ipg-card__arrow {
+    transform: translateX(3px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .ipg-card__image img,
+    .ipg-card .ipg-card__arrow {
+        transition: none;
+    }
+}
+
+/* =============================================================================
+   Footer — result count + pagination
+   ============================================================================= */
+
+.ipg-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 50px;
+    padding-top: 32px;
+    border-top: 1px solid var(--wp--preset--color--bnti-gray-100);
+}
+
+/* No results (initially or after a filter): the count is what the footer hangs
+   on, so drop the whole thing rather than leaving a bare rule. The markup stays
+   in the DOM either way — the AJAX response refills it. */
+.ipg-footer:not(:has(.ipg-count)) {
+    display: none;
+}
+
+.ipg-footer .ipg-count {
+    margin: 0;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    line-height: 1.5;
+}
+
+/* Keeps the pagination hard right when the count is empty. */
+.ipg-pagination-wrap {
+    margin-left: auto;
+}
+
+/* 44px page buttons with 8px corners; the current page is the Premier
+   gradient, a hovered one turns Premier. Prev/Next widen to fit. */
+.ipg-pagination {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+}
+
+.ipg-pagination .ipg-page-btn {
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    box-sizing: border-box;
+    min-width: 44px;
+    height: 44px;
+    padding: 0 12px;
+    background: var(--wp--preset--color--bnti-white);
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 8px;
+    color: var(--wp--preset--color--bnti-ink);
+    font-family: inherit;
+    font-size: var(--wp--preset--font-size--bnti-small);
+    font-weight: 600;
+    line-height: 1;
+    transition:
+        background-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        border-color 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.ipg-pagination .ipg-page-step {
+    padding: 0 16px;
+}
+
+.ipg-pagination .ipg-page-btn:hover {
+    border-color: var(--wp--preset--color--bnti-premier);
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.ipg-pagination .ipg-page-btn.active {
+    background: var(--wp--preset--gradient--bnti-premier);
+    border-color: transparent;
+    color: var(--wp--preset--color--bnti-white);
+}
+
+.ipg-pagination .ipg-page-btn:focus-visible {
+    outline: 2px solid var(--wp--preset--color--bnti-premier);
+    outline-offset: 2px;
+}
+
+.ipg-pagination .ipg-page-ellipsis {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 24px;
+    height: 44px;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    user-select: none;
+}
+
+/* =============================================================================
+   Responsive — one column at 1024px and below (CLAUDE.md column rule)
+   ============================================================================= */
+
+@media (max-width: 1024px) {
+    .ipg-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 782px) {
+    /* Tabs scroll sideways rather than stacking into a tall block. */
+    .ipg-nav {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        max-width: 100%;
+        padding-bottom: 4px;
+        scrollbar-width: none;
+    }
+
+    .ipg-nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .ipg-nav .ipg-filter-btn {
+        flex-shrink: 0;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 600px) {
+    .ipg-footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+
+    .ipg-pagination-wrap {
+        margin-left: 0;
+    }
+}

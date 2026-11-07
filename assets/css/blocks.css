@@ -1,0 +1,1299 @@
+:where(figure) {
+    margin: 0 !important;
+}
+
+/* Images fill their column. A width picked in the Image block's settings is
+   written inline on the <img>, so it still wins (e.g. the footer badges). */
+.wp-block-image img {
+    width: 100%;
+}
+
+.wp-block-buttons.is-style-full-width {
+    width: 100% !important;
+}
+
+.is-style-post-typo.wp-block-post-content h2 {
+    font-size: var(--wp--preset--font-size--bnti-heading-three);
+}
+
+.wp-block-post-excerpt__more-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border: none;
+    color: var(--wp--preset--color--bnti-premier);
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Arrow icon matching the theme's arrow SVG (white stroke). */
+.wp-block-post-excerpt__more-link::after {
+    content: '';
+    width: 11px;
+    height: 11px;
+    flex-shrink: 0;
+    background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTQiIGhlaWdodD0iMTMiIHZpZXdCb3g9IjAgMCAxNCAxMyIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTguMjUgMC4yODEyNUwxMy43NSA1LjUzMTI1QzEzLjkwNjIgNS42ODc1IDE0IDUuODc1IDE0IDYuMDkzNzVDMTQgNi4yODEyNSAxMy45MDYyIDYuNDY4NzUgMTMuNzUgNi42MjVMOC4yNSAxMS44NzVDNy45Njg3NSAxMi4xNTYyIDcuNDY4NzUgMTIuMTU2MiA3LjE4NzUgMTEuODQzOEM2LjkwNjI1IDExLjU2MjUgNi45MDYyNSAxMS4wNjI1IDcuMjE4NzUgMTAuNzgxMkwxMS4zNzUgNi44NDM3NUgwLjc1QzAuMzEyNSA2Ljg0Mzc1IDAgNi41IDAgNi4wOTM3NUMwIDUuNjU2MjUgMC4zMTI1IDUuMzQzNzUgMC43NSA1LjM0Mzc1SDExLjM3NUw3LjIxODc1IDEuMzc1QzYuOTA2MjUgMS4wOTM3NSA2LjkwNjI1IDAuNTkzNzUgNy4xODc1IDAuMzEyNUM3LjQ2ODc1IDAgNy45Mzc1IDAgOC4yNSAwLjI4MTI1WiIgZmlsbD0iIzUzODk4OCIvPgo8L3N2Zz4K');
+    background-repeat: no-repeat;
+    background-size: contain;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-post-excerpt__more-link:hover::after {
+    transform: translateX(2px);
+}
+
+header.wp-block-kadence-rowlayout {
+    position: relative;
+}
+
+header.wp-block-kadence-rowlayout::before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, rgba(6, 24, 57, 0.7) 50%, rgba(6, 24, 57, 0) 77.94%);
+    content: '';
+    z-index: -1;
+}
+
+.has-glass-effect {
+    position: relative;
+    overflow: hidden;
+    border-radius: 16px;
+    /* Frost 100 + Refraction 38 + Dispersion 100 */
+    background: rgba(255, 255, 255, 0.06);
+    backdrop-filter: blur(24px) saturate(1.2);
+    -webkit-backdrop-filter: blur(24px) saturate(1.2);
+}
+
+.has-glass-effect::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    /* Light 79° sheen */
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.175) 0%, rgba(255, 255, 255, 0.04) 35%, rgba(255, 255, 255, 0) 60%);
+}
+
+.bnti-icon-pos .kt-svg-icon-link {
+    flex-direction: row-reverse !important;
+    gap: 12px;
+}
+
+.wp-block-button.is-style-link .wp-block-button__link {
+    display: inline-flex !important;
+    align-items: center;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+    .is-style-wrap-mobile {
+        flex-wrap: wrap !important;
+    }
+}
+
+/*
+ * Group — Plain Links: links inside keep their text's weight and get no
+ * underline (links have none anywhere; kept for older content). For
+ * link lists such as "On this page".
+ */
+.wp-block-group.is-style-plain-links a {
+    text-decoration: none;
+}
+
+/*
+ * Post Template — Card Grid: for Query Loop card grids (e.g. the Our Team
+ * attorney cards). Use with the Grid layout set to 3 columns. Each card
+ * stretches to the row's height (a Group inside with Full Height fills it), a
+ * card left alone in the last row spans the full width (Sean's card in
+ * Figma), and at 1024px and below the cards stack in one column.
+ */
+.wp-block-post-template.is-style-card-grid > li {
+    display: flex;
+    flex-direction: column;
+}
+
+.wp-block-post-template.is-style-card-grid > li > * {
+    flex-grow: 1;
+}
+
+@media (min-width: 1025px) {
+    .wp-block-post-template.is-style-card-grid > li:last-child:nth-child(3n + 1) {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wp-block-post-template.is-style-card-grid.is-layout-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+/*
+ * List — Dots (Figma "Key takeaways"): an 8px Premier Soft dot before each
+ * item, 16px from the text, items 16px apart. The text colour and size come
+ * from the List block's settings.
+ */
+ul.is-style-dots {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.is-style-dots > li {
+    position: relative;
+    margin: 0;
+    padding-left: 24px;
+}
+
+ul.is-style-dots > li + li {
+    margin-top: 16px;
+}
+
+ul.is-style-dots > li::before {
+    content: "";
+    position: absolute;
+    top: 0.65em;
+    left: 0;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background-color: var(--wp--preset--color--bnti-premier-soft);
+    transform: translateY(-50%);
+}
+
+/*
+ * Mega menu link lists (List block styles).
+ *
+ * Mega Links: a plain list of links (practice areas, cities), 16px Inter,
+ * white; on hover a link turns Premier and an arrow slides in after it.
+ * Mega Links: Large: the big links in the About Us panel (About the Firm, Our
+ * Team, Contact Us), Baskervville semi-bold with the arrow always on the right
+ * and a faint divider between items.
+ */
+ul.is-style-mega-links,
+ul.is-style-mega-links-large {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+ul.is-style-mega-links > li + li {
+    margin-top: 12px;
+}
+
+ul.is-style-mega-links a,
+ul.is-style-mega-links-large a {
+    color: var(--wp--preset--color--bnti-white);
+    text-decoration: none;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ul.is-style-mega-links a {
+    font-size: var(--wp--preset--font-size--bnti-regular);
+}
+
+ul.is-style-mega-links a::after {
+    content: "\2192";
+    display: inline-block;
+    margin-left: 10px;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+ul.is-style-mega-links a:hover,
+ul.is-style-mega-links a:focus-visible,
+ul.is-style-mega-links-large a:hover,
+ul.is-style-mega-links-large a:focus-visible {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+ul.is-style-mega-links a:hover::after,
+ul.is-style-mega-links a:focus-visible::after {
+    opacity: 1;
+    transform: none;
+}
+
+ul.is-style-mega-links-large > li + li {
+    border-top: 1px solid var(--wp--preset--color--bnti-white-15);
+}
+
+ul.is-style-mega-links-large a {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 20px 0;
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-five);
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+ul.is-style-mega-links-large > li:first-child a {
+    padding-top: 0;
+}
+
+ul.is-style-mega-links-large a::after {
+    content: "\2192";
+    font-family: var(--wp--preset--font-family--inter);
+    font-size: var(--wp--preset--font-size--bnti-regular);
+    font-weight: 400;
+}
+
+/*
+ * Mega menus (Kadence Navigation items with "Mega Menu" on, width
+ * "Container").
+ *
+ * Kadence positions a container-width panel against the nearest positioned
+ * parent, which in this header is the menu's own column. Make the header row
+ * the reference instead, so every panel spans the row (1310px content + the
+ * row's side padding) and starts on the white rule under the nav, as in Figma.
+ */
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) {
+    position: relative;
+}
+
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) .wp-block-kadence-header-section,
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) .wp-block-kadence-header-column,
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) .wp-block-kadence-navigation,
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) .kb-navigation,
+.wp-block-kadence-header .kadence-header-row-inner:has(.kadence-menu-mega-enabled) .kb-navigation > li.kadence-menu-mega-enabled {
+    position: static;
+}
+
+.wp-block-kadence-header .kb-navigation > li.kb-menu-mega-width-container > .sub-menu.mega-menu {
+    top: 100%;
+    right: 0 !important;
+    left: 0 !important;
+    width: auto !important;
+    max-width: none;
+    transform: none !important;
+    margin: 0;
+    background: transparent;
+    /* Figma dims the page to 70% black under an open panel: a huge spread
+       shadow on the panel's (transparent, full-row) container, clipped so it
+       only covers what is below the header. It shows and hides with the panel. */
+    box-shadow: 0 0 0 100vmax rgb(0 0 0 / 0.7);
+    clip-path: inset(0 -100vmax -100vmax -100vmax);
+}
+
+/* Parent item: "+" instead of Kadence's chevron, "−" while open; text and
+   sign Premier Soft (#9DB8EC) while open, as in Figma "Navigation States". Mega menu items and the plain dropdowns of the
+   desktop (horizontal) menu, e.g. Resources, share it. */
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap {
+    position: relative;
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled .kb-nav-dropdown-toggle-btn svg,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children > .kb-link-wrap .kb-nav-dropdown-toggle-btn svg {
+    display: none;
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled .kb-nav-dropdown-toggle-btn,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children > .kb-link-wrap .kb-nav-dropdown-toggle-btn {
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    color: inherit;
+    font-family: var(--wp--preset--font-family--inter);
+    font-size: var(--wp--preset--font-size--bnti-medium);
+    font-weight: 500;
+    line-height: 1;
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled .kb-nav-dropdown-toggle-btn::before,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children > .kb-link-wrap .kb-nav-dropdown-toggle-btn::before {
+    content: "+";
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap,
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-link-content {
+    color: var(--wp--preset--color--bnti-premier-soft);
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) .kb-nav-dropdown-toggle-btn::before,
+.wp-block-kadence-header .navigation-desktop-orientation-horizontal .kb-navigation > li.menu-item-has-children:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap .kb-nav-dropdown-toggle-btn::before {
+    content: "\2212";
+}
+
+/* 3px Premier Soft bar on the header's bottom rule (Figma "Active Bar"): the
+   80px row ends 19px below the link area, and the bar straddles the 1px rule. */
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap::after {
+    content: "";
+    position: absolute;
+    top: calc(100% + 18px);
+    right: 0;
+    left: 0;
+    height: 3px;
+    background-color: var(--wp--preset--color--bnti-premier-soft);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled:is(:hover, :focus-within, .menu-item--toggled-on) > .kb-link-wrap::after {
+    opacity: 1;
+}
+
+/* Invisible bridge over the 25px between the link and the panel, so the
+   panel stays open while the pointer moves down into it. */
+.wp-block-kadence-header .kb-navigation > li.kadence-menu-mega-enabled > .kb-link-wrap::before {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: -20px;
+    left: -20px;
+    height: 26px;
+}
+
+/*
+ * Mega menu panel content (the Row Layout inside each mega item).
+ * Separators: WordPress centres them with auto side margins, which stops them
+ * stretching in the panel's flex columns, so they would collapse to 0 width.
+ * Column titles (`bnti-mega-title`): Premier Soft with a → on hover, as in
+ * Figma's "Column Heading (Hover)".
+ */
+.wp-block-kadence-header .mega-menu .wp-block-separator {
+    width: auto;
+    margin-right: 0;
+    margin-left: 0;
+}
+
+/* No underline on menu links (links have no underline anywhere; this keeps
+   the menus safe from plugin or core link styles). */
+.wp-block-kadence-header .mega-menu a,
+.wp-block-kadence-off-canvas .kb-navigation a {
+    text-decoration: none;
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a:is(:hover, :focus-visible),
+.wp-block-kadence-header .mega-menu .bnti-mega-hub a:is(:hover, :focus-visible) {
+    color: var(--wp--preset--color--bnti-premier-soft);
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a::after {
+    content: "\2192";
+    display: inline-block;
+    margin-left: 0.3em;
+    opacity: 0;
+    transform: translateX(-6px);
+    transition:
+        opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+        transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-kadence-header .mega-menu .bnti-mega-title a:is(:hover, :focus-visible)::after {
+    opacity: 1;
+    transform: none;
+}
+
+/*
+ * Off-canvas Mobile Menu (Figma "Nav • Mobile"): Midnight gradient panel, a
+ * faint rule under the logo row, → on plain items, + / − on the hubs (Premier
+ * Soft while open), the hub link in small uppercase Premier Soft, and the
+ * child pages on a faint left border.
+ */
+.wp-block-kadence-off-canvas .kb-off-canvas-inner-wrap {
+    background-image: var(--wp--preset--gradient--bnti-midnight);
+}
+
+/* Logo row: the logo and the rule under it start on the same left edge as
+   the menu rows and their dividers. */
+.wp-block-kadence-off-canvas .kb-off-canvas-inner > .wp-block-image {
+    margin-bottom: 8px;
+    padding: 0 0 20px;
+    border-bottom: 1px solid var(--wp--preset--color--bnti-white-30);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li > .kb-link-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a::after,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn::before {
+    color: var(--wp--preset--color--bnti-white-60);
+    font-family: var(--wp--preset--font-family--inter);
+    font-size: 22px;
+    font-weight: 400;
+    line-height: 1;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li:not(.menu-item-has-children) > .kb-link-wrap > a::after {
+    content: "\2192";
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn svg {
+    display: none;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn {
+    padding: 0;
+    color: inherit;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item-has-children .kb-nav-dropdown-toggle-btn::before {
+    content: "+";
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on > .kb-link-wrap,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on > .kb-link-wrap > a,
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on .kb-nav-dropdown-toggle-btn::before {
+    color: var(--wp--preset--color--bnti-premier-soft);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation > li.menu-item--toggled-on .kb-nav-dropdown-toggle-btn::before {
+    content: "\2212";
+}
+
+/* Kadence indents every vertical sub-menu by 1em (it sets
+   --kb-nav-dropdown-margin-left on the sub-menu itself, so the navigation's
+   own 0 setting can't override it); in Figma the hub link and the child list
+   line up with the row labels. */
+.wp-block-kadence-off-canvas .wp-block-kadence-navigation .kb-navigation .sub-menu {
+    --kb-nav-dropdown-margin-left: 0;
+    padding-left: 0;
+    border-bottom: 1px solid var(--wp--preset--color--bnti-white-10);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li:not(.bnti-hub-link) {
+    border-left: 1px solid var(--wp--preset--color--bnti-white-20);
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li.bnti-hub-link {
+    margin-bottom: 9px;
+}
+
+.wp-block-kadence-off-canvas .kb-navigation .sub-menu > li.bnti-hub-link > .kb-link-wrap > a {
+    padding-left: 0;
+    color: var(--wp--preset--color--bnti-premier-soft);
+    font-size: var(--wp--preset--font-size--bnti-x-small);
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-kadence-header .mega-menu .bnti-mega-title a::after {
+        transition: none;
+    }
+}
+
+/*
+ * "vs" badge (Figma "VS Badge", homepage Agent vs Broker): a Group with the
+ * `bnti-vs-badge` class, styled with block settings (64px black circle, 6px
+ * border in the section background, "vs" in Baskervville), placed as the last
+ * block of the first card. This only positions it: centred on the 24px gap
+ * between the two cards, and between the stacked cards at 1024px and below.
+ */
+.kt-inside-inner-col:has(> .bnti-vs-badge) {
+    position: relative;
+}
+
+/* Kadence gives every Section `z-index: 1`, so the badge's own z-index only
+   counts inside its card and the next card would paint over its right half.
+   Lift the card that holds the badge above its neighbour. */
+.wp-block-kadence-column:has(> .kt-inside-inner-col > .bnti-vs-badge) {
+    z-index: 2;
+}
+
+.wp-block-group.bnti-vs-badge {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    z-index: 2;
+    box-sizing: border-box;
+    transform: translate(calc(50% + 12px), -50%);
+}
+
+@media (max-width: 1024px) {
+    .wp-block-group.bnti-vs-badge {
+        top: auto;
+        right: 50%;
+        bottom: 0;
+        transform: translate(50%, calc(50% + 12px));
+    }
+}
+
+/*
+ * Paragraph — Has Arrow: the Figma section "eyebrow" (e.g. "What We Cover"):
+ * a 40 × 19px corner arrow (a line that turns down into an arrowhead) 16px
+ * after the text. Drawn as a mask over `currentColor`, so it always matches the
+ * paragraph's text colour. Its line sits 4.25px above the middle of the first
+ * line of text and the arrowhead drops below it, as in Figma (measured on the
+ * 14px / 1.5 eyebrow; the offset follows the font size). If the text wraps,
+ * the arrow follows the last word.
+ */
+p.is-style-has-arrow::after {
+    content: "";
+    display: inline-block;
+    position: relative;
+    top: calc(0.75em - 4.25px);
+    width: 40px;
+    height: 20px;
+    margin-left: 16px;
+    vertical-align: top;
+    background-color: currentColor;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 20%27%3E%3Cpath d=%27M38.67 15.11 36.48 16.89V0H0v1.31h35.21v15.58l-2.24-1.77-.8 1.01 3.67 2.96 3.67-2.96-.84-1.01Z%27/%3E%3C/svg%3E") no-repeat center / contain;
+    mask: url("data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 40 20%27%3E%3Cpath d=%27M38.67 15.11 36.48 16.89V0H0v1.31h35.21v15.58l-2.24-1.77-.8 1.01 3.67 2.96 3.67-2.96-.84-1.01Z%27/%3E%3C/svg%3E") no-repeat center / contain;
+}
+
+/* Kadence Codes */
+
+.kb-table p {
+    margin: 0 !important;
+}
+
+/*
+ * Button styles
+ *
+ * Loaded in both the editor and the front end via `enqueue_block_assets`, so
+ * the two stay identical. Block style variation CSS (`is-style-alternative`,
+ * `is-style-link`) is not emitted from theme.json at all, so those variations
+ * are defined here rather than there.
+ *
+ * The default button (`styles.elements.button` in theme.json: the Figma "CTA"
+ * — Premier gradient, CTA shadow, 8px radius, Inter 16px/500) keeps everything
+ * on hover except the gradient, which rotates to run bottom to top (see
+ * "Button hover" below). Alternative and Outline have their own hover
+ * colours, mirrored in theme.json under
+ * `styles.blocks.core/button.variations`; keep the two in sync if either
+ * changes.
+ */
+
+/*
+ * Button hover — the default button's gradient (the `bnti-premier`
+ * colours, written out in `styles.elements.button.color.gradient` rather than
+ * through the preset variable, because a var() inside a preset is resolved on
+ * :root and would never see the button's own angle) is drawn at
+ * `--bnti-button-angle`, registered here as an <angle> so the browser can
+ * animate it: on hover it turns from 180deg (top to bottom) to
+ * 0deg (bottom to top), over the 0.3s button transition set in theme.json
+ * (`styles.elements.button.css`). Everything else stays as it is.
+ * `:where()` keeps the selector at zero specificity, like the theme.json button
+ * rules. Gravity Forms' submit does the same (gravity-forms.css), and turns its
+ * own transition off for reduced motion there.
+ */
+@property --bnti-button-angle {
+    syntax: "<angle>";
+    inherits: false;
+    initial-value: 180deg;
+}
+
+:root :where(.wp-element-button, .wp-block-button__link):hover {
+    --bnti-button-angle: 0deg;
+}
+
+/* Visitors who ask for reduced motion get the hover without the animation. */
+@media (prefers-reduced-motion: reduce) {
+    :root :where(.wp-element-button, .wp-block-button__link) {
+        transition: none !important;
+    }
+}
+
+/*
+ * Button arrow — the "→" after the label on the Outline style (Inter Regular
+ * 16px, 12px from the label). The default (primary) button has no arrow, as in
+ * the Figma "CTA" button. A button that uses Icon Settings (Iconic Button)
+ * shows its own icon instead.
+ */
+.wp-block-button.is-style-outline:not(.bnti-icon-button) > .wp-block-button__link::after {
+    content: "\2192";
+    margin-left: 12px;
+    font-size: var(--wp--preset--font-size--bnti-regular);
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 1;
+    text-transform: none;
+}
+
+/*
+ * Alternative — the Figma "Button" (the CTA's white twin): white fill, 1px
+ * Premier Dark border and text, no gradient or shadow. Radius, padding (11px
+ * 23px + the 1px border = 12px 24px in Figma) and typography (Inter 16px/500)
+ * are inherited from `styles.elements.button` in theme.json. Goes full width
+ * on tablet/mobile.
+ *
+ * Hover, as in the Figma hover variant: the Premier button gradient with white
+ * text. A gradient can't fade in from a plain colour, so it is drawn on a
+ * `::before` layer behind the label (covering the border too) and faded in
+ * with opacity over the theme's 0.3s button transition.
+ *
+ * theme.json declares this variation under
+ * `styles.blocks.core/button.variations.alternative`, but block style variation
+ * CSS is not emitted from theme.json (verified against WP 7.0), so it is
+ * restated here. Keep the two in sync.
+ */
+.wp-block-button.is-style-alternative .wp-block-button__link {
+    position: relative;
+    isolation: isolate;
+    background-color: var(--wp--preset--color--bnti-white);
+    background-image: none;
+    border-color: var(--wp--preset--color--bnti-premier-dark);
+    box-shadow: none;
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link::before {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    z-index: -1;
+    border-radius: inherit;
+    background: var(--wp--preset--gradient--bnti-premier);
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    pointer-events: none;
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link:hover {
+    color: var(--wp--preset--color--bnti-white);
+}
+
+.wp-block-button.is-style-alternative .wp-block-button__link:hover::before {
+    opacity: 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .wp-block-button.is-style-alternative .wp-block-button__link::before {
+        transition: none;
+    }
+}
+
+@media (max-width: 1024px) {
+    .wp-block-button.is-style-alternative {
+        width: 100%;
+    }
+}
+
+/*
+ * Outline — the default button (`styles.elements.button` in theme.json: 8px
+ * radius, Inter 16px/500, 1px border, 11px 23px padding) with a transparent
+ * fill, no gradient or shadow, a `currentColor` border and the → arrow, in
+ * white. Same padding as the default, so both are the same size.
+ *
+ * Registered by core, not by the theme. Core ships its own CSS for this
+ * variation (`border: 2px solid`, `color: currentColor`, and its own padding)
+ * wrapped in `:root :where(...)`, so these plain class selectors outrank it.
+ * Mirrored in theme.json under `styles.blocks.core/button.variations.outline`;
+ * keep the two in sync. Goes full width on tablet/mobile with every other
+ * button (see "Tablet & mobile: full-width buttons" below).
+ */
+.wp-block-button.is-style-outline .wp-block-button__link {
+    background-color: transparent;
+    background-image: none;
+    border: 1px solid currentColor;
+    box-shadow: none;
+    color: var(--wp--preset--color--bnti-white);
+    padding: 11px 23px;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+/* The border is `currentColor`, so it turns orange along with the text. */
+.wp-block-button.is-style-outline .wp-block-button__link:hover {
+    background-color: transparent;
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+/*
+ * Link — must not pick up the default button's white fill. Same reason as
+ * Alternative above: the variation's `background: transparent` in theme.json
+ * is not emitted, so it is restated here.
+ *
+ * No underline, as in Figma (the Link component has no text decoration or
+ * rule): Premier text that turns Premier Dark on hover.
+ */
+.wp-block-button.is-style-link .wp-block-button__link {
+    background-color: transparent;
+    background-image: none;
+    box-shadow: none;
+    color: var(--wp--preset--color--bnti-premier);
+    border: 0;
+    border-radius: 0;
+    text-decoration: none;
+}
+
+.wp-block-button.is-style-link .wp-block-button__link:hover {
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+/* A Link with an icon (Iconic Button) stays an inline text link: the
+   extension makes every icon button a centred full-width flex box, so on
+   mobile a long label wrapped onto a centred second line with the arrow
+   pushed to the far edge. Inline, it wraps like text: left-aligned, with the
+   arrow right after the last word. */
+.wp-block-button.is-style-link.bnti-icon-button .wp-block-button__link {
+    display: inline !important;
+    text-align: left;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.wp-block-button.is-style-link.bnti-icon-button .wp-block-button__link .bnti-icon-button-svg {
+    margin-left: var(--bnti-icon-gap, 10px);
+    vertical-align: -0.125em;
+}
+
+/* Kadence Table (Figma "Inner / Table"): a white table with a 1px border and
+   20px corners, a Premier gradient header row (white Inter 16/600), a light
+   grey first column (Inter 16/600 in Ink) and a 1px rule between rows.
+   Cell padding, column backgrounds and type come from the block's settings;
+   this adds what Kadence can't: the rounded clipped frame and the gradient. */
+.kb-table-container {
+    width: 100%;
+    overflow: hidden;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
+}
+
+.kb-table-container .kb-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.kb-table-container .kb-table tr:first-child th.kb-table-data {
+    background-image: var(--wp--preset--gradient--bnti-premier);
+    color: var(--wp--preset--color--bnti-white);
+}
+
+.kb-table-container .kb-table tr + tr .kb-table-data {
+    border-top: 1px solid var(--wp--preset--color--bnti-gray-100);
+}
+
+.kb-table td.kb-table-data {
+    vertical-align: middle;
+}
+
+/* Tables without a header row keep a scrollable layout on small screens. */
+@media (max-width: 600px) {
+    .kb-table-container:not(:has(td[data-label])) {
+        overflow-x: auto;
+    }
+
+    .kb-table-container:not(:has(td[data-label])) .kb-table {
+        table-layout: auto !important;
+        min-width: 600px !important;
+    }
+}
+
+/* Mobile (Figma "Inner / Table" mobile): no table frame and no header row;
+   each body row is a white card (1px border, 20px corners, 24px padding,
+   16px apart) and every cell shows its column heading as a small grey label
+   above the value (`data-label`, added by inc/kadence-table.php). The first
+   cell reads as the card's title (20px, Premier). */
+@media (max-width: 767px) {
+    .kb-table-container:has(td[data-label]) {
+        overflow: visible;
+        border: 0;
+        border-radius: 0;
+        background: transparent;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table,
+    .kb-table-container:has(td[data-label]) .kb-table tbody,
+    .kb-table-container:has(td[data-label]) .kb-table tr,
+    .kb-table-container:has(td[data-label]) .kb-table td {
+        display: block;
+        width: 100%;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:first-child:has(th) {
+        display: none;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:has(td) {
+        box-sizing: border-box;
+        padding: 24px;
+        border: 1px solid var(--wp--preset--color--bnti-gray-100);
+        border-radius: 20px;
+        background: var(--wp--preset--color--bnti-white);
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr:has(td) + tr:has(td) {
+        margin-top: 16px;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table tr + tr .kb-table-data {
+        border-top: 0;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data {
+        padding: 0 !important;
+        background: transparent !important;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data + td.kb-table-data {
+        padding-top: 14px !important;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td[data-label]::before {
+        content: attr(data-label);
+        display: block;
+        margin-bottom: 4px;
+        color: var(--wp--preset--color--bnti-neutral);
+        font-size: var(--wp--preset--font-size--bnti-small);
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    .kb-table-container:has(td[data-label]) .kb-table td.kb-table-data:first-child p {
+        color: var(--wp--preset--color--bnti-premier) !important; /* over the cell's Ink colour class */
+        font-size: var(--wp--preset--font-size--bnti-lead);
+        font-weight: 400 !important;
+    }
+}
+
+/* FAQ accordion (Figma "Inner / FAQ"): a Kadence Accordion with the class
+   `bnti-faq`. Every question is a white card (1px border, 20px corners), 14px
+   apart; the question is Baskervville 22px in Ink with a Premier + / − on the
+   right, the answer Inter 18px in the text colour. The first pane starts open
+   (Accordion → "Start open": pane 1), the rest collapsed. */
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-inner-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-pane {
+    overflow: hidden;
+    margin: 0;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 20px;
+    background: var(--wp--preset--color--bnti-white);
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-header-wrap {
+    margin: 0;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:hover,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:focus,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header.kt-accordion-panel-active {
+    gap: 24px;
+    padding: 28px 32px;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    color: var(--wp--preset--color--bnti-ink);
+    text-align: left;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-title {
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    font-weight: 400;
+    line-height: 1.3;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-header:hover .kt-blocks-accordion-title {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+/* Kadence's "basic" icon draws the + / − with two bars; colour them Premier. */
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-icon-trigger::before,
+.wp-block-kadence-accordion.bnti-faq .kt-blocks-accordion-icon-trigger::after {
+    background: var(--wp--preset--color--bnti-premier) !important;
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner {
+    padding: 0 32px 28px;
+    border: 0;
+    background: transparent;
+    color: var(--wp--preset--color--bnti-text);
+    font-size: var(--wp--preset--font-size--bnti-medium);
+}
+
+.wp-block-kadence-accordion.bnti-faq .kt-accordion-panel-inner > :last-child {
+    margin-bottom: 0;
+}
+
+/*
+ * Accordion — Numbered (Figma "FAQ"): a green "Q.01, Q.02…" label before each
+ * question (numbered automatically), a green plus that turns into a minus when
+ * the item is open, and the answer indented under the question text. Item
+ * spacing, borders, colours and heading type come from the blocks' own
+ * settings (Accordion, Item, Heading).
+ */
+.wp-block-accordion.is-style-numbered {
+    counter-reset: bnti-faq;
+}
+
+.wp-block-accordion.is-style-numbered > .wp-block-accordion-item {
+    counter-increment: bnti-faq;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle {
+    align-items: flex-start;
+    gap: 24px;
+    padding: 0;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle::before {
+    content: "Q." counter(bnti-faq, decimal-leading-zero);
+    flex: 0 0 52px;
+    align-self: baseline;
+    color: var(--wp--preset--color--bnti-premier);
+    font-family: var(--wp--preset--font-family--inter, inherit);
+    font-size: 13px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle-title {
+    align-self: baseline;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle:hover .wp-block-accordion-heading__toggle-title {
+    text-decoration: none;
+}
+
+/* The core "+" glyph is hidden; the plus/minus is drawn with two 2px bars
+   centred on the question's first line. */
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle-icon {
+    position: relative;
+    flex: 0 0 14px;
+    width: 14px;
+    height: 1.2em;
+    color: transparent;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle-icon::before,
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 14px;
+    height: 2px;
+    margin-top: -1px;
+    background: var(--wp--preset--color--bnti-premier);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle-icon::after {
+    transform: rotate(90deg);
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-item.is-open > .wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon {
+    transform: none;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-item.is-open > .wp-block-accordion-heading .wp-block-accordion-heading__toggle-icon::after {
+    transform: rotate(90deg) scaleX(0);
+}
+
+/* Answer lines up with the question text: 52px label + 24px gap. */
+.wp-block-accordion.is-style-numbered .wp-block-accordion-panel {
+    padding-left: 76px;
+}
+
+.wp-block-accordion.is-style-numbered .wp-block-accordion-panel > :last-child {
+    margin-bottom: 0;
+}
+
+@media (max-width: 767px) {
+    .wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle {
+        gap: 14px;
+    }
+
+    .wp-block-accordion.is-style-numbered .wp-block-accordion-heading__toggle::before {
+        flex-basis: 44px;
+    }
+
+    .wp-block-accordion.is-style-numbered .wp-block-accordion-panel {
+        padding-left: 58px;
+    }
+}
+
+/* Tablet/mobile menu (bars) button in orange, as in the Figma blog post; the
+   bars are drawn with currentColor, which Kadence sets to white for hero pages. */
+body.single-post .wp-block-kadence-off-canvas-trigger,
+body.single-post .wp-block-kadence-off-canvas-trigger:hover,
+body.single-post .wp-block-kadence-off-canvas-trigger:focus,
+.editor-styles-wrapper:has(.wp-block-post-author-name) .wp-block-kadence-off-canvas-trigger {
+    color: var(--wp--preset--color--bnti-premier, #214280) !important;
+}
+
+/* Tablet/mobile header row: 15px left/right instead of Kadence's 30px. */
+@media (max-width: 1024px) {
+    body.single-post .kadence-header-row-inner,
+    .editor-styles-wrapper:has(.wp-block-post-author-name) .kadence-header-row-inner {
+        padding-left: 15px !important;
+        padding-right: 15px !important;
+    }
+}
+
+/* No top padding on the header containers there (Kadence gives the desktop
+   one 30px and the tablet/mobile one 15px). */
+body.single-post .wp-block-kadence-header-desktop.kb-header-container,
+body.single-post .wp-block-kadence-header-tablet.kb-header-container,
+.editor-styles-wrapper:has(.wp-block-post-author-name) .wp-block-kadence-header-desktop.kb-header-container,
+.editor-styles-wrapper:has(.wp-block-post-author-name) .wp-block-kadence-header-tablet.kb-header-container {
+    padding-top: 0 !important;
+}
+
+/*
+ * Tablet & mobile: full-width buttons
+ *
+ * At 1024px and below every content button spans its container, with the
+ * label (and icon) centred: core Button blocks (Default, Outline, Alternative,
+ * iconic), Kadence Advanced Buttons, the contact form's Submit and the posts
+ * grid's "Read More". Left alone: anything in the site header (Contact button,
+ * menu), the Link style (a text link, not a button), and pagination/filter
+ * controls. `!important` beats core's width presets and Gravity Forms.
+ */
+@media (max-width: 1024px) {
+    /* The containers stretch too: in a Kadence column that aligns its content
+       left/right/centre, a Buttons block would otherwise shrink to its button. */
+    .wp-block-buttons:not(header *),
+    .wp-block-kadence-advancedbtn:not(header *) {
+        align-self: stretch;
+        box-sizing: border-box;
+        width: 100%;
+    }
+
+    .wp-block-buttons > .wp-block-button:not(.is-style-link):not(header *),
+    .wp-block-button.bnti-gform-button:not(header *) {
+        flex-basis: 100%;
+        width: 100% !important;
+        max-width: 100%;
+    }
+
+    .wp-block-button:not(.is-style-link):not(header *) > .wp-block-button__link {
+        box-sizing: border-box;
+        width: 100% !important;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .wp-block-kadence-advancedbtn:not(header *) > .kb-button {
+        flex-basis: 100%;
+        width: 100% !important;
+        justify-content: center;
+    }
+
+    .ipg-card--boxed .ipg-card__button {
+        align-self: stretch;
+        justify-content: center;
+    }
+}
+
+/* =============================================================================
+   Blog, posts and templates
+   ============================================================================= */
+
+/*
+ * Long-form text (`.bnti-prose`): the single post content and the legal pages.
+ * Section titles elsewhere are h2 at the theme size (52px); inside an article
+ * the headings step down so a writer's h2 reads as a sub-heading: h2 at
+ * heading-four, h3 at heading-five, h4 at heading-six, with room above them.
+ * Paragraphs and lists use Text Medium, blockquotes a Premier rule and the
+ * heading face, images the 20px radius.
+ */
+.bnti-prose > * {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.bnti-prose > * + * {
+    margin-top: 24px;
+}
+
+.bnti-prose > h2,
+.bnti-prose > h3,
+.bnti-prose > h4 {
+    margin-top: 48px;
+}
+
+.bnti-prose > :is(h2, h3, h4) + * {
+    margin-top: 16px;
+}
+
+.bnti-prose h2 {
+    font-size: var(--wp--preset--font-size--bnti-heading-four);
+}
+
+.bnti-prose h3 {
+    font-size: var(--wp--preset--font-size--bnti-heading-five);
+}
+
+.bnti-prose h4 {
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+}
+
+.bnti-prose p,
+.bnti-prose li {
+    font-size: var(--wp--preset--font-size--bnti-medium);
+}
+
+.bnti-prose ul,
+.bnti-prose ol {
+    padding-left: 1.25em;
+}
+
+.bnti-prose li + li {
+    margin-top: 8px;
+}
+
+.bnti-prose li::marker {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-prose a {
+    color: var(--wp--preset--color--bnti-premier);
+    text-decoration: none;
+}
+
+.bnti-prose a:hover {
+    color: var(--wp--preset--color--bnti-premier-dark);
+}
+
+.bnti-prose blockquote,
+.bnti-prose .wp-block-quote {
+    padding: 4px 0 4px 24px;
+    border-left: 3px solid var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-prose blockquote p {
+    color: var(--wp--preset--color--bnti-ink);
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    line-height: 1.5;
+}
+
+.bnti-prose img {
+    border-radius: 20px;
+}
+
+/* Search form (search and 404 heroes): a 52px white field with 8px corners
+   beside the theme's default button. */
+.bnti-search {
+    max-width: 640px;
+}
+
+.bnti-search .wp-block-search__inside-wrapper {
+    gap: 12px;
+}
+
+.bnti-search .wp-block-search__input {
+    min-height: 52px;
+    padding: 0 16px;
+    border: 1px solid var(--wp--preset--color--bnti-gray-100);
+    border-radius: 8px;
+    background: var(--wp--preset--color--bnti-white);
+    color: var(--wp--preset--color--bnti-ink);
+    font-size: var(--wp--preset--font-size--bnti-regular);
+}
+
+.bnti-search .wp-block-search__input:focus {
+    border-color: var(--wp--preset--color--bnti-premier);
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(141, 181, 255, 0.35);
+}
+
+.bnti-search .wp-block-search__button {
+    margin-left: 0;
+}
+
+/* Post footer: tags as small 8px-rounded chips. */
+.bnti-post-tags a {
+    display: inline-block;
+    margin: 0 4px 4px 0;
+    padding: 4px 12px;
+    border-radius: 8px;
+    background: var(--wp--preset--color--bnti-neutral-lightest);
+    color: var(--wp--preset--color--bnti-ink);
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.bnti-post-tags a:hover {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+.bnti-post-tags .wp-block-post-terms__separator {
+    display: none;
+}
+
+/* Previous / next article: a small Premier label with the arrow ("← Previous
+   article"), the post title under it in the heading face. */
+.bnti-post-nav .post-navigation-link-previous,
+.bnti-post-nav .post-navigation-link-next {
+    max-width: calc(50% - 12px);
+}
+
+.bnti-post-nav a {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    color: var(--wp--preset--color--bnti-ink);
+    text-decoration: none;
+}
+
+.bnti-post-nav .post-navigation-link-next a {
+    align-items: flex-end;
+}
+
+.bnti-post-nav .post-navigation-link__label {
+    color: var(--wp--preset--color--bnti-premier);
+    font-size: var(--wp--preset--font-size--bnti-small);
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.bnti-post-nav .post-navigation-link-previous .post-navigation-link__label::before {
+    content: "\2190\00a0\00a0";
+}
+
+.bnti-post-nav .post-navigation-link-next .post-navigation-link__label::after {
+    content: "\00a0\00a0\2192";
+}
+
+.bnti-post-nav .post-navigation-link__title {
+    font-family: var(--wp--preset--font-family--baskervville);
+    font-size: var(--wp--preset--font-size--bnti-heading-six);
+    line-height: 1.2;
+    transition: color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.bnti-post-nav a:hover .post-navigation-link__title {
+    color: var(--wp--preset--color--bnti-premier);
+}
+
+@media (max-width: 767px) {
+    .bnti-post-nav .post-navigation-link-previous,
+    .bnti-post-nav .post-navigation-link-next {
+        max-width: 100%;
+    }
+}
+
+/* Social Share: the copy-link item is a <button>, which the theme's button
+   reset leaves transparent; give it the same tile as the link items. */
+.wp-block-bnti-social-share .bnti-social-share__item.is-copy-link {
+    background-color: var(--icon-bg, transparent);
+    color: var(--icon-color, currentColor);
+}
+
+.bnti-search .wp-block-search__button {
+    border-radius: 8px;
+}
