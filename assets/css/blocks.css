@@ -747,6 +747,23 @@ p.is-style-has-arrow::after {
     color: var(--wp--preset--color--bnti-premier-dark);
 }
 
+/* A Link with an icon (Iconic Button) stays an inline text link: the
+   extension makes every icon button a centred full-width flex box, so on
+   mobile a long label wrapped onto a centred second line with the arrow
+   pushed to the far edge. Inline, it wraps like text: left-aligned, the
+   underline under each line and the arrow right after the last word. */
+.wp-block-button.is-style-link.bnti-icon-button .wp-block-button__link {
+    display: inline !important;
+    text-align: left;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone;
+}
+
+.wp-block-button.is-style-link.bnti-icon-button .wp-block-button__link .bnti-icon-button-svg {
+    margin-left: var(--bnti-icon-gap, 10px);
+    vertical-align: -0.125em;
+}
+
 /* Kadence Table (Figma "Inner / Table"): a white table with a 1px border and
    20px corners, a Premier gradient header row (white Inter 16/600), a light
    grey first column (Inter 16/600 in Ink) and a 1px rule between rows.
