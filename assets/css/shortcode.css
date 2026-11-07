@@ -206,16 +206,14 @@
     line-height: 1.5;
 }
 
-/* "Read more →": the Link button style (Premier text with a 1px rule under
-   it), pinned to the bottom so the links line up across a row. */
+/* "Read more →": the Link button style (Premier text, no underline), pinned
+   to the bottom so the links line up across a row. */
 .ipg-card .ipg-card__button {
     display: inline-flex;
     align-items: center;
     gap: 10px;
     align-self: flex-start;
     margin-top: auto;
-    padding-bottom: 2px;
-    border-bottom: 1px solid currentColor;
     color: var(--wp--preset--color--bnti-premier);
     font-size: var(--wp--preset--font-size--bnti-regular);
     font-weight: 500;

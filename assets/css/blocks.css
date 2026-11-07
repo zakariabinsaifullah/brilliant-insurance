@@ -95,7 +95,7 @@ header.wp-block-kadence-rowlayout::before {
 
 /*
  * Group — Plain Links: links inside keep their text's weight and get no
- * underline (paragraph links are underlined by default in style.css). For
+ * underline (links have none anywhere; kept for older content). For
  * link lists such as "On this page".
  */
 .wp-block-group.is-style-plain-links a {
@@ -366,8 +366,8 @@ ul.is-style-mega-links-large a::after {
     margin-left: 0;
 }
 
-/* No underline on menu links: style.css underlines paragraph links
-   (`.wp-block-paragraph a`) and loads after the block's own link setting. */
+/* No underline on menu links (links have no underline anywhere; this keeps
+   the menus safe from plugin or core link styles). */
 .wp-block-kadence-header .mega-menu a,
 .wp-block-kadence-off-canvas .kb-navigation a {
     text-decoration: none;
@@ -718,18 +718,17 @@ p.is-style-has-arrow::after {
  * Alternative above: the variation's `background: transparent` in theme.json
  * is not emitted, so it is restated here.
  *
- * Underlined with a 1px bottom border rather than `text-decoration`, so the
- * rule sits clear of the descenders. `currentColor` keeps it in step with the
- * link colour, including the hover swap below.
+ * No underline, as in Figma (the Link component has no text decoration or
+ * rule): Premier text that turns Premier Dark on hover.
  */
 .wp-block-button.is-style-link .wp-block-button__link {
     background-color: transparent;
     background-image: none;
     box-shadow: none;
     color: var(--wp--preset--color--bnti-premier);
-    border-width: 0 0 1px;
-    border-bottom: 1px solid currentColor;
+    border: 0;
     border-radius: 0;
+    text-decoration: none;
 }
 
 .wp-block-button.is-style-link .wp-block-button__link:hover {
@@ -739,8 +738,8 @@ p.is-style-has-arrow::after {
 /* A Link with an icon (Iconic Button) stays an inline text link: the
    extension makes every icon button a centred full-width flex box, so on
    mobile a long label wrapped onto a centred second line with the arrow
-   pushed to the far edge. Inline, it wraps like text: left-aligned, the
-   underline under each line and the arrow right after the last word. */
+   pushed to the far edge. Inline, it wraps like text: left-aligned, with the
+   arrow right after the last word. */
 .wp-block-button.is-style-link.bnti-icon-button .wp-block-button__link {
     display: inline !important;
     text-align: left;
@@ -1162,8 +1161,7 @@ body.single-post .wp-block-kadence-header-tablet.kb-header-container,
 
 .bnti-prose a {
     color: var(--wp--preset--color--bnti-premier);
-    text-decoration: underline;
-    text-underline-offset: 3px;
+    text-decoration: none;
 }
 
 .bnti-prose a:hover {
