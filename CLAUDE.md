@@ -204,7 +204,7 @@ The site is **light by default**: the body background is white, headings and lin
 **Typography:**
 
 -   **Headings (h1–h6):** Baskervville, weight **400 (Regular)**, line-height **1.2**, colour `bnti-ink` (white on dark sections). Headings in the Figma design are one colour and weight; don't colour or bold parts of them.
--   **Body and paragraphs:** Inter, **16px** (`bnti-regular`), weight **400**, line-height **1.5**, colour `bnti-text`. Links are `bnti-ink` and turn `bnti-premier` on hover.
+-   **Body and paragraphs:** Inter, **16px** (`bnti-regular`), weight **400**, line-height **1.5**, colour `bnti-text`. Links are `bnti-ink` and turn `bnti-premier` on hover, with **no underline** anywhere (text links, Link buttons, "Read more", article links), as in Figma.
 -   **Fonts are self-hosted** variable woff2 files in `assets/fonts/` (Baskervville 400–700, Inter 100–900, normal and italic, Latin subset).
 -   **Heading and large text sizes are fluid** (Figma mobile → desktop size, scaling between the 393px and 1440px viewports of the Figma frames):
 
