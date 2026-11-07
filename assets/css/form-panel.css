@@ -235,10 +235,12 @@ body.bnti-panel-open {
     gap: 12px !important;
 }
 
+/* Gravity Forms prints its framework CSS in the footer, after this file, with
+   an equal-specificity `.gchoice` grid rule, hence the !important. */
 .bnti-form-panel__body .gfield_radio .gchoice {
     display: flex !important;
-    align-items: center;
-    gap: 12px;
+    align-items: center !important;
+    gap: 12px !important;
 }
 
 .bnti-form-panel__body .gfield_radio input[type='radio'] {

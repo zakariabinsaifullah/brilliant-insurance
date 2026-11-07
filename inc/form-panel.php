@@ -113,6 +113,27 @@ function bnti_form_panel_html() {
 	<?php
 }
 
+// ── No scroll jump after an AJAX submit ────────────────────────────────────────
+
+add_filter( 'gform_confirmation_anchor', 'bnti_form_panel_no_anchor', 10, 2 );
+
+/**
+ * Turns off Gravity Forms' scroll-to-form after an AJAX submit for the panel's
+ * form. The form sits in a fixed panel, so that scroll only moves the page
+ * behind it.
+ *
+ * @param bool|int $anchor Whether (or where) to scroll.
+ * @param array    $form   The form being submitted.
+ * @return bool|int
+ */
+function bnti_form_panel_no_anchor( $anchor, $form ) {
+	if ( preg_match( '/\bid=["\']?(\d+)/', (string) get_option( 'bnti_form_shortcode', '' ), $match ) && (int) $match[1] === (int) ( $form['id'] ?? 0 ) ) {
+		return false;
+	}
+
+	return $anchor;
+}
+
 // ── Register settings ──────────────────────────────────────────────────────────
 
 add_action( 'admin_init', 'bnti_form_register_settings' );
