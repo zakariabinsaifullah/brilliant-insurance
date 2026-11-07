@@ -2,10 +2,11 @@
 /**
  * Brilliant Insurance — theme documentation page (Appearance → Brilliant Insurance).
  *
- * A guide to what the theme adds (Brilliant Insurance blocks, editor extensions, block styles,
- * team members, posts grid shortcode, contact panel), written for whoever is
- * building pages rather than for a developer. Keep it in step with the blocks,
- * src/extensions, inc/block-styles.php, inc/team.php and inc/shortcode.php.
+ * A guide to what the theme adds (Brilliant Insurance blocks, editor extensions,
+ * block styles, the posts grid shortcode and the quote form panel), written for
+ * whoever is building pages rather than for a developer. Keep it in step with
+ * src/blocks, src/extensions, inc/block-styles.php, inc/shortcode.php and
+ * inc/form-panel.php.
  *
  * @package Brilliant_Insurance
  */
@@ -173,10 +174,10 @@ function bnti_docs_render_page() {
 	<div class="wrap bnti-docs">
 		<h1><?php esc_html_e( 'Brilliant Insurance', 'brilliant-insurance' ); ?></h1>
 		<p class="bnti-docs-intro">
-			<?php esc_html_e( 'A quick guide to what this theme adds: the Brilliant Insurance blocks, the extra settings on core blocks, the block styles, team member pages, the posts grid shortcode and the contact panel.', 'brilliant-insurance' ); ?>
+			<?php esc_html_e( 'A quick guide to what this theme adds: the Brilliant Insurance blocks, the extra settings on core blocks, the block styles, the posts grid shortcode and the quote form.', 'brilliant-insurance' ); ?>
 		</p>
 
-		<!-- ── Brilliant Insurance blocks ────────────────────────────────────────────────── -->
+		<!-- ── Brilliant Insurance blocks ────────────────────────────────── -->
 		<div class="bnti-docs-section">
 			<h2><?php esc_html_e( 'Brilliant Insurance blocks', 'brilliant-insurance' ); ?></h2>
 			<p>
@@ -188,19 +189,11 @@ function bnti_docs_render_page() {
 				array(
 					array(
 						__( 'Icon', 'brilliant-insurance' ),
-						__( 'An SVG icon, by default 20px and white in a 45×45px green box, optionally with a title beside it. Paste SVG code or pick an icon from the library; icons you paste can be saved under <strong>My Icons</strong> and reused anywhere on the site.', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Timeline', 'brilliant-insurance' ),
-						__( 'A row of numbered steps joined by one line, each marked by a square dot, with any blocks (number, heading, text) below each dot. Set the number of steps, columns, gaps and colours in the sidebar, and turn on <strong>Highlight step</strong> on the step to highlight. <strong>Highlight line</strong> makes that step’s line a thicker progress bar; <strong>Highlight on hover</strong> moves the highlight to the step under the mouse. On tablet and mobile the steps stack as a plain list.', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Rating', 'brilliant-insurance' ),
-						__( 'A star rating, optionally with the rating number beside it.', 'brilliant-insurance' ),
+						__( 'An SVG icon, optionally with a title beside it. Paste SVG code or pick an icon from the library; icons you paste can be saved under <strong>My Icons</strong> and reused anywhere on the site.', 'brilliant-insurance' ),
 					),
 					array(
 						__( 'Social Share', 'brilliant-insurance' ),
-						__( 'Sharing buttons for the current post, for single post templates.', 'brilliant-insurance' ),
+						__( 'Copy-link, LinkedIn, X and Facebook buttons for the current post. Used in the single post template.', 'brilliant-insurance' ),
 					),
 				),
 				array( __( 'Block', 'brilliant-insurance' ), __( 'What it does', 'brilliant-insurance' ) )
@@ -212,43 +205,23 @@ function bnti_docs_render_page() {
 		<div class="bnti-docs-section">
 			<h2><?php esc_html_e( 'Extra block settings', 'brilliant-insurance' ); ?></h2>
 			<p>
-				<?php esc_html_e( 'The theme adds these options to core and Kadence blocks. Select the block and look in its sidebar (or toolbar, for Highlight).', 'brilliant-insurance' ); ?>
+				<?php esc_html_e( 'The theme adds these options to core blocks. Select the block and look in its sidebar.', 'brilliant-insurance' ); ?>
 			</p>
 
 			<?php
 			bnti_docs_info_table(
 				array(
 					array(
-						__( 'Highlight', 'brilliant-insurance' ),
-						__( 'Text toolbar, the “A” button next to Bold and Italic. Makes the selected words semi-bold and green, as in “Meet <strong>James.</strong>”. Another Brilliant Insurance colour can be picked in its popover. Use it for coloured words in headings instead of colouring them by hand.', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Figure Frame', 'brilliant-insurance' ),
-						__( 'Image and Post Featured Image → Settings. The framed look from the design: a faint border, a dark overlay, white corner ticks and a “FIG. 02” label. Type the number into <strong>FIG value</strong> (leave it empty for no label) and switch off the parts the design leaves out. On Post Featured Image, <strong>Post title as label</strong> shows “[HEADSHOT: NAME]”, and a post without an image shows an empty framed box.', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Pointer', 'brilliant-insurance' ),
-						__( 'Group and Kadence Section → Settings. A thin white line from the block’s edge ending in a dot, pointing at the image beside it. Add it to the text side, not the image. Choose the direction, length, vertical position and size (Large: 18px dot with a green ring; Small: 10px white dot). Shown on desktop only.', 'brilliant-insurance' ),
-					),
-					array(
 						__( 'Icon Settings', 'brilliant-insurance' ),
-						__( 'Button. Buttons already end in a → arrow; turn on <strong>Add Icon to Button</strong> and paste SVG code only when the design shows a different icon, which then replaces the arrow.', 'brilliant-insurance' ),
+						__( 'Button. Turn on <strong>Add Icon to Button</strong> and paste SVG code when the design shows an icon on a button (for example the arrow on Link buttons). The icon follows the text colour and sits 10px from the label.', 'brilliant-insurance' ),
 					),
 					array(
-						__( 'Hover Color', 'brilliant-insurance' ),
-						__( 'Any block with colour settings. Text, background and border colours on hover, and how fast they change.', 'brilliant-insurance' ),
+						__( 'Max Width', 'brilliant-insurance' ),
+						__( 'Heading and Paragraph. Limits how wide the text runs (in px), so long lines wrap where the design wraps them. Full width under 768px.', 'brilliant-insurance' ),
 					),
 					array(
-						__( 'Text Max Width', 'brilliant-insurance' ),
-						__( 'Heading and Paragraph. Limits how wide the text runs, so long lines wrap where the design wraps them.', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Full Height, Overlay Background, Global Hover', 'brilliant-insurance' ),
-						__( 'Group. Stretch the group to its column’s height, lay a colour or gradient over its background, and change the colours of everything inside when the whole group is hovered (for example, a card).', 'brilliant-insurance' ),
-					),
-					array(
-						__( 'Featured Image Background', 'brilliant-insurance' ),
-						__( 'Kadence Row Layout. Uses the current post’s featured image as the row’s background.', 'brilliant-insurance' ),
+						__( 'Full Height', 'brilliant-insurance' ),
+						__( 'Group. Stretches the group to the height of its column.', 'brilliant-insurance' ),
 					),
 				),
 				array( __( 'Setting', 'brilliant-insurance' ), __( 'Where and what it does', 'brilliant-insurance' ) )
@@ -268,15 +241,19 @@ function bnti_docs_render_page() {
 				array(
 					array(
 						__( 'Button', 'brilliant-insurance' ),
-						__( '<strong>Default</strong>: green, uppercase, square, with a → arrow. <strong>Outline</strong>: the same with a transparent background and a thin border, for dark or image backgrounds. <strong>Alternative</strong>: light green background with dark green text. <strong>Link</strong>: a text link with the arrow.', 'brilliant-insurance' ),
+						__( '<strong>Default</strong>: the blue gradient button. <strong>Alternative</strong>: white with a dark blue border, for gradient sections such as the CTA. <strong>Outline</strong>: transparent with a thin border and a → arrow, for dark or photo backgrounds. <strong>Link</strong>: a blue text link with a line under it.', 'brilliant-insurance' ),
+					),
+					array(
+						__( 'Paragraph', 'brilliant-insurance' ),
+						__( '<strong>Has Arrow</strong>: the small section label (eyebrow) with a corner arrow after it.', 'brilliant-insurance' ),
 					),
 					array(
 						__( 'List', 'brilliant-insurance' ),
-						__( '<strong>Mega Links</strong> and <strong>Mega Links: Large</strong>, for the link lists in the mega menu panels.', 'brilliant-insurance' ),
+						__( '<strong>Dots</strong> (the “Key takeaways” list), <strong>Mega Links</strong> and <strong>Mega Links: Large</strong> (link lists in the mega menu panels).', 'brilliant-insurance' ),
 					),
 					array(
 						__( 'Post Template', 'brilliant-insurance' ),
-						__( '<strong>Card Grid</strong>, for Query Loop card grids: three columns of equal-height cards, a lone last card fills the row, one column on tablet and mobile.', 'brilliant-insurance' ),
+						__( '<strong>Card Grid</strong>, for Query Loop card grids: three columns of equal-height cards, one column on tablet and mobile.', 'brilliant-insurance' ),
 					),
 					array(
 						__( 'Group', 'brilliant-insurance' ),
@@ -292,46 +269,21 @@ function bnti_docs_render_page() {
 			?>
 		</div>
 
-		<!-- ── Team members ──────────────────────────────────────────────── -->
+		<!-- ── Quote form ─────────────────────────────────────────────────── -->
 		<div class="bnti-docs-section">
 			<h2>
 				<?php
 				printf(
 					'<a href="%s">%s</a>',
-					esc_url( admin_url( 'edit.php?post_type=bnti_team' ) ),
-					esc_html__( 'Team members', 'brilliant-insurance' )
+					esc_url( admin_url( 'themes.php?page=bnti-form' ) ),
+					esc_html__( 'Quote form', 'brilliant-insurance' )
 				);
 				?>
 			</h2>
 			<p>
-				<?php esc_html_e( 'Each attorney has their own page at /team/name/, built in the block editor like any page.', 'brilliant-insurance' ); ?>
+				<?php esc_html_e( 'There is no Contact page. Every “Get a quote” and “Contact” link opens the slide-in quote form. Its title, text, phone number and Gravity Form are set in Appearance → Quote Form. To open it from any button, menu item or text link, use this as the link URL:', 'brilliant-insurance' ); ?>
 			</p>
-
-			<h3><?php esc_html_e( 'Adding a team member', 'brilliant-insurance' ); ?></h3>
-			<ol class="bnti-docs-list bnti-docs-list--ordered">
-				<li><?php esc_html_e( 'Go to Team → Add Team Member. Choose the Team Member Page layout when it is offered.', 'brilliant-insurance' ); ?></li>
-				<li><?php esc_html_e( 'Title: the full name. Excerpt: the short bio shown on team cards. Featured image: the headshot. Page Attributes → Order: their place in the team list.', 'brilliant-insurance' ); ?></li>
-				<li><?php esc_html_e( 'Fill in the Team details panel in the sidebar. The page’s name, intro line and facts fill themselves in from it, so don’t retype them.', 'brilliant-insurance' ); ?></li>
-				<li><?php esc_html_e( 'Edit, remove or duplicate the middle sections to match their page in the design, and renumber the “01 / 07” labels.', 'brilliant-insurance' ); ?></li>
-			</ol>
-
-			<?php
-			bnti_docs_info_table(
-				array(
-					array( __( 'Short name', 'brilliant-insurance' ), __( 'First name used in links, e.g. “Read <strong>James’s</strong> bio”.', 'brilliant-insurance' ) ),
-					array( __( 'Highlighted name', 'brilliant-insurance' ), __( 'The part of the name shown in green, e.g. “Laura, Jr.”. Leave empty to highlight the last word.', 'brilliant-insurance' ) ),
-					array( __( 'Position, Office', 'brilliant-insurance' ), __( 'Shown above the name, e.g. “Founder, Fairhope, Alabama”.', 'brilliant-insurance' ) ),
-					array( __( 'Role, Licensed in, Cases, Practicing since', 'brilliant-insurance' ), __( 'The facts listed under the bio hero.', 'brilliant-insurance' ) ),
-				),
-				array( __( 'Team detail', 'brilliant-insurance' ), __( 'Where it shows', 'brilliant-insurance' ) )
-			);
-			?>
-
-			<div class="bnti-docs-note">
-				<p>
-					<?php esc_html_e( 'To show a detail in any block, connect the block to the “Team member” source (block bindings) rather than typing it. This works on the member’s page and inside a Query Loop of team members.', 'brilliant-insurance' ); ?>
-				</p>
-			</div>
+			<?php bnti_docs_code( '#bnti-contact' ); ?>
 		</div>
 
 		<!-- ── Posts grid ─────────────────────────────────────────────────── -->
@@ -339,36 +291,25 @@ function bnti_docs_render_page() {
 			<h2><?php esc_html_e( 'Posts grid', 'brilliant-insurance' ); ?> <code>[bnti_posts_grid]</code></h2>
 
 			<p>
-				<?php esc_html_e( 'A filterable, paginated grid of posts. Clicking a category or a page number swaps the cards in place, without reloading the page. Add it to a page with a Shortcode block.', 'brilliant-insurance' ); ?>
+				<?php esc_html_e( 'A grid of post cards with category filters and page numbers. Clicking a category or a page number swaps the cards in place, without reloading the page. Add it to a page with a Shortcode block. The blog, archive, search and 404 templates use it too.', 'brilliant-insurance' ); ?>
 			</p>
 
-			<?php bnti_docs_code( '[bnti_posts_grid]', __( 'Simplest version: six posts, all categories, heading “All Insights.”', 'brilliant-insurance' ) ); ?>
+			<?php bnti_docs_code( '[bnti_posts_grid]', __( 'Simplest version: six posts per page, every category, with filters.', 'brilliant-insurance' ) ); ?>
 
 			<h3><?php esc_html_e( 'Attributes', 'brilliant-insurance' ); ?></h3>
 
 			<?php
 			bnti_docs_attr_table(
 				array(
-					array(
-						'title',
-						'All Insights.',
-						__( 'Heading shown at the top left, opposite the category links, as an <code>h2</code>. Pass <code>title=""</code> to leave it out.', 'brilliant-insurance' ),
-					),
-					array(
-						'per_page',
-						'6',
-						__( 'How many posts each page of the grid shows. Anything above 50 is capped at 50.', 'brilliant-insurance' ),
-					),
-					array(
-						'categories',
-						'',
-						__( 'Comma-separated category IDs or slugs. Limits both the posts shown and the category links offered. Leave empty to use every category that has posts.', 'brilliant-insurance' ),
-					),
-					array(
-						'post_type',
-						'post',
-						__( 'Which post type to list. Falls back to <code>post</code> if the name is not a registered post type.', 'brilliant-insurance' ),
-					),
+					array( 'per_page', '6', __( 'How many posts each page of the grid shows (up to 50).', 'brilliant-insurance' ) ),
+					array( 'categories', '', __( 'Comma-separated category IDs or slugs. Limits both the posts shown and the filter buttons. Leave empty for every category with posts except Uncategorized.', 'brilliant-insurance' ) ),
+					array( 'title', '', __( 'Optional heading above the filters, as an <code>h2</code>.', 'brilliant-insurance' ) ),
+					array( 'filters', 'true', __( '<code>false</code> hides the category filter buttons.', 'brilliant-insurance' ) ),
+					array( 'pagination', 'true', __( '<code>false</code> hides the article count and page numbers.', 'brilliant-insurance' ) ),
+					array( 'exclude', '', __( 'Comma-separated post IDs to leave out, or <code>current</code> for the post being viewed.', 'brilliant-insurance' ) ),
+					array( 'context', '', __( '<code>auto</code> lists the current category, tag, author or search results instead of every post (used by the templates).', 'brilliant-insurance' ) ),
+					array( 'empty', '', __( 'Message shown when there are no matching posts.', 'brilliant-insurance' ) ),
+					array( 'post_type', 'post', __( 'Comma-separated post types to list.', 'brilliant-insurance' ) ),
 				)
 			);
 			?>
@@ -376,26 +317,15 @@ function bnti_docs_render_page() {
 			<h3><?php esc_html_e( 'Examples', 'brilliant-insurance' ); ?></h3>
 
 			<?php
-			bnti_docs_code(
-				'[bnti_posts_grid title="Latest articles." per_page="9"]',
-				__( 'Nine posts per page with a different heading.', 'brilliant-insurance' )
-			);
-
-			bnti_docs_code(
-				'[bnti_posts_grid categories="personal-injury,car-accidents"]',
-				__( 'Only two categories, by slug (use your own category slugs or IDs).', 'brilliant-insurance' )
-			);
-
-			bnti_docs_code(
-				'[bnti_posts_grid title=""]',
-				__( 'No heading, category links only.', 'brilliant-insurance' )
-			);
+			bnti_docs_code( '[bnti_posts_grid per_page="9"]', __( 'The Blog page: nine posts per page.', 'brilliant-insurance' ) );
+			bnti_docs_code( '[bnti_posts_grid categories="business-insurance,workers-compensation"]', __( 'Only two categories, by slug.', 'brilliant-insurance' ) );
+			bnti_docs_code( '[bnti_posts_grid per_page="3" exclude="current" filters="false" pagination="false"]', __( 'Three other posts, no filters or page numbers (the “More articles” row under a post).', 'brilliant-insurance' ) );
 			?>
 
 			<h3><?php esc_html_e( 'What it shows', 'brilliant-insurance' ); ?></h3>
 			<ul class="bnti-docs-list">
-				<li><?php esc_html_e( 'Each card: featured image (left out if the post has none), category, title and a “Read More” button.', 'brilliant-insurance' ); ?></li>
-				<li><?php esc_html_e( 'Three columns on desktop, one on tablet and mobile. On small screens the category links scroll sideways.', 'brilliant-insurance' ); ?></li>
+				<li><?php esc_html_e( 'Each card: featured image (left out if the post has none), category and date, title, a short excerpt and a “Read more” link.', 'brilliant-insurance' ); ?></li>
+				<li><?php esc_html_e( 'Three columns on desktop, one on tablet and mobile. On small screens the category filters scroll sideways.', 'brilliant-insurance' ); ?></li>
 				<li><?php esc_html_e( 'Under the cards: a count (“Showing 9 of 16 articles”) with the page numbers opposite it.', 'brilliant-insurance' ); ?></li>
 			</ul>
 		</div>
